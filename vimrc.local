@@ -1,12 +1,15 @@
 syntax on
 filetype on
 
+" RELOAD THIS FILE
+map <Leader>rv :so ~/.vimrc.local<CR>
+
 " SPF13 ESC FIX!!!!!
 "iunmap <Esc>
 
 "| Language & Encoding |"
 setglobal langmenu=en_GB.UTF-8
-setglobal encoding=utf-8
+setglobal encoding=utf8
 setglobal fileencoding=utf-8
 
 set shell=/bin/zsh
