@@ -30,6 +30,8 @@
 [color]
 	ui = auto
 [color "status"]
+  header = cyan
+  branch = white
   changed = yellow
   added = green
   untracked = cyan
