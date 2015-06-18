@@ -1,0 +1,300 @@
+syntax on
+filetype on
+
+" SPF13 ESC FIX!!!!!
+"iunmap <Esc>
+
+"| Language & Encoding |"
+setglobal langmenu=en_GB.UTF-8
+setglobal encoding=utf-8
+setglobal fileencoding=utf-8
+
+set shell=/bin/zsh
+
+"| Theme |"
+" Hide Scrollbars
+set guioptions-=r
+set guioptions-=L
+
+colorscheme gotham
+let g:airline_theme="gotham"
+set background=dark
+:hi Normal ctermbg=black
+:hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+:hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+
+:hi LineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=grey
+:hi clear SignColumn
+:hi SignColumn guibg=NONE ctermbg=NONE
+:hi VertSplit ctermbg=blue ctermfg=black
+
+:hi SyntasticWarningSign ctermbg=NONE ctermfg=red
+:hi SyntasticErrorSign ctermbg=red ctermfg=black
+
+:hi DiffAdd      guibg=#003300
+:hi DiffChange   guibg=#003300
+:hi DiffDelete   guifg=#330000 guibg=#330000
+:hi DiffText     guibg=#990000 
+
+:hi SignifySignAdd ctermbg=NONE
+:hi SignifySignChange ctermbg=NONE
+:hi SignifySignChangeDelete ctermbg=NONE
+:hi SignifySignDeleteFirstSign ctermbg=NONE
+
+:hi Search ctermfg=black
+
+:hi TabLineFill ctermbg=blue ctermfg=black
+:hi TabLine ctermbg=blue ctermfg=white
+:hi TabLineSel ctermbg=yellow ctermfg=white
+
+:hi Pmenu guibg=black ctermbg=grey ctermfg=black
+:hi PmenuSel ctermbg=yellow ctermfg=black
+:hi Cursor guibg=#cb4b16 ctermbg=yellow ctermfg=green
+let g:indentLine_color_term = 4
+let g:indentLine_char = "¦"
+
+"| GUI Settings |"
+set linespace=4
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Office\ Code\ Pro13
+  elseif has("gui_photon")
+    set guifont=Office\ Code\ Pro:s13
+  elseif has("gui_kde")
+    set guifont=Office\ Code\ Pro/13/-1/5/50/0/0/0/1/0
+  elseif has("x11")
+    set guifont=-*-courier-medium-r-normal-*-*-150-*-*-m-*-*
+  elseif has("gui_mac")
+    set guifont=Office\ Code\ Pro:h13
+  elseif has("gui_gtk")
+    set guifont=Office\ Code\ Pro:h13:cDEFAULT
+  else
+    "Set gui if none of the above are applicable
+    set guifont=Office\ Code\ Pro:h13
+  endif
+endif
+
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+
+set guicursor=n-v-c:ver15-Cursor
+
+
+"| Tabs |"
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
+
+"| Syntax |"
+au BufRead,BufNewFile *.pde,*.ino set filetype=arduino
+au BufRead,BufNewFile *.zsh-theme,*.zsh set filetype=zsh
+au BufRead,BufNewFile *.xm set filetype=logos
+au BufRead,BufNewFile *.vimrc,*.vimrc.* set filetype=vim
+au BufRead,BufNewFile *.scss,*.css.scss,*.sass,*.css.sass set syntax=sass
+
+map <Leader>sy :syntax on<CR>
+autocmd BufRead,BufNewFile *.sass,*.css.sass,*.scss,*.css.scss :syntax on
+"au BufRead,BufNewFile *.css.sass set syntax=sass
+"au! BufRead,BufNewFile *.css.sass setfiletype sass
+"au BufRead,BufNewFile *.sass set syntax=sass
+"au! BufRead,BufNewFile *.sass setfiletype sass
+
+"| General Settings |"
+set nospell
+set noeb vb t_vb=
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:EasyGrepCommand=1
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  unlet g:ctrlp_user_command
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" Syntastic
+"let g:syntastic_debug = 1
+"let g:syntastic_ruby_exec = '/Users/luke/.rvm/rubies/ruby-1.9.3-p550/bin/ruby'
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_scss_checkers = ['scss_lint', 'sass']
+"let g:syntastic_scss_scss_lint_exec = '/Users/luke/.rvm/gems/ruby-1.9.3-p550/bin/scss-lint'
+let g:syntastic_scss_scss_lint_args = "--config /Users/Luke/.vim/scss-lint.yml"
+let g:syntastic_python_checker= "flake8"
+let g:syntastic_python_checker_args="--ignore=E501,W601"
+let g:syntastic_haml_checkers = ['haml_lint', 'haml']
+let g:syntastic_haml_haml_lint_args = "--config /Users/Luke/.vim/haml-lint.yml"
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:syntastic_ruby_rubocop_args = '--config /Users/Luke/.vim/rubocop.yml'
+let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
+
+" Line Highlighting
+set relativenumber
+set number
+
+"" Toggle relative line number
+function! NumberToggle()
+    if(&relativenumber)
+        set norelativenumber
+        set number
+    else
+        "" Uncomment the following to display a '0' instead of the line number
+        " set nonumber
+        set relativenumber
+    endif
+endfunc
+
+nnoremap <C-l> :call NumberToggle()<cr>
+
+"| Keyboard Shortcuts |"
+
+"Zen Coding"
+
+"Easy split navigation"
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+"nmap <silent> <c-l> :wincmd l<CR>
+
+"Vimux
+map <Leader>tr :VimuxPromptCommand<CR>
+map <Leader>tc :VimuxCloseRunner<CR>
+map <Leader>ti :VimuxInspectRunner<CR>
+map <Leader>tl :VimuxRunLastCommand<CR>
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+let g:rspec_runner = "os_x_iterm"
+
+" Session Saving keys
+map <F2> :call SaveSess()<CR>
+map <F3> :call RestoreSess()<CR>
+" Neocomplecache TAB completion
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" NumberToggle
+let g:NumberToggleTrigger="<F10>"
+
+" Remove trailing whitespace [f5]
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" NERDTREE
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+let g:NERDTreeShowLineNumbers=1
+
+" Vimroom
+nnoremap <silent> <Leader>vr <Plug>VimroomToggle
+
+" Multi-cursor
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+" CTRLP
+" Set no max file limit
+let g:ctrlp_max_files = 200
+" Search from current directory instead of project root
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" CHEATSHEET
+let g:cheatsheet_dir = "~/.vim/"
+let g:cheatsheet_ext = "~/.vim/cheatsheet.txt"
+
+command! -nargs=? -complete=customlist,CheatSheetComplete CS call ToggleCheatSheet(<f-args>)
+nmap <F6> :CS<CR>
+
+" strip extension from complete list
+function! CheatSheetComplete(A)
+  return map(split(globpath(g:cheatsheet_dir, a:A.'*'.g:cheatsheet_ext)),
+    \ "v:val[".strlen(expand(g:cheatsheet_dir)).
+    \ ":-".(strlen(g:cheatsheet_ext) + 1)."]")
+endfun
+
+" specify cheatsheet or use filetype of open buffer as default
+" instead of saving window status in a boolean variable,
+" test if the file is open (by name). If a boolean is used,
+" you'll run into trouble if you close the window manually with :wq etc
+function! ToggleCheatSheet(...)
+  let s:file = g:cheatsheet_ext
+  if bufwinnr(s:file) != -1
+    call ToggleWindowClose(s:file)
+  else
+    call ToggleWindowOpen(s:file)
+  endif
+endfun
+
+" stateless open and close so it can be used with other plugins
+function! ToggleWindowOpen(file)
+  let splitr = &splitright
+  set splitright
+  exe ":vsp ".a:file
+  exe ":vertical resize 84"
+  if !splitr
+    set splitright
+  endif
+endfun
+
+function! ToggleWindowClose(file)
+  let w_orig = bufwinnr('%')
+  let w = bufwinnr(a:file)
+  exe w.'wincmd w'
+  exe ':silent wq!'
+  if w != w_orig
+    exe w_orig.'wincmd w'
+  endif
+endfun
+" END CHEATSHEET
+
+" Easy find in files
+fu! FindInFiles(keyword, dir)
+  execute 'vim ' . a:keyword . ' ' . a:dir . ' | cw'
+endfun
+
+" Auto Sessions
+fu! SaveSess()
+  execute 'mksession! /Users/luke/.vim/session.vim'
+endfunction
+
+fu! RestoreSess()
+execute 'so /Users/luke/.vim/session.vim'
+if bufexists(1)
+  for l in range(1, bufnr('$'))
+    if bufwinnr(l) == -1
+      exec 'sbuffer ' . l
+    endif
+  endfor
+endif
+endfunction
+
+autocmd VimLeave * call SaveSess()
+" autocmd VimEnter * call RestoreSess()
+" End Auto Sessions

@@ -1,0 +1,57 @@
+[user]
+	name = LkeMitchll
+	email = lke.mitchll@gmail.com
+[alias]
+	ch = checkout
+	co = commit
+	sh = push
+	ll = pull --rebase
+	ad = add
+	ma = master
+	or = origin
+	s = status
+	rb = rebase
+	lg = log --graph --date=relative -10
+  shom = push origin master
+  shhm = push heroku master
+  shsm = push staging master
+  shpm = push production master
+	llom = pull origin master
+  col = commit -aC $(git rev-parse HEAD)
+  update = pull --rebase origin
+  reset-last-soft = reset --soft HEAD~1
+  reset-last-hard = reset --hard HEAD~1
+[core]
+	editor=vim
+	excludesfile = /Users/luke/.gitignore_global
+	autocrlf = input
+	whitespace = space-before-tab,tab-in-indent,trailing-space
+		
+[color]
+	ui = auto
+[color "status"]
+  changed = yellow
+  added = green
+  untracked = cyan
+[format]
+	pretty = %Cred%h%Creset %aN -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+	keepBackup = false
+
+[push]
+	;default = simple
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[apply]
+	whitespace = fix
+[merge]
+	conflictstyle = diff3
+	tool = gvimdiff
+[push]
+	default = matching
+[branch]
+	autosetuprebase = always
