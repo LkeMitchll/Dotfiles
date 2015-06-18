@@ -69,6 +69,7 @@ export EDITOR=vim
 export PEBBLE_PHONE=192.168.1.84
 export THEOS_DEVICE_IP=192.168.1.33
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
+export CUCUMBER_COLORS=comment=cyan:passed_param=white
 
 export LC_ALL=en_GB.UTF-8 export LANG=en_GB.UTF-8
 # The following lines were added by compinstall
