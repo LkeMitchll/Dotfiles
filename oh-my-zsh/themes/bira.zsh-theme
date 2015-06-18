@@ -1,7 +1,7 @@
 # ZSH Theme - Preview: http://gyazo.com/8becc8a7ed5ab54a0262a470555c3eed.png
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-local user_host='%{$terminfo[bold]$FG[005]%}⁉️ %{$reset_color%}'
+local user_host='%{$terminfo[bold]$FG[005]%}%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
 local rvm_ruby=''
 if which rvm-prompt &> /dev/null; then
