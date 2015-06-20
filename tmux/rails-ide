@@ -2,5 +2,7 @@ split-window -h
 select-pane -t 1
 split-window -v
 select-pane -t 0
+rename-window shell
 new-window
+rename-window vim
 select-window -t 1
