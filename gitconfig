@@ -57,3 +57,5 @@
 	default = matching
 [branch]
 	autosetuprebase = always
+[commit]
+	template = /Users/luke/.gitmessage
