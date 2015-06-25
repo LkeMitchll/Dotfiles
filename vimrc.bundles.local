@@ -10,6 +10,7 @@ Bundle 'tmux-plugins/vim-tmux'
 Bundle 'whatyouhide/vim-gotham'
 Bundle 'EinfachToll/DidYouMean'
 Bundle 'benmills/vimux'
+Bundle 'cloud8421/vimux-cucumber'
 
 " UNBUNDLES
 UnBundle 'bling/vim-bufferline'
