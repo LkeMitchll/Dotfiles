@@ -5,7 +5,7 @@ filetype on
 map <Leader>rv :so ~/.vimrc.local<CR>
 
 " SPF13 ESC FIX!!!!!
-"iunmap <Esc>
+iunmap <Esc>
 
 "| Language & Encoding |"
 setglobal langmenu=en_GB.UTF-8
