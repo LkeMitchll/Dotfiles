@@ -1,9 +1,6 @@
 syntax on
 filetype on
 
-" RELOAD THIS FILE
-map <Leader>rv :so ~/.vimrc.local<CR>
-
 " SPF13 ESC FIX!!!!!
 iunmap <Esc>
 
@@ -53,8 +50,11 @@ set background=dark
 :hi Pmenu guibg=black ctermbg=grey ctermfg=black
 :hi PmenuSel ctermbg=yellow ctermfg=black
 :hi Cursor guibg=#cb4b16 ctermbg=yellow ctermfg=green
-let g:indentLine_color_term = 4
-let g:indentLine_char = "¦"
+
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+
+set guicursor=n-v-c:ver15-Cursor
 
 "| GUI Settings |"
 set linespace=4
@@ -77,15 +77,15 @@ if has("gui_running")
   endif
 endif
 
+" Airline
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-set nocompatible   " Disable vi-compatibility
-set laststatus=2   " Always show the statusline
 
-set guicursor=n-v-c:ver15-Cursor
-
+" Indentline
+let g:indentLine_color_term = 4
+let g:indentLine_char = "¦"
 
 "| Tabs |"
 set smartindent
@@ -102,12 +102,9 @@ au BufRead,BufNewFile *.xm set filetype=logos
 au BufRead,BufNewFile *.vimrc,*.vimrc.* set filetype=vim
 au BufRead,BufNewFile *.scss,*.css.scss,*.sass,*.css.sass set syntax=sass
 
+" Hack to force syntax Highlighting on sass files
 map <Leader>sy :syntax on<CR>
 autocmd BufRead,BufNewFile *.sass,*.css.sass,*.scss,*.css.scss :syntax on
-"au BufRead,BufNewFile *.css.sass set syntax=sass
-"au! BufRead,BufNewFile *.css.sass setfiletype sass
-"au BufRead,BufNewFile *.sass set syntax=sass
-"au! BufRead,BufNewFile *.sass setfiletype sass
 
 "| General Settings |"
 set nospell
@@ -129,12 +126,11 @@ endif
 
 " Syntastic
 "let g:syntastic_debug = 1
-"let g:syntastic_ruby_exec = '/Users/luke/.rvm/rubies/ruby-1.9.3-p550/bin/ruby'
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
+
 let g:syntastic_scss_checkers = ['scss_lint', 'sass']
-"let g:syntastic_scss_scss_lint_exec = '/Users/luke/.rvm/gems/ruby-1.9.3-p550/bin/scss-lint'
 let g:syntastic_scss_scss_lint_args = "--config /Users/Luke/.vim/scss-lint.yml"
 let g:syntastic_python_checker= "flake8"
 let g:syntastic_python_checker_args="--ignore=E501,W601"
@@ -148,7 +144,7 @@ let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
 set relativenumber
 set number
 
-"" Toggle relative line number
+" Toggle relative line number
 function! NumberToggle()
     if(&relativenumber)
         set norelativenumber
@@ -177,6 +173,9 @@ map <Leader>tc :VimuxCloseRunner<CR>
 map <Leader>ti :VimuxInspectRunner<CR>
 map <Leader>tl :VimuxRunLastCommand<CR>
 
+" Reload This file
+map <Leader>rv :so ~/.vimrc.local<CR>
+
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -195,6 +194,7 @@ let g:rspec_runner = "os_x_iterm"
 " Session Saving keys
 map <F2> :call SaveSess()<CR>
 map <F3> :call RestoreSess()<CR>
+
 " Neocomplecache TAB completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
@@ -207,9 +207,6 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " NERDTREE
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 let g:NERDTreeShowLineNumbers=1
-
-" Vimroom
-nnoremap <silent> <Leader>vr <Plug>VimroomToggle
 
 " Multi-cursor
 let g:multi_cursor_use_default_mapping=0
@@ -303,5 +300,3 @@ endif
 endfunction
 
 autocmd VimLeave * call SaveSess()
-" autocmd VimEnter * call RestoreSess()
-" End Auto Sessions
