@@ -39,6 +39,7 @@ alias easy-brew="brew update && brew upgrade --all"
 alias bower='noglob bower'
 alias list-ip='sudo nmap -sn 192.168.0.0/24'
 alias crontab='VIM_CRONTAB=true EDITOR=vim crontab'
+alias vim-update="vim '+PluginUpdate' '+qa'"
 lpass-copy() {
   lpass show --password $1 | pbcopy
 }
