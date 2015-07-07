@@ -7,6 +7,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'shougo/neocomplete.vim'
 " Snippet support
 Plug 'shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 " Shortcuts for moving from word to word more easily
 Plug 'easymotion/vim-easymotion'
 " Lightweight powerline alternative

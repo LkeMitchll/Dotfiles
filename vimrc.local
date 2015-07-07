@@ -99,6 +99,9 @@ let g:airline_right_sep=''
 let g:indentLine_color_term = 4
 let g:indentLine_char = "¦"
 
+" | NeoSnippet | "
+let g:neosnippet#snippets_directory='~/.vim/snippets'
+
 "| NeoComplete |"
 
 " Disable AutoComplPop.
@@ -148,7 +151,6 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-" | NeoSnippet | "
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
