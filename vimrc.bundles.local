@@ -1,18 +1,27 @@
-Bundle 'mattn/emmet-vim'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'sudo.vim'
-Bundle 'jeffkreeftmeijer/vim-numbertoggle'
-Bundle 'Yggdroot/indentLine'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'dsawardekar/wordpress.vim'
-Bundle 'zoeesilcock/vim-caniuse'
-Bundle 'tmux-plugins/vim-tmux'
-Bundle 'whatyouhide/vim-gotham'
-Bundle 'EinfachToll/DidYouMean'
-Bundle 'benmills/vimux'
-Bundle 'cloud8421/vimux-cucumber'
+" Gotham colorscheme
+Plug 'whatyouhide/vim-gotham'
 
-" UNBUNDLES
-UnBundle 'bling/vim-bufferline'
-UnBundle 'nathanaelkane/vim-indent-guides'
-UnBundle 'gorodinskiy/vim-coloresque'
+" Easy auto comments
+Plug 'scrooloose/nerdcommenter'
+" Syntax suggestion and snippet plugin
+Plug 'shougo/neocomplete.vim'
+" Snippet support
+Plug 'shougo/neosnippet.vim'
+" Shortcuts for moving from word to word more easily
+Plug 'easymotion/vim-easymotion'
+" Lightweight powerline alternative
+Plug 'bling/vim-airline'
+" Short sytnax and expansion for HTML markup
+Plug 'mattn/emmet-vim'
+" Toggle line numbers
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+" Pretty indentation lines
+Plug 'Yggdroot/indentLine'
+" TMUX integration
+Plug 'tmux-plugins/vim-tmux'
+" Error suggestions
+Plug 'EinfachToll/DidYouMean'
+" Open TMUX splits to run commands
+Plug 'benmills/vimux'
+" Easy vimux (above) cucumber running
+Plug 'cloud8421/vimux-cucumber'
