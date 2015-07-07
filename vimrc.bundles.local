@@ -25,3 +25,11 @@ Plug 'EinfachToll/DidYouMean'
 Plug 'benmills/vimux'
 " Easy vimux (above) cucumber running
 Plug 'cloud8421/vimux-cucumber'
+" Display git diffs in gutter
+Plug 'airblade/vim-gitgutter'
+" Highlight trailing whitespace
+Plug 'bronson/vim-trailing-whitespace'
+" Funky vim startup
+Plug 'mhinz/vim-startify'
+" Distraction free writing in vim
+Plug 'junegunn/goyo.vim'
