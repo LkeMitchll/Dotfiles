@@ -1,13 +1,17 @@
 " ===============================
+" VIMRC LOCAL - LUKE MITCHELL
+" ===============================
+"
+" ===============================
 " General Settings
 " ===============================
 set noeb vb t_vb=
-set shell=/bin/zsh
-let mapleader = ','
-set hlsearch
+set shell=/usr/local/bin/zsh " Set shell
+let mapleader = ',' " Override leader
+set hlsearch " Highlight searched term
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
-set clipboard=unnamed
+set clipboard=unnamed " use system clipboard
 
 " ===============================
 " Language & Encoding
