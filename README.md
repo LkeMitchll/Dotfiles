@@ -20,8 +20,8 @@ Gathered from lots of places see below an incomplete list of sources.
 2. Clone `thoughtbot/dotfiles`
 2. Clone this repo: `git clone git@bitbucket.org:LkeMitchll/.dotfiles.git
    dotfiles-local`
-3. Execute `RCRC=~/dotfiles/rcrc lsrc -v` (dry-run to look for errors)
-4. Execute `RCRC=~/dotfiles/rcrc rcup -v`
+3. Execute `RCRC=~/dotfiles-local/rcrc lsrc -v` (dry-run to look for errors)
+4. Execute `RCRC=~/dotfiles-local/rcrc rcup -v`
 5. Profit.
 
 **Sources:**
