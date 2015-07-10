@@ -12,6 +12,7 @@ set hlsearch " Highlight searched term
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set clipboard=unnamed " use system clipboard
+set ignorecase " Case-insensitive tab completion
 
 " ===============================
 " Language & Encoding
@@ -225,7 +226,7 @@ let g:NERDTreeShowLineNumbers=1
 
 " | CTRLP |
 " Search from current directory instead of project root
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache)$',
   \ 'file': '\v\.(exe|so|dll)$',
