@@ -1,0 +1,33 @@
+#!/bin/sh
+
+brew install caskroom/cask/brew-cask
+
+brew cask install alfred
+brew cask install backblaze
+brew cask install bartender
+brew cask install daisydisk
+brew cask install dash
+brew cask install dropbox
+brew cask install firefox
+brew cask install fontprep
+brew cask install fontexplorer-x-pro
+brew cask install google-chrome
+brew cask install flux
+brew cask install istat-menus
+brew cask install littleipsum
+brew cask install macdown
+brew cask install monotype-skyfonts
+brew cask install noizio
+brew cask install numi
+brew cask install onyx
+brew cask install psequel
+brew cask install slack
+brew cask install sketch-toolbox
+brew cask install sketch
+brew cask install spotify
+brew cask install sublime-text
+brew cask install todoist
+brew cask install transmission
+brew cask install vlc
+brew cask install virtualbox
+brew cask install tripmode
