@@ -13,6 +13,8 @@ set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set clipboard=unnamed " use system clipboard
 set ignorecase " Case-insensitive tab completion
+set list
+set listchars=eol:¬,extends:…,precedes:…,tab:\ \
 
 " ===============================
 " Language & Encoding
