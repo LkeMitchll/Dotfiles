@@ -13,7 +13,8 @@ set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set clipboard=unnamed " use system clipboard
 set ignorecase " Case-insensitive tab completion
-set list
+set autochdir " Automatically change dirs for ':e'
+set list " Add EOL char
 set listchars=eol:¬,extends:…,precedes:…,tab:\ \
 
 " ===============================
@@ -44,8 +45,9 @@ set background=dark
 :hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
 " Line No's
-:hi LineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=11
-:hi VertSplit ctermbg=blue ctermfg=black
+:hi LineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=12
+:hi CursorLineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=5
+:hi VertSplit ctermbg=10 ctermfg=4
 
 " Diffs
 :hi DiffAdd      guibg=#003300
@@ -111,7 +113,6 @@ let g:indentLine_char = "¦"
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 "| NeoComplete |"
-
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
