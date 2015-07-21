@@ -175,7 +175,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " | The Silver Searcher |
 if executable('ag')
   " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
+  set grepformat=%f:%l:%c%m
   let g:EasyGrepCommand=1
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
