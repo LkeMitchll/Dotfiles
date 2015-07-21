@@ -337,4 +337,16 @@ if bufexists(1)
 endif
 endfunction
 
+" Reload Chrome on save
+autocmd BufWriteCmd *.haml,*.haml.html :call RefreshChrome()
+autocmd BufWriteCmd *.sass,*.scss,*.css :call RefreshChrome()
+autocmd BufWriteCmd *.coffee,*.js :call RefreshChrome()
+
+function! RefreshChrome()
+  if &modified
+    write
+    exec '!chrome-cli reload'
+  endif
+endfunction
+
 autocmd VimLeave * call SaveSess()
