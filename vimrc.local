@@ -14,8 +14,7 @@ set laststatus=2   " Always show the statusline
 set clipboard=unnamed " use system clipboard
 set ignorecase " Case-insensitive tab completion
 set autochdir " Automatically change dirs for ':e'
-set list " Add EOL char
-set listchars=eol:¬,extends:…,precedes:…,tab:\ \
+set listchars=eol:¬,extends:…,precedes:…
 
 " ===============================
 " Language & Encoding
@@ -93,7 +92,7 @@ au BufRead,BufNewFile *.scss,*.css.scss,*.sass,*.css.sass set syntax=sass
 
 " Hack to force syntax Highlighting on sass files
 map <Leader>sy :syntax on<CR>
-autocmd BufRead,BufNewFile *.sass,*.css.sass,*.scss,*.css.scss :syntax on
+"autocmd BufRead,BufNewFile *.sass,*.css.sass,*.scss,*.css.scss :syntax on
 
 " ===============================
 " Plugins
@@ -171,6 +170,13 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
+
+" | EasyMotion  |
+hi EasyMotionTarget ctermbg=none ctermfg=1
+hi EasyMotionShade ctermbg=none ctermfg=4
+
+hi EasyMotionTarget2Second ctermbg=none ctermfg=1
+hi EasyMotionTarget2First ctermbg=none ctermfg=1
 
 " | The Silver Searcher |
 if executable('ag')
