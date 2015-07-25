@@ -1,6 +1,11 @@
 " Gotham colorscheme
 Plug 'whatyouhide/vim-gotham'
 
+" Syntaxes
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-haml'
 " Easy auto comments
 Plug 'scrooloose/nerdcommenter'
 " Syntax suggestion and snippet plugin
