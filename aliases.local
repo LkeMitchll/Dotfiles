@@ -22,7 +22,8 @@ alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 alias tunnel-lamp='ssh -N -L 8888:127.0.0.1:80 bitnami@lamp'
 alias mamp-start='start.sh'
 alias mamp-stop='stop.sh'
-alias cuke='cucumber -r features'
+alias cuke='cucumber -r features -f rerun --out rerun.txt'
+alias cuker='cucumber @rerun.txt'
 alias colour='for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n"done"]"'
 
 # cli apps
