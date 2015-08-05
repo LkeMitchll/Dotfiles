@@ -75,6 +75,9 @@ V S<p>                  Line-wise mode
 :argdo %s/foo/bar/g     Perfom an action across all files
 :argdo update           "
 
+:reg                    View previous deletes (register)
+"2p                     Put register 2 into buffer
+
 :diffg RE               difftool get from REMOTE
 :diffg BA               difftool get from BASE
 :diffg LO               difftool get from LOCAL
