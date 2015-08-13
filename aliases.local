@@ -24,6 +24,7 @@ alias mamp-start='start.sh'
 alias mamp-stop='stop.sh'
 alias cuke='cucumber -r features -f rerun --out rerun.txt'
 alias cuker='cucumber @rerun.txt'
+alias cukew='cuke --tags @wip'
 alias colour='for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n"done"]"'
 
 # cli apps
