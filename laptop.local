@@ -6,7 +6,6 @@ brew cask install alfred
 brew cask install backblaze
 brew cask install bartender
 brew cask install daisydisk
-brew cask install dash
 brew cask install dropbox
 brew cask install firefox
 brew cask install fontprep
