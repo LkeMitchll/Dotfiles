@@ -178,6 +178,18 @@ hi EasyMotionShade ctermbg=none ctermfg=4
 hi EasyMotionTarget2Second ctermbg=none ctermfg=1
 hi EasyMotionTarget2First ctermbg=none ctermfg=1
 
+" | CTRLP |
+" Search from current directory instead of project root
+let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
 " | The Silver Searcher |
 if executable('ag')
   " Use ag over grep
@@ -213,9 +225,13 @@ map <Leader>tr :VimuxPromptCommand<CR>
 map <Leader>tc :VimuxCloseRunner<CR>
 map <Leader>ti :VimuxInspectRunner<CR>
 map <Leader>tl :VimuxRunLastCommand<CR>
+map <Leader>tt :RunFocusedCuke<CR>
 
 " | Emmet |
 let g:user_emmet_mode='a'
+
+" | Rails |
+let g:rails_projections = { 'app/decorators/*.rb': { 'command': 'decorator' }}
 
 " | Fugitive |
 nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -233,19 +249,7 @@ let g:rspec_runner = "os_x_iterm"
 " | NerdTree |
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 let g:NERDTreeShowLineNumbers=1
-
-" | CTRLP |
-" Search from current directory instead of project root
-let g:ctrlp_working_path_mode = 'c'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ }
-" Ignore bundler and sass cache
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
-" Disable output and VCS files
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
-
+"
 " ===============================
 " Keyboard Shortcuts
 " ===============================
