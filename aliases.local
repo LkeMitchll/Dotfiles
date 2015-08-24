@@ -42,6 +42,7 @@ alias bower='noglob bower'
 alias list-ip='sudo nmap -sn 192.168.0.0/24'
 alias crontab='VIM_CRONTAB=true EDITOR=vim crontab'
 alias vim-update="vim '+PlugUpdate' '+qa'"
+alias mm="middleman"
 lpass-copy() {
   lpass show --password $1 | pbcopy
 }
