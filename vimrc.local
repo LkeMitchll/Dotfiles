@@ -180,7 +180,7 @@ hi EasyMotionTarget2First ctermbg=none ctermfg=1
 
 " | CTRLP |
 " Search from current directory instead of project root
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache)$',
   \ 'file': '\v\.(exe|so|dll)$',
@@ -349,9 +349,9 @@ endif
 endfunction
 
 " Reload Chrome on save
-autocmd BufWriteCmd *.haml,*.haml.html :call RefreshChrome()
-autocmd BufWriteCmd *.sass,*.scss,*.css :call RefreshChrome()
-autocmd BufWriteCmd *.coffee,*.js :call RefreshChrome()
+"autocmd BufWriteCmd *.haml,*.haml.html :call RefreshChrome()
+"autocmd BufWriteCmd *.sass,*.scss,*.css :call RefreshChrome()
+"autocmd BufWriteCmd *.coffee,*.js :call RefreshChrome()
 
 function! RefreshChrome()
   if &modified
