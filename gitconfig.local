@@ -23,12 +23,7 @@
   reset-last-hard = reset --hard HEAD~1
 [core]
 	editor=vim
-	excludesfile = /Users/luke/.gitignore_global
-	autocrlf = input
 	whitespace = space-before-tab,tab-in-indent,trailing-space
-		
-[color]
-	ui = auto
 [color "status"]
   header = cyan
   branch = white
@@ -42,7 +37,6 @@
 [mergetool]
 	prompt = false
 	keepBackup = false
-
 [push]
 	;default = simple
 [filter "media"]
@@ -52,10 +46,8 @@
 	whitespace = fix
 [merge]
 	conflictstyle = diff3
-	tool = gvimdiff
+	tool = vimdiff
 [push]
 	default = matching
 [branch]
 	autosetuprebase = always
-[commit]
-	template = /Users/luke/.gitmessage
