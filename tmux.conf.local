@@ -16,7 +16,7 @@ bind-key b split-window
 set-window-option -g window-status-fg colour12 #base0
 set-window-option -g window-status-bg default
 #set-window-option -g window-status-attr dim
-set-window-option -g window-status-activity-bg colour8
+set-window-option -g window-status-activity-bg colour12
 set-window-option -g window-status-activity-fg colour8
 
 # active window title colors
@@ -47,7 +47,7 @@ set -g status-justify left
 set -g status-left-length 20
 set -g status-right-length 140
 set -g status-left '#[fg=colour12]░ #[fg=green]#{session_name} #[fg=colour12]░░#[fg=green,bright] #[default]'
-set -g status-right '#[fg=blue,bg=default,dim]#{battery_percentage} #[fg=colour12]░ #[fg=blue]#{online_status}#[fg=colour12]░#[fg=blue] #(tmux-mem-cpu-load -i 1)#[fg=colour12] ░#[fg=blue,bg=default]%l:%M%p %a#[default] #[fg=blue]%d/%m#[fg=colour12] ░'
+set -g status-right '#[fg=blue,bg=default,dim]#{battery_percentage} #[fg=colour12]░ #[fg=blue]#{online_status}#[fg=colour12] ░#[fg=blue] #(tmux-mem-cpu-load -i 1)#[fg=colour12] ░ #[fg=blue,bg=default]%l:%M%p %a#[default] #[fg=blue]%d/%m#[fg=colour12] ░'
 set-window-option -g window-status-current-format '[#I] #W #[fg=colour12]░'
 set-window-option -g window-status-format '[#I] #W #[fg=colour12]░'
 
