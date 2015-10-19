@@ -14,7 +14,7 @@ I usually use 'Input Mono' as my font of choice.
 **Requirements:**
 
 - OS X
-- tmux
+- tmux (2.1+)
 - vim
 - zsh (oh-my-zsh)
 - Ruby + rubygems
