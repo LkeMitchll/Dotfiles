@@ -13,13 +13,15 @@ I usually use 'Input Mono' as my font of choice.
 
 **Requirements:**
 
-- OS X
-- tmux (2.1+)
-- vim
-- zsh (oh-my-zsh)
-- Ruby + rubygems
-- rcm
 - thoughtbot/dotfiles
+- tmux (2.1+)
+  - tpm (tmux plugin manager)
+- vim
+  - vim-plug (vim plugin manager)
+- zsh 
+  - oh-my-zsh
+- rcm
+- Gotham theme (for iTerm and Vim)
 
 ### Install
 
@@ -30,6 +32,8 @@ I usually use 'Input Mono' as my font of choice.
 3. Execute `RCRC=~/dotfiles-local/rcrc lsrc -v` (dry-run to look for errors)
 4. Execute `RCRC=~/dotfiles-local/rcrc rcup -v`
 5. Profit.
+
+Then go ahead and initialise the tmux and vim plugins.
 
 **Sources:**
 
