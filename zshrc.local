@@ -55,9 +55,6 @@ export PATH=\
 :/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/PrivateFrameworks/DTDeviceKitBase.framework/Versions/A/Resources\
 :/Users/luke/Library/Android/sdk/platform-tools\
 
-# MOTD
-source ~/.zsh/motd.zsh
-
 # RVM
 function rvm_reload() {
   rvm reload;
