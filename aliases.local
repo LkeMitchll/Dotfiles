@@ -18,6 +18,7 @@ alias vim-update="vim '+PlugUpdate' '+qa'"
 alias mm="middleman"
 
 # Git
+alias git="hub"
 alias g="git"
 alias gs="git status"
 alias ghash="git rev-parse HEAD"
