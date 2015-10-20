@@ -1,69 +1,23 @@
-# Navigation
 alias ls='ls -lA'
 alias sl=ls
 alias cdu='cd ~'
 alias finder='open .'
-cds () {
-  cd $1; ls
-}
-
-# cli
+alias zsh="zsh --login"
 alias aliases='cat ~/.aliases'
 alias c='clear'
-alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
 alias please="sudo"
 alias su="sudo"
-alias sulast='sudo $(history -p !-1)'
 alias vimcs='open http://walking-without-crutches.heroku.com/image/images/vi-vim-cheat-sheet.png'
-alias libpebble='~/Git/libpebble/p.py --pebble_id 00:18:2F:cf:0D:E2 --lightblue'
-#alias pebble-new-project='~/Pebble/PebbleSDK-1.12/Pebble/tools/create_pebble_project.py ~/Pebble/PebbleSDK-1.12/Pebble/sdk'
-#alias pebble-project-symlink='~/Pebble/PebbleSDK-1.12/Pebble/tools/create_pebble_project.py --symlink-only ~/Pebble/PebbleSDK-1.12/Pebble/sdk .'
 alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
-alias tunnel-lamp='ssh -N -L 8888:127.0.0.1:80 bitnami@lamp'
-alias mamp-start='start.sh'
-alias mamp-stop='stop.sh'
 alias cuke='cucumber -r features -f rerun --out rerun.txt'
 alias cuker='cucumber @rerun.txt'
 alias cukew='cuke --tags @wip'
-alias colour='for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n"done"]"'
-
-# cli apps
-alias zsh="zsh --login"
 alias zshconfig="vim ~/.zshrc"
-alias aliasconfig="vim ~/.aliases"
-alias gitconfig='vim ~/.gitconfig'
-alias ohmyzsh="~/.oh-my-zsh"
-alias vimconfig="vim ~/.vimrc.local"
-alias vimconfig-bundles="vim ~/.vimrc.bundles.local"
-alias wp="presspass"
-alias v='vim'
 alias easy-brew="brew update && brew upgrade --all"
-alias bower='noglob bower'
-alias list-ip='sudo nmap -sn 192.168.0.0/24'
-alias crontab='VIM_CRONTAB=true EDITOR=vim crontab'
 alias vim-update="vim '+PlugUpdate' '+qa'"
 alias mm="middleman"
-lpass-copy() {
-  lpass show --password $1 | pbcopy
-}
-
-# pelican stuff
-alias devserver="make devserver"
-alias devserver-stop="./develop_server.sh stop"
-
-# Pebble timecodes
-TIME=$(date +%s)
-alias libpebble-now="pebble set_time $TIME"
-alias libpebble-sat="pebble set_time 1377943297"
-alias libpebble-sun="pebble set_time 1378029697"
-alias libpebble-mon="pebble set_time 1378116097"
-alias libpebble-tue="pebble set_time 1378202497"
-alias libpebble-wed="pebble set_time 1378288897"
-alias libpebble-thu="pebble set_time 1378375297"
-alias libpebble-fri="pebble set_time 1378461697"
 
 # Git
-alias mvimdiff="mvim -d"
 alias g="git"
 alias gs="git status"
 alias ghash="git rev-parse HEAD"
@@ -71,69 +25,12 @@ gauth() {
   AUTHY_TOKEN="$2" git push $1 master
   echo "Done!"
 }
-clear-statamic-cache() {
-  ssh -p $2 -t luke@$1 'cd /var/www/interroban.gg && ./clear-cache.sh'
-}
 
-gh() {
-  giturl=$(git config --get remote.origin.url)
-  if [ "$giturl" == "" ]
-    then
-     echo "Not a git repository or no remote.origin.url set"
-     exit 1;
-  fi
- 
-  giturl=${giturl/git\@github\.com\:/https://github.com/}
-  giturl=${giturl/\.git//}
-  echo $giturl
-  open $giturl
-}
-
-extract () {
-    if [ -f $1 ] ; then
-      case $1 in
-        *.tar.bz2)   tar xjf $1     ;;
-        *.tar.gz)    tar xzf $1     ;;
-        *.bz2)       bunzip2 $1     ;;
-        *.rar)       unrar e $1     ;;
-        *.gz)        gunzip $1      ;;
-        *.tar)       tar xf $1      ;;
-        *.tbz2)      tar xjf $1     ;;
-        *.tgz)       tar xzf $1     ;;
-        *.zip)       unzip $1       ;;
-        *.Z)         uncompress $1  ;;
-        *.7z)        7z x $1        ;;
-        *)     echo "'$1' cannot be extracted via extract()" ;;
-         esac
-     else
-         echo "'$1' is not a valid file"
-     fi
-}
-
-mergepdf()
-{
-  tomerge="";
-  for file in "$@"; do
-    tomerge=$tomerge" "$file;
-  done
-  pdftk $tomerge cat output mergd.pdf;
-}
-
-google() {
-    search=""
-    echo "Googling: $@"
-    for term in $@; do
-        search="$search%20$term"
-    done
-    /usr/bin/open -a "/Applications/Google Chrome.app" 'http://google.com/search?q='$search
-#    xdg-open "http://www.google.com/search?q=$search"
-}
-
+# Usage edit-remote [env] [port] [token] [path]
 edit-remote() {
-  AUTHY_TOKEN=$3 mvim scp://luke@$1:$2/$4
+  AUTHY_TOKEN=$3 vim scp://luke@$1:$2/$4
 }
 
 # Non cli stuff
 alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES"
 alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO"
-
