@@ -2,7 +2,7 @@
 set-option -g default-command "reattach-to-user-namespace -l /usr/local/bin/zsh"
 
 # Mouse scroll and click navigation
-set mouse on
+setw -g  mouse on
 
 set-option -g status-bg colour8 #base02
 set-option -g status-fg colour136 #yellow
@@ -109,12 +109,6 @@ bind-key s set-window-option synchronize-panes \; display-message "Sync toggled.
 
 # auto window rename
 set-window-option -g automatic-rename off
-
-# rm mouse mode fail
-setw -g mode-mouse on
-setw -g mouse-select-pane on
-setw -g mouse-resize-pane on
-setw -g mouse-select-window on
 
 # color
 set -g default-terminal "screen-256color"
