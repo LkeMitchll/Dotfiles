@@ -1,0 +1,4 @@
+# FN + (R)CTRL -> [KEY] -> [ACTION] -> PN
+
+S = CTRL-A + S    Choose session TMUX
+s = CTRL-A + s    TMUX sync mode

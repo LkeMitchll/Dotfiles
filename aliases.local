@@ -16,6 +16,7 @@ alias zshconfig="vim ~/.zshrc"
 alias easy-brew="brew update && brew upgrade --all"
 alias vim-update="vim '+PlugUpdate' '+qa'"
 alias mm="middleman"
+alias mech="cat ~/.mech"
 
 # Git
 alias git="hub"
