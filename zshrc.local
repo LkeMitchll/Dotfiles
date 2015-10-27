@@ -28,18 +28,13 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(themes sublime history-substring-search zsh-syntax-highlighting bundler brew rvm osx)
+plugins=(themes sublime history-substring-search zsh-syntax-highlighting bundler brew osx rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
 # PATH
 export PATH=\
-/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin\
-:~/.rvm/bin\
-:~/.rvm/gems\
-:~/.rvm/scripts\
-:/usr/local/heroku/bin\
-:/usr/local/bin\
+/usr/local/bin\
 :/usr/local/sbin\
 :/usr/bin\
 :/bin\
@@ -47,19 +42,11 @@ export PATH=\
 :/sbin\
 :/opt/X11/bin\
 :/opt/local/bin\
-:/usr/local/opt/ruby/bin\
 :~/pebble-dev/PebbleSDK-current/bin\
 :/usr/local/share/npm/bin\
-:/Applications/Postgres.app/Contents/Versions/9.3/bin\
-:/usr/local/deployd/bin\
-:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/PrivateFrameworks/DTDeviceKitBase.framework/Versions/A/Resources\
 :/Users/luke/Library/Android/sdk/platform-tools\
 
-# RVM
-function rvm_reload() {
-  rvm reload;
-}
-#rvm_reload
+eval "$(rbenv init -)"
 
 # MISC
 export EDITOR=vim
@@ -71,11 +58,3 @@ export CUCUMBER_COLORS=comment=cyan:passed_param=white
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export LC_ALL=en_GB.UTF-8 export LANG=en_GB.UTF-8
-# The following lines were added by compinstall
-zstyle :compinstall filename '/Users/Luke/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
