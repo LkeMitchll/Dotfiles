@@ -25,10 +25,12 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'Yggdroot/indentLine'
 " TMUX integration
 Plug 'tmux-plugins/vim-tmux'
-" Error suggestions
-Plug 'EinfachToll/DidYouMean'
 " Open TMUX splits to run commands
 Plug 'benmills/vimux'
+" Navigate tmux panes and vim splits smoothly
+Plug 'christoomey/vim-tmux-navigator'
+" Error suggestions
+Plug 'EinfachToll/DidYouMean'
 " Easy vimux (above) cucumber running
 Plug 'cloud8421/vimux-cucumber'
 " Display git diffs in gutter
