@@ -34,7 +34,8 @@ source $ZSH/oh-my-zsh.sh
 
 # PATH
 export PATH=\
-/usr/local/bin\
+~/.rbenv/bin\
+:/usr/local/bin\
 :/usr/local/sbin\
 :/usr/bin\
 :/bin\
