@@ -13,10 +13,11 @@ alias cuke='cucumber -r features -f rerun --out rerun.txt'
 alias cuker='cucumber @rerun.txt'
 alias cukew='cuke --tags @wip'
 alias zshconfig="vim ~/.zshrc"
-alias easy-brew="brew update && brew upgrade --all"
+alias easy-brew="brew update; brew upgrade --all"
 alias vim-update="vim '+PlugUpdate' '+qa'"
 alias mm="middleman"
 alias mech="cat ~/.mech"
+alias housekeep="brew update; brew upgrade; ~/.dotfiles; g llom; rcup -v; cd ~; vim-update; rbenv update"
 
 # Git
 alias git="hub"
