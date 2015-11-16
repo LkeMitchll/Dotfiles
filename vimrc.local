@@ -51,13 +51,7 @@ set background=dark
 :hi LineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=12
 :hi CursorLineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=5
 :hi VertSplit ctermbg=10 ctermfg=4
-
-" Diffs
-:hi DiffAdd      guibg=#003300
-:hi DiffChange   guibg=#003300
-:hi DiffDelete   guifg=#330000 guibg=#330000
-:hi DiffText     guibg=#990000
-
+"
 " Gutter signs
 :hi SignifySignAdd ctermbg=NONE
 :hi SignifySignChange ctermbg=NONE
@@ -80,12 +74,6 @@ set background=dark
 :hi Pmenu guibg=black ctermbg=7 ctermfg=black
 :hi PmenuSel ctermbg=9 ctermfg=white
 
-set guicursor=n-v-c:ver15-Cursor
-
-" Hide Scrollbars on GUI
-set guioptions-=r
-set guioptions-=L
-
 " ===============================
 " Syntax
 " ===============================
@@ -93,10 +81,6 @@ au BufRead,BufNewFile *.zsh-theme,*.zsh set filetype=zsh
 au BufRead,BufNewFile *.xm set filetype=logos
 au BufRead,BufNewFile *.vimrc,*.vimrc.*,*.vim set filetype=vim
 au BufRead,BufNewFile *.scss,*.css.scss,*.sass,*.css.sass set syntax=sass
-
-" Hack to force syntax Highlighting on sass files
-map <Leader>sy :syntax on<CR>
-"autocmd BufRead,BufNewFile *.sass,*.css.sass,*.scss,*.css.scss :syntax on
 
 " ===============================
 " Plugins
