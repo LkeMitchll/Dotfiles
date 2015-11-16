@@ -41,3 +41,5 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'mhinz/vim-startify'
 " Distraction free writing in vim
 Plug 'junegunn/goyo.vim'
+"Auto close brackets et al
+Plug 'Raimondi/delimitMate'
