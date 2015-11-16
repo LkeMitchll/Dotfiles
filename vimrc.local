@@ -230,23 +230,6 @@ let g:user_emmet_mode='a'
 " | Rails |
 let g:rails_projections = { 'app/decorators/*.rb': { 'command': 'decorator' }}
 
-" | Fugitive |
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
-
-" | Rspec |
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-let g:rspec_runner = "os_x_iterm"
-
-" | NerdTree |
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
-let g:NERDTreeShowLineNumbers=1
-"
 " ===============================
 " Keyboard Shortcuts
 " ===============================
@@ -324,11 +307,6 @@ function! ToggleWindowClose(file)
 endfun
 " END CHEATSHEET
 
-" Easy find in files
-fu! FindInFiles(keyword, dir)
-  execute 'vim ' . a:keyword . ' ' . a:dir . ' | cw'
-endfun
-
 " Auto Sessions
 fu! SaveSess()
   execute 'mksession! /Users/luke/.vim/session.vim'
@@ -343,18 +321,6 @@ if bufexists(1)
     endif
   endfor
 endif
-endfunction
-
-" Reload Chrome on save
-"autocmd BufWriteCmd *.haml,*.haml.html :call RefreshChrome()
-"autocmd BufWriteCmd *.sass,*.scss,*.css :call RefreshChrome()
-"autocmd BufWriteCmd *.coffee,*.js :call RefreshChrome()
-
-function! RefreshChrome()
-  if &modified
-    write
-    exec '!chrome-cli reload'
-  endif
 endfunction
 
 autocmd VimLeave * call SaveSess()
