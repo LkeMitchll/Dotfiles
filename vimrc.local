@@ -81,6 +81,9 @@ au BufRead,BufNewFile *.zsh-theme,*.zsh set filetype=zsh
 au BufRead,BufNewFile *.xm set filetype=logos
 au BufRead,BufNewFile *.vimrc,*.vimrc.*,*.vim set filetype=vim
 au BufRead,BufNewFile *.scss,*.css.scss,*.sass,*.css.sass set syntax=sass
+" Squarespace
+au BufRead,BufNewFile *.conf set syntax=json
+au BufRead,BufNewFile *.list,*.item,*.page,*.block set syntax=html
 
 " ===============================
 " Plugins
