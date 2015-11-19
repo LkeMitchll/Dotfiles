@@ -3,7 +3,7 @@ select-pane -t 2
 send-keys -t 2 'cd ~/.dotfiles-local' Enter
 split-window -v
 select-pane -t 3
-resize-pane -D 10
+resize-pane -D 15
 send-keys -t 3 'postgres -D /usr/local/var/pg9.4' Enter
 select-pane -t 0
 rename-window shell
