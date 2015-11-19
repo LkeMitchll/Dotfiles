@@ -1,23 +1,21 @@
 alias ls='ls -lA'
 alias sl=ls
-alias cdu='cd ~'
 alias finder='open .'
 alias zsh="zsh --login"
-alias aliases='cat ~/.aliases'
 alias c='clear'
-alias please="sudo"
-alias su="sudo"
-alias vimcs='open http://walking-without-crutches.heroku.com/image/images/vi-vim-cheat-sheet.png'
-alias flushdns='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+alias mech="cat ~/.mech"
+alias easy-brew="brew update; brew upgrade --all"
+alias housekeep="brew update; brew upgrade; ~/.dotfiles; g llom; rcup -v; cd ~; vim-update; rbenv update"
+alias vim-update="vim '+PlugUpdate' '+qa'"
+
+# Web dev
+alias mm="middleman"
 alias cuke='cucumber -r features -f rerun --out rerun.txt'
 alias cuker='cucumber @rerun.txt'
 alias cukew='cuke --tags @wip'
-alias zshconfig="vim ~/.zshrc"
-alias easy-brew="brew update; brew upgrade --all"
-alias vim-update="vim '+PlugUpdate' '+qa'"
-alias mm="middleman"
-alias mech="cat ~/.mech"
-alias housekeep="brew update; brew upgrade; ~/.dotfiles; g llom; rcup -v; cd ~; vim-update; rbenv update"
+edit-remote() {
+  AUTHY_TOKEN=$3 vim scp://luke@$1:$2/$4
+}
 
 # Git
 alias git="hub"
@@ -29,11 +27,6 @@ gauth() {
   echo "Done!"
 }
 
-# Usage edit-remote [env] [port] [token] [path]
-edit-remote() {
-  AUTHY_TOKEN=$3 vim scp://luke@$1:$2/$4
-}
-
-# Non cli stuff
+# Non CLI
 alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES"
 alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO"
