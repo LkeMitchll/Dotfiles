@@ -1,11 +1,11 @@
-
 " ===============================
 " VIMRC LOCAL - LUKE MITCHELL
 " ===============================
-"
+
 if has('gui_running')
   so ~/.gvimrc
 endif
+
 " ===============================
 " General Settings
 " ===============================
@@ -38,19 +38,19 @@ set autoindent
 " ==============================
 " Theme
 " ==============================
-colorscheme gotham
-let g:airline_theme="gotham"
-set background=dark
-:hi Normal ctermbg=black
+colorscheme spacegray
+let g:airline_theme="lkemitchll"
 
 " Cursor
 :hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 :hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
 " Line No's
-:hi LineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=12
+:hi LineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=6
 :hi CursorLineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=5
-:hi VertSplit ctermbg=10 ctermfg=4
+
+" Splits
+:hi VertSplit ctermbg=234 ctermfg=7
 "
 " Gutter signs
 :hi SignifySignAdd ctermbg=NONE
@@ -66,13 +66,20 @@ set background=dark
 :hi Search ctermfg=black
 
 " Tabs
-:hi TabLineFill ctermbg=10 ctermfg=black
-:hi TabLine ctermbg=10 ctermfg=white
-:hi TabLineSel ctermbg=yellow ctermfg=white
+:hi TabLineFill ctermbg=234 ctermfg=black
+:hi TabLine ctermbg=234 ctermfg=white
+:hi TabLineSel ctermbg=6 ctermfg=white
 
 " CtrlP Dialog
 :hi Pmenu guibg=black ctermbg=7 ctermfg=black
 :hi PmenuSel ctermbg=9 ctermfg=white
+
+" Misc
+:set colorcolumn=+1
+:hi ColorColumn ctermbg=234
+:hi SpellBad ctermfg=red ctermbg=233 cterm=underline
+:hi NonText ctermfg=236
+:hi Constant ctermfg=9
 
 " ===============================
 " Syntax
@@ -105,36 +112,45 @@ let g:airline_section_y='%Y'
 let g:airline_section_z=''
 
 " | Indentline |
-let g:indentLine_color_term = 4
+let g:indentLine_color_term = 0
 let g:indentLine_char = "¦"
 
 " | NeoSnippet | "
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 "| NeoComplete |"
+"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
+
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
+
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
+
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
   \ 'default' : '',
   \ 'vimshell' : $HOME.'/.vimshell_hist',
   \ 'scheme' : $HOME.'/.gosh_completions'
     \ }
+
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
   let g:neocomplete#keyword_patterns = {}
 endif
+
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
+
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -148,6 +164,7 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
+
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -174,7 +191,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " | EasyMotion  |
 hi EasyMotionTarget ctermbg=none ctermfg=1
 hi EasyMotionShade ctermbg=none ctermfg=4
-
 hi EasyMotionTarget2Second ctermbg=none ctermfg=1
 hi EasyMotionTarget2First ctermbg=none ctermfg=1
 
@@ -209,7 +225,6 @@ endif
 "let g:syntastic_debug = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
-
 let g:syntastic_scss_checkers = ['scss_lint', 'sass']
 let g:syntastic_scss_scss_lint_args = "--config /Users/Luke/.vim/scss-lint.yml"
 let g:syntastic_python_checker= "flake8"

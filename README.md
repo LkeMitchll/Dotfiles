@@ -9,19 +9,19 @@ UNIXy system.
 
 I usually use 'Input Mono' as my font of choice.
 
-![Preview](https://s3.amazonaws.com/f.cl.ly/items/3T2q153G0g1R2O1A1i3i/Screen%20Shot%202015-08-25%20at%2016.01.28.png)
+![Preview](http://f.cl.ly/items/2V072Y2j333w0q0X2O1l/Screen%20Shot%202015-11-24%20at%2011.32.07.png)
 
 **Requirements:**
 
-- thoughtbot/dotfiles
+- [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
 - tmux (2.1+)
-  - tpm (tmux plugin manager)
+  - [tpm](https://github.com/tmux-plugins/tpm) (tmux plugin manager)
 - vim
-  - vim-plug (vim plugin manager)
+  - [vim-plug](https://github.com/junegunn/vim-plug) (vim plugin manager)
 - zsh 
-  - oh-my-zsh
-- rcm
-- Gotham theme (for iTerm and Vim)
+  - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+- [rcm](https://github.com/thoughtbot/rcm)
+- [Spacegray](https://github.com/ajh17/Spacegray.vim) theme (for iTerm and Vim)
 
 ### Install
 

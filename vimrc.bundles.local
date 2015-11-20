@@ -1,5 +1,5 @@
-" Gotham colorscheme
-Plug 'whatyouhide/vim-gotham'
+" Colorscheme
+Plug 'ajh17/Spacegray.vim'
 
 " Syntaxes
 Plug 'pangloss/vim-javascript'
