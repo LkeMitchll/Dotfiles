@@ -34,3 +34,5 @@ brew cask install transmission
 brew cask install vlc
 brew cask install virtualbox
 brew cask install tripmode
+# QuickLook plugins
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
