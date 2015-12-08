@@ -1,12 +1,15 @@
 #!/bin/sh
 
+# Install cask
 brew install caskroom/cask/brew-cask
 brew tap caskroom/fonts
 
-brew cask install font-input
-brew cask install font-source-code-pro-for-powerline
+# QuickLook plugins
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
+# Apps
 brew cask install alfred
+brew cask install bettertouchtool
 brew cask install backblaze
 brew cask install bartender
 brew cask install daisydisk
@@ -16,7 +19,6 @@ brew cask install firefox
 brew cask install fontprep
 brew cask install fontexplorer-x-pro
 brew cask install flux
-brew cask install istat-menus
 brew cask install macdown
 brew cask install mailbox
 brew cask install monotype-skyfonts
@@ -25,14 +27,21 @@ brew cask install numi
 brew cask install onyx
 brew cask install psequel
 brew cask install slack
-brew cask install sketch-toolbox
 brew cask install sketch
+brew cask install sketch-toolbox
 brew cask install spotify
 brew cask install sublime-text
 brew cask install todoist
-brew cask install transmission
 brew cask install vlc
 brew cask install virtualbox
 brew cask install tripmode
-# QuickLook plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+
+# Fonts
+brew cask install font-input
+brew cask install font-source-code-pro-for-powerline
+brew cask install font-open-sans
+brew cask install font-andale-mono
+brew cask install font-droid-sans
+brew cask install font-droid-serif
+brew cask install font-droid-mono
+brew cask install fira-mono
