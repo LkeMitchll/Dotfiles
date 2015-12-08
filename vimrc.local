@@ -80,6 +80,7 @@ let g:airline_theme="lkemitchll"
 :hi SpellBad ctermfg=red ctermbg=233 cterm=underline
 :hi NonText ctermfg=236
 :hi Constant ctermfg=9
+:hi SpecialKey ctermfg=233
 
 " ===============================
 " Syntax

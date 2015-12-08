@@ -52,7 +52,7 @@ set -g status-justify left
 set -g status-left-length 20
 set -g status-right-length 140
 set -g status-left ' #[fg=green]#{session_name} #[fg=colour0]░ #[default]'
-set -g status-right '#[fg=green,bg=default,dim]%l:%M%p %a %d/%m#[fg=green] #{battery_percentage} #[fg=colour0]░ #[fg=green]#{online_status} '
+set -g status-right '#[fg=colour6,bg=default,dim]%l:%M%p %a %d/%m #[fg=colour0]░ #[fg=colour6]#{battery_percentage} #[fg=colour0]░ #[fg=colour6]#{online_status} '
 
 # C-b is not acceptable -- Vim uses it
 set-option -g prefix C-a
