@@ -45,6 +45,7 @@ export PATH=\
 :/sbin\
 :/opt/X11/bin\
 :/opt/local/bin\
+:~/.bin\
 :~/pebble-dev/PebbleSDK-current/bin\
 :/usr/local/share/npm/bin\
 :/Users/luke/Library/Android/sdk/platform-tools\
@@ -60,3 +61,5 @@ export CUCUMBER_COLORS=comment=cyan:passed_param=white
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export LC_ALL=en_GB.UTF-8 export LANG=en_GB.UTF-8
+
+export PATH="$HOME/.bin:$PATH"
