@@ -2,17 +2,12 @@
 set-option -g default-command "reattach-to-user-namespace -l /usr/local/bin/zsh"
 
 # Mouse scroll and click navigation
-setw -g  mouse on
+setw -g  mouse off
 
 # status bar colours
 set-option -g status-bg colour234 #base02
 set-option -g status-fg colour136 #yellow
 set-option -g status-attr default
-set-option -g message-bg colour234
-set-option -g message-fg colour2
-set-option -g message-attr dim
-set-option -g message-command-bg colour234
-set-option -g message-command-fg colour2
 
 # set window split
 bind-key v split-window -h
@@ -39,8 +34,8 @@ set-option -g pane-active-border-fg colour0 #base01
 set-option -g renumber-windows on
 
 # message text
-set-option -g message-bg colour8
-set-option -g message-fg colour9 #orange
+set-option -g message-bg colour0
+set-option -g message-fg colour2
 
 # pane number display
 set-option -g display-panes-active-colour colour33 #blue
