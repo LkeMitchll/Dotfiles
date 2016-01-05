@@ -2,10 +2,12 @@
 Plug 'ajh17/Spacegray.vim'
 
 " Syntaxes
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-cucumber'
-Plug 'tpope/vim-haml'
+Plug 'keith/tmux.vim'
 " Easy auto comments
 Plug 'scrooloose/nerdcommenter'
 " Syntax suggestion and snippet plugin
