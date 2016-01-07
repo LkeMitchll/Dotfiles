@@ -14,7 +14,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'shougo/neocomplete.vim'
 " Snippet support
 Plug 'shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'shougo/neosnippet-snippets'
 " Shortcuts for moving from word to word more easily
 Plug 'easymotion/vim-easymotion'
 " Lightweight powerline alternative
@@ -43,5 +43,5 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'mhinz/vim-startify'
 " Distraction free writing in vim
 Plug 'junegunn/goyo.vim'
-"Auto close brackets et al
+" Auto close brackets et al
 Plug 'Raimondi/delimitMate'
