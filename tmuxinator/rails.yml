@@ -1,0 +1,12 @@
+# ~/.tmuxinator/rails.yml
+
+name: <%= args[0] %>
+root: <%= args[1] %>
+
+windows:
+  - editor:
+      layout: b36f,208x54,0,0{80x54,0,0[80x37,0,0,82,80x16,0,38,86],127x54,81,0,84}
+      panes:
+        -
+        - foreman start
+        - vim .

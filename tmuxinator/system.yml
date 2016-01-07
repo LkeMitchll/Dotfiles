@@ -1,0 +1,13 @@
+# ~/.tmuxinator/system.yml
+
+name: system
+root: ~/
+
+windows:
+  - shell:
+      layout: even-horizontal
+      panes:
+        -
+        - cd ~/.dotfiles-local
+  - chat:
+    - weechat -r "/window splitv"

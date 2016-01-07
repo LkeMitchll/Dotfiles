@@ -16,6 +16,7 @@ I usually use 'Input Mono' as my font of choice.
 - [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
 - tmux (2.1+)
   - [tpm](https://github.com/tmux-plugins/tpm) (tmux plugin manager)
+  - [tmuxinator](https://github.com/tmuxinator/tmuxinato)
   - [tmux-spotify-info](https://github.com/dickeyxxx/tmux-spotify-info) (Display
     spotify now playing)
 - vim
