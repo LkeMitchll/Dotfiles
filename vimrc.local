@@ -38,19 +38,19 @@ set autoindent
 " ==============================
 " Theme
 " ==============================
-colorscheme spacegray
-let g:airline_theme="lkemitchll"
+colorscheme gotham
+let g:airline_theme="gotham"
 
 " Cursor
 :hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 :hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
 " Line No's
-:hi LineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=6
+:hi LineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=12
 :hi CursorLineNr guibg=NONE guifg=grey ctermbg=NONE ctermfg=5
 
 " Splits
-:hi VertSplit ctermbg=234 ctermfg=7
+:hi VertSplit ctermbg=10 ctermfg=4
 "
 " Gutter signs
 :hi SignifySignAdd ctermbg=NONE
@@ -66,22 +66,13 @@ let g:airline_theme="lkemitchll"
 :hi Search ctermfg=black
 
 " Tabs
-:hi TabLineFill ctermbg=234 ctermfg=black
-:hi TabLine ctermbg=234 ctermfg=white
-:hi TabLineSel ctermbg=6 ctermfg=white
+:hi TabLineFill ctermbg=10 ctermfg=black
+:hi TabLine ctermbg=10 ctermfg=white
+:hi TabLineSel ctermbg=yellow ctermfg=white
 
 " CtrlP Dialog
 :hi Pmenu guibg=black ctermbg=7 ctermfg=black
 :hi PmenuSel ctermbg=9 ctermfg=white
-
-" Misc
-:set colorcolumn=+1
-:hi ColorColumn ctermbg=234
-:hi SpellBad ctermfg=red ctermbg=233 cterm=underline
-:hi NonText ctermfg=236
-:hi Constant ctermfg=9
-:hi SpecialKey ctermfg=233
-:hi Error ctermbg=1 ctermfg=15
 
 " ===============================
 " Syntax
@@ -110,7 +101,7 @@ let g:airline_section_y='%Y'
 let g:airline_section_z=''
 
 " | Indentline |
-let g:indentLine_color_term = 0
+let g:indentLine_color_term = 4
 let g:indentLine_char = "¦"
 
 " | NeoSnippet | "
