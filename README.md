@@ -24,7 +24,7 @@ I usually use 'Input Mono' as my font of choice.
 - zsh 
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [rcm](https://github.com/thoughtbot/rcm)
-- [Spacegray](https://github.com/ajh17/Spacegray.vim) theme (for iTerm and Vim)
+- [Gotham](https://github.com/whatyouhide/vim-gotham) theme (for iTerm and Vim)
 
 ### Install
 
