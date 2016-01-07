@@ -81,6 +81,7 @@ let g:airline_theme="lkemitchll"
 :hi NonText ctermfg=236
 :hi Constant ctermfg=9
 :hi SpecialKey ctermfg=233
+:hi Error ctermbg=1 ctermfg=15
 
 " ===============================
 " Syntax
