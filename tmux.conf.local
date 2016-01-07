@@ -15,8 +15,8 @@ bind-key v split-window -h
 bind-key b split-window
 
 # window title format
-set-window-option -g window-status-format '[#I] #W '
-set-window-option -g window-status-current-format '[#I] #W '
+set-window-option -g window-status-format ' #I. #W '
+set-window-option -g window-status-current-format ' #I. #W '
 # default window title colors
 set-window-option -g window-status-fg colour7 #base0
 set-window-option -g window-status-bg colour234
