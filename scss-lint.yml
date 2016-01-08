@@ -1,4 +1,4 @@
-# Default application configuration that all configurations inherit from.
+# Up-to-date with SCSS-Lint v0.43.2
 
 scss_files: "**/*.scss"
 
@@ -8,14 +8,26 @@ linters:
     space_before_bang: true
     space_after_bang: false
 
+  BemDepth:
+    enabled: false
+    max_elements: 1
+
   BorderZero:
     enabled: true
+    convention: zero
+
+  ChainedClasses:
+    enabled: false
 
   ColorKeyword:
-    enabled: false
+    enabled: true
+
+  ColorVariable:
+    enabled: true
 
   Comment:
     enabled: true
+    style: silent
 
   DebugStatement:
     enabled: true
@@ -23,12 +35,15 @@ linters:
   DeclarationOrder:
     enabled: true
 
+  DisableLinterReason:
+    enabled: false
+
   DuplicateProperty:
     enabled: true
 
   ElsePlacement:
     enabled: true
-    style: same_line # or 'new_line'
+    style: same_line
 
   EmptyLineBetweenBlocks:
     enabled: true
@@ -37,32 +52,45 @@ linters:
   EmptyRule:
     enabled: true
 
+  ExtendDirective:
+    enabled: true
+    severity: warning
+
   FinalNewline:
     enabled: true
     present: true
 
   HexLength:
     enabled: true
-    style: short # or 'long'
+    style: short
 
   HexNotation:
-    enabled: true
-    style: lowercase # or 'uppercase'
+    enabled: false
+    style: lowercase
 
   HexValidation:
     enabled: true
 
-  IdWithExtraneousSelector:
+  IdSelector:
     enabled: true
+
+  ImportantRule:
+    enabled: true
+
+  ImportPath:
+    enabled: true
+    leading_underscore: false
+    filename_extension: false
 
   Indentation:
     enabled: true
-    character: space # or 'tab'
+    allow_non_nested_indentation: false
+    character: space
     width: 2
 
   LeadingZero:
     enabled: true
-    style: include_zero # or 'include_zero'
+    style: include_zero
 
   MergeableSelector:
     enabled: true
@@ -70,29 +98,67 @@ linters:
 
   NameFormat:
     enabled: true
-    convention: hyphenated_lowercase # or 'BEM', or a regex pattern
+    allow_leading_underscore: true
+    convention: hyphenated_lowercase
+
+  NestingDepth:
+    enabled: true
+    max_depth: 3
+    ignore_parent_selectors: false
 
   PlaceholderInExtend:
     enabled: true
 
+  PropertyCount:
+    enabled: false
+    include_nested: false
+    max_properties: 10
+
   PropertySortOrder:
     enabled: true
     ignore_unspecified: false
+    min_properties: 2
+    separate_groups: false
 
   PropertySpelling:
     enabled: true
     extra_properties: []
+    disabled_properties: []
+
+  PropertyUnits:
+    enabled: true
+    global: [
+      'ch', 'em', 'ex', 'rem',
+      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q',
+      'vh', 'vw', 'vmin', 'vmax',
+      'deg', 'grad', 'rad', 'turn',
+      'ms', 's',
+      'Hz', 'kHz',
+      'dpi', 'dpcm', 'dppx',
+      '%']
+    properties:
+      line-height: []
+
+  PseudoElement:
+    enabled: true
+
+  QualifyingElement:
+    enabled: true
+    allow_element_with_attribute: false
+    allow_element_with_class: false
+    allow_element_with_id: false
 
   SelectorDepth:
     enabled: true
     max_depth: 3
 
   SelectorFormat:
-    enabled: true
-    convention: hyphenated_BEM # or 'BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    enabled: false
+    convention: hyphenated_BEM
 
   Shorthand:
     enabled: true
+    allowed_shorthands: [1, 2, 3]
 
   SingleLinePerProperty:
     enabled: true
@@ -103,13 +169,21 @@ linters:
 
   SpaceAfterComma:
     enabled: true
+    style: one_space
 
   SpaceAfterPropertyColon:
     enabled: true
-    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
+    style: one_space
 
   SpaceAfterPropertyName:
     enabled: true
+
+  SpaceAfterVariableName:
+    enabled: true
+
+  SpaceAroundOperator:
+    enabled: true
+    style: one_space
 
   SpaceBeforeBrace:
     enabled: true
@@ -122,13 +196,19 @@ linters:
 
   StringQuotes:
     enabled: true
-    style: double_quotes # or double_quotes
+    style: double_quotes
 
   TrailingSemicolon:
     enabled: true
 
+  TrailingWhitespace:
+    enabled: true
+
   TrailingZero:
-    enabled: false
+    enabled: true
+
+  TransitionAll:
+    enabled: true
 
   UnnecessaryMantissa:
     enabled: true
@@ -142,11 +222,13 @@ linters:
   UrlQuotes:
     enabled: true
 
-  VendorPrefixes:
+  VariableForProperty:
+    enabled: false
+    properties: []
+
+  VendorPrefix:
     enabled: true
     identifier_list: base
-    include: []
-    exclude: []
 
   ZeroUnit:
     enabled: true
