@@ -46,3 +46,6 @@ Plug 'mhinz/vim-startify'
 Plug 'junegunn/goyo.vim'
 " Auto close brackets et al
 Plug 'Raimondi/delimitMate'
+" Better session saving
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
