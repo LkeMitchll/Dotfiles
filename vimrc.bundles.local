@@ -19,7 +19,7 @@ Plug 'shougo/neosnippet-snippets'
 " Shortcuts for moving from word to word more easily
 Plug 'easymotion/vim-easymotion'
 " Lightweight powerline alternative
-Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 " Short sytnax and expansion for HTML markup
 Plug 'mattn/emmet-vim'
 " Toggle line numbers

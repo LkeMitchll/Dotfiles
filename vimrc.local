@@ -39,7 +39,9 @@ set autoindent
 " Theme
 " ==============================
 colorscheme gotham
-let g:airline_theme="gotham"
+let g:lightline = {
+      \ 'colorscheme': 'gotham',
+      \ }
 
 " Cursor
 :hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
