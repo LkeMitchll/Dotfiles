@@ -3,6 +3,8 @@ alias sl=ls
 alias finder='open .'
 alias zsh="zsh --login"
 alias c='clear'
+alias top=htop
+
 alias mech="cat ~/.mech"
 alias easy-brew="brew update; brew upgrade --all"
 alias housekeep="brew update; brew upgrade; ~/.dotfiles; g llom; rcup -v; cd ~; vim-update; rbenv update"
