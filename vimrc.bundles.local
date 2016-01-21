@@ -9,6 +9,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-cucumber'
 Plug 'keith/tmux.vim'
+Plug 'mxw/vim-jsx'
 " Easy auto comments
 Plug 'scrooloose/nerdcommenter'
 " Syntax suggestion and snippet plugin
@@ -49,3 +50,5 @@ Plug 'Raimondi/delimitMate'
 " Better session saving
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
+" Grep for files more easily
+Plug 'dkprice/vim-easygrep'
