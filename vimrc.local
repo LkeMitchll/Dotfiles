@@ -232,8 +232,7 @@ let g:syntastic_scss_scss_lint_args="--config ~/.scss-lint.yml"
 let g:syntastic_python_checker= "flake8"
 let g:syntastic_python_checker_args="--ignore=E501,W601"
 let g:syntastic_haml_checkers = ['haml_lint', 'haml']
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-let g:syntastic_ruby_rubocop_args = '--config /Users/Luke/.vim/rubocop.yml'
+let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
 
 " | Vimux |
