@@ -28,7 +28,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(themes sublime history-substring-search bundler brew osx rbenv zsh-syntax-highlighting)
+plugins=(themes sublime history-substring-search bundler brew osx rbenv zsh-syntax-highlighting vi-mode)
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
@@ -53,15 +53,10 @@ export PATH=\
 eval "$(rbenv init -)"
 
 # MISC
-export EDITOR=vim
-export PEBBLE_PHONE=192.168.1.84
-export THEOS_DEVICE_IP=192.168.1.33
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
 export CUCUMBER_COLORS=comment=cyan:passed_param=white
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-export LC_ALL=en_GB.UTF-8 export LANG=en_GB.UTF-8
-
-export PATH="$HOME/.bin:$PATH"
+export LC_ALL=en_GB.UTF-8
+export LANG=en_GB.UTF-8
 
 source ~/.bin/tmuxinator.zsh
