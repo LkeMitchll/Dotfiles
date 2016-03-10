@@ -9,8 +9,6 @@ UNIXy system.
 
 I usually use 'Input Mono' as my font of choice.
 
-![Preview](http://f.cl.ly/items/2V072Y2j333w0q0X2O1l/Screen%20Shot%202015-11-24%20at%2011.32.07.png)
-
 **Requirements:**
 
 - [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
@@ -24,7 +22,7 @@ I usually use 'Input Mono' as my font of choice.
 - zsh 
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [rcm](https://github.com/thoughtbot/rcm)
-- [Gotham](https://github.com/whatyouhide/vim-gotham) theme (for iTerm and Vim)
+- [Gruvbox](https://github.com/morhetz/gruvbox) theme (for iTerm and Vim)
 
 ### Install
 

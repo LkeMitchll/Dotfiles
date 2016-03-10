@@ -1,6 +1,6 @@
 " Colorscheme
-Plug 'ajh17/Spacegray.vim'
-Plug 'whatyouhide/vim-gotham'
+Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 " Syntaxes
 Plug 'hail2u/vim-css3-syntax'
