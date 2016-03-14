@@ -11,12 +11,11 @@ else
   fi
 fi
 local git_branch='$(git_prompt_info)%{$reset_color%}'
-
+local vi_mode='$(vi_mode_prompt_info)'
 PROMPT="%{$FG[014]%}╭─%{$reset_color%} ${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
 %{$FG[014]%}╰─%B>%b %{$reset_color%}"
-RPS1="$(vi_mode_prompt_info) ${return_code}"
+RPS1="${vi_mode} ${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[007]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
-MODE_INDICATOR="%{$fg_bold[magenta]%}<%{$reset_color%}%{$fg[magenta]%}<<%{$reset_color%}"
-
+MODE_INDICATOR="%{$fg[red]%}NORMAL"
