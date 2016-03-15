@@ -111,6 +111,9 @@ bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
 # switch to another session (ask)
 bind S command-prompt -p "Name of session: " "attach -t %%"
 
+# Clear the pane
+bind C send-keys "clear && ls" \; send-keys "Enter"
+
 # toggle window sync
 bind-key s set-window-option synchronize-panes \; display-message "Sync toggled..."
 
@@ -153,6 +156,7 @@ set -g @tpm_plugins '              \
 set -g @resurrect-strategy-vim 'session'
 set -g @resurrect-capture-pane-contents 'on'
 set -g @continuum-restore 'on'
+set -g @continuum-save-interval '15'
 
 # Initializes TMUX plugin manager.
 # Keep this line at the very bottom of tmux.conf.
