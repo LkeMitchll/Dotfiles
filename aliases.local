@@ -1,5 +1,6 @@
 alias ls='ls -lA'
 alias sl=ls
+alias rpsec=rspec
 alias finder='open .'
 alias zsh="zsh --login"
 alias c='clear'
