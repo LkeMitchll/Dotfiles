@@ -33,6 +33,8 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'benmills/vimux'
 " Navigate tmux panes and vim splits smoothly
 Plug 'christoomey/vim-tmux-navigator'
+" Run Rspec tests from vim
+Plug 'thoughtbot/vim-rspec'
 " Error suggestions
 Plug 'EinfachToll/DidYouMean'
 " Easy vimux (above) cucumber running
