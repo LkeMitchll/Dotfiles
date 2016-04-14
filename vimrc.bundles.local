@@ -1,6 +1,5 @@
 " Colorscheme
 Plug 'morhetz/gruvbox'
-Plug 'shinchu/lightline-gruvbox.vim'
 
 " Syntaxes
 Plug 'hail2u/vim-css3-syntax'

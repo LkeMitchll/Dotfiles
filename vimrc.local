@@ -39,9 +39,34 @@ set autoindent
 " Theme
 " ==============================
 colorscheme gruvbox
+
+" | Lightline |
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
+    \ 'colorscheme': 'gruvbox'
+    \ }
+
+let g:lightline.enable = {
+    \ 'tabline': 0
+    \ }
+
+let g:lightline.active = {
+    \ 'right': [ [ 'lineinfo' ], ['filetype'] ]
+    \ }
+
+let g:lightline.mode_map = {
+    \ 'n' : 'N',
+    \ 'i' : 'I',
+    \ 'R' : 'R',
+    \ 'v' : 'V',
+    \ 'V' : 'VL',
+    \ "\<C-v>": 'VB',
+    \ 'c' : 'C',
+    \ 's' : 'S',
+    \ 'S' : 'SL',
+    \ "\<C-s>": 'SB',
+    \ 't': 'T',
+    \ '?': '?'
+    \ }
 
 " Cursor
 :hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
@@ -69,9 +94,10 @@ let g:lightline = {
 :hi Search ctermfg=black
 
 " Tabs
-:hi TabLineFill ctermbg=235 ctermfg=NONE
-:hi TabLine ctermbg=235 ctermfg=8
-:hi TabLineSel ctermbg=8 ctermfg=NONE
+:hi TabLineFill ctermbg=236 ctermfg=NONE
+:hi TabLine ctermbg=236 ctermfg=8 cterm=bold
+:hi TabLineSel ctermbg=2 ctermfg=0
+:hi Title ctermfg=236
 
 " CtrlP Dialog
 :hi Pmenu guibg=black ctermbg=7 ctermfg=black
@@ -87,6 +113,7 @@ let g:lightline = {
 au BufRead,BufNewFile *.zsh-theme,*.zsh set filetype=zsh
 au BufRead,BufNewFile *.xm set filetype=logos
 au BufRead,BufNewFile *.vimrc,*.vimrc.*,*.vim set filetype=vim
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " ===============================
 " Plugins
@@ -232,6 +259,7 @@ endif
 "let g:syntastic_debug = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_css_checkers = ['stylelint']
 let g:syntastic_scss_checkers = ['scss_lint', 'sass']
 let g:syntastic_scss_scss_lint_args="--config ~/.scss-lint.yml"
 let g:syntastic_python_checker= "flake8"
