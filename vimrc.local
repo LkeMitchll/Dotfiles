@@ -97,7 +97,6 @@ let g:lightline.mode_map = {
 :hi TabLineFill ctermbg=236 ctermfg=NONE
 :hi TabLine ctermbg=236 ctermfg=8 cterm=bold
 :hi TabLineSel ctermbg=2 ctermfg=0
-:hi Title ctermfg=236
 
 " CtrlP Dialog
 :hi Pmenu guibg=black ctermbg=7 ctermfg=black
