@@ -34,6 +34,8 @@
   pretty = %Cred%h%Creset %aN -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset
 [difftool]
   prompt = false
+[diff]
+  algorithm = histogram
 [mergetool]
   prompt = false
   keepBackup = false
