@@ -9,6 +9,7 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-cucumber'
 Plug 'keith/tmux.vim'
 Plug 'mxw/vim-jsx'
+Plug 'mustache/vim-mustache-handlebars'
 " Easy auto comments
 Plug 'scrooloose/nerdcommenter'
 " Syntax suggestion and snippet plugin
