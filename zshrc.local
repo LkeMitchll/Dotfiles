@@ -50,7 +50,12 @@ export PATH=\
 :/usr/local/share/npm/bin\
 :/Users/luke/Library/Android/sdk/platform-tools\
 
+source ~/.zsh/brew_cask_upgrade.zsh
+
 eval "$(rbenv init -)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # MISC
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
