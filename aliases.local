@@ -20,6 +20,7 @@ alias cukew='cuke --tags @wip'
 edit-remote() {
   AUTHY_TOKEN=$3 vim scp://luke@$1:$2/$4
 }
+alias nr="npm run"
 
 # Git
 alias git="hub"
