@@ -54,3 +54,5 @@ Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 " Grep for files more easily
 Plug 'dkprice/vim-easygrep'
+" Search Dash.app inside vim
+Plug 'rizzatti/dash.vim'
