@@ -311,6 +311,9 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nnoremap g^ gUiW
 nnoremap gv guiW
 
+nnoremap ]l :lnext<CR>
+nnoremap [l :lprev<CR>
+
 " ===============================
 " Functions
 " ===============================
