@@ -45,6 +45,57 @@ let g:lightline = {
     \ 'colorscheme': 'gruvbox'
     \ }
 
+" | Cursor |
+:hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+:hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+
+" | Line No's |
+:hi LineNr ctermbg=NONE ctermfg=12
+:hi CursorLineNr ctermbg=NONE ctermfg=5
+:hi ColorColumn ctermbg=236
+
+" | Splits |
+:hi VertSplit ctermbg=NONE ctermfg=4
+
+" | Gutter |
+:hi clear SignColumn
+:hi SignColumn guibg=NONE ctermbg=NONE
+:hi SyntasticWarningSign ctermbg=NONE ctermfg=11
+:hi SyntasticErrorSign ctermbg=NONE ctermfg=9
+:hi GitGutterAdd ctermbg=NONE
+:hi GitGutterChange ctermbg=NONE
+:hi GitGutterDelete ctermbg=NONE
+:hi GitGutterChangeDelete ctermbg=NONE
+
+" | Search |
+:hi Search ctermfg=black
+
+" | Tabs |
+:hi TabLineFill ctermbg=236 ctermfg=NONE
+:hi TabLine ctermbg=236 ctermfg=8 cterm=bold
+:hi TabLineSel ctermbg=2 ctermfg=0
+
+" | CTRLp Dialog |
+:hi Pmenu guibg=black ctermbg=7 ctermfg=black
+:hi PmenuSel ctermbg=9 ctermfg=white
+
+" | Basic |
+:hi Comment ctermfg=8 cterm=italic
+:hi Nontext ctermfg=239
+
+" ===============================
+" Syntax
+" ===============================
+au BufRead,BufNewFile *.zsh-theme,*.zsh set filetype=zsh
+au BufRead,BufNewFile *.xm set filetype=logos
+au BufRead,BufNewFile *.vimrc,*.vimrc.*,*.vim set filetype=vim
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" ===============================
+" Plugins
+" ===============================
+
+" | Lightline |
 let g:lightline.enable = {
     \ 'tabline': 0
     \ }
@@ -68,71 +119,6 @@ let g:lightline.mode_map = {
     \ '?': '?'
     \ }
 
-" Cursor
-:hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-:hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-
-" Line No's
-:hi LineNr ctermbg=NONE ctermfg=12
-:hi CursorLineNr ctermbg=NONE ctermfg=5
-:hi ColorColumn ctermbg=236
-
-" Splits
-:hi VertSplit ctermbg=NONE ctermfg=4
-"
-" Gutter signs
-:hi clear SignColumn
-:hi SignColumn guibg=NONE ctermbg=NONE
-:hi SyntasticWarningSign ctermbg=NONE ctermfg=11
-:hi SyntasticErrorSign ctermbg=NONE ctermfg=9
-:hi GitGutterAdd ctermbg=NONE
-:hi GitGutterChange ctermbg=NONE
-:hi GitGutterDelete ctermbg=NONE
-:hi GitGutterChangeDelete ctermbg=NONE
-
-" Search
-:hi Search ctermfg=black
-
-" Tabs
-:hi TabLineFill ctermbg=236 ctermfg=NONE
-:hi TabLine ctermbg=236 ctermfg=8 cterm=bold
-:hi TabLineSel ctermbg=2 ctermfg=0
-
-" CtrlP Dialog
-:hi Pmenu guibg=black ctermbg=7 ctermfg=black
-:hi PmenuSel ctermbg=9 ctermfg=white
-
-" Syntax
-:hi Comment ctermfg=8 cterm=italic
-:hi Nontext ctermfg=239
-
-" ===============================
-" Syntax
-" ===============================
-au BufRead,BufNewFile *.zsh-theme,*.zsh set filetype=zsh
-au BufRead,BufNewFile *.xm set filetype=logos
-au BufRead,BufNewFile *.vimrc,*.vimrc.*,*.vim set filetype=vim
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-
-" ===============================
-" Plugins
-" ===============================
-
-" | Airline |
-let g:airline_powerline_fonts = 1
-let g:Powerline_symbols = 'fancy'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-
-" Remove git info
-let g:airline_section_b=''
-" Remove filetype section
-let g:airline_section_x=''
-" Show show filetype instead of fileencoding
-let g:airline_section_y='%Y'
-" Remove line number/percentages
-let g:airline_section_z=''
-
 " | Indentline |
 let g:indentLine_color_term = 4
 let g:indentLine_char = "¦"
@@ -140,8 +126,7 @@ let g:indentLine_char = "¦"
 " | NeoSnippet | "
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
-"| NeoComplete |"
-"
+" | NeoComplete |"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
@@ -291,26 +276,27 @@ set tags=./tags
 " Keyboard Shortcuts
 " ===============================
 
-" Reload This file
+" | Reload This file |
 map <Leader>rv :so ~/.vimrc.local<CR>
 
-" bind K to grep word under cursor
+" | bind K to grep word under cursor |
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" Session Saving keys
+" | Session Saving keys |
 map <F2> :call SaveSess()<CR>
 map <F3> :call RestoreSess()<CR>
 
-" NumberToggle
+"  | NumberToggle |
 let g:NumberToggleTrigger="<F10>"
 
-" Remove trailing whitespace [f5]
+" | Remove trailing whitespace [f5] |
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" UPPERCASE and lowercase conversion
+"  | UPPERCASE and lowercase conversion |
 nnoremap g^ gUiW
 nnoremap gv guiW
 
+" | Error navigation |
 nnoremap ]l :lnext<CR>
 nnoremap [l :lprev<CR>
 
