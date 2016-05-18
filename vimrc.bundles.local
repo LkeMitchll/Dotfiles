@@ -56,3 +56,5 @@ Plug 'dhruvasagar/vim-prosession'
 Plug 'dkprice/vim-easygrep'
 " Search Dash.app inside vim
 Plug 'rizzatti/dash.vim'
+" Show marks in the gutter
+Plug 'kshenoy/vim-signature'
