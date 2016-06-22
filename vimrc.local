@@ -111,6 +111,9 @@ let g:airline_section_z = "%{airline#extensions#obsession#get_status()}%{line('.
 let g:indentLine_color_term = 8
 let g:indentLine_char = "┆"
 
+" | YankRing |
+let g:yankring_replace_n_pkey = '<C-Y>'
+
 " | NeoSnippet | "
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
@@ -287,6 +290,12 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " | Error navigation |
 nnoremap ]l :lnext<CR>
 nnoremap [l :lprev<CR>
+
+" | YankRing |
+nnoremap <Leader>yr :YRShow<CR>
+
+" | Registers |
+nnoremap <Leader>r :reg<CR>
 
 " ===============================
 " Functions

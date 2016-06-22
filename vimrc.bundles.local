@@ -49,3 +49,5 @@ Plug 'dhruvasagar/vim-prosession'
 Plug 'dkprice/vim-easygrep'
 " Show marks in the gutter
 Plug 'kshenoy/vim-signature'
+" Add a yank history
+Plug 'vim-scripts/YankRing.vim'
