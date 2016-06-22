@@ -38,12 +38,8 @@ set autoindent
 " ==============================
 " Theme
 " ==============================
+set background=dark
 colorscheme gruvbox
-
-" | Lightline |
-let g:lightline = {
-    \ 'colorscheme': 'gruvbox'
-    \ }
 
 " | Cursor |
 :hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
@@ -66,9 +62,6 @@ let g:lightline = {
 :hi GitGutterChange ctermbg=NONE
 :hi GitGutterDelete ctermbg=NONE
 :hi GitGutterChangeDelete ctermbg=NONE
-
-" | Search |
-:hi Search ctermfg=black
 
 " | Tabs |
 :hi TabLineFill ctermbg=236 ctermfg=NONE
@@ -95,29 +88,24 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " Plugins
 " ===============================
 
-" | Lightline |
-let g:lightline.enable = {
-    \ 'tabline': 0
-    \ }
+" | Airline |
+let g:airline_theme='gruvbox'
 
-let g:lightline.active = {
-    \ 'right': [ [ 'lineinfo' ], ['filetype'] ]
-    \ }
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#obsession#indicator_text = '✓'
 
-let g:lightline.mode_map = {
-    \ 'n' : 'N',
-    \ 'i' : 'I',
-    \ 'R' : 'R',
-    \ 'v' : 'V',
-    \ 'V' : 'VL',
-    \ "\<C-v>": 'VB',
-    \ 'c' : 'C',
-    \ 's' : 'S',
-    \ 'S' : 'SL',
-    \ "\<C-s>": 'SB',
-    \ 't': 'T',
-    \ '?': '?'
-    \ }
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#bufferline#enabled=0
+let g:airline#extensions#tagbar#enabled=0
+let g:airline#extensions#csv#enabled=0
+let g:airline#extensions#virtualenv#enabled = 0
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
+
+let g:airline_section_b = ''
+let g:airline_section_y = ''
+let g:airline_section_z = "%{airline#extensions#obsession#get_status()}%{line('.')}/%{line('$')}"
 
 " | Indentline |
 let g:indentLine_color_term = 4
