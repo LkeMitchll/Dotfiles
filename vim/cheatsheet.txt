@@ -11,6 +11,8 @@ N                       Previous highlight
 :tabp                   open previous tab
 :tabfirst               open first tab
 
+:<leader><leader><C-^>  Toggle between last two files
+
 :noh                    Reset /search highlight
 
 :grep 'term' ../*.scss  Search for term in folder or files
@@ -30,9 +32,6 @@ q	                      stop recording
 
 ma                      create a mark 'a'
 `a                      goto mark 'a'
-
-ctrl + u                Up page
-ctrl + d                Down page
 
 di"                     delete contents inside "" (swap out enclosing tag)
 
@@ -54,8 +53,6 @@ V S<p>                  Line-wise mode
 <leader>c$              Toggle comment from cursor to EOL
 <leader>cy              Yank before comment
 
-<leader>a:              align all statements on ':'
-
 :s/foo/bar/g	          Change each 'foo' to 'bar' in the current line.
 :%s/foo/bar/g	          Change each 'foo' to 'bar' in all lines.
 :5,12s/foo/bar/g	      Change each 'foo' to 'bar' for all lines from line 5 to line 12 inclusive.
@@ -76,6 +73,7 @@ V S<p>                  Line-wise mode
 :argdo update           "
 
 :reg                    View previous deletes (register)
+"ay                     Yank into register 'a'
 "2p                     Put register 2 into buffer
 
 :diffg RE               difftool get from REMOTE

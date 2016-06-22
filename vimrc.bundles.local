@@ -6,7 +6,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-cucumber'
 Plug 'keith/tmux.vim'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
@@ -35,10 +34,6 @@ Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 " Run Rspec tests from vim
 Plug 'thoughtbot/vim-rspec'
-" Error suggestions
-Plug 'EinfachToll/DidYouMean'
-" Easy vimux (above) cucumber running
-Plug 'cloud8421/vimux-cucumber'
 " Display git diffs in gutter
 Plug 'airblade/vim-gitgutter'
 " Highlight trailing whitespace
@@ -47,14 +42,10 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'mhinz/vim-startify'
 " Distraction free writing in vim
 Plug 'junegunn/goyo.vim'
-" Auto close brackets et al
-Plug 'Raimondi/delimitMate'
 " Better session saving
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 " Grep for files more easily
 Plug 'dkprice/vim-easygrep'
-" Search Dash.app inside vim
-Plug 'rizzatti/dash.vim'
 " Show marks in the gutter
 Plug 'kshenoy/vim-signature'

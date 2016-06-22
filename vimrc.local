@@ -18,7 +18,8 @@ set laststatus=2   " Always show the statusline
 set clipboard=unnamed " use system clipboard
 set ignorecase " Case-insensitive tab completion
 set autochdir " Automatically change dirs for ':e'
-set listchars=eol:¬,extends:…,precedes:…
+set listchars=tab:»·,eol:¬,extends:…,precedes:…,space:·,nbsp:·
+set numberwidth=5
 
 " ===============================
 " Language & Encoding
@@ -32,8 +33,8 @@ setglobal fileencoding=utf-8
 " ==============================
 set smartindent
 set softtabstop=2
-set expandtab
 set autoindent
+set textwidth=0
 
 " ==============================
 " Theme
@@ -80,7 +81,6 @@ colorscheme gruvbox
 " Syntax
 " ===============================
 au BufRead,BufNewFile *.zsh-theme,*.zsh set filetype=zsh
-au BufRead,BufNewFile *.xm set filetype=logos
 au BufRead,BufNewFile *.vimrc,*.vimrc.*,*.vim set filetype=vim
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
@@ -108,17 +108,35 @@ let g:airline_section_y = ''
 let g:airline_section_z = "%{airline#extensions#obsession#get_status()}%{line('.')}/%{line('$')}"
 
 " | Indentline |
-let g:indentLine_color_term = 4
-let g:indentLine_char = "¦"
+let g:indentLine_color_term = 8
+let g:indentLine_char = "┆"
 
 " | NeoSnippet | "
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
+" | NerdCommenter |
+let g:NERDCommentEmptyLines = 1
+
+" | Startify |
+let g:custom_header = [
+  \'',
+  \'                 _________ _______',
+  \'        |\     /|\__   __/(       )',
+  \'        | )   ( |   ) (   | () () |',
+  \'        | |   | |   | |   | || || |',
+  \'        ( (   ) )   | |   | |(_)| |',
+  \'         \ \_/ /    | |   | |   | |',
+  \'          \   /  ___) (___| )   ( |',
+  \'           \_/   \_______/|/     \|',
+  \''
+  \]
+let g:startify_custom_header = g:custom_header
+let g:startify_list_order = ['files', 'dir', 'sessions', 'bookmarks', 'commands']
+let g:startify_bookmarks = [ '~/.vimrc.local', '~/.zshrc' ]
+
 " | NeoComplete |"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
-
-" Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 
 " Use smartcase.
@@ -152,8 +170,10 @@ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
 endfunction
+
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -166,6 +186,7 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
@@ -175,6 +196,7 @@ endif
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
@@ -196,8 +218,10 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
+
 " Ignore bundler and sass cache
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 
@@ -212,21 +236,6 @@ nnoremap <silent> <leader>gr :Gread<CR>
 nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
 
-" | The Silver Searcher |
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --column
-  set grepformat=%f:%l:%c%m
-  let g:EasyGrepCommand=1
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  unlet g:ctrlp_user_command
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
 " | Syntastic |
 "let g:syntastic_debug = 1
 let g:syntastic_check_on_wq = 1
@@ -234,19 +243,14 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_css_checkers = ['stylelint']
 let g:syntastic_scss_checkers = ['scss_lint', 'sass']
 let g:syntastic_scss_scss_lint_args="--config ~/.scss-lint.yml"
-let g:syntastic_python_checker= "flake8"
-let g:syntastic_python_checker_args="--ignore=E501,W601"
 let g:syntastic_haml_checkers = ['haml_lint', 'haml']
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_html_tidy_exec = "/usr/local/bin/tidy"
-let g:syntastic_coffee_coffelint_args = "--csv --file ~/.coffeelint.json"
 
 " | Vimux |
 map <Leader>tr :VimuxPromptCommand<CR>
 map <Leader>tc :VimuxCloseRunner<CR>
 map <Leader>ti :VimuxInspectRunner<CR>
 map <Leader>tl :VimuxRunLastCommand<CR>
-map <Leader>tt :RunFocusedCuke<CR>
 
 " | Emmet |
 let g:user_emmet_mode='a'
@@ -255,10 +259,14 @@ let g:user_emmet_mode='a'
 let g:rails_projections = { 'app/decorators/*.rb': { 'command': 'decorator' }}
 
 " | Obsession/Prosession |
-let g:prosession_on_startup = 1
+let g:prosession_on_startup = 0
 
 " | Ctags |
 set tags=./tags
+
+" | Surround |
+let b:surround_{char2nr('=')} = "<%= \r %>"
+let b:surround_{char2nr('-')} = "<% \r %>"
 
 " ===============================
 " Keyboard Shortcuts
@@ -270,23 +278,19 @@ map <Leader>rv :so ~/.vimrc.local<CR>
 " | bind K to grep word under cursor |
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" | Session Saving keys |
-map <F2> :call SaveSess()<CR>
-map <F3> :call RestoreSess()<CR>
-
 "  | NumberToggle |
 let g:NumberToggleTrigger="<F10>"
 
 " | Remove trailing whitespace [f5] |
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-"  | UPPERCASE and lowercase conversion |
-nnoremap g^ gUiW
-nnoremap gv guiW
-
 " | Error navigation |
 nnoremap ]l :lnext<CR>
 nnoremap [l :lprev<CR>
+
+" | Session Saving keys |
+map <F2> :call SaveSess()<CR>
+map <F3> :call RestoreSess()<CR>
 
 " ===============================
 " Functions
