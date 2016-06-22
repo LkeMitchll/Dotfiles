@@ -1,14 +1,8 @@
 set linespace=4
-set guifont=Input\ Mono:h12
 
-set guicursor=n-v-c:ver15-Cursor
+set guifont=Office\ Code\ Pro\ D:h14
+set guicursor=n-v-c:block-Cursor
 
 " Hide Scrollbars on GUI
 set guioptions-=r
 set guioptions-=L
-
-" Diffs
-:hi DiffAdd      guibg=#003300
-:hi DiffChange   guibg=#003300
-:hi DiffDelete   guifg=#330000 guibg=#330000
-:hi DiffText     guibg=#990000

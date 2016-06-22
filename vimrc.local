@@ -74,8 +74,8 @@ colorscheme gruvbox
 :hi PmenuSel ctermbg=9 ctermfg=white
 
 " | Basic |
-:hi Comment ctermfg=8 cterm=italic
-:hi Nontext ctermfg=239
+:hi Comment ctermfg=8 cterm=italic guifg=darkgrey
+:hi Nontext ctermfg=239 guifg=darkgrey
 
 " ===============================
 " Syntax
