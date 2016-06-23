@@ -55,9 +55,6 @@ set -g status-right '#[fg=colour3]#(tmux-spotify-info)#[fg=colour6]%l:%M%p %a %d
 set-option -g prefix C-a
 bind-key C-a last-window
 
-# Start numbering at 1
-set -g base-index 1
-
 # Allows for faster key repetition
 set -s escape-time 0
 
@@ -85,12 +82,6 @@ bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 # Bind ']' to use pbpaste
 bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
 
-# hjkl pane traversal
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
-#
 # smart pane switching with awareness of vim splits
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
 bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-j) || tmux select-pane -D"

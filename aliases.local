@@ -4,7 +4,6 @@ alias rpsec=rspec
 alias finder='open .'
 alias zsh="zsh --login"
 alias c='clear'
-alias top=htop
 
 alias mech="cat ~/.mech"
 alias easy-brew="brew update; brew upgrade --all"
@@ -14,9 +13,6 @@ alias vim-update="vim '+PlugUpdate' '+qa'"
 
 # Web dev
 alias mm="middleman"
-alias cuke='cucumber -r features -f rerun --out rerun.txt'
-alias cuker='cucumber @rerun.txt'
-alias cukew='cuke --tags @wip'
 edit-remote() {
   AUTHY_TOKEN=$3 vim scp://luke@$1:$2/$4
 }
@@ -26,11 +22,6 @@ alias nr="npm run"
 alias git="hub"
 alias g="git"
 alias gs="git status"
-alias ghash="git rev-parse HEAD"
-gauth() {
-  AUTHY_TOKEN="$2" git push $1 master
-  echo "Done!"
-}
 
 # Non CLI
 alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES"
