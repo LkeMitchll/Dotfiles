@@ -213,12 +213,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
 
-" | EasyMotion  |
-hi EasyMotionTarget ctermbg=none ctermfg=1
-hi EasyMotionShade ctermbg=none ctermfg=4
-hi EasyMotionTarget2Second ctermbg=none ctermfg=1
-hi EasyMotionTarget2First ctermbg=none ctermfg=1
-
 " | CTRLP |
 " Search from current directory instead of project root
 let g:ctrlp_working_path_mode = 'ra'
@@ -276,6 +270,12 @@ set tags=./tags
 let b:surround_{char2nr('=')} = "<%= \r %>"
 let b:surround_{char2nr('-')} = "<% \r %>"
 
+"  | NumberToggle |
+let g:NumberToggleTrigger="<F10>"
+
+" | YankRing |
+nnoremap <Leader>yr :YRShow<CR>
+
 " ===============================
 " Keyboard Shortcuts
 " ===============================
@@ -286,18 +286,12 @@ map <Leader>rv :so ~/.vimrc.local<CR>
 " | bind K to grep word under cursor |
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-"  | NumberToggle |
-let g:NumberToggleTrigger="<F10>"
-
 " | Remove trailing whitespace [f5] |
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " | Error navigation |
 nnoremap ]l :lnext<CR>
 nnoremap [l :lprev<CR>
-
-" | YankRing |
-nnoremap <Leader>yr :YRShow<CR>
 
 " | Registers |
 nnoremap <Leader>r :reg<CR>
