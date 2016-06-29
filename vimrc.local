@@ -42,6 +42,10 @@ set textwidth=0
 set background=dark
 colorscheme gruvbox
 
+" | Basic |
+:hi Comment ctermfg=8 cterm=italic guifg=darkgrey
+:hi Nontext ctermfg=239 guifg=darkgrey
+
 " | Cursor |
 :hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 :hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
@@ -73,9 +77,8 @@ colorscheme gruvbox
 :hi Pmenu guibg=black ctermbg=7 ctermfg=black
 :hi PmenuSel ctermbg=9 ctermfg=white
 
-" | Basic |
-:hi Comment ctermfg=8 cterm=italic guifg=darkgrey
-:hi Nontext ctermfg=239 guifg=darkgrey
+" | Sneak |
+:hi SneakPluginTarget ctermbg=5
 
 " ===============================
 " Syntax
@@ -108,9 +111,6 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_b = ''
 let g:airline_section_y = ''
 let g:airline_section_z = "%{airline#extensions#obsession#get_status()}┆ %{line('.')}/%{line('$')}"
-
-" | Sneak |
-:hi SneakPluginTarget ctermbg=5
 
 " | Indentline |
 let g:indentLine_color_term = 8
