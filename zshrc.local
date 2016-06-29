@@ -34,15 +34,15 @@ export PATH=\
 :/Users/luke/Library/Android/sdk/platform-tools\
 
 # MISC
+eval "$(rbenv init -)"
+eval "$(thefuck --alias)"
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export LC_ALL=en_GB.UTF-8
+export LANG=en_GB.UTF-8
+export NVM_DIR="$HOME/.nvm"
+
 source ~/.bin/tmuxinator.zsh
 source ~/.zsh/brew_cask_upgrade.zsh
 
-export LC_ALL=en_GB.UTF-8
-export LANG=en_GB.UTF-8
-
-eval "$(rbenv init -)"
-eval "$(thefuck --alias)"
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
