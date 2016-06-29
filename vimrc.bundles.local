@@ -16,8 +16,6 @@ Plug 'shougo/neocomplete.vim'
 " Snippet support
 Plug 'shougo/neosnippet.vim'
 Plug 'shougo/neosnippet-snippets'
-" Shortcuts for moving from word to word more easily
-Plug 'easymotion/vim-easymotion'
 " Lightweight powerline alternative
 Plug 'vim-airline/vim-airline'
 " Short sytnax and expansion for HTML markup
@@ -51,3 +49,5 @@ Plug 'dkprice/vim-easygrep'
 Plug 'kshenoy/vim-signature'
 " Add a yank history
 Plug 'vim-scripts/YankRing.vim'
+" Medium movements with three keystrokes
+Plug 'justinmk/vim-sneak'
