@@ -20,17 +20,9 @@ set ignorecase " Case-insensitive tab completion
 set autochdir " Automatically change dirs for ':e'
 set listchars=tab:»·,eol:¬,extends:…,precedes:…,space:·,nbsp:·
 set numberwidth=5
-
-" ===============================
-" Language & Encoding
-" ===============================
 setglobal langmenu=en_GB.UTF-8
 setglobal encoding=utf8
 setglobal fileencoding=utf-8
-
-" ==============================
-" Tabs
-" ==============================
 set smartindent
 set softtabstop=2
 set autoindent
@@ -47,7 +39,7 @@ colorscheme gruvbox
 :hi Nontext ctermfg=239 guifg=darkgrey
 
 " | Cursor |
-:hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+:hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 :hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
 " | Line No's |
@@ -67,15 +59,6 @@ colorscheme gruvbox
 :hi GitGutterChange ctermbg=NONE
 :hi GitGutterDelete ctermbg=NONE
 :hi GitGutterChangeDelete ctermbg=NONE
-
-" | Tabs |
-:hi TabLineFill ctermbg=236 ctermfg=NONE
-:hi TabLine ctermbg=236 ctermfg=8 cterm=bold
-:hi TabLineSel ctermbg=2 ctermfg=0
-
-" | CTRLp Dialog |
-:hi Pmenu guibg=black ctermbg=7 ctermfg=black
-:hi PmenuSel ctermbg=9 ctermfg=white
 
 " | Sneak |
 :hi SneakPluginTarget ctermbg=5
@@ -98,15 +81,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline#extensions#obsession#indicator_text = '✓'
 
 let g:airline#extensions#hunks#enabled=0
-let g:airline#extensions#bufferline#enabled=0
-let g:airline#extensions#tagbar#enabled=0
-let g:airline#extensions#csv#enabled=0
-let g:airline#extensions#virtualenv#enabled = 0
-let g:airline#extensions#wordcount#enabled = 0
-let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#obsession#indicator_text = '✓'
 
 let g:airline_section_b = ''
 let g:airline_section_y = ''
@@ -119,74 +96,35 @@ let g:indentLine_char = "┆"
 " | YankRing |
 let g:yankring_replace_n_pkey = '<C-Y>'
 
-" | NeoSnippet | "
-let g:neosnippet#snippets_directory='~/.vim/snippets'
-
-" | NerdCommenter |
-let g:NERDCommentEmptyLines = 1
-
 " | Startify |
-let g:custom_header = [
-  \'',
-  \'                 _________ _______',
-  \'        |\     /|\__   __/(       )',
-  \'        | )   ( |   ) (   | () () |',
-  \'        | |   | |   | |   | || || |',
-  \'        ( (   ) )   | |   | |(_)| |',
-  \'         \ \_/ /    | |   | |   | |',
-  \'          \   /  ___) (___| )   ( |',
-  \'           \_/   \_______/|/     \|',
-  \''
-  \]
-let g:startify_custom_header = g:custom_header
+let g:startify_custom_header = []
 let g:startify_list_order = ['files', 'dir', 'sessions', 'bookmarks', 'commands']
 let g:startify_bookmarks = [ '~/.vimrc.local', '~/.zshrc' ]
 
 " | NeoComplete |"
-" Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
-
-" Use smartcase.
 let g:neocomplete#enable_smart_case = 1
-
-" Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-" Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
   \ 'default' : '',
   \ 'vimshell' : $HOME.'/.vimshell_hist',
   \ 'scheme' : $HOME.'/.gosh_completions'
     \ }
 
-" Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
+    let g:neocomplete#keyword_patterns = {}
 endif
-
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-endfunction
-
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
+imap <C-k><Plug> (neosnippet_expand_or_jump)
+smap <C-k><Plug> (neosnippet_expand_or_jump)
+xmap <C-k><Plug> (neosnippet_expand_target)
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -200,18 +138,8 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+" | NeoSnippet | "
+let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 " | CTRLP |
 " Search from current directory instead of project root
@@ -229,14 +157,8 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 
 " | Fugitive (Git) |
 nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>ge :Gedit<CR>
 
 " | Syntastic |
 "let g:syntastic_debug = 1
