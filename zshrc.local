@@ -11,7 +11,7 @@ DISABLE_AUTO_UPDATE="false"
 DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(themes sublime history-substring-search bundler brew osx rbenv zsh-syntax-highlighting vi-mode)
+plugins=(themes history-substring-search osx zsh-syntax-highlighting vi-mode)
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
