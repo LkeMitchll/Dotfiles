@@ -43,8 +43,6 @@ Plug 'junegunn/goyo.vim'
 " Better session saving
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
-" Grep for files more easily
-Plug 'dkprice/vim-easygrep'
 " Show marks in the gutter
 Plug 'kshenoy/vim-signature'
 " Add a yank history
