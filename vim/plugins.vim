@@ -111,9 +111,6 @@ let g:user_emmet_mode='a'
 " | Rails |
 let g:rails_projections = { 'app/decorators/*.rb': { 'command': 'decorator' }}
 
-" | Obsession/Prosession |
-let g:prosession_on_startup = 0
-
 " | Ctags |
 set tags=./tags
 
