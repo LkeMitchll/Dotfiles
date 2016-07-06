@@ -18,8 +18,6 @@ Plug 'shougo/neosnippet-snippets'
 Plug 'vim-airline/vim-airline'
 " Short sytnax and expansion for HTML markup
 Plug 'mattn/emmet-vim'
-" Toggle line numbers
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Pretty indentation lines
 Plug 'Yggdroot/indentLine'
 " TMUX integration
@@ -28,16 +26,12 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'benmills/vimux'
 " Navigate tmux panes and vim splits smoothly
 Plug 'christoomey/vim-tmux-navigator'
-" Run Rspec tests from vim
-Plug 'thoughtbot/vim-rspec'
 " Display git diffs in gutter
 Plug 'airblade/vim-gitgutter'
 " Highlight trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
 " Funky vim startup
 Plug 'mhinz/vim-startify'
-" Distraction free writing in vim
-Plug 'junegunn/goyo.vim'
 " Better session saving
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'

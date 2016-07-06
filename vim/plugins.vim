@@ -118,8 +118,5 @@ set tags=./tags
 let b:surround_{char2nr('=')} = "<%= \r %>"
 let b:surround_{char2nr('-')} = "<% \r %>"
 
-"  | NumberToggle |
-let g:NumberToggleTrigger="<F10>"
-
 " | YankRing |
 nnoremap <Leader>yr :YRShow<CR>
