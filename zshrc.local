@@ -22,6 +22,7 @@ export PATH=\
 ~/.rbenv/bin\
 :/usr/local/bin\
 :/usr/local/sbin\
+:/usr/local/share/npm/bin\
 :/usr/bin\
 :/bin\
 :/usr/sbin\
@@ -30,19 +31,18 @@ export PATH=\
 :/opt/local/bin\
 :~/.bin\
 :~/pebble-dev/PebbleSDK-current/bin\
-:/usr/local/share/npm/bin\
-:/Users/luke/Library/Android/sdk/platform-tools\
+:~/Library/Android/sdk/platform-tools\
 
 # MISC
 eval "$(rbenv init -)"
 eval "$(thefuck --alias)"
 
+source ~/.bin/tmuxinator.zsh
+source ~/.zsh/brew_cask_upgrade.zsh
+
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export LC_ALL=en_GB.UTF-8
 export LANG=en_GB.UTF-8
 export NVM_DIR="$HOME/.nvm"
-
-source ~/.bin/tmuxinator.zsh
-source ~/.zsh/brew_cask_upgrade.zsh
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
