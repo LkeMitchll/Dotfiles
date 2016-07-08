@@ -120,3 +120,6 @@ let b:surround_{char2nr('-')} = "<% \r %>"
 
 " | YankRing |
 nnoremap <Leader>yr :YRShow<CR>
+
+" | Golden ratio |
+let g:golden_ratio_exclude_nonmodifiable = 1
