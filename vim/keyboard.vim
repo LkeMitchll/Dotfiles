@@ -13,4 +13,7 @@ nnoremap ]l :lnext<CR>
 nnoremap [l :lprev<CR>
 
 " | Registers |
-nnoremap <Leader>r :reg<CR>
+nnoremap <Leader>r :registers<CR>
+
+" | Remove highlight |
+map <Leader>n :nohlsearch<CR>
