@@ -7,14 +7,12 @@ Gathered from lots of places see below an incomplete list of sources.
 I run all of this in iTerm 2 on OS X, although it should be transferable to any
 UNIXy system.
 
-I usually use 'Input Mono' as my font of choice.
-
 **Requirements:**
 
 - [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
 - tmux (2.1+)
   - [tpm](https://github.com/tmux-plugins/tpm) (tmux plugin manager)
-  - [tmuxinator](https://github.com/tmuxinator/tmuxinato)
+  - [tmuxinator](https://github.com/tmuxinator/tmuxinator)
   - [tmux-spotify-info](https://github.com/dickeyxxx/tmux-spotify-info) (Display
     spotify now playing)
 - vim
@@ -22,7 +20,6 @@ I usually use 'Input Mono' as my font of choice.
 - zsh 
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [rcm](https://github.com/thoughtbot/rcm)
-- [Gruvbox](https://github.com/morhetz/gruvbox) theme (for iTerm and Vim)
 
 ### Install
 
