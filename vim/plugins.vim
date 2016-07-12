@@ -23,6 +23,7 @@ let g:indentLine_char = "┆"
 
 " | YankRing |
 let g:yankring_replace_n_pkey = '<C-Y>'
+let g:yankring_history_dir = '~/.vim'
 
 " | Startify |
 let g:startify_custom_header = []
