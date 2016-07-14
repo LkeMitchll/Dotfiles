@@ -109,8 +109,8 @@ bind C send-keys "clear && ls" \; send-keys "Enter"
 # toggle window sync
 bind-key s set-window-option synchronize-panes \; display-message "Sync toggled..."
 
-bind-key [ resize-pane -L 20
-bind-key ] resize-pane -R 20
+bind-key { resize-pane -L 20
+bind-key } resize-pane -R 20
 
 # auto window rename
 set-window-option -g automatic-rename off
