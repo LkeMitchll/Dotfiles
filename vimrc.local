@@ -20,6 +20,7 @@ set clipboard=unnamed        " use system clipboard
 set ignorecase               " Case-insensitive tab completion
 set autochdir                " Automatically change dirs for ':e'
 set numberwidth=5            " Width of the number column
+set relativenumber           " Line numbers relative to current line
 set smartindent              " Context-aware suto-indent
 set softtabstop=2            " Tab width
 set autoindent               " Self-explanatory
