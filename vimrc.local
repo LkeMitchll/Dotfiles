@@ -24,6 +24,7 @@ set relativenumber           " Line numbers relative to current line
 set smartindent              " Context-aware suto-indent
 set softtabstop=2            " Tab width
 set autoindent               " Self-explanatory
+set textwidth=0              " Don't automatically break lines after x chars
 " Set some (not so) invisble characters
 set listchars=tab:»·,eol:¬,extends:…,precedes:…,space:·,nbsp:·
 

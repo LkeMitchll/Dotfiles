@@ -15,7 +15,7 @@ let g:airline#extensions#obsession#indicator_text = '✓'
 
 let g:airline_section_b = ''
 let g:airline_section_y = ''
-let g:airline_section_z = "%{airline#extensions#obsession#get_status()}┆ %{line('.')}/%{line('$')}"
+let g:airline_section_z = "%{airline#extensions#obsession#get_status()}|| %{line('.')}/%{line('$')}"
 
 " | Indentline |
 let g:indentLine_color_term = 8
@@ -122,6 +122,3 @@ let b:surround_{char2nr('-')} = "<% \r %>"
 
 " | YankRing |
 nnoremap <Leader>yr :YRShow<CR>
-
-" | Golden ratio |
-let g:golden_ratio_exclude_nonmodifiable = 1

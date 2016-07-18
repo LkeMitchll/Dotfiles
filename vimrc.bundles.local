@@ -41,7 +41,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/YankRing.vim'
 " Medium movements with three keystrokes
 Plug 'justinmk/vim-sneak'
-" Autmatically make current (editing) split bigger
+" Automatically make current (editing) split bigger
 Plug 'roman/golden-ratio'
 " Automatically switch between line number modes
 Plug 'jeffkreeftmeijer/vim-numbertoggle'

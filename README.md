@@ -7,6 +7,8 @@ Gathered from lots of places see below an incomplete list of sources.
 I run all of this in iTerm 2 on OS X, although it should be transferable to any
 UNIXy system.
 
+Use 'Fira Code' to take full advantage of ligatures.
+
 **Requirements:**
 
 - [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
