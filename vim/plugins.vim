@@ -87,7 +87,7 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 
 " | Fugitive (Git) |
 nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gco :Gcommit<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
 
 " | Syntastic |
