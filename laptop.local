@@ -2,7 +2,6 @@
 
 # Install cask
 brew install caskroom/cask/brew-cask
-brew tap caskroom/fonts
 
 # QuickLook plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
@@ -13,16 +12,9 @@ brew cask install bettertouchtool
 brew cask install backblaze
 brew cask install bartender
 brew cask install dropbox
+brew cask install iterm2
 brew cask install google-chrome
 brew cask install firefox
-brew cask install fontprep
-brew cask install fontexplorer-x-pro
-brew cask install flux
-brew cask install macdown
-brew cask install mailbox
-brew cask install monotype-skyfonts
-brew cask install numi
-brew cask install psequel
 brew cask install slack
 brew cask install sketch
 brew cask install sketch-toolbox
@@ -31,3 +23,4 @@ brew cask install sublime-text
 brew cask install vlc
 brew cask install virtualbox
 brew cask install tripmode
+brew cask install numi
