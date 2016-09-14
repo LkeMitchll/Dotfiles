@@ -99,6 +99,7 @@ let g:syntastic_scss_checkers = ['scss_lint', 'sass']
 let g:syntastic_scss_scss_lint_args="--config ~/.scss-lint.yml"
 let g:syntastic_haml_checkers = ['haml_lint', 'haml']
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " | Vimux |
 map <Leader>tr :VimuxPromptCommand<CR>
