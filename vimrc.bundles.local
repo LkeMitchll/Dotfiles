@@ -23,7 +23,8 @@ Plug 'Yggdroot/indentLine'
 " TMUX integration
 Plug 'tmux-plugins/vim-tmux'
 " Open TMUX splits to run commands
-Plug 'benmills/vimux'
+" Plug 'benmills/vimux'
+Plug 'christoomey/vim-tmux-runner'
 " Navigate tmux panes and vim splits smoothly
 Plug 'christoomey/vim-tmux-navigator'
 " Display git diffs in gutter

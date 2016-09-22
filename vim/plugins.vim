@@ -101,11 +101,11 @@ let g:syntastic_haml_checkers = ['haml_lint', 'haml']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['eslint']
 
-" | Vimux |
-map <Leader>tr :VimuxPromptCommand<CR>
-map <Leader>tc :VimuxCloseRunner<CR>
-map <Leader>ti :VimuxInspectRunner<CR>
-map <Leader>tl :VimuxRunLastCommand<CR>
+" | VTR (Vim Tmux Runner) |
+let g:VtrUseVtrMaps = 1
+map <Leader>ap :VtrAttachToPane<CR>1<CR>
+map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
+map <Leader>tl :VtrSendCommandToRunner<cr>
 
 " | Emmet |
 let g:user_emmet_mode='a'
