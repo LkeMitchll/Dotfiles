@@ -28,8 +28,8 @@ set-window-option -g window-status-current-bg colour0
 set-window-option -g window-status-current-attr bold
 
 # pane border
-set-option -g pane-border-fg colour14
-set-option -g pane-active-border-fg colour14
+set-option -g pane-border-fg colour8
+set-option -g pane-active-border-fg colour8
 
 # Renumber windows
 set-option -g renumber-windows on
