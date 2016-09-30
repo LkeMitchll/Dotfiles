@@ -103,9 +103,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " | VTR (Vim Tmux Runner) |
 let g:VtrUseVtrMaps = 1
-map <Leader>ap :VtrAttachToPane<CR>1<CR>
+map <Leader>ta :VtrAttachToPane<CR>1<CR>
 map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 map <Leader>tl :VtrSendCommandToRunner<cr>
+map <Leader>tc :VtrClearRunner<cr>
 
 " | Emmet |
 let g:user_emmet_mode='a'
