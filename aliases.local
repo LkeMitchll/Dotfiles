@@ -8,7 +8,7 @@ alias c='clear'
 alias mech="cat ~/.mech"
 alias easy-brew="brew update; brew upgrade --all"
 alias housekeep="brew update; brew upgrade; ~/.dotfiles; g llom; rcup -v; cd ~;
-vim-update; rbenv update; ~/.tmux/plugins/tpm/bin/update_plugins all; zsh ~/.oh-my-zsh/tools/upgrade.sh"
+vim-update; rbenv update; ~/.tmux/plugins/tpm/bin/update_plugins all"
 alias vim-update="vim '+PlugUpdate' '+qa'"
 
 # Web dev
