@@ -21,10 +21,6 @@ let g:airline_section_z = "%{airline#extensions#obsession#get_status()}|| %{line
 let g:indentLine_color_term = 8
 let g:indentLine_char = "┆"
 
-" | YankRing |
-let g:yankring_replace_n_pkey = '<C-Y>'
-let g:yankring_history_dir = '~/.vim'
-
 " | Startify |
 let g:startify_custom_header = []
 let g:startify_list_order = ['files', 'dir', 'sessions', 'bookmarks', 'commands']
@@ -41,18 +37,14 @@ let g:neocomplete#sources#dictionary#dictionaries = {
   \ 'default' : '',
   \ 'vimshell' : $HOME.'/.vimshell_hist',
   \ 'scheme' : $HOME.'/.gosh_completions'
-    \ }
+  \ }
 
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
@@ -67,9 +59,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
-
-" | NeoSnippet | "
-let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 " | CTRLP |
 " Search from current directory instead of project root
@@ -120,6 +109,3 @@ set tags=./tags
 " | Surround |
 let b:surround_{char2nr('=')} = "<%= \r %>"
 let b:surround_{char2nr('-')} = "<% \r %>"
-
-" | YankRing |
-nnoremap <Leader>yr :YRShow<CR>

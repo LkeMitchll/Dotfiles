@@ -8,12 +8,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-markdown'
 Plug 'keith/tmux.vim'
 Plug 'mxw/vim-jsx'
-Plug 'mustache/vim-mustache-handlebars'
 " Syntax suggestion and snippet plugin
 Plug 'shougo/neocomplete.vim'
-" Snippet support
-Plug 'shougo/neosnippet.vim'
-Plug 'shougo/neosnippet-snippets'
 " Lightweight powerline alternative
 Plug 'vim-airline/vim-airline'
 " Short sytnax and expansion for HTML markup
@@ -28,17 +24,11 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-tmux-navigator'
 " Display git diffs in gutter
 Plug 'airblade/vim-gitgutter'
-" Highlight trailing whitespace
-Plug 'bronson/vim-trailing-whitespace'
 " Funky vim startup
 Plug 'mhinz/vim-startify'
 " Better session saving
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
-" Show marks in the gutter
-Plug 'kshenoy/vim-signature'
-" Add a yank history
-Plug 'vim-scripts/YankRing.vim'
 " Medium movements with three keystrokes
 Plug 'justinmk/vim-sneak'
 " Automatically make current (editing) split bigger
