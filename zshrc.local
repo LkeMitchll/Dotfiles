@@ -44,5 +44,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export LC_ALL=en_GB.UTF-8
 export LANG=en_GB.UTF-8
 export NVM_DIR="$HOME/.nvm"
+export CMUS_HOME="$HOME/.cmus"
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm

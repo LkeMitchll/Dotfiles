@@ -50,7 +50,7 @@ set -g status-right-length 140
 
 # format the status bar
 set -g status-left ' #[fg=colour4]#{session_name} #[fg=colour3]|> #[default]'
-set -g status-right '#[fg=colour3]<| #[fg=colour10]#(tmux-spotify-info)#[fg=colour6]%H:%M%p %a %d/%m #[fg=colour3]<| #[fg=colour6]#{battery_percentage} #[fg=colour3]<| #[fg=colour6]#{online_status} '
+set -g status-right '#[fg=colour3]<| #[fg=colour10]#(cmus_now_playing) #(tmux-spotify-info)#[fg=colour6]%H:%M%p %a %d/%m #[fg=colour3]<| #[fg=colour6]#{battery_percentage} #[fg=colour3]<| #[fg=colour6]#{online_status} '
 
 # C-b is not acceptable -- Vim uses it
 set-option -g prefix C-a
