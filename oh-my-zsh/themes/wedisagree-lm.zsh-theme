@@ -5,7 +5,7 @@ local git=' <|$(git_prompt_info)'
 local git_status='$(git_prompt_status)'
 
 PROMPT="
-%{$fg[magenta]%}|| %c ||
+%{$fg[magenta]%}# %c
 %{$FG[014]%}${vi_mode}>=> %{$reset_color%}"
 
 RPROMPT="${rbenv}%{$FG[014]%}${git}%{$reset_color%}${git_status}%{$reset_color%}%{$reset_color%}"

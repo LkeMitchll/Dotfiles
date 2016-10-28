@@ -10,9 +10,8 @@ endif
 " ===============================
 " General Settings
 " ===============================
-set noeb vb t_vb=            " Disable bells
 set shell=/usr/local/bin/zsh " Set shell
-let mapleader = ','          " Override leader
+set noeb vb t_vb=            " Disable bells
 set hlsearch                 " Highlight searched term
 set nocompatible             " Disable vi-compatibility
 set laststatus=2             " Always show the statusline
