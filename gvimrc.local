@@ -1,8 +1,0 @@
-set linespace=4
-
-set guifont=Office\ Code\ Pro\ D:h14
-set guicursor=n-v-c:block-Cursor
-
-" Hide Scrollbars on GUI
-set guioptions-=r
-set guioptions-=L

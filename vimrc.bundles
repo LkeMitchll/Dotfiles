@@ -1,17 +1,39 @@
+if &compatible
+  set nocompatible
+end
+
+call plug#begin('~/.vim/bundle')
+
 " Colorscheme
 Plug 'morhetz/gruvbox'
-
 " Syntaxes
+Plug 'vim-ruby/vim-ruby'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-markdown'
 Plug 'keith/tmux.vim'
 Plug 'mxw/vim-jsx'
+Plug 'kchmck/vim-coffee-script'
+Plug 'slim-template/vim-slim'
+" File and buffer finder and browser
+Plug 'ctrlpvim/ctrlp.vim'
+" Syntax errors
+Plug 'scrooloose/syntastic'
 " Syntax suggestion and snippet plugin
 Plug 'shougo/neocomplete.vim'
 " Lightweight powerline alternative
 Plug 'vim-airline/vim-airline'
+" Git integration
+Plug 'tpope/vim-fugitive'
+" Automatically end ruby structures automatically
+Plug 'tpope/vim-endwise'
+" Rails IDE
+Plug 'tpope/vim-rails'
+" Use vim '.' to repeat more things
+Plug 'tpope/vim-repeat'
+" Easily change branckets etc.
+Plug 'tpope/vim-surround'
 " Short sytnax and expansion for HTML markup
 Plug 'mattn/emmet-vim'
 " Pretty indentation lines
@@ -35,3 +57,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'roman/golden-ratio'
 " Automatically switch between line number modes
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+" Line commenting
+Plug 'vim-scripts/tComment'
+
+call plug#end()

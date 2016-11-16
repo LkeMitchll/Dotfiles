@@ -1,8 +1,18 @@
 " ==============================
 " Theme
 " ==============================
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
+
 set background=dark
 colorscheme gruvbox
+
+set textwidth=80
+set colorcolumn=+1
 
 " | Basic |
 :hi Comment ctermfg=8 cterm=italic guifg=darkgrey

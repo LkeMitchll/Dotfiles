@@ -1,3 +1,5 @@
+[init]
+  templatedir = ~/.git_template
 [user]
   name = LkeMitchll
   email = lke.mitchll@gmail.com
@@ -6,24 +8,22 @@
   co = commit
   sh = push
   ll = pull --rebase
-  ad = add
-  ma = master
+  a = add
+  aa = add --all
+  aaa = --all --amend
   or = origin
   s = status
-  rb = rebase
   lg = log --graph --date=relative -10
   shom = push origin master
-  shhm = push heroku master
-  shsm = push staging master
-  shpm = push production master
-  llom = pull origin master
-  col = commit -aC $(git rev-parse HEAD)
-  update = pull --rebase origin
   reset-last-soft = reset --soft HEAD~1
   reset-last-hard = reset --hard HEAD~1
 [core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
   editor=vim
   whitespace = space-before-tab,tab-in-indent,trailing-space
+[color]
+  ui = auto
 [color "status"]
   header = cyan
   branch = white
@@ -39,17 +39,22 @@
 [mergetool]
   prompt = false
   keepBackup = false
-[push]
-  ;default = simple
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 [apply]
   whitespace = fix
 [merge]
+  ff = only
   conflictstyle = diff3
   tool = vimdiff
 [push]
   default = matching
 [branch]
   autosetuprebase = always
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true

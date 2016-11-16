@@ -11,7 +11,6 @@ Use 'Fira Code' to take full advantage of ligatures.
 
 **Requirements:**
 
-- [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
 - tmux (2.1+)
   - [tpm](https://github.com/tmux-plugins/tpm) (tmux plugin manager)
   - [tmuxinator](https://github.com/tmuxinator/tmuxinator)
@@ -26,11 +25,8 @@ Use 'Fira Code' to take full advantage of ligatures.
 ### Install
 
 1. Install requirements (above)
-2. Clone `thoughtbot/dotfiles`
-2. Clone this repo: `git clone git@bitbucket.org:LkeMitchll/.dotfiles.git
-   dotfiles-local`
-3. Execute `RCRC=~/dotfiles-local/rcrc lsrc -v` (dry-run to look for errors)
-4. Execute `RCRC=~/dotfiles-local/rcrc rcup -v`
+2. Clone this repo
+4. Execute `RCRC=~/dotfiles/rcrc rcup -v`
 5. Profit.
 
 Then go ahead and initialise the tmux and vim plugins.
