@@ -5,22 +5,3 @@ brew install caskroom/cask/brew-cask
 
 # QuickLook plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
-
-# Apps
-brew cask install alfred
-brew cask install bettertouchtool
-brew cask install backblaze
-brew cask install bartender
-brew cask install dropbox
-brew cask install iterm2
-brew cask install google-chrome
-brew cask install firefox
-brew cask install slack
-brew cask install sketch
-brew cask install sketch-toolbox
-brew cask install spotify
-brew cask install sublime-text
-brew cask install vlc
-brew cask install virtualbox
-brew cask install tripmode
-brew cask install numi
