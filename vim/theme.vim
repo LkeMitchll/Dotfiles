@@ -11,34 +11,24 @@ endif
 set background=dark
 colorscheme gruvbox
 
-set textwidth=80
-set colorcolumn=+1
+" Basic
+hi Comment cterm=italic
 
-" | Basic |
-:hi Comment ctermfg=8 cterm=italic guifg=darkgrey
-:hi Nontext ctermfg=239 guifg=darkgrey
+" Line No's
+hi LineNr ctermbg=NONE ctermfg=blue
+hi CursorLineNr ctermbg=NONE ctermfg=magenta
 
-" | Cursor |
-:hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-:hi CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+" Splits
+hi VertSplit ctermbg=NONE ctermfg=blue
 
-" | Line No's |
-:hi LineNr ctermbg=NONE ctermfg=12
-:hi CursorLineNr ctermbg=NONE ctermfg=5
-:hi ColorColumn ctermbg=236
+" Gutter
+hi SignColumn ctermbg=235
+hi SyntasticWarningSign ctermbg=NONE ctermfg=yellow
+hi SyntasticErrorSign ctermbg=NONE ctermfg=red
+hi GitGutterAdd ctermbg=NONE ctermfg=green
+hi GitGutterChange ctermbg=NONE ctermfg=green
+hi GitGutterDelete ctermbg=NONE ctermfg=red
+hi GitGutterChangeDelete ctermbg=NONE ctermfg=yellow
 
-" | Splits |
-:hi VertSplit ctermbg=NONE ctermfg=4
-
-" | Gutter |
-:hi clear SignColumn
-:hi SignColumn guibg=NONE ctermbg=NONE
-:hi SyntasticWarningSign ctermbg=NONE ctermfg=11
-:hi SyntasticErrorSign ctermbg=NONE ctermfg=9
-:hi GitGutterAdd ctermbg=NONE
-:hi GitGutterChange ctermbg=NONE
-:hi GitGutterDelete ctermbg=NONE
-:hi GitGutterChangeDelete ctermbg=NONE
-
-" | Sneak |
-:hi SneakPluginTarget ctermbg=5
+" Sneak
+hi SneakPluginTarget ctermbg=magenta

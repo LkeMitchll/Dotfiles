@@ -1,9 +1,13 @@
 " ===============================
 " Syntax
 " ===============================
+
+au BufRead,BufNewFile ~/.dotfiles/* set filetype=config
+au BufRead,BufNewFile git-rebase* set filetype=gitrebase
+au BufRead,BufNewFile COMMIT_* set filetype=gitcommit
 au BufRead,BufNewFile *.zsh-theme,*.zsh set filetype=zsh
-au BufRead,BufNewFile *.vimrc,*.vimrc.*,*.vim set filetype=vim
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+au BufRead,BufNewFile *vimrc,*vimrc.*,*.vim,*.bundles,*.gvimrc set filetype=vim
+au BufRead,BufNewFile tmux.conf set filetype=tmux
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'

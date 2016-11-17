@@ -10,9 +10,11 @@
   ll = pull --rebase
   a = add
   aa = add --all
-  aaa = --all --amend
+  aaa = commit --all --amend
   or = origin
   s = status
+  ri = rebase --interactive
+  rc = rebase --continue
   lg = log --graph --date=relative -10
   shom = push origin master
   reset-last-soft = reset --soft HEAD~1

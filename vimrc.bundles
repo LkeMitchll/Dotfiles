@@ -12,10 +12,10 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-markdown'
-Plug 'keith/tmux.vim'
 Plug 'mxw/vim-jsx'
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
+Plug 'tmux-plugins/vim-tmux'
 " File and buffer finder and browser
 Plug 'ctrlpvim/ctrlp.vim'
 " Syntax errors
@@ -38,8 +38,6 @@ Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 " Pretty indentation lines
 Plug 'Yggdroot/indentLine'
-" TMUX integration
-Plug 'tmux-plugins/vim-tmux'
 " Open TMUX splits to run commands
 Plug 'christoomey/vim-tmux-runner'
 " Navigate tmux panes and vim splits smoothly

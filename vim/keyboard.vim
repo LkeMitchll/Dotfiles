@@ -2,23 +2,23 @@
 " Keyboard Shortcuts
 " ===============================
 
-" | Reload This file |
+" Reload This file
 map <Leader>rv :so ~/.vimrc<CR>
 
-" | Remove trailing whitespace [f5] |
+" Remove trailing whitespace [f5]
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" | Error navigation |
+" Error navigation
 nnoremap ]l :lnext<CR>
 nnoremap [l :lprev<CR>
 
-" | Registers |
+" Registers
 nnoremap <Leader>r :registers<CR>
 
-" | Remove highlight |
+" Remove highlight
 map <Leader>n :nohlsearch<CR>
-"
-" | Get off my lawn |
+
+" Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>

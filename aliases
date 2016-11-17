@@ -2,20 +2,20 @@ alias ls='ls -lA'
 alias sl=ls
 alias rpsec=rspec
 alias finder='open .'
-alias zsh="zsh --login"
 alias c='clear'
 
 alias mech="cat ~/.mech"
 alias easy-brew="brew update; brew upgrade --all"
-alias housekeep="brew update; brew upgrade; ~/.dotfiles; g llom; rcup -v; cd ~;
-vim-update; rbenv update; ~/.tmux/plugins/tpm/bin/update_plugins all"
+alias housekeep="brew update;
+                brew upgrade;
+                rcup -v;
+                vim-update;
+                rbenv update;
+                ~/.tmux/plugins/tpm/bin/update_plugins all"
 alias vim-update="vim '+PlugUpdate' '+qa'"
 
 # Web dev
 alias mm="middleman"
-edit-remote() {
-  AUTHY_TOKEN=$3 vim scp://luke@$1:$2/$4
-}
 alias nr="npm run"
 
 # Git
@@ -24,5 +24,7 @@ alias g="git"
 alias gs="git status"
 
 # Non CLI
-alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES"
-alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO"
+alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES &&
+killall Finder"
+alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO &&
+killall Finder"
