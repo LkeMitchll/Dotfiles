@@ -1,6 +1,6 @@
-" ===============================
+" ==============================
 " Syntax
-" ===============================
+" ==============================
 
 au BufRead,BufNewFile ~/.dotfiles/* set filetype=config
 au BufRead,BufNewFile git-rebase* set filetype=gitrebase
@@ -10,4 +10,4 @@ au BufRead,BufNewFile *vimrc,*vimrc.*,*.vim,*.bundles,*.gvimrc set filetype=vim
 au BufRead,BufNewFile tmux.conf set filetype=tmux
 
 " Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
+let g:html_indent_tags = 'li\|p\|span'

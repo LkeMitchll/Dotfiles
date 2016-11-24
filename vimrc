@@ -1,10 +1,10 @@
-" ===============================
+" ==============================
 " VIMRC LOCAL - LUKE MITCHELL
-" ===============================
+" ==============================
 
-" ===============================
+" ==============================
 " General Settings
-" ===============================
+" ==============================
 let mapleader = " "
 
 set shell=/usr/local/bin/zsh
@@ -66,9 +66,9 @@ endif
 
 filetype plugin indent on
 
-" ===============================
+" ==============================
 " Other settings
-" ===============================
+" ==============================
 
 source $HOME/.vim/theme.vim     " colorscheme related tweaks
 source $HOME/.vim/syntax.vim    " syntax plugins and bindings
