@@ -15,6 +15,7 @@
   s = status
   ri = rebase --interactive
   rc = rebase --continue
+  d = diff
   lg = log --graph --date=relative -10
   shom = push origin master
   reset-last-soft = reset --soft HEAD~1
