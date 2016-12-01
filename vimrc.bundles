@@ -7,20 +7,16 @@ call plug#begin('~/.vim/bundle')
 " Colorscheme
 Plug 'morhetz/gruvbox'
 " Syntaxes
-Plug 'vim-ruby/vim-ruby'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-markdown'
 Plug 'mxw/vim-jsx'
-Plug 'kchmck/vim-coffee-script'
-Plug 'slim-template/vim-slim'
 Plug 'tmux-plugins/vim-tmux'
 " File and buffer finder and browser
 Plug 'ctrlpvim/ctrlp.vim'
 " Syntax errors
 Plug 'scrooloose/syntastic'
-" Syntax suggestion and snippet plugin
+" Syntax suggestion
 Plug 'shougo/neocomplete.vim'
 " Lightweight powerline alternative
 Plug 'vim-airline/vim-airline'
