@@ -6,13 +6,13 @@ local git_status='$(git_prompt_status)'
 
 PROMPT="
 %{$fg[magenta]%}# %c
-%{$FG[014]%}${vi_mode}>=> %{$reset_color%}"
+%{$fg[cyan]%}${vi_mode}>=> %{$reset_color%}"
 
-RPROMPT="${rbenv}%{$FG[014]%}${git}%{$reset_color%}${git_status}%{$reset_color%}%{$reset_color%}"
+RPROMPT="${rbenv}%{$fg[cyan]%}${git}%{$reset_color%}${git_status}%{$reset_color%}%{$reset_color%}"
 
 MODE_INDICATOR="%{$fg[red]%}NORMAL "
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$FG[014]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 
 # Git branch status
