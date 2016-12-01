@@ -2,7 +2,7 @@
 " Keyboard Shortcuts
 " ==============================
 
-" Reload This file
+" Refresh vim after a config change
 map <Leader>rv :so ~/.vimrc<CR>
 
 " Remove trailing whitespace [f5]
@@ -17,9 +17,3 @@ nnoremap <Leader>r :registers<CR>
 
 " Remove highlight
 map <Leader>n :nohlsearch<CR>
-
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
