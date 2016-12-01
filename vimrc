@@ -26,7 +26,7 @@ set noswapfile
 
 " Set some (not so) invisble characters
 set list
-set listchars=tab:»·,eol:¬,extends:…,precedes:…,space:·,nbsp:·,trail:#
+set listchars=eol:¬,extends:…,precedes:…,space:·,trail:#
 
 " Tabs
 set smartindent
@@ -38,7 +38,6 @@ set expandtab
 
 " Number column
 set number
-set numberwidth=5
 set relativenumber
 
 " Splits
