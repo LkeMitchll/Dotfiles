@@ -9,14 +9,12 @@ let g:airline_right_sep = ""
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#hunks#enabled=0
-let g:airline#extensions#obsession#indicator_text = "✓"
 
 let g:airline_section_b = ""
 let g:airline_section_y = ""
-let g:airline_section_z = "%{airline#extensions#obsession#get_status()}| %{line('.')}/%{line('$')}"
+let g:airline_section_z = "%{line('.')}/%{line('$')}"
 
 " Indentline
-let g:indentLine_color_term = 8
 let g:indentLine_char = "┆"
 
 " Startify
@@ -29,12 +27,6 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = "\*ku\*"
-
-let g:neocomplete#sources#dictionary#dictionaries = {
-  \ "default" : "",
-  \ "vimshell" : $HOME."/.vimshell_hist",
-  \ "scheme" : $HOME."/.gosh_completions"
-  \ }
 
 if !exists("g:neocomplete#keyword_patterns")
   let g:neocomplete#keyword_patterns = {}
@@ -67,8 +59,6 @@ let g:ctrlp_custom_ignore = {
 
 " Ignore bundler and sass cache
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
-
-" Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 
 " Fugitive (Git)
@@ -96,9 +86,6 @@ map <Leader>ta :VtrAttachToPane<CR>1<CR>
 map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 map <Leader>tl :VtrSendCommandToRunner<cr>
 map <Leader>tc :VtrClearRunner<cr>
-
-" Emmet
-let g:user_emmet_mode="a"
 
 " Rails
 let g:rails_projections = { "app/decorators/*.rb": { "command": "decorator" }}
