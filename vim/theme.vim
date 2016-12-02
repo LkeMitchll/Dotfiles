@@ -9,7 +9,7 @@ colorscheme gruvbox
 hi CursorLineNr ctermbg=NONE
 
 " Splits
-hi VertSplit ctermbg=NONE
+hi VertSplit ctermbg=black ctermfg=black
 
 " Gutter
 hi SignColumn ctermbg=NONE
