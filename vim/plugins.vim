@@ -10,6 +10,7 @@ let g:airline_right_sep = ""
 let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_section_b = ""
+let g:airline_section_y = ""
 let g:airline_section_z = "%{line('.')}/%{line('$')}"
 
 " Indentline
