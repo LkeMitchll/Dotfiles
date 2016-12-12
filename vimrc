@@ -25,6 +25,7 @@ set nowritebackup
 set noswapfile
 
 " Set some (not so) invisble characters
+set conceallevel=0
 set list
 set listchars=eol:¬,extends:…,precedes:…,space:·,trail:#
 
