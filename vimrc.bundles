@@ -52,6 +52,6 @@ Plug 'roman/golden-ratio'
 " Automatically switch between line number modes
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Line commenting
-Plug 'vim-scripts/tComment'
+Plug 'tomtom/tcomment_vim'
 
 call plug#end()
