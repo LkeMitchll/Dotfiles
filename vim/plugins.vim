@@ -33,7 +33,6 @@ endif
 let g:neocomplete#keyword_patterns["default"] = "\h\w*"
 
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " Enable omni completion.
@@ -81,6 +80,7 @@ let g:syntastic_javascript_checkers = ["eslint"]
 
 " VTR (Vim Tmux Runner)
 let g:VtrUseVtrMaps = 1
+let g:VtrClearSequence = ""
 map <Leader>ta :VtrAttachToPane<CR>1<CR>
 map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 map <Leader>tl :VtrSendCommandToRunner<cr>
