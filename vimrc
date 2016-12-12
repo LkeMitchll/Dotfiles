@@ -14,10 +14,15 @@ set nocompatible
 set autochdir
 set autoindent
 set autowrite
+set autoread
 set laststatus=2
-set history=50
+set history=1000
 set textwidth=0
 set backspace=2
+set ttimeout
+set ttimeoutlen=100
+set scrolloff=1
+set formatoptions+=j
 
 " Don't backup or swap
 set nobackup
@@ -27,7 +32,7 @@ set noswapfile
 " Set some (not so) invisble characters
 set conceallevel=0
 set list
-set listchars=eol:¬,extends:…,precedes:…,space:·,trail:#
+set listchars=tab:>\ ,eol:¬,extends:…,precedes:…,space:·,trail:#
 
 " Tabs
 set smartindent
@@ -60,11 +65,11 @@ set hlsearch
 set smartcase
 set incsearch
 
+filetype plugin indent on
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
-
-filetype plugin indent on
 
 " ==============================
 " Other settings

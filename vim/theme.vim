@@ -19,3 +19,7 @@ hi GitGutterAdd ctermbg=NONE ctermfg=green
 hi GitGutterChange ctermbg=NONE ctermfg=green
 hi GitGutterDelete ctermbg=NONE ctermfg=red
 hi GitGutterChangeDelete ctermbg=NONE ctermfg=yellow
+
+" CSS Vendor Prefixes
+hi VendorPrefix ctermfg=cyan
+match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/
