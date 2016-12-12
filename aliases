@@ -23,6 +23,11 @@ alias git="hub"
 alias g="git"
 alias gs="git status"
 
+# Rails
+alias rdbm="rake db:migrate"
+alias rdbs="rake db:setup"
+alias rdbr="rake db:reset"
+
 # Non CLI
 alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES &&
 killall Finder"
