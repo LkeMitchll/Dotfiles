@@ -6,16 +6,18 @@
 [alias]
   ch = checkout
   co = commit
+  ca = commit --all
+  caa = commit --all --amend
   sh = push
   ll = pull --rebase
   a = add
   aa = add --all
-  aaa = commit --all --amend
-  or = origin
   s = status
+  f = fetch
+  fo = fetch origin
+  d = diff
   ri = rebase --interactive
   rc = rebase --continue
-  d = diff
   lg = log --graph --date=relative -10
   shom = push origin master
   reset-last-soft = reset --soft HEAD~1
