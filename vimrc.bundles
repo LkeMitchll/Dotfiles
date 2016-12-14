@@ -49,8 +49,6 @@ Plug 'dhruvasagar/vim-prosession'
 Plug 'justinmk/vim-sneak'
 " Automatically make current (editing) split bigger
 Plug 'roman/golden-ratio'
-" Automatically switch between line number modes
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Line commenting
 Plug 'tomtom/tcomment_vim'
 

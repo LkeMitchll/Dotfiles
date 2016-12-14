@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="wedisagree-lm"
+ZSH_THEME="interrobang"
 
 # Aliases
 source $HOME/.aliases
@@ -11,7 +11,7 @@ DISABLE_AUTO_UPDATE="false"
 DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(themes history-substring-search osx zsh-syntax-highlighting vi-mode)
+plugins=(themes history-substring-search osx zsh-syntax-highlighting)
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 

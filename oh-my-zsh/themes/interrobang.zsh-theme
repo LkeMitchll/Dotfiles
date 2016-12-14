@@ -1,14 +1,12 @@
-# Based on .oh-my-zsh/themes/wedisagree.zsh-theme
+# Based on oh-my-zsh themes wedisagree & bira
 local vi_mode='$(vi_mode_prompt_info)'
-local rbenv='%{$FG[008]%}<| $(rbenv version | sed -e "s/ (set.*$//")'
-local git=' <|$(git_prompt_info)'
+local rbenv='%{$FG[008]%}| $(rbenv version | sed -e "s/ (set.*$//")'
+local git=' |$(git_prompt_info)'
 local git_status='$(git_prompt_status)'
 
 PROMPT="
-%{$fg[magenta]%}# %c
-%{$fg[cyan]%}${vi_mode}>=> %{$reset_color%}"
-
-RPROMPT="${rbenv}%{$fg[cyan]%}${git}%{$reset_color%}${git_status}%{$reset_color%}%{$reset_color%}"
+%{$fg[cyan]%}╭─-<< %{$fg[magenta]%}%c ${rbenv}%{$fg[cyan]%}${git}%{$reset_color%}${git_status}%{$reset_color%}%{$reset_color%}
+%{$fg[cyan]%}╰─--> %{$reset_color%}"
 
 MODE_INDICATOR="%{$fg[red]%}NORMAL "
 
