@@ -13,7 +13,7 @@ nnoremap ]l :lnext<CR>
 nnoremap [l :lprev<CR>
 
 " Registers
-nnoremap <Leader>r :registers<CR>
+nnoremap <Leader>re :registers<CR>
 
 " Remove highlight
 nnoremap <silent> <Leader>n :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
