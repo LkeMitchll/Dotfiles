@@ -18,6 +18,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 " Syntax suggestion
 Plug 'shougo/neocomplete.vim'
+" Powerful multi-file search
+Plug 'wincent/ferret'
 " Lightweight powerline alternative
 Plug 'vim-airline/vim-airline'
 " Git integration
