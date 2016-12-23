@@ -69,7 +69,6 @@ let g:gitgutter_sign_removed = 'x'
 let g:gitgutter_sign_modified_removed = 'x'
 
 " Syntastic
-"let g:syntastic_debug = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_scss_checkers = ["scss_lint", "sass"]
