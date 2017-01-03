@@ -23,6 +23,7 @@ set ttimeout
 set ttimeoutlen=100
 set scrolloff=1
 set formatoptions+=j
+set wildmenu
 
 " Don't backup or swap
 set nobackup
@@ -61,6 +62,7 @@ setglobal fileencoding=utf-8
 
 " Searching
 set hlsearch
+set ignorecase
 set smartcase
 set incsearch
 
