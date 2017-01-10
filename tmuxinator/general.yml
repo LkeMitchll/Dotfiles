@@ -1,4 +1,4 @@
-# ~/.tmuxinator/rails.yml
+# ~/.tmuxinator/general.yml
 
 name: <%= args[0] %>
 root: <%= args[1] %>
@@ -12,6 +12,6 @@ windows:
   - utils:
       layout: d2e8,283x57,0,0{78x57,0,0[78x28,0,0,54,78x28,0,29,56],204x57,79,0,57}
       panes:
-        - rails server
-        - guard
-        - ls
+        -
+        -
+        -
