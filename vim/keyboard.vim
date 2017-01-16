@@ -2,6 +2,9 @@
 " Keyboard Shortcuts
 " ==============================
 
+" Never enter ex mode
+nnoremap Q <nop>
+
 " Refresh vim after a config change
 map <Leader>rv :so ~/.vimrc<CR>
 
@@ -15,6 +18,9 @@ nnoremap 'l :lclose<CR>
 
 " Registers
 nnoremap <Leader>re :registers<CR>
+
+" Buffers
+nnoremap <Leader>bu :buffers<CR>
 
 " Remove highlight
 nnoremap <silent> <Leader>n :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
