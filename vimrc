@@ -33,6 +33,7 @@ set noswapfile
 " Set some (not so) invisble characters
 set list
 set listchars=tab:>\ ,eol:¬,extends:…,precedes:…,space:·,trail:#
+set showbreak=↪
 
 " Tabs
 set smartindent
