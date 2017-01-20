@@ -17,8 +17,17 @@ let g:airline_section_z = "%{line('.')}/%{line('$')}"
 let g:indentLine_char = "┆"
 
 " Startify
-let g:startify_custom_header = []
-let g:startify_list_order = ["files", "dir", "sessions", "bookmarks", "commands"]
+let g:startify_custom_header = [
+      \ '    /$$    /$$       /$$$$$$       /$$      /$$',
+      \ '   | $$   | $$      |_  $$_/      | $$$    /$$$',
+      \ '   | $$   | $$        | $$        | $$$$  /$$$$',
+      \ '   |  $$ / $$/        | $$        | $$ $$/$$ $$',
+      \ '    \  $$ $$/         | $$        | $$  $$$| $$',
+      \ '     \  $$$/          | $$        | $$\  $ | $$',
+      \ '      \  $/          /$$$$$$      | $$ \/  | $$',
+      \ '       \_/          |______/      |__/     |__/',
+      \ ]
+let g:startify_list_order = ["sessions", "files", "dir"]
 
 " NeoComplete
 let g:acp_enableAtStartup = 0
