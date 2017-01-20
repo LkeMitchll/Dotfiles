@@ -15,9 +15,9 @@ Plug 'tmux-plugins/vim-tmux'
 " File and buffer finder and browser
 Plug 'ctrlpvim/ctrlp.vim'
 " Syntax errors
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 " Syntax suggestion
-Plug 'shougo/neocomplete.vim'
+Plug 'ajh17/VimCompletesMe'
 " Powerful multi-file search
 Plug 'wincent/ferret'
 " Lightweight powerline alternative

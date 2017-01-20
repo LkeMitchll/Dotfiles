@@ -11,7 +11,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_section_b = ""
 let g:airline_section_y = ""
-let g:airline_section_z = "%{line('.')}/%{line('$')}"
+let g:airline_section_z = "%{line('.')}/%{line('$')} %{ALEGetStatusLine()}"
 
 " Indentline
 let g:indentLine_char = "┆"
@@ -28,33 +28,6 @@ let g:startify_custom_header = [
       \ '       \_/          |______/      |__/     |__/',
       \ ]
 let g:startify_list_order = ["sessions", "files", "dir"]
-
-" NeoComplete
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = "\*ku\*"
-
-if !exists("g:neocomplete#keyword_patterns")
-  let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns["default"] = "\h\w*"
-
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists("g:neocomplete#sources#omni#input_patterns")
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
 
 " CTRLP
 " Search from current directory instead of project root
@@ -77,14 +50,12 @@ let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_removed = 'x'
 let g:gitgutter_sign_modified_removed = 'x'
 
-" Syntastic
-let g:syntastic_check_on_wq = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_scss_checkers = ["scss_lint", "sass"]
-let g:syntastic_scss_scss_lint_args="--config ~/.scss-lint.yml"
-let g:syntastic_haml_checkers = ["haml_lint", "haml"]
-let g:syntastic_ruby_checkers = ["rubocop"]
-let g:syntastic_javascript_checkers = ["eslint"]
+" Ale
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+
+" VimCompletesMe
+let g:vcm_direction = 'p'
 
 " VTR (Vim Tmux Runner)
 let g:VtrUseVtrMaps = 1
