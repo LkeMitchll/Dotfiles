@@ -2,17 +2,6 @@
 " Plugins
 " ==============================
 
-" Airline
-let g:airline_theme="gruvbox"
-let g:airline_left_sep = ""
-let g:airline_right_sep = ""
-
-let g:airline#extensions#tabline#enabled = 1
-
-let g:airline_section_b = ""
-let g:airline_section_y = ""
-let g:airline_section_z = "%{line('.')}/%{line('$')} %{ALEGetStatusLine()}"
-
 " Indentline
 let g:indentLine_char = "┆"
 
@@ -38,7 +27,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " Ignore bundler and sass cache
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*,*/node_modules/*
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 
 " Fugitive (Git)
@@ -46,13 +35,14 @@ nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gco :Gcommit<CR>
 
 " GitGutter
+let g:gitgutter_sign_column_always = 1
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_removed = 'x'
 let g:gitgutter_sign_modified_removed = 'x'
 
 " Ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
 
 " VimCompletesMe
 let g:vcm_direction = 'p'

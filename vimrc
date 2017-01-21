@@ -15,7 +15,6 @@ set autochdir
 set autoindent
 set autowrite
 set autoread
-set laststatus=2
 set history=1000
 set textwidth=0
 set backspace=2
@@ -33,7 +32,6 @@ set noswapfile
 " Set some (not so) invisble characters
 set list
 set listchars=tab:>\ ,eol:¬,extends:…,precedes:…,space:·,trail:#
-set showbreak=↪
 
 " Tabs
 set smartindent
@@ -66,6 +64,18 @@ set hlsearch
 set ignorecase
 set smartcase
 set incsearch
+
+" Statusline
+set laststatus=2
+set showtabline=2
+" Filename
+set statusline=\ %f%<
+" Filetype
+set statusline+=%2*%=%y
+" Current/total lines
+set statusline+=\ %l\/%L
+" Ale errors
+set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 
 filetype plugin indent on
 

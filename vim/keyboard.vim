@@ -2,6 +2,9 @@
 " Keyboard Shortcuts
 " ==============================
 
+" Fixes InsertLeave on Ctrl-C
+inoremap <C-C> <Esc>
+
 " Never enter ex mode
 nnoremap Q <nop>
 

@@ -5,32 +5,30 @@ end
 call plug#begin('~/.vim/bundle')
 
 " Colorscheme
-Plug 'morhetz/gruvbox'
+Plug 'noahfrederick/vim-noctu'
 " Syntaxes
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-markdown'
 Plug 'mxw/vim-jsx'
 Plug 'tmux-plugins/vim-tmux'
-" File and buffer finder and browser
+" File and buffer finder
 Plug 'ctrlpvim/ctrlp.vim'
-" Syntax errors
+" Syntax errors inline
 Plug 'w0rp/ale'
-" Syntax suggestion
+" Tab auto-complete
 Plug 'ajh17/VimCompletesMe'
-" Powerful multi-file search
+" Multi-file search
 Plug 'wincent/ferret'
-" Lightweight powerline alternative
-Plug 'vim-airline/vim-airline'
 " Git integration
 Plug 'tpope/vim-fugitive'
-" Automatically end ruby structures automatically
+" Automatically end ruby structures
 Plug 'tpope/vim-endwise'
 " Rails IDE
 Plug 'tpope/vim-rails'
-" Use vim '.' to repeat more things
+" Use '.' to repeat more things
 Plug 'tpope/vim-repeat'
-" Easily change branckets etc.
+" Easily change brackets etc.
 Plug 'tpope/vim-surround'
 " Short sytnax and expansion for HTML markup
 Plug 'mattn/emmet-vim'
@@ -42,14 +40,14 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-tmux-navigator'
 " Display git diffs in gutter
 Plug 'airblade/vim-gitgutter'
-" Funky vim startup
+" Useful vim startup screen
 Plug 'mhinz/vim-startify'
-" Better session saving
+" Automatic session saving
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 " Medium movements with three keystrokes
 Plug 'justinmk/vim-sneak'
-" Automatically make current (editing) split bigger
+" Automatically make current split bigger
 Plug 'roman/golden-ratio'
 " Line commenting
 Plug 'tomtom/tcomment_vim'
