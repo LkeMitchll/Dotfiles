@@ -5,34 +5,23 @@
 " Indentline
 let g:indentLine_char = "┆"
 
-" Startify
-let g:startify_custom_header = [
-      \ '    /$$    /$$       /$$$$$$       /$$      /$$',
-      \ '   | $$   | $$      |_  $$_/      | $$$    /$$$',
-      \ '   | $$   | $$        | $$        | $$$$  /$$$$',
-      \ '   |  $$ / $$/        | $$        | $$ $$/$$ $$',
-      \ '    \  $$ $$/         | $$        | $$  $$$| $$',
-      \ '     \  $$$/          | $$        | $$\  $ | $$',
-      \ '      \  $/          /$$$$$$      | $$ \/  | $$',
-      \ '       \_/          |______/      |__/     |__/',
-      \ ]
-let g:startify_list_order = ["sessions", "files", "dir"]
+" FZF
+let g:fzf_layout = { 'down': '~30%' }
 
-" CTRLP
-" Search from current directory instead of project root
-let g:ctrlp_working_path_mode = "ra"
-let g:ctrlp_custom_ignore = {
-  \ "dir":  "\v[\/]\.(git|hg|svn|sass-cache)$",
-  \ "file": "\v\.(exe|so|dll)$",
-  \ }
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+command! ProjectFiles execute 'Files' s:find_git_root()
 
-" Ignore bundler and sass cache
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*,*/node_modules/*
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+nnoremap <C-T> :ProjectFiles<CR>
+nnoremap <Leader>bu :Buffers<CR>
+nnoremap <Leader>bl :BLines<CR>
+nnoremap <Leader>; :Commands<CR>
+nnoremap <Leader>' :Marks<CR>
 
 " Fugitive (Git)
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gco :Gcommit<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gco :Gcommit<CR>
 
 " GitGutter
 let g:gitgutter_sign_column_always = 1
@@ -66,15 +55,17 @@ let b:surround_{char2nr("-")} = "<% \r %>"
 if executable("ag")
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor\ --silent
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  if !exists(":Ag")
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-  endif
 endif
+
+" Startify
+let g:startify_custom_header = [
+      \ '    /$$    /$$       /$$$$$$       /$$      /$$',
+      \ '   | $$   | $$      |_  $$_/      | $$$    /$$$',
+      \ '   | $$   | $$        | $$        | $$$$  /$$$$',
+      \ '   |  $$ / $$/        | $$        | $$ $$/$$ $$',
+      \ '    \  $$ $$/         | $$        | $$  $$$| $$',
+      \ '     \  $$$/          | $$        | $$\  $ | $$',
+      \ '      \  $/          /$$$$$$      | $$ \/  | $$',
+      \ '       \_/          |______/      |__/     |__/',
+      \ ]
+let g:startify_list_order = ["sessions", "files", "dir"]

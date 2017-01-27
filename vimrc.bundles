@@ -8,12 +8,12 @@ call plug#begin('~/.vim/bundle')
 Plug 'noahfrederick/vim-noctu'
 " Syntaxes
 Plug 'hail2u/vim-css3-syntax'
+Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-markdown'
-Plug 'mxw/vim-jsx'
 Plug 'tmux-plugins/vim-tmux'
 " File and buffer finder
-Plug 'ctrlpvim/ctrlp.vim'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 " Syntax errors inline
 Plug 'w0rp/ale'
 " Tab auto-complete
@@ -22,12 +22,8 @@ Plug 'ajh17/VimCompletesMe'
 Plug 'wincent/ferret'
 " Git integration
 Plug 'tpope/vim-fugitive'
-" Automatically end ruby structures
-Plug 'tpope/vim-endwise'
 " Rails IDE
 Plug 'tpope/vim-rails'
-" Use '.' to repeat more things
-Plug 'tpope/vim-repeat'
 " Easily change brackets etc.
 Plug 'tpope/vim-surround'
 " Short sytnax and expansion for HTML markup

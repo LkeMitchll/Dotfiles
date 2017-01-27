@@ -22,8 +22,5 @@ nnoremap 'l :lclose<CR>
 " Registers
 nnoremap <Leader>re :registers<CR>
 
-" Buffers
-nnoremap <Leader>bu :buffers<CR>
-
 " Remove highlight
 nnoremap <silent> <Leader>n :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
