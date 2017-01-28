@@ -3,16 +3,17 @@ alias sl=ls
 alias rpsec=rspec
 alias finder='open .'
 alias c='clear'
+alias vim='nvim'
+alias vi='nvim'
 
 alias mech="cat ~/.mech"
 alias easy-brew="brew update; brew upgrade --all"
 alias housekeep="brew update;
                 brew upgrade;
                 rcup -v;
-                vim-update;
                 rbenv update;
                 ~/.tmux/plugins/tpm/bin/update_plugins all"
-alias vim-update="vim '+PlugUpdate' '+qa'"
+alias vim-update="nvim +PlugUpdate"
 
 # Web dev
 alias mm="middleman"

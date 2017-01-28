@@ -4,12 +4,17 @@
 
 " Fixes InsertLeave on Ctrl-C
 inoremap <C-C> <Esc>
+" Fix for neovim
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
+" Leave the terminal mode easily
+tnoremap <Esc> <C-\><C-n>
 
 " Never enter ex mode
 nnoremap Q <nop>
 
 " Refresh vim after a config change
-map <Leader>rv :so ~/.vimrc<CR>
+map <Leader>rv :so ~/.config/nvim/init.vim<CR>
 
 " Remove trailing whitespace [f5]
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>

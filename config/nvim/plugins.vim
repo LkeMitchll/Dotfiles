@@ -14,6 +14,7 @@ endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 
 nnoremap <C-T> :ProjectFiles<CR>
+nnoremap <C-P> :ProjectFiles<CR>
 nnoremap <Leader>bu :Buffers<CR>
 nnoremap <Leader>bl :BLines<CR>
 nnoremap <Leader>; :Commands<CR>
@@ -34,8 +35,9 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 
-" VimCompletesMe
-let g:vcm_direction = 'p'
+" Deocomplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
 
 " VTR (Vim Tmux Runner)
 let g:VtrUseVtrMaps = 1
@@ -54,12 +56,19 @@ let b:surround_{char2nr("-")} = "<% \r %>"
 
 " Silver Searcher
 if executable("ag")
-  " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor\ --silent
 endif
 
 " Sneak
 let g:sneak#label = 1
+nmap s <Plug>SneakLabel_s
+nmap S <Plug>SneakLabel_S
+
+" Commentary
+nmap gcc <Plug>CommentaryLine
+
+" Ferret
+nmap <Leader>a <Plug>(FerretAck)
 
 " Startify
 let g:startify_custom_header = [

@@ -35,6 +35,7 @@ export PATH=\
 
 # MISC
 eval "$(rbenv init -)"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 eval "$(thefuck --alias)"
 
 source ~/.bin/tmuxinator.zsh

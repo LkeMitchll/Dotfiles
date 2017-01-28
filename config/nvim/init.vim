@@ -74,21 +74,14 @@ set statusline+=\ %l\/%L
 
 filetype plugin indent on
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
+source $HOME/.config/nvim/bundles.vim
 
 " ==============================
 " Other settings
 " ==============================
 
-source $HOME/.vim/theme.vim     " colorscheme related tweaks
-source $HOME/.vim/syntax.vim    " syntax plugins and bindings
-source $HOME/.vim/plugins.vim   " plugin settings
-source $HOME/.vim/keyboard.vim  " custom keyboard shortcuts
-source $HOME/.vim/functions.vim " custom functions
-
-" Use some tweaks if running a GUI version
-if has("gcgui_running")
-  so ~/.gvimrc
-endif
+source $HOME/.config/nvim/theme.vim     " colorscheme related tweaks
+source $HOME/.config/nvim/syntax.vim    " syntax plugins and bindings
+source $HOME/.config/nvim/plugins.vim   " plugin settings
+source $HOME/.config/nvim/keyboard.vim  " custom keyboard shortcuts
+source $HOME/.config/nvim/functions.vim " custom functions
