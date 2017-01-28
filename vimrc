@@ -11,6 +11,7 @@ set autowrite
 set autoread
 set backspace=2
 set formatoptions+=j
+set formatoptions-=o
 set history=1000
 set noeb vb t_vb=
 set nocompatible
@@ -70,8 +71,6 @@ set statusline=\ %f%<
 set statusline+=%2*%=%y
 " Current/total lines
 set statusline+=\ %l\/%L
-" Ale errors
-set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 
 filetype plugin indent on
 

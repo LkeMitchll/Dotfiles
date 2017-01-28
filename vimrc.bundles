@@ -46,6 +46,7 @@ Plug 'justinmk/vim-sneak'
 " Automatically make current split bigger
 Plug 'roman/golden-ratio'
 " Line commenting
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 
 call plug#end()

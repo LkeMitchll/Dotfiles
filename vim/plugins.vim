@@ -32,6 +32,7 @@ let g:gitgutter_sign_modified_removed = 'x'
 " Ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
+set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 
 " VimCompletesMe
 let g:vcm_direction = 'p'
