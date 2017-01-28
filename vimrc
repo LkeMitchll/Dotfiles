@@ -1,27 +1,23 @@
 " ==============================
 " VIMRC LOCAL - LUKE MITCHELL
 " ==============================
-
-" ==============================
-" General Settings
-" ==============================
 let mapleader = " "
 
 set shell=/usr/local/bin/zsh
 set clipboard=unnamed
-set noeb vb t_vb=
-set nocompatible
 set autochdir
 set autoindent
 set autowrite
 set autoread
-set history=1000
-set textwidth=0
 set backspace=2
+set formatoptions+=j
+set history=1000
+set noeb vb t_vb=
+set nocompatible
+set scrolloff=1
+set textwidth=0
 set ttimeout
 set ttimeoutlen=100
-set scrolloff=1
-set formatoptions+=j
 set wildmenu
 
 " Don't backup or swap
