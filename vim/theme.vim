@@ -41,6 +41,9 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+" Sneak
+hi Sneak ctermbg=red
+
 " CSS Vendor Prefixes
 hi VendorPrefix ctermfg=cyan
 match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/

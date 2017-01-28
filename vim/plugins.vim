@@ -58,6 +58,9 @@ if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor\ --silent
 endif
 
+" Sneak
+let g:sneak#label = 1
+
 " Startify
 let g:startify_custom_header = [
       \ '    /$$    /$$       /$$$$$$       /$$      /$$',
