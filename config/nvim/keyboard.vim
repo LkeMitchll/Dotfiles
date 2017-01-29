@@ -4,10 +4,9 @@
 
 " Fixes InsertLeave on Ctrl-C
 inoremap <C-C> <Esc>
-" Fix for neovim
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
-" Leave the terminal mode easily
+" Fixes for neovim
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 tnoremap <Esc> <C-\><C-n>
 
 " Never enter ex mode

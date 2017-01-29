@@ -70,6 +70,9 @@ nmap gcc <Plug>CommentaryLine
 " Ferret
 nmap <Leader>a <Plug>(FerretAck)
 
+" Prosession
+let g:prosession_dir = '~/.config/nvim/sessions'
+
 " Startify
 let g:startify_custom_header = [
       \ '    /$$    /$$       /$$$$$$       /$$      /$$',

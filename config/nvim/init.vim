@@ -72,8 +72,6 @@ set statusline+=%2*%=%y
 " Current/total lines
 set statusline+=\ %l\/%L
 
-filetype plugin indent on
-
 source $HOME/.config/nvim/bundles.vim
 
 " ==============================

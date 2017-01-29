@@ -16,11 +16,12 @@ Use 'Fira Code' to take full advantage of ligatures.
   - [tmuxinator](https://github.com/tmuxinator/tmuxinator)
   - [tmux-spotify-info](https://github.com/dickeyxxx/tmux-spotify-info) (Display
     spotify now playing)
-- vim
-  - [vim-plug](https://github.com/junegunn/vim-plug) (vim plugin manager)
+- neovim
+  - [dein](https://github.com/Shougo/dein.vim) (neovim plugin manager)
 - zsh 
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [rcm](https://github.com/thoughtbot/rcm)
+- [fzf](https://github.com/junegunn/fzf)
 
 ### Install
 
@@ -29,12 +30,11 @@ Use 'Fira Code' to take full advantage of ligatures.
 4. Execute `RCRC=~/dotfiles/rcrc rcup -v`
 5. Profit.
 
-Then go ahead and initialise the tmux and vim plugins.
+Then go ahead and initialise the tmux and neovim plugins.
 
 **Sources:**
 
 - [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
-- [spf13/spf13-vim](https://github.com/spf13/spf13-vim)
 - [tony/tmux-config](https://github.com/tony/tmux-config)
 - [robbyrussell/oh-my-zsh](https://github.com/tony/tmux-config)
 - [xero/dotfiles](https://github.com/xero/dotfiles)
