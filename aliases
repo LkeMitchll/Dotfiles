@@ -29,9 +29,3 @@ alias gs="git status"
 alias rdbm="rake db:migrate"
 alias rdbs="rake db:setup"
 alias rdbr="rake db:reset"
-
-# Non CLI
-alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES &&
-killall Finder"
-alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO &&
-killall Finder"
