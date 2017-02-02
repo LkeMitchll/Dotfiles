@@ -59,11 +59,6 @@ if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor\ --silent
 endif
 
-" Sneak
-let g:sneak#label = 1
-nmap s <Plug>SneakLabel_s
-nmap S <Plug>SneakLabel_S
-
 " Commentary
 nmap gcc <Plug>CommentaryLine
 

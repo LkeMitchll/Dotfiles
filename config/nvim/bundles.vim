@@ -29,6 +29,8 @@ call dein#add('tpope/vim-obsession')
 call dein#add('dhruvasagar/vim-prosession')
 " Automatically make current split bigger
 call dein#add('roman/golden-ratio')
+" Medium movements with three keystrokes
+call dein#add('justinmk/vim-sneak')
 
 " Syntaxes
 call dein#add('hail2u/vim-css3-syntax',
@@ -56,9 +58,6 @@ call dein#add('mattn/emmet-vim',
 " Open TMUX splits to run commands
 call dein#add('christoomey/vim-tmux-runner',
       \{ 'on_cmd': 'VtrAttachToPane' })
-" Medium movements with three keystrokes
-call dein#add('justinmk/vim-sneak',
-      \{ 'on_map': '<Plug>SneakLabel_s' })
 " Line commenting
 call dein#add('tpope/vim-commentary',
       \{ 'on_map': '<Plug>CommentaryLine' })
