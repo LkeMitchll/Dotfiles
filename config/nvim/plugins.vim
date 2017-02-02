@@ -72,16 +72,3 @@ nmap <Leader>a <Plug>(FerretAck)
 
 " Prosession
 let g:prosession_dir = '~/.config/nvim/sessions'
-
-" Startify
-let g:startify_custom_header = [
-      \ '    /$$    /$$       /$$$$$$       /$$      /$$',
-      \ '   | $$   | $$      |_  $$_/      | $$$    /$$$',
-      \ '   | $$   | $$        | $$        | $$$$  /$$$$',
-      \ '   |  $$ / $$/        | $$        | $$ $$/$$ $$',
-      \ '    \  $$ $$/         | $$        | $$  $$$| $$',
-      \ '     \  $$$/          | $$        | $$\  $ | $$',
-      \ '      \  $/          /$$$$$$      | $$ \/  | $$',
-      \ '       \_/          |______/      |__/     |__/',
-      \ ]
-let g:startify_list_order = ["sessions", "files", "dir"]

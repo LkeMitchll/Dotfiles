@@ -55,9 +55,6 @@ if dein#load_state('/Users/Luke/.local/share/dein')
   " Open TMUX splits to run commands
   call dein#add('christoomey/vim-tmux-runner',
         \{ 'on_cmd': 'VtrAttachToPane' })
-  " Useful vim startup screen
-  call dein#add('mhinz/vim-startify',
-        \{ 'on_cmd': 'Startify' })
   " Medium movements with three keystrokes
   call dein#add('justinmk/vim-sneak',
         \{ 'on_map': '<Plug>SneakLabel_s' })
