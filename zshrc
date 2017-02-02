@@ -19,19 +19,13 @@ source $ZSH/oh-my-zsh.sh
 
 # PATH
 export PATH=\
-~/.rbenv/bin\
-:/usr/local/bin\
+/usr/local/bin\
 :/usr/local/sbin\
-:/usr/local/share/npm/bin\
 :/usr/bin\
 :/bin\
 :/usr/sbin\
 :/sbin\
-:/opt/X11/bin\
-:/opt/local/bin\
 :~/.bin\
-:~/pebble-dev/PebbleSDK-current/bin\
-:~/Library/Android/sdk/platform-tools\
 
 # MISC
 eval "$(rbenv init -)"
@@ -47,7 +41,5 @@ export LANG=en_GB.UTF-8
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
