@@ -82,4 +82,3 @@ source $HOME/.config/nvim/theme.vim     " colorscheme related tweaks
 source $HOME/.config/nvim/syntax.vim    " syntax plugins and bindings
 source $HOME/.config/nvim/plugins.vim   " plugin settings
 source $HOME/.config/nvim/keyboard.vim  " custom keyboard shortcuts
-source $HOME/.config/nvim/functions.vim " custom functions
