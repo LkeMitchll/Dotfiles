@@ -15,7 +15,7 @@ set formatoptions-=o
 set history=1000
 set noeb vb t_vb=
 set nocompatible
-set scrolloff=1
+set scrolloff=999
 set textwidth=0
 set ttimeout
 set ttimeoutlen=100
