@@ -13,7 +13,8 @@ call dein#add('noahfrederick/vim-noctu')
 
 " File and buffer finder
 call dein#add('/usr/local/opt/fzf')
-call dein#add('junegunn/fzf.vim')
+call dein#add('junegunn/fzf.vim',
+      \{ 'depends': 'fzf' })
 " Syntax errors inline
 call dein#add('w0rp/ale')
 " Rails IDE
