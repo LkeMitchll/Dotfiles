@@ -8,9 +8,10 @@ if dein#load_state('/Users/Luke/.local/share/dein')
 call dein#begin('/Users/Luke/.local/share/dein')
 call dein#add('/Users/Luke/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
+" Dein utility commands
+call dein#add('haya14busa/dein-command.vim')
 " Colorscheme
 call dein#add('noahfrederick/vim-noctu')
-
 " File and buffer finder
 call dein#add('/usr/local/opt/fzf')
 call dein#add('junegunn/fzf.vim',
@@ -21,8 +22,6 @@ call dein#add('w0rp/ale')
 call dein#add('tpope/vim-rails')
 " Easily change brackets etc.
 call dein#add('tpope/vim-surround')
-" Pretty indentation lines
-call dein#add('Yggdroot/indentLine')
 " Navigate tmux panes and vim splits smoothly
 call dein#add('christoomey/vim-tmux-navigator')
 " Automatic session saving

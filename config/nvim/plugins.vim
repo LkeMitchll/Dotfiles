@@ -2,19 +2,14 @@
 " Plugins
 " ==============================
 
-" Indentline
-let g:indentLine_char = "┆"
-
 " FZF
 let g:fzf_layout = { 'down': '~30%' }
-
 function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 
 nnoremap <C-T> :ProjectFiles<CR>
-nnoremap <C-P> :ProjectFiles<CR>
 nnoremap <Leader>bu :Buffers<CR>
 nnoremap <Leader>bl :BLines<CR>
 nnoremap <Leader>; :Commands<CR>
@@ -41,12 +36,10 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 
 " VTR (Vim Tmux Runner)
-let g:VtrUseVtrMaps = 1
 let g:VtrClearSequence = ""
 map <Leader>ta :VtrAttachToPane<CR>1<CR>
 map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 map <Leader>tl :VtrSendCommandToRunner<cr>
-map <Leader>tc :VtrClearRunner<cr>
 
 " Rails
 let g:rails_projections = { "app/decorators/*.rb": { "command": "decorator" }}
