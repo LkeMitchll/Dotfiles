@@ -26,8 +26,8 @@ Use 'Fira Code' to take full advantage of ligatures.
 ### Install
 
 1. Install requirements (above)
-2. Clone this repo
-4. Execute `RCRC=~/dotfiles/rcrc rcup -v`
+2. Clone this repo `git clone [url] ~/.dotfiles`
+4. Execute `RCRC=~/.dotfiles/rcrc rcup -v`
 5. Profit.
 
 Then go ahead and initialise the tmux and neovim plugins.
