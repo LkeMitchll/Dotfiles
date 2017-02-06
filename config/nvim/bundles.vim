@@ -18,8 +18,6 @@ call dein#add('junegunn/fzf.vim',
       \{ 'depends': 'fzf' })
 " Syntax errors inline
 call dein#add('w0rp/ale')
-" Rails IDE
-call dein#add('tpope/vim-rails')
 " Easily change brackets etc.
 call dein#add('tpope/vim-surround')
 " Navigate tmux panes and vim splits smoothly
