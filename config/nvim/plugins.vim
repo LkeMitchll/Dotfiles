@@ -34,6 +34,7 @@ let g:gitgutter_sign_modified_removed = 'x'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
+let g:ale_javascript_eslint_use_global = 1
 
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
