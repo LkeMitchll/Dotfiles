@@ -9,5 +9,5 @@ au BufRead,BufNewFile *.zsh-theme,*.zsh set filetype=zsh
 au BufRead,BufNewFile *.vim set filetype=vim
 au BufRead,BufNewFile tmux.conf set filetype=tmux
 
-" Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p\|span'
+let g:jsx_ext_required = 0

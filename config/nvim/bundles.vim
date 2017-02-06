@@ -36,7 +36,7 @@ call dein#add('justinmk/vim-sneak')
 call dein#add('hail2u/vim-css3-syntax',
       \{ 'on_ft': 'scss' })
 call dein#add('mxw/vim-jsx',
-      \{ 'on_ft': 'javascript.jsx' })
+      \{ 'on_ft': 'javascript'})
 call dein#add('pangloss/vim-javascript',
       \{ 'on_ft': 'javascript' })
 call dein#add('tpope/vim-markdown',
