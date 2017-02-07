@@ -18,8 +18,9 @@ Use 'Fira Code' to take full advantage of ligatures.
     spotify now playing)
 - neovim
   - [dein](https://github.com/Shougo/dein.vim) (neovim plugin manager)
-- zsh 
-  - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+- fish 
+  - [fisherman](https://github.com/fisherman/fisherman)
+  - [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 - [rcm](https://github.com/thoughtbot/rcm)
 - [fzf](https://github.com/junegunn/fzf)
 

@@ -6,15 +6,20 @@ alias c='clear'
 alias vim='nvim'
 alias vi='nvim'
 
-alias mech="cat ~/.mech"
 alias easy-brew="brew update; brew upgrade --all"
-alias housekeep="brew update;
-                brew upgrade;
-                vim-update;
-                rcup -v;
-                rbenv update;
-                ~/.tmux/plugins/tpm/bin/update_plugins all"
 alias vim-update="nvim '+call dein#update()' '+qa'"
+
+function housekeep
+  brew update
+  brew upgrade
+  rcup -v
+  omf reload
+  omf update
+  fisher update
+  rbenv update
+  ~/.tmux/plugins/tpm/bin/update_plugins all
+  vim-update
+end
 
 # Web dev
 alias mm="middleman"

@@ -50,7 +50,7 @@ call dein#add('wincent/ferret',
 " Git integration
 call dein#add('tpope/vim-fugitive',
       \{'on_cmd' : 'Gstatus'})
-" Short sytnax and expansion for HTML markup
+" Short syntax and expansion for HTML markup
 call dein#add('mattn/emmet-vim',
       \{ 'on_ft': ['html', 'scss'] })
 " Open TMUX splits to run commands
