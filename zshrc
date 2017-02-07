@@ -33,7 +33,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 eval "$(thefuck --alias)"
 
 source ~/.bin/tmuxinator.zsh
-source ~/.zsh/brew_cask_upgrade.zsh
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export LC_ALL=en_GB.UTF-8
