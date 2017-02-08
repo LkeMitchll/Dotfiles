@@ -34,6 +34,7 @@ let g:ale_javascript_eslint_use_global = 1
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+let deoplete#tag#cache_limit_size = 5000000
 
 " VTR (Vim Tmux Runner)
 let g:VtrClearSequence = ""
