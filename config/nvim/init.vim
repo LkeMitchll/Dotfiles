@@ -20,6 +20,7 @@ set textwidth=0
 set ttimeout
 set ttimeoutlen=100
 set wildmenu
+set nowrap
 
 " Don't backup or swap
 set nobackup
@@ -45,6 +46,11 @@ set relativenumber
 " Splits
 set splitbelow
 set splitright
+
+" Folds
+setglobal foldmethod=indent
+setglobal foldnestmax=1
+setglobal foldlevelstart=99
 
 " Spelling
 set spellfile=$HOME/.vim-spell-en.utf-8.add
