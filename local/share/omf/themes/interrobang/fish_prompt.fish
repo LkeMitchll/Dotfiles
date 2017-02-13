@@ -34,10 +34,10 @@ function __git_status
     if [ (_git_is_dirty) ]
       set git_info '| '$git_branch(set_color yellow)" D"
     else
-      set git_info '| '$git_branch' |'
+      set git_info '| '$git_branch
     end
 
-    echo -e (set_color cyan) $git_info (set_color normal) 
+    echo -n (set_color cyan) $git_info (set_color normal) 
   else
     echo -e ''
   end
