@@ -23,7 +23,7 @@ end
 
 # Web dev
 alias mm="middleman"
-alias nr="npm run"
+alias npm="yarn"
 
 # Git
 alias git="hub"
