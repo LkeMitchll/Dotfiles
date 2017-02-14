@@ -8,6 +8,4 @@ windows:
       layout: b392,208x57,0,0{80x57,0,0,10,127x57,81,0,12}
       panes:
         -
-        - cd ~/.dotfiles-local && vim .
-  - chat:
-    - weechat -r "/window splitv"
+        - cd ~/.dotfiles && vim .
