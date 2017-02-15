@@ -13,12 +13,12 @@ function housekeep
   brew update
   brew upgrade
   rcup -v
-  omf reload
   omf update
   fisher update
   rbenv update
   ~/.tmux/plugins/tpm/bin/update_plugins all
   vim-update
+  omf reload
 end
 
 # Web dev
