@@ -29,21 +29,8 @@ call dein#add('dhruvasagar/vim-prosession')
 call dein#add('roman/golden-ratio')
 " Medium movements with three keystrokes
 call dein#add('justinmk/vim-sneak')
-
-" Syntaxes
-call dein#add('hail2u/vim-css3-syntax',
-      \{ 'on_ft': 'scss' })
-call dein#add('mxw/vim-jsx',
-      \{ 'on_ft': 'javascript'})
-call dein#add('pangloss/vim-javascript',
-      \{ 'on_ft': 'javascript' })
-call dein#add('tpope/vim-markdown',
-      \{ 'on_ft': 'markdown' })
-call dein#add('tmux-plugins/vim-tmux',
-      \{ 'on_ft': 'tmux' })
 " Tab auto-complete
-call dein#add('Shougo/deoplete.nvim',
-      \{'on_event': 'InsertEnter'})
+call dein#add('Shougo/deoplete.nvim')
 " Multi-file search
 call dein#add('wincent/ferret',
       \{'on_map': '<Plug>(FerretAck)'})
@@ -62,6 +49,18 @@ call dein#add('tpope/vim-commentary',
 " Display git diffs in gutter
 call dein#add('airblade/vim-gitgutter',
       \{'on_event': 'BufWrite'})
+
+" Syntaxes
+call dein#add('hail2u/vim-css3-syntax',
+      \{ 'on_ft': 'scss' })
+call dein#add('mxw/vim-jsx',
+      \{ 'on_ft': 'javascript'})
+call dein#add('pangloss/vim-javascript',
+      \{ 'on_ft': 'javascript' })
+call dein#add('tpope/vim-markdown',
+      \{ 'on_ft': 'markdown' })
+call dein#add('tmux-plugins/vim-tmux',
+      \{ 'on_ft': 'tmux' })
 
 call dein#end()
 call dein#save_state()
