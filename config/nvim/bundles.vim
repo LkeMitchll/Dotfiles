@@ -49,6 +49,9 @@ call dein#add('tpope/vim-commentary',
 " Display git diffs in gutter
 call dein#add('airblade/vim-gitgutter',
       \{'on_event': 'BufWrite'})
+" Preview markdown files in Markoff
+call dein#add('aliou/markoff.vim',
+      \{'on_cmd': 'Markoff'})
 
 " Syntaxes
 call dein#add('hail2u/vim-css3-syntax',
