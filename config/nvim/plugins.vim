@@ -41,6 +41,7 @@ let g:VtrClearSequence = ""
 map <Leader>ta :VtrAttachToPane<CR>1<CR>
 map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 map <Leader>tl :VtrSendCommandToRunner<cr>
+map <Leader>tc :VtrClearRunner<cr>
 
 " Rails
 let g:rails_projections = { "app/decorators/*.rb": { "command": "decorator" }}
