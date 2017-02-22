@@ -9,6 +9,7 @@
   ca = commit --all
   caa = commit --all --amend
   sh = push
+  sho = push origin
   ll = pull --rebase
   a = add
   aa = add --all
