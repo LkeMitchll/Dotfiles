@@ -53,6 +53,7 @@ setglobal foldnestmax=1
 setglobal foldlevelstart=99
 
 " Spelling
+set exrc
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 set complete+=kspell
 set diffopt+=vertical
