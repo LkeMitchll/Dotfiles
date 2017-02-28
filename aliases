@@ -22,7 +22,6 @@ end
 
 # Web dev
 alias mm="middleman"
-alias npm="yarn"
 
 # Git
 alias git="hub"
