@@ -4,6 +4,8 @@
 
 " Fixes InsertLeave on Ctrl-C
 inoremap <C-C> <Esc>
+" Don't show tutorial warning
+nnoremap <C-c> <silent> <C-c>
 
 " Fixes for neovim
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
