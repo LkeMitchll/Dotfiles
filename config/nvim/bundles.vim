@@ -52,6 +52,8 @@ call dein#add('airblade/vim-gitgutter',
 " Preview markdown files in Markoff
 call dein#add('aliou/markoff.vim',
       \{'on_cmd': 'Markoff'})
+" Rails IDE
+call dein#add('tpope/vim-rails')
 
 " Syntaxes
 call dein#add('hail2u/vim-css3-syntax',
