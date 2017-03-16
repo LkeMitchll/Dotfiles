@@ -47,7 +47,7 @@ call dein#add('christoomey/vim-tmux-runner',
 call dein#add('tpope/vim-commentary',
       \{ 'on_map': '<Plug>CommentaryLine' })
 " Display git diffs in gutter
-call dein#add('airblade/vim-gitgutter',
+call dein#add('mhinz/vim-signify',
       \{'on_event': 'BufWrite'})
 " Preview markdown files in Markoff
 call dein#add('aliou/markoff.vim',

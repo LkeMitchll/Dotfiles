@@ -15,16 +15,14 @@ nnoremap <Leader>bl :BLines<CR>
 nnoremap <Leader>; :Commands<CR>
 nnoremap <Leader>' :Marks<CR>
 
-" Fugitive (Git)
+" Fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gco :Gcommit<CR>
 
-" GitGutter
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_removed = 'x'
-let g:gitgutter_sign_modified_removed = 'x'
+" Signify
+let g:signify_sign_show_count = 0
 
-" Ale
+" " Ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 

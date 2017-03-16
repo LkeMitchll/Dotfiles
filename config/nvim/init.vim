@@ -5,7 +5,6 @@ let mapleader = " "
 
 set shell=/bin/sh
 set clipboard=unnamed
-set autochdir
 set autoindent
 set autowrite
 set autoread

@@ -13,10 +13,9 @@ hi VertSplit ctermbg=NONE ctermfg=blue
 
 " Gutter
 hi SignColumn ctermbg=NONE
-hi GitGutterAdd ctermbg=NONE ctermfg=green
-hi GitGutterChange ctermbg=NONE ctermfg=green
-hi GitGutterDelete ctermbg=NONE ctermfg=red
-hi GitGutterChangeDelete ctermbg=NONE ctermfg=yellow
+hi SignifySignAdd ctermfg=green
+hi SignifySignDelete ctermfg=red
+hi SignifySignChange ctermfg=yellow
 
 " Statusline
 hi StatusLine ctermbg=black ctermfg=gray
