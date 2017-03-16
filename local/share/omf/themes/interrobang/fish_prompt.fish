@@ -8,12 +8,20 @@ function _git_branch_name
   echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
 end
 
+function _git_branch_name_length
+  echo (command echo -n (_git_branch_name) | wc -c)
+end
+
 function __git_branch
   echo -n (set_color cyan) '| '
   if [ (_git_branch_name) ]
-    set -l git_branch (_git_branch_name)
-    set git_info $git_branch
+    if  [ (_git_branch_name_length) -ge 10 ]
+      set git_branch (set_color red)(command echo (_git_branch_name) | head -c 9)"..."
+    else
+      set git_branch (_git_branch_name)
+    end
 
+    set git_info $git_branch
     echo -n (set_color cyan)$git_info (set_color normal)
   else
     echo -n ''
