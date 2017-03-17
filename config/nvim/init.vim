@@ -1,5 +1,5 @@
 " ==============================
-" VIMRC LOCAL - LUKE MITCHELL
+" VIMRC - LUKE MITCHELL
 " ==============================
 let mapleader = " "
 
@@ -78,6 +78,7 @@ set statusline+=%2*%=%y
 " Current/total lines
 set statusline+=\ %l\/%L
 
+" Load plugins
 source $HOME/.config/nvim/bundles.vim
 
 " ==============================
