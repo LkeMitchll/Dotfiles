@@ -12,11 +12,19 @@ function _git_branch_name_length
   echo (command echo -n (_git_branch_name) | wc -c)
 end
 
+function _tmux_current_width
+  echo (command tmux display -p "#{pane_width}")
+end
+
 function __git_branch
   echo -n (set_color cyan) '| '
   if [ (_git_branch_name) ]
-    if  [ (_git_branch_name_length) -ge 10 ]
-      set git_branch (set_color red)(command echo (_git_branch_name) | head -c 9)"..."
+    if  [ (_git_branch_name_length) -ge 20 ]
+      if [ (_tmux_current_width) -lt 65 ]
+        set git_branch (set_color red)(command echo (_git_branch_name) | head -c 17)"..."
+      else
+        set git_branch (_git_branch_name)
+      end
     else
       set git_branch (_git_branch_name)
     end
