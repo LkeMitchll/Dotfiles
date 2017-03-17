@@ -1,7 +1,11 @@
 # Theme based on Bira theme from oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/bira.zsh-theme
 # Some code stolen from oh-my-fish clearance theme: https://github.com/bpinto/oh-my-fish/blob/master/themes/clearance/
 function __current_path
-  echo -n (set_color magenta) (prompt_pwd) (set_color normal)
+  if [ (prompt_pwd) = "~" ]
+    echo -n (set_color green) "Home" (set_color normal)
+  else
+    echo -n (set_color magenta) (prompt_pwd) (set_color normal)
+  end
 end
 
 function _git_branch_name
