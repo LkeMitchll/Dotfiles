@@ -28,7 +28,7 @@
   autocrlf = input
   editor=nvim
   whitespace = space-before-tab,tab-in-indent,trailing-space
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
   ui = auto
 [color "status"]
@@ -56,7 +56,7 @@
   conflictstyle = diff3
   tool = vimdiff
 [push]
-  default = matching
+  default = current
 [branch]
   autosetuprebase = always
 [commit]
