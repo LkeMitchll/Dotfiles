@@ -18,6 +18,7 @@ nnoremap <Leader>' :Marks<CR>
 " Fugitive
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gco :Gcommit<CR>
+nnoremap <leader>gd :Gdiff<CR>
 
 " Signify
 let g:signify_sign_show_count = 0
