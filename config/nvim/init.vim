@@ -3,7 +3,7 @@
 " ==============================
 let mapleader = " "
 
-set shell=/bin/sh
+set shell=/usr/local/bin/zsh
 set clipboard=unnamed
 set autoindent
 set autowrite

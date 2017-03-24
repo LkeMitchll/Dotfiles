@@ -1,5 +1,5 @@
-alias sl=ls
-alias rpsec=rspec
+alias sl="ls"
+alias rpsec="rspec"
 alias finder='open .'
 alias c='clear'
 alias vim='nvim'
@@ -8,17 +8,14 @@ alias vi='nvim'
 alias easy-brew="brew update; brew upgrade --all"
 alias vim-update="nvim '+call dein#update()' '+qa'"
 
-function housekeep
+housekeep() {
   brew update
   brew upgrade
   rcup -v
-  omf update
-  fisher update
   rbenv update
   ~/.tmux/plugins/tpm/bin/update_plugins all
   vim-update
-  omf reload
-end
+}
 
 # Web dev
 alias mm="middleman"

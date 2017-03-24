@@ -3,6 +3,7 @@
 " ==============================
 
 " FZF
+set rtp+=/usr/local/opt/fzf
 let g:fzf_layout = { 'down': '~30%' }
 function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
@@ -41,9 +42,6 @@ map <Leader>ta :VtrAttachToPane<CR>1<CR>
 map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 map <Leader>tl :VtrSendCommandToRunner<cr>
 map <Leader>tc :VtrClearRunner<cr>
-
-" Rails
-let g:rails_projections = { "app/decorators/*.rb": { "command": "decorator" }}
 
 " Surround
 let b:surround_{char2nr("=")} = "<%= \r %>"

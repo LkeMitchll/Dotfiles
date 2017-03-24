@@ -13,7 +13,7 @@ call dein#add('haya14busa/dein-command.vim')
 " Colorscheme
 call dein#add('noahfrederick/vim-noctu')
 " File and buffer finder
-call dein#add('/usr/local/opt/fzf')
+call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
 call dein#add('junegunn/fzf.vim',
       \{ 'depends': 'fzf' })
 " Syntax errors inline
