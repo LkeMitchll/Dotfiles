@@ -3,7 +3,7 @@ function git_current_branch() {
   local ret=$?
   local branch=${ref#refs/heads/}
   local length=${#branch}
-  local tmux_width=$(command tmux display -p "#{pane_width}")
+  local tmux_width=$(command tmux display -t 1 -p "#{pane_width}")
 
   if [[ $ret != 0 ]]; then
     [[ $ret == 128 ]] && return  # no git repo.
