@@ -35,6 +35,10 @@ let g:ale_sign_column_always = 1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let deoplete#tag#cache_limit_size = 5000000
+let g:tern#filetypes = [
+    \ 'jsx',
+    \ 'javascript.jsx'
+    \ ]
 
 " VTR (Vim Tmux Runner)
 let g:VtrClearSequence = ""

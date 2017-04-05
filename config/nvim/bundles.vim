@@ -31,6 +31,8 @@ call dein#add('roman/golden-ratio')
 call dein#add('justinmk/vim-sneak')
 " Tab auto-complete
 call dein#add('Shougo/deoplete.nvim')
+call dein#add('fishbullet/deoplete-ruby')
+call dein#add('carlitux/deoplete-ternjs', { 'build': 'yarn global add tern' })
 " Multi-file search
 call dein#add('wincent/ferret',
       \{'on_map': '<Plug>(FerretAck)'})

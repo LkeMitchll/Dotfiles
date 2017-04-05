@@ -4,6 +4,7 @@
 let mapleader = " "
 
 set shell=/usr/local/bin/zsh
+set tags+=.git/tags;/
 set clipboard=unnamed
 set autoindent
 set autowrite
