@@ -57,6 +57,7 @@ set exrc
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 set complete+=kspell
 set diffopt+=vertical
+set completeopt-=preview
 
 " Language encoding
 setglobal langmenu=en_GB.UTF-8
