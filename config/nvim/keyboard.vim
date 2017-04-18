@@ -23,11 +23,6 @@ map <Leader>rv :so ~/.config/nvim/init.vim<CR>
 " Remove trailing whitespace [f5]
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" Error navigation
-nnoremap ]l :lnext<CR>
-nnoremap [l :lprev<CR>
-nnoremap 'l :lclose<CR>
-
 " Registers
 nnoremap <Leader>re :registers<CR>
 

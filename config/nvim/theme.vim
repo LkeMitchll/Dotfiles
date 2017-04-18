@@ -8,9 +8,6 @@ colorscheme noctu
 " Line No's
 hi CursorLineNr ctermbg=NONE
 
-" Splits
-hi VertSplit ctermbg=NONE ctermfg=blue
-
 " Gutter
 hi SignColumn ctermbg=NONE
 hi SignifySignAdd ctermfg=green
