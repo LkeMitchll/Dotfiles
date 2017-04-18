@@ -26,6 +26,12 @@ call dein#add('junegunn/fzf.vim',
       \{ 'depends': 'fzf' })
 set rtp+=/usr/local/opt/fzf
 let g:fzf_layout = { 'down': '~30%' }
+
+function! s:fzf_statusline()
+  setlocal statusline=%#fzf1#\ fzf
+endfunction
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
+
 function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
