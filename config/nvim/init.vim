@@ -80,14 +80,15 @@ set statusline+=%2*%=%y
 " Current/total lines
 set statusline+=\ %l\/%L
 
-" Load plugins
-source $HOME/.config/nvim/bundles.vim
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor\ --silent
+endif
 
 " ==============================
 " Other settings
 " ==============================
 
+source $HOME/.config/nvim/plugins.vim   " plugin settings
 source $HOME/.config/nvim/theme.vim     " colorscheme related tweaks
 source $HOME/.config/nvim/syntax.vim    " syntax plugins and bindings
-source $HOME/.config/nvim/plugins.vim   " plugin settings
 source $HOME/.config/nvim/keyboard.vim  " custom keyboard shortcuts
