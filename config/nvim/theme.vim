@@ -5,11 +5,9 @@
 set background=dark
 colorscheme noctu
 
-" Line No's
-hi CursorLineNr ctermbg=NONE
-
 " Gutter
 hi SignColumn ctermbg=NONE
+hi CursorLineNr ctermbg=NONE
 hi SignifySignAdd ctermfg=green
 hi SignifySignDelete ctermfg=red
 hi SignifySignChange ctermfg=yellow
@@ -19,8 +17,11 @@ hi StatusLine ctermbg=black ctermfg=gray
 hi StatusLineNC ctermbg=black ctermfg=darkgray
 au InsertEnter * hi StatusLine ctermbg=black ctermfg=yellow
 au InsertLeave * hi StatusLine ctermbg=black ctermfg=gray
+" Ale (StatusLine)
 hi User1 ctermbg=black ctermfg=red
-hi User2 ctermbg=black ctermfg=green
+
+" Sneak
+hi Sneak ctermbg=red
 
 " FZF
 let g:fzf_colors =
@@ -36,10 +37,3 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-
-" Sneak
-hi Sneak ctermbg=red
-
-" CSS Vendor Prefixes
-hi VendorPrefix ctermfg=cyan
-match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/

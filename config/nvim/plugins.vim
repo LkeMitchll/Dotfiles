@@ -9,7 +9,6 @@ end
 set runtimepath+=/Users/Luke/.local/share/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('/Users/Luke/.local/share/dein')
-
 call dein#begin('/Users/Luke/.local/share/dein')
 call dein#add('/Users/Luke/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
@@ -39,9 +38,6 @@ command! ProjectFiles execute 'Files' s:find_git_root()
 
 nnoremap <C-T> :ProjectFiles<CR>
 nnoremap <Leader>bu :Buffers<CR>
-nnoremap <Leader>bl :BLines<CR>
-nnoremap <Leader>; :Commands<CR>
-nnoremap <Leader>' :Marks<CR>
 
 " Fugitive
 call dein#add('tpope/vim-fugitive',
@@ -59,22 +55,23 @@ let g:signify_sign_show_count = 0
 call dein#add('w0rp/ale')
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
+let g:ale_sign_column_always = 1
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 let g:ale_javascript_eslint_use_global = 1
-let g:ale_sign_column_always = 1
 
 " Deocomplete
-"
 call dein#add('Shougo/deoplete.nvim')
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let deoplete#tag#cache_limit_size = 5000000
+
 call dein#add('carlitux/deoplete-ternjs',
       \{ 'build': 'yarn global add tern' })
 let g:tern#filetypes = [
     \ 'jsx',
     \ 'javascript.jsx'
     \ ]
+
 call dein#add('fishbullet/deoplete-ruby')
 
 " VTR (Vim Tmux Runner)
@@ -88,17 +85,12 @@ map <Leader>tc :VtrClearRunner<cr>
 
 " Surround
 call dein#add('tpope/vim-surround')
-let b:surround_{char2nr("=")} = "<%= \r %>"
-let b:surround_{char2nr("-")} = "<% \r %>"
-
-" Commentary
-call dein#add('tpope/vim-commentary',
-      \{ 'on_map': '<Plug>CommentaryLine' })
-nmap gcc <Plug>CommentaryLine
+let g:surround_45 = "<% \r %>" " on hyphen
+let g:surround_61 = "<%= \r %>" " on equals
 
 " Ferret
 call dein#add('wincent/ferret',
-      \{'on_map': '<Plug>(FerretAck)'})
+    \{'on_map': '<Plug>(FerretAck)'})
 nmap <Leader>a <Plug>(FerretAck)
 
 " Obsession/Prosession
@@ -114,7 +106,9 @@ call dein#add('roman/golden-ratio')
 call dein#add('justinmk/vim-sneak')
 " Fast HTML expansion expressions
 call dein#add('mattn/emmet-vim',
-      \{ 'on_ft': ['html', 'scss'] })
+    \{ 'on_ft': ['html', 'scss'] })
+" Toggle comments
+call dein#add('tpope/vim-commentary')
 " Extra Rails functionality
 call dein#add('tpope/vim-rails')
 

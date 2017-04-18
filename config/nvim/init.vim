@@ -76,10 +76,9 @@ set showtabline=2
 " Filename
 set statusline=\ %f%<
 " Filetype
-set statusline+=%2*%=%y
-" Current/total lines
-set statusline+=\ %l\/%L
+set statusline+=%=%y
 
+" Set grep command (ag)
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor\ --silent
 endif
