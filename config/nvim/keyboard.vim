@@ -14,6 +14,9 @@ tnoremap <Esc> <C-\><C-n>
 " Never enter ex mode
 nnoremap Q <nop>
 
+" Split lines
+nnoremap K i<CR><Esc>
+
 " Refresh vim after a config change
 map <Leader>rv :so ~/.config/nvim/init.vim<CR>
 
