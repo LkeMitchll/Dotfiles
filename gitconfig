@@ -13,7 +13,7 @@
   ll = pull --rebase
   a = add
   aa = add --all
-  s = status
+  s = status -sbu
   f = fetch
   fo = fetch origin
   d = diff

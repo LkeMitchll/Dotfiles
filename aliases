@@ -24,7 +24,7 @@ alias mm="middleman"
 # Git
 alias git="hub"
 alias g="git"
-alias gs="git status"
+alias gs="git s"
 
 # Rails
 alias rdbm="rake db:migrate"
