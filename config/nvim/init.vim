@@ -1,19 +1,17 @@
 " ==============================
 " VIMRC - LUKE MITCHELL
 " ==============================
-let mapleader = " "
 
+let mapleader = " "
 set shell=/usr/local/bin/zsh
 set tags+=.git/tags;/
 set clipboard=unnamed
-set autoindent
 set autowrite
 set autoread
 set backspace=2
 set formatoptions+=j
 set formatoptions-=o
-set history=1000
-set noeb vb t_vb=
+set noerrorbells visualbell t_vb=
 set nocompatible
 set scrolloff=999
 set textwidth=0
@@ -33,11 +31,12 @@ set listchars=tab:>\ ,eol:¬,extends:…,precedes:…,space:·,trail:#
 
 " Tabs
 set smartindent
+set autoindent
+set expandtab
+set shiftround
 set softtabstop=2
 set tabstop=2
 set shiftwidth=2
-set shiftround
-set expandtab
 
 " Number column
 set number
@@ -56,8 +55,10 @@ setglobal foldlevelstart=99
 set exrc
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 set complete+=kspell
-set diffopt+=vertical
 set completeopt-=preview
+
+" Diffs
+set diffopt+=vertical
 
 " Language encoding
 setglobal langmenu=en_GB.UTF-8
