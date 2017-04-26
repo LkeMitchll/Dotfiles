@@ -36,8 +36,12 @@ function! s:find_git_root()
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 
+" Ctrl-p like functionality
 nnoremap <C-T> :ProjectFiles<CR>
+" Search buffers
 nnoremap <Leader>bu :Buffers<CR>
+" Ferret like grepping functionality
+nmap <Leader>a :Ag<Space>
 
 " Fugitive
 call dein#add('tpope/vim-fugitive',
@@ -87,11 +91,6 @@ map <Leader>tc :VtrClearRunner<cr>
 call dein#add('tpope/vim-surround')
 let g:surround_45 = "<% \r %>" " on hyphen
 let g:surround_61 = "<%= \r %>" " on equals
-
-" Ferret
-call dein#add('wincent/ferret',
-    \{'on_map': '<Plug>(FerretAck)'})
-nmap <Leader>a <Plug>(FerretAck)
 
 " Obsession/Prosession
 call dein#add('tpope/vim-obsession')
