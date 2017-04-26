@@ -4,12 +4,14 @@ alias finder='open .'
 alias c='clear'
 alias vim='nvim'
 alias vi='nvim'
+alias z='source ~/.zshrc'
 
 alias easy-brew="brew update; brew upgrade --all"
 alias vim-update="nvim '+call dein#update()' '+qa'"
 alias cpu="top -u -s 2"
 
-housekeep() {
+# Update all the things
+uatt() {
   brew update
   brew upgrade
   rcup -v
@@ -18,13 +20,19 @@ housekeep() {
   vim-update
 }
 
+# Cleanup
+housekeep() {
+  brew cleanup
+  brew cask cleanup
+  nvm cache clear
+}
+
 # Web dev
 alias mm="middleman"
 
 # Git
 alias git="hub"
 alias g="git"
-alias gs="git s"
 
 # Rails
 alias rdbm="rake db:migrate"
