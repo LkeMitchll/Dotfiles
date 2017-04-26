@@ -19,6 +19,7 @@ set ttimeout
 set ttimeoutlen=100
 set wildmenu
 set nowrap
+set shortmess=atI
 
 " Don't backup or swap
 set nobackup
