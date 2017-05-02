@@ -96,6 +96,7 @@ let g:surround_61 = "<%= \r %>" " on equals
 call dein#add('tpope/vim-obsession')
 call dein#add('dhruvasagar/vim-prosession')
 let g:prosession_dir = '~/.config/nvim/sessions'
+let g:prosession_on_startup = 1
 
 " Vim Tmux Navigation
 call dein#add('christoomey/vim-tmux-navigator')
