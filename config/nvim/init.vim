@@ -1,5 +1,5 @@
 " ==============================
-" VIMRC - LUKE MITCHELL
+"cVIMRC - LUKE MITCHELL
 " ==============================
 
 let mapleader = " "
@@ -19,7 +19,6 @@ set ttimeout
 set ttimeoutlen=100
 set wildmenu
 set nowrap
-set shortmess=atI
 
 " Don't backup or swap
 set nobackup
