@@ -13,6 +13,8 @@ tnoremap <Esc> <C-\><C-n>
 
 " Never enter ex mode
 nnoremap Q <nop>
+" Never open command history
+nnoremap q: <nop>
 
 " Split lines
 nnoremap K i<CR><Esc>
