@@ -1,5 +1,5 @@
 " ==============================
-"cVIMRC - LUKE MITCHELL
+" VIMRC - LUKE MITCHELL
 " ==============================
 
 let mapleader = " "

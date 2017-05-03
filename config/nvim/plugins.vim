@@ -70,7 +70,7 @@ let g:deoplete#enable_smart_case = 1
 let deoplete#tag#cache_limit_size = 5000000
 
 call dein#add('carlitux/deoplete-ternjs',
-      \{ 'build': 'yarn global add tern' })
+      \{ 'build': 'npm install -g tern' })
 let g:tern#filetypes = [
     \ 'jsx',
     \ 'javascript.jsx'
