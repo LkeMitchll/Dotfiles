@@ -1,7 +1,3 @@
-" ==============================
-" VIMRC - LUKE MITCHELL
-" ==============================
-
 let mapleader = " "
 set shell=/usr/local/bin/zsh
 set tags+=.git/tags;/
@@ -94,10 +90,6 @@ set statusline+=%=%y
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor\ --silent
 endif
-
-" ==============================
-" Other settings
-" ==============================
 
 source $HOME/.config/nvim/plugins.vim   " plugin settings
 source $HOME/.config/nvim/theme.vim     " colorscheme related tweaks

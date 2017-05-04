@@ -1,7 +1,3 @@
-" ==============================
-" Keyboard Shortcuts
-" ==============================
-
 " Fixes InsertLeave on Ctrl-C
 inoremap <C-C> <Esc>
 " Don't show tutorial warning

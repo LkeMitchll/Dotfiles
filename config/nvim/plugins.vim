@@ -1,7 +1,3 @@
-" ==============================
-" Plugins
-" ==============================
-
 " Init Dein
 if &compatible
   set nocompatible
