@@ -8,8 +8,6 @@ inoremap <C-C> <Esc>
 nnoremap <C-c> <silent> <C-c>
 " Never enter ex mode
 nnoremap Q <nop>
-" Never open command history
-nnoremap q: <nop>
 
 " Fixes for neovim
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
