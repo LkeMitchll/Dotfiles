@@ -3,7 +3,6 @@
 " ==============================
 
 set background=dark
-colorscheme noctu
 
 " Gutter
 hi SignColumn ctermbg=NONE
