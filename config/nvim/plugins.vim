@@ -32,6 +32,7 @@ if dein#load_state('/Users/Luke/.local/share/dein')
   call dein#add('mattn/emmet-vim', { 'on_ft': ['html', 'scss'] })
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-rails')
+  call dein#add('junegunn/vim-peekaboo')
 
   " Syntaxes
   call dein#add('hail2u/vim-css3-syntax', { 'on_ft': 'scss' })
@@ -71,9 +72,9 @@ nnoremap <Leader>bu :Buffers<CR>
 nmap <Leader>a :Ag<Space>
 
 " Fugitive
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gco :Gcommit<CR>
-nnoremap <leader>gd :Gdiff<CR>
+map <leader>gs :Gstatus<CR>
+map <leader>gco :Gcommit<CR>
+map <leader>gd :Gdiff<CR>
 
 " Signify
 let g:signify_sign_show_count = 0
@@ -108,3 +109,7 @@ let g:surround_61 = "<%= \r %>" " on equals
 " Obsession/Prosession
 let g:prosession_dir = '~/.config/nvim/sessions'
 let g:prosession_on_startup = 1
+
+" Syntaxes
+let g:html_indent_tags = 'li\|p\|span'
+let g:jsx_ext_required = 0
