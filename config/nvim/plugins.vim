@@ -31,11 +31,7 @@ if dein#load_state('/Users/Luke/.local/share/dein')
   call dein#add('junegunn/vim-peekaboo')
 
   " Syntaxes
-  call dein#add('hail2u/vim-css3-syntax', { 'on_ft': 'scss' })
-  call dein#add('mxw/vim-jsx', { 'on_ft': 'javascript'})
-  call dein#add('pangloss/vim-javascript', { 'on_ft': 'javascript' })
-  call dein#add('tpope/vim-markdown', { 'on_ft': 'markdown' })
-  call dein#add('tmux-plugins/vim-tmux', { 'on_ft': 'tmux' })
+  call dein#add('sheerun/vim-polyglot')
 
   call dein#end()
   call dein#save_state()
@@ -43,7 +39,6 @@ endif
 
 filetype plugin indent on
 syntax enable
-
 colorscheme noctu
 
 " FZF
