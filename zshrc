@@ -1,6 +1,7 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export LS_COLORS='di=1:fi=1:ln=32:or=31:mi=31:ex=35'
 
 # Enable autocomplete
 autoload -Uz compinit

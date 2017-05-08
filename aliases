@@ -1,3 +1,4 @@
+alias ls="ls -lG"
 alias sl="ls"
 alias rpsec="rspec"
 alias finder='open .'
