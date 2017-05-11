@@ -34,6 +34,11 @@ set softtabstop=2
 set tabstop=2
 set shiftwidth=2
 
+" Cursorline
+set cursorline
+autocmd WinLeave * set nocursorline
+autocmd WinEnter * set cursorline
+
 " Number column
 set number
 set relativenumber

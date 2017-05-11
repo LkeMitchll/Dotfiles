@@ -39,7 +39,6 @@ endif
 
 filetype plugin indent on
 syntax enable
-colorscheme noctu
 
 " FZF
 set rtp+=/usr/local/opt/fzf
