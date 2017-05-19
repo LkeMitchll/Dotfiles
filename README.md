@@ -19,6 +19,7 @@ Use 'Fira Code' to take full advantage of ligatures.
 - neovim
   - [dein](https://github.com/Shougo/dein.vim) (neovim plugin manager)
 - zsh
+  - [antigen](https://github.com/zsh-users/antigen) `git clone [url] ~/.antigen`
 - [rcm](https://github.com/thoughtbot/rcm)
 - [fzf](https://github.com/junegunn/fzf)
 
@@ -26,6 +27,7 @@ Use 'Fira Code' to take full advantage of ligatures.
 
 1. Install requirements (above)
 2. Clone this repo `git clone [url] ~/.dotfiles`
+3. Clone submodules `git submodule init && git submodule update`
 4. Execute `RCRC=~/.dotfiles/rcrc rcup -v`
 5. Profit.
 

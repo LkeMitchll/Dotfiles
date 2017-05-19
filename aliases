@@ -19,9 +19,10 @@ uatt() {
   echo $SEPERATOR
   rcup -v
   echo $SEPERATOR
-  rbenv update
-  echo $SEPERATOR
   ~/.tmux/plugins/tpm/bin/update_plugins all
+  echo $SEPERATOR
+  antigen selfupdate
+  antigen update
   echo $SEPERATOR
   mas outdated
   mas upgrade
