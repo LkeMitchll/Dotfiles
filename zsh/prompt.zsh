@@ -9,7 +9,7 @@ function git_current_branch() {
     [[ $ret == 128 ]] && return  # no git repo.
     ref=$(command git rev-parse --short HEAD 2> /dev/null)
   fi
-  if [[ $length -gt 20 ]];
+  if [[ $length -gt 18 ]];
   then
     if [[ $tmux_width -lt 65 ]];
     then
