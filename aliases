@@ -23,6 +23,9 @@ uatt() {
   echo $SEPERATOR
   ~/.tmux/plugins/tpm/bin/update_plugins all
   echo $SEPERATOR
+  mas outdated
+  mas upgrade
+  echo $SEPERATOR
   vim-update
 }
 
