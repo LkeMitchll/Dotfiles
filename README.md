@@ -14,8 +14,6 @@ Use 'Fira Code' to take full advantage of ligatures.
 - tmux (2.1+)
   - [tpm](https://github.com/tmux-plugins/tpm) (tmux plugin manager)
   - [tmuxinator](https://github.com/tmuxinator/tmuxinator)
-  - [tmux-spotify-info](https://github.com/dickeyxxx/tmux-spotify-info) (Display
-    spotify now playing)
 - neovim
   - [dein](https://github.com/Shougo/dein.vim) (neovim plugin manager)
 - zsh
