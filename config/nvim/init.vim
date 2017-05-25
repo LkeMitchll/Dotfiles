@@ -1,4 +1,4 @@
-let mapleader = " "
+let mapleader = "\<Space>"
 set shell=/usr/local/bin/zsh
 set tags+=.git/tags;/
 set clipboard=unnamed
