@@ -52,7 +52,7 @@ function! s:find_git_root()
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 
-""" Ctrl-p like functionality
+""" Ctrl-T like functionality
 nnoremap <C-T> :ProjectFiles<CR>
 """ Search buffers
 nnoremap <Leader>bu :Buffers<CR>
