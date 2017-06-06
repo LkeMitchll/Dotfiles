@@ -1,5 +1,4 @@
 colorscheme noctu
-set background=dark
 
 " Gutter
 hi SignifySignAdd ctermfg=green
