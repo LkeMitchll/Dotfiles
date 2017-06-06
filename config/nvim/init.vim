@@ -43,17 +43,6 @@ autocmd WinEnter * set cursorline
 set number
 set relativenumber
 
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-    set norelativenumber
-  else
-    set number
-    set relativenumber
-  endif
-endfunc
-autocmd InsertEnter,InsertLeave * :call NumberToggle()
-
 " Splits
 set splitbelow
 set splitright
