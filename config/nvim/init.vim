@@ -4,16 +4,10 @@ set tags+=.git/tags;/
 set clipboard=unnamed
 set autowrite
 set autoread
-set backspace=2
-set formatoptions+=j
 set formatoptions-=o
 set noerrorbells visualbell t_vb=
 set nocompatible
-set scrolloff=999
 set textwidth=0
-set ttimeout
-set ttimeoutlen=100
-set wildmenu
 set nowrap
 
 " Don't backup or swap
@@ -23,11 +17,10 @@ set noswapfile
 
 " Set some (not so) invisble characters
 set list
-set listchars=tab:>\ ,eol:¬,extends:…,precedes:…,space:·,trail:#
+set listchars+=eol:¬,space:·
 
 " Tabs
 set smartindent
-set autoindent
 set expandtab
 set shiftround
 set softtabstop=2
@@ -63,7 +56,6 @@ set diffopt+=vertical
 
 " Language encoding
 setglobal langmenu=en_GB.UTF-8
-setglobal encoding=utf8
 setglobal fileencoding=utf-8
 
 " Searching
@@ -73,7 +65,6 @@ set smartcase
 set incsearch
 
 " Statusline
-set laststatus=2
 set showtabline=2
 " Filename
 set statusline=\ %f%<
