@@ -18,7 +18,6 @@ if dein#load_state('/Users/Luke/.local/share/dein')
   call dein#add('w0rp/ale')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('carlitux/deoplete-ternjs', { 'build': 'npm install -g tern', 'on_ft': 'javascript' })
-  call dein#add('fishbullet/deoplete-ruby', { 'on_ft': 'ruby' } )
   call dein#add('christoomey/vim-tmux-runner')
   call dein#add('tpope/vim-surround')
   call dein#add('tpope/vim-obsession')
@@ -28,7 +27,6 @@ if dein#load_state('/Users/Luke/.local/share/dein')
   call dein#add('justinmk/vim-sneak')
   call dein#add('mattn/emmet-vim', { 'on_ft': ['html', 'scss'] })
   call dein#add('tpope/vim-commentary')
-  call dein#add('tpope/vim-rails')
   call dein#add('junegunn/vim-peekaboo')
   call dein#add('sheerun/vim-polyglot')
 
@@ -63,7 +61,6 @@ nmap <Leader>a :Ag<Space>
 " Fugitive
 map <leader>gs :Gstatus<CR>
 map <leader>gco :Gcommit<CR>
-map <leader>gd :Gdiff<CR>
 
 " Signify
 let g:signify_sign_show_count = 0
@@ -77,7 +74,6 @@ let g:ale_javascript_eslint_use_global = 1
 
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
 let deoplete#tag#cache_limit_size = 5000000
 let g:tern#filetypes = [
       \ 'jsx',
