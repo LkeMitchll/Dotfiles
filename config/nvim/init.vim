@@ -77,5 +77,4 @@ if executable("ag")
 endif
 
 source $HOME/.config/nvim/plugins.vim   " plugin settings
-source $HOME/.config/nvim/theme.vim     " colorscheme related tweaks
 source $HOME/.config/nvim/keyboard.vim  " custom keyboard shortcuts

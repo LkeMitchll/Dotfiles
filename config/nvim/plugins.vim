@@ -10,7 +10,8 @@ if dein#load_state('/Users/Luke/.local/share/dein')
 
   call dein#add('tpope/vim-sensible')
   call dein#add('haya14busa/dein-command.vim')
-  call dein#add('noahfrederick/vim-noctu')
+  call dein#add('lkemitchll/vim-interrobang')
+
   call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('tpope/vim-fugitive')
@@ -36,6 +37,8 @@ endif
 
 filetype plugin indent on
 syntax enable
+
+colorscheme interrobang
 
 " FZF
 set rtp+=/usr/local/opt/fzf
