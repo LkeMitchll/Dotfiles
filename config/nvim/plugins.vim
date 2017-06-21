@@ -74,6 +74,10 @@ let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
 let g:ale_sign_column_always = 1
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 let g:ale_javascript_eslint_use_global = 1
+let g:ale_fixers = {
+      \ 'javascript': ['eslint']
+      \ }
+map <Leader>f :ALEFix<CR>
 
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
