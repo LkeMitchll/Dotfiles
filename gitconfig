@@ -2,7 +2,7 @@
   templatedir = ~/.git_template
 [user]
   name = LkeMitchll
-  email = lke.mitchll@gmail.com
+  email = mail@luke.fail
 [alias]
   ch = checkout
   co = commit
@@ -41,11 +41,16 @@
   pretty = %Cred%h%Creset %aN -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset
 [difftool]
   prompt = false
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
 [diff]
+  tool = vimdiff
   algorithm = histogram
 [mergetool]
   prompt = false
   keepBackup = false
+  path = nvim
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
