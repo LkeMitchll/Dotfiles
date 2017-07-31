@@ -1,3 +1,4 @@
+export TERM=screen-256color
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
