@@ -9,6 +9,7 @@ set noerrorbells visualbell t_vb=
 set nocompatible
 set textwidth=0
 set nowrap
+set scrolloff=999
 
 " Don't backup or swap
 set nobackup
