@@ -12,7 +12,7 @@ if dein#load_state('/Users/Luke/.local/share/dein')
   call dein#add('haya14busa/dein-command.vim')
   call dein#add('lkemitchll/vim-interrobang')
 
-  call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('tpope/vim-fugitive')
   call dein#add('mhinz/vim-signify')
