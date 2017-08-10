@@ -39,12 +39,8 @@ function git_status() {
 }
 
 function ruby_version() {
-  if which rvm-prompt &> /dev/null; then
-    rvm-prompt i v g
-  else
-    if which rbenv &> /dev/null; then
-      rbenv version | sed -e "s/ (set.*$//"
-    fi
+  if which asdf &> /dev/null; then
+    asdf current ruby  | sed -e "s/ (set.*$//"
   fi
 }
 
