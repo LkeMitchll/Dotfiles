@@ -4,13 +4,14 @@ function git_current_branch() {
   local prefix="%{$fg[cyan]%}| "
   local branch=${ref#refs/heads/}
   local length=${#branch}
-  local tmux_width=$(command tmux display -t 1 -p "#{pane_width}")
+  local tmux_width=
 
   if [[ $ret != 0 ]]; then
     [[ $ret == 128 ]] && return  # no git repo.
     ref=$(command git rev-parse --short HEAD 2> /dev/null)
   fi
 
+  # If a repo exists add prefix
   if [[ $branch ]];
   then
     branch=${prefix}${ref#refs/heads/}
@@ -18,9 +19,17 @@ function git_current_branch() {
     branch=""
   fi
 
+  # If tmux is running measure the pane width
+  if tmux info &> /dev/null; then
+    tmux_width=$(command tmux display -t 1 -p "#{pane_width}")
+  else
+    tmux_width=""
+  fi
+
+  # If branch name is long concat on narrow tmux panes
   if [[ $length -gt 18 ]];
   then
-    if [[ $tmux_width -lt 65 ]];
+    if [[ $tmux_width && $tmux_width -lt 65 ]];
     then
       clipped=$(command echo ${branch} | cut -c-12)
       echo "${clipped}..."
