@@ -1,6 +1,7 @@
 function git_current_branch() {
   local ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
   local ret=$?
+  local prefix="%{$fg[cyan]%}| "
   local branch=${ref#refs/heads/}
   local length=${#branch}
   local tmux_width=$(command tmux display -t 1 -p "#{pane_width}")
@@ -9,6 +10,14 @@ function git_current_branch() {
     [[ $ret == 128 ]] && return  # no git repo.
     ref=$(command git rev-parse --short HEAD 2> /dev/null)
   fi
+
+  if [[ $branch ]];
+  then
+    branch=${prefix}${ref#refs/heads/}
+  else
+    branch=""
+  fi
+
   if [[ $length -gt 18 ]];
   then
     if [[ $tmux_width -lt 65 ]];
@@ -24,32 +33,28 @@ function git_current_branch() {
 }
 
 function git_status() {
-  local STATUS=''
-  local FLAGS
-  local DIRTY="%{$fg[yellow]%}*"
-  local CLEAN=""
-  FLAGS=('--porcelain')
+  local STATUS=""
+  local DIRTY="%{$fg[yellow]%}⊛"
+  local CLEAN="%{$fg[green]%}⊝"
+  local FLAGS=("--porcelain")
+
   STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
 
-  if [[ -n $STATUS ]]; then
-    echo "$DIRTY"
-  else
-    echo "$CLEAN"
-  fi
-}
-
-function ruby_version() {
-  if which asdf &> /dev/null; then
-    asdf current ruby  | sed -e "s/ (set.*$//"
+  if [[ $(git_current_branch) ]]; then
+    if [[ $STATUS ]]; then
+      echo "$DIRTY"
+    else
+      echo "$CLEAN"
+    fi
   fi
 }
 
 function precmd {
   local PREFIX="%{$fg[cyan]%}╭─-<<"
   local CWD="%{$fg[magenta]%}%~"
-  local RUBY="%{$fg[cyan]%}| $(ruby_version) |"
+  local GIT="$(git_current_branch) $(git_status)"
   local SUFFIX="%{$fg[cyan]%}╰─--> %{$fg[white]%}"
 
-  PROMPT="${PREFIX} ${CWD} ${RUBY} $(git_current_branch) $(git_status)
+  PROMPT="${PREFIX} ${CWD} ${GIT}
 ${SUFFIX}"
 }
