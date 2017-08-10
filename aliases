@@ -24,6 +24,9 @@ uatt() {
   antigen selfupdate
   antigen update
   echo $SEPERATOR
+  asdf update
+  asdf plugin-update --all
+  echo $SEPERATOR
   mas outdated
   mas upgrade
   echo $SEPERATOR

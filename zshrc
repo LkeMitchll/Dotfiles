@@ -36,9 +36,6 @@ source ~/.aliases
 source ~/.antigen/antigen.zsh
 
 antigen bundles <<EOBUNDLES
-  nvm
-  rbenv
-  pyenv
   zsh-users/zsh-history-substring-search
   zsh-users/zsh-syntax-highlighting
   zsh-users/zsh-autosuggestions
@@ -48,6 +45,10 @@ antigen apply
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# ASDF
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
