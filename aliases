@@ -37,7 +37,6 @@ uatt() {
 housekeep() {
   brew cleanup
   brew cask cleanup
-  nvm cache clear
 }
 
 # Web dev
