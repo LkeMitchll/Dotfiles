@@ -29,9 +29,9 @@ function git_current_branch() {
   # If branch name is long concat on narrow tmux panes
   if [[ $length -gt 18 ]];
   then
-    if [[ $tmux_width && $tmux_width -lt 65 ]];
+    if [[ $tmux_width && $tmux_width -lt 70 ]];
     then
-      clipped=$(command echo ${branch} | cut -c-12)
+      clipped=$(command echo ${branch} | cut -c-20)
       echo "${clipped}..."
     else
       echo ${branch}
