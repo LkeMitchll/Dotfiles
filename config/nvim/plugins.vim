@@ -49,17 +49,21 @@ function! s:fzf_statusline()
 endfunction
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
+""" Browse files in current git dir
 function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
+
+""" Custom ripgrep command
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 """ Ctrl-T like functionality
 nnoremap <C-T> :ProjectFiles<CR>
 """ Search buffers
 nnoremap <Leader>bu :Buffers<CR>
 """ Ferret like grepping functionality
-nmap <Leader>a :Ag<Space>
+nmap <Leader>a :Find<Space>
 
 " Fugitive
 map <leader>gs :Gstatus<CR>

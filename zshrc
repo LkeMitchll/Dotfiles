@@ -53,5 +53,4 @@ source $HOME/.asdf/completions/asdf.bash
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_TMUX="1"
-export FZF_DEFAULT_COMMAND="ag -g ''"
-export FZF_CTRL_T_COMMAND="ag -g ''"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'

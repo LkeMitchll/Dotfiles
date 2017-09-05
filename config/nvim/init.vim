@@ -73,8 +73,8 @@ set statusline=\ %f%<
 set statusline+=%=%y
 
 " Set grep command (ag)
-if executable("ag")
-  set grepprg=ag\ --nogroup\ --nocolor\ --silent
+if executable("rg")
+  set grepprg=rg\ --vimgrep
 endif
 
 source $HOME/.config/nvim/plugins.vim   " plugin settings

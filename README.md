@@ -18,6 +18,7 @@ Use [Fira Code](https://github.com/tonsky/FiraCode) to take full advantage of li
 - neovim
   - [dein](https://github.com/Shougo/dein.vim)
 - [fzf](https://github.com/junegunn/fzf)
+  - [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## Install
 
