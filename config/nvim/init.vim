@@ -1,14 +1,20 @@
-let mapleader = "\<Space>"
-set shell=/usr/local/bin/zsh
-set tags+=.git/tags;/
-set clipboard=unnamed
-set autowrite
-set autoread
-set formatoptions-=o
-set noerrorbells visualbell t_vb=
+" Disable old features
 set nocompatible
-set textwidth=0
+" Specifically set the shell bin
+set shell=/usr/local/bin/zsh
+" Leader key
+let mapleader = "\<Space>"
+" Find tags in local git folder
+set tags+=.git/tags;/
+" Use the * register for yanks
+set clipboard=unnamed
+" Auto write files when leaving buffer
+set autowrite
+" Disable error flashes
+set noerrorbells visualbell t_vb=
+" Don't wrap lines
 set nowrap
+" Keep cursorline centered when scrolling
 set scrolloff=999
 
 " Don't backup or swap
@@ -16,9 +22,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Set some (not so) invisble characters
+" Invisble characters
 set list
-set listchars+=eol:¬,space:·
+set listchars+=eol:¬,space:·,trail:#
 
 " Tabs
 set smartindent
@@ -37,11 +43,11 @@ autocmd WinEnter * set cursorline
 set number
 set relativenumber
 
-" Splits
+" Split behaviour
 set splitbelow
 set splitright
 
-" Folds
+" Fold behaviour
 setglobal foldmethod=indent
 setglobal foldnestmax=1
 setglobal foldlevelstart=99
@@ -55,24 +61,13 @@ set completeopt-=preview
 " Diffs
 set diffopt+=vertical
 
-" Language encoding
-setglobal langmenu=en_GB.UTF-8
-setglobal fileencoding=utf-8
-
-" Searching
-set hlsearch
-set ignorecase
-set smartcase
-set incsearch
-
 " Statusline
-set showtabline=2
-" Filename
+""" Filename
 set statusline=\ %f%<
-" Filetype
+""" Filetype
 set statusline+=%=%y
 
-" Set grep command (ag)
+" Set grep command
 if executable("rg")
   set grepprg=rg\ --vimgrep
 endif

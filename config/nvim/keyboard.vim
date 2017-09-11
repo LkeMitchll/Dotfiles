@@ -1,5 +1,5 @@
 " Don't show tutorial warning on <C-c>
- nnoremap <C-c> <silent> <C-c>
+nnoremap <C-c> <silent> <C-c>
 " Never enter ex mode
 nnoremap Q <nop>
 
