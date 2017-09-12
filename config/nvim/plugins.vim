@@ -2,34 +2,32 @@
 if &compatible
   set nocompatible
 end
-set runtimepath+=/Users/Luke/.local/share/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.local/share/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('/Users/Luke/.local/share/dein')
-  call dein#begin('/Users/Luke/.local/share/dein')
-  call dein#add('/Users/Luke/.local/share/dein/repos/github.com/Shougo/dein.vim')
+if dein#load_state('~/.local/share/dein')
+  call dein#begin('~/.local/share/dein')
+  call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
-  call dein#add('haya14busa/dein-command.vim')
-  call dein#add('lkemitchll/vim-interrobang')
-
-  call dein#add('tpope/vim-sensible')
-  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('mhinz/vim-signify')
-  call dein#add('w0rp/ale')
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('carlitux/deoplete-ternjs', { 'build': 'npm install -g tern', 'on_ft': 'javascript' })
+  call dein#add('~/Git/vim-interrobang')
   call dein#add('christoomey/vim-tmux-runner')
+  call dein#add('christoomey/vim-tmux-navigator')
+  call dein#add('dhruvasagar/vim-prosession')
+  call dein#add('haya14busa/dein-command.vim')
+  call dein#add('/usr/local/bin/fzf')
+  call dein#add('junegunn/fzf.vim')
+  call dein#add('junegunn/vim-peekaboo')
+  call dein#add('justinmk/vim-sneak')
+  call dein#add('mattn/emmet-vim', { 'on_ft': ['html'] })
+  call dein#add('mhinz/vim-signify')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-sensible')
   call dein#add('tpope/vim-surround')
   call dein#add('tpope/vim-obsession')
-  call dein#add('dhruvasagar/vim-prosession')
-  call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('roman/golden-ratio')
-  call dein#add('justinmk/vim-sneak')
-  call dein#add('mattn/emmet-vim', { 'on_ft': ['html', 'scss', 'eelixir'] })
-  call dein#add('tpope/vim-commentary')
-  call dein#add('junegunn/vim-peekaboo')
   call dein#add('sheerun/vim-polyglot')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('w0rp/ale')
 
   call dein#end()
   call dein#save_state()
@@ -42,7 +40,6 @@ colorscheme interrobang
 
 " FZF
 set rtp+=/usr/local/opt/fzf
-let g:fzf_layout = { 'down': '~30%' }
 
 """ Customize the statusline
 function! s:fzf_statusline()
@@ -55,14 +52,14 @@ function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
-""" Custom ripgrep command
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 """ Ctrl-T like functionality
 nnoremap <C-T> :ProjectFiles<CR>
-""" Search buffers
-nnoremap <Leader>bu :Buffers<CR>
+""" Custom ripgrep command
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 """ Ferret like grepping functionality
 nmap <Leader>a :Find<Space>
+""" Search buffers
+nnoremap <Leader>bu :Buffers<CR>
 
 " Fugitive
 map <leader>gs :Gstatus<CR>
@@ -101,7 +98,7 @@ map <Leader>tc :VtrClearRunner<cr>
 let g:surround_45 = "<% \r %>" " on hyphen
 let g:surround_61 = "<%= \r %>" " on equals
 
-" Obsession/Prosession
+" Prosession
 let g:prosession_dir = '~/.config/nvim/sessions'
 let g:prosession_on_startup = 1
 
