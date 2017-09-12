@@ -35,18 +35,15 @@ endif
 
 filetype plugin indent on
 syntax enable
-
 colorscheme interrobang
 
 " FZF
 set rtp+=/usr/local/opt/fzf
-
 """ Customize the statusline
 function! s:fzf_statusline()
   setlocal statusline=%#fzf1#\ fzf
 endfunction
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
-
 """ Browse files in current git dir
 function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
@@ -55,9 +52,14 @@ command! ProjectFiles execute 'Files' s:find_git_root()
 """ Ctrl-T like functionality
 nnoremap <C-T> :ProjectFiles<CR>
 """ Custom ripgrep command
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%', '?'),
+  \   <bang>0)
 """ Ferret like grepping functionality
-nmap <Leader>a :Find<Space>
+nmap <Leader>a :Rg<Space>
 """ Search buffers
 nnoremap <Leader>bu :Buffers<CR>
 
@@ -74,18 +76,12 @@ let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
 let g:ale_sign_column_always = 1
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 let g:ale_javascript_eslint_use_global = 1
-let g:ale_fixers = {
-      \ 'javascript': ['eslint']
-      \ }
+let g:ale_fixers = { 'javascript': ['eslint'] }
 map <Leader>f :ALEFix<CR>
 
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
 let deoplete#tag#cache_limit_size = 5000000
-let g:tern#filetypes = [
-      \ 'jsx',
-      \ 'javascript.jsx'
-      \ ]
 
 " VTR (Vim Tmux Runner)
 let g:VtrClearSequence = ""
