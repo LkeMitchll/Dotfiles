@@ -3,6 +3,8 @@ nnoremap <C-c> <silent> <C-c>
 " Never enter ex mode
 nnoremap Q <nop>
 
+" Open netrw
+nnoremap <Leader>e :Sexplore<CR>
 " Split lines (opposite of j)
 nnoremap K i<CR><Esc>
 " Refresh vim after a config change

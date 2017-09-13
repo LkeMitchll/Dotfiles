@@ -61,6 +61,11 @@ set completeopt-=preview
 " Diffs
 set diffopt+=vertical
 
+" Netrw (folders)
+let g:netrw_browse_split=3
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+
 " Statusline
 """ Filename
 set statusline=\ %f%<
