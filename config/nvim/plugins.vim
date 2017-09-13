@@ -58,7 +58,7 @@ command! -bang -nargs=* Rg
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%', '?'),
   \   <bang>0)
-""" Ferret like grepping functionality
+""" Ferret-like grepping functionality
 nmap <Leader>a :Rg<Space>
 """ Search buffers
 nnoremap <Leader>bu :Buffers<CR>
@@ -73,11 +73,9 @@ let g:signify_sign_show_count = 0
 " Ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
-let g:ale_sign_column_always = 1
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_fixers = { 'javascript': ['eslint'] }
-map <Leader>f :ALEFix<CR>
 
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
@@ -97,6 +95,12 @@ let g:surround_61 = "<%= \r %>" " on equals
 " Prosession
 let g:prosession_dir = '~/.config/nvim/sessions'
 let g:prosession_on_startup = 1
+
+" Sneak
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
 
 " Syntaxes
 let g:html_indent_tags = 'li\|p\|span'
