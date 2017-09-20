@@ -13,7 +13,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('dhruvasagar/vim-prosession')
   call dein#add('haya14busa/dein-command.vim')
-  call dein#add('/usr/local/bin/fzf')
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
   call dein#add('junegunn/fzf.vim')
   call dein#add('junegunn/vim-peekaboo')
   call dein#add('justinmk/vim-sneak')
@@ -103,5 +103,6 @@ map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
 " Syntaxes
+autocmd BufNewFile,BufRead *.css set filetype=scss
 let g:html_indent_tags = 'li\|p\|span'
 let g:jsx_ext_required = 0
