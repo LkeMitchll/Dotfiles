@@ -41,6 +41,8 @@ housekeep() {
 
 # Web dev
 alias mm="middleman"
+alias yr="yarn run"
+alias nr="npm run"
 
 # Git
 alias git="hub"
