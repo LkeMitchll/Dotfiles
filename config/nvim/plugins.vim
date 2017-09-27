@@ -75,7 +75,10 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 let g:ale_javascript_eslint_use_global = 1
-let g:ale_fixers = { 'javascript': ['eslint'] }
+let g:ale_fixers = {
+  \  'javascript': ['eslint'],
+  \  'css': ['stylelint']
+  \}
 
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
@@ -103,6 +106,5 @@ map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
 " Syntaxes
-autocmd BufNewFile,BufRead *.css set filetype=scss
 let g:html_indent_tags = 'li\|p\|span'
 let g:jsx_ext_required = 0
