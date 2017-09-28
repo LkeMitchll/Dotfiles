@@ -75,6 +75,10 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 let g:ale_javascript_eslint_use_global = 1
+let g:ale_linters = {
+  \  'eruby': [],
+  \  'scss': ['scsslint']
+  \}
 let g:ale_fixers = {
   \  'javascript': ['eslint'],
   \  'css': ['stylelint']
