@@ -27,16 +27,16 @@ zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' group-name ''
 
 # Custom prompt
-source ~/.zsh/prompt.zsh
+source ~/.config/zsh/prompt.zsh
 
 # Aliases
-source ~/.aliases
+source ~/.config/zsh/aliases
 
 # Plugins
 source ~/.antigen/antigen.zsh
 
 antigen bundles <<EOBUNDLES
-  /Users/Luke/.zsh/lib
+  /Users/Luke/.config/zsh/lib
   zsh-users/zsh-history-substring-search
   zsh-users/zsh-syntax-highlighting
   zsh-users/zsh-autosuggestions

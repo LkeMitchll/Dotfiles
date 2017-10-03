@@ -1,5 +1,5 @@
 [init]
-  templatedir = ~/.git_template
+  templatedir = ~/.config/git/git_template
 [user]
   name = LkeMitchll
   email = mail@luke.fail
@@ -24,7 +24,7 @@
   reset-last-soft = reset --soft HEAD~1
   reset-last-hard = reset --hard HEAD~1
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.config/git/gitignore
   autocrlf = input
   editor=nvim
   whitespace = space-before-tab,tab-in-indent,trailing-space
@@ -65,7 +65,7 @@
 [branch]
   autosetuprebase = always
 [commit]
-  template = ~/.gitmessage
+  template = ~/.config/git/gitmessage
 [fetch]
   prune = true
 [rebase]
