@@ -17,7 +17,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('junegunn/fzf.vim')
   call dein#add('junegunn/vim-peekaboo')
   call dein#add('justinmk/vim-sneak')
-  call dein#add('mattn/emmet-vim', { 'on_ft': ['html'] })
+  call dein#add('mattn/emmet-vim')
   call dein#add('mhinz/vim-signify')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-fugitive')
@@ -110,5 +110,6 @@ map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
 " Syntaxes
+au BufNewFile,BufRead *.css set filetype=css.css4
 let g:html_indent_tags = 'li\|p\|span'
 let g:jsx_ext_required = 0
