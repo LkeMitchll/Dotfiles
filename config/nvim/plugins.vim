@@ -18,7 +18,6 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('junegunn/vim-peekaboo')
   call dein#add('justinmk/vim-sneak')
   call dein#add('mattn/emmet-vim')
-  call dein#add('mhinz/vim-signify')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-fugitive')
   call dein#add('tpope/vim-sensible')
@@ -66,9 +65,6 @@ nnoremap <Leader>bu :Buffers<CR>
 " Fugitive
 map <leader>gs :Gstatus<CR>
 map <leader>gco :Gcommit<CR>
-
-" Signify
-let g:signify_sign_show_count = 0
 
 " Ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
