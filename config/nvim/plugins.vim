@@ -1,7 +1,4 @@
 " Init Dein
-if &compatible
-  set nocompatible
-end
 set runtimepath+=~/.local/share/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.local/share/dein')
@@ -11,11 +8,10 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('~/Git/vim-interrobang')
   call dein#add('christoomey/vim-tmux-runner')
   call dein#add('christoomey/vim-tmux-navigator')
-  call dein#add('dhruvasagar/vim-prosession')
+  call dein#add('dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' })
   call dein#add('haya14busa/dein-command.vim')
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
   call dein#add('junegunn/fzf.vim')
-  call dein#add('junegunn/vim-peekaboo')
   call dein#add('justinmk/vim-sneak')
   call dein#add('mattn/emmet-vim')
   call dein#add('tpope/vim-commentary')
@@ -32,24 +28,11 @@ if dein#load_state('~/.local/share/dein')
   call dein#save_state()
 endif
 
-filetype plugin indent on
-syntax enable
+" Theme
 colorscheme interrobang
 
 " FZF
 set rtp+=/usr/local/opt/fzf
-""" Customize the statusline
-function! s:fzf_statusline()
-  setlocal statusline=%#fzf1#\ fzf
-endfunction
-autocmd! User FzfStatusLine call <SID>fzf_statusline()
-""" Browse files in current git dir
-function! s:find_git_root()
-  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
-command! ProjectFiles execute 'Files' s:find_git_root()
-""" Ctrl-T like functionality
-nnoremap <C-T> :ProjectFiles<CR>
 """ Custom ripgrep command
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -57,20 +40,9 @@ command! -bang -nargs=* Rg
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%', '?'),
   \   <bang>0)
-""" Ferret-like grepping functionality
-nmap <Leader>a :Rg<Space>
-""" Search buffers
-nnoremap <Leader>bu :Buffers<CR>
-
-" Fugitive
-map <leader>gs :Gstatus<CR>
-map <leader>gco :Gcommit<CR>
 
 " Ale
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '']
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
-let g:ale_javascript_eslint_use_global = 1
 let g:ale_linters = {
   \  'eruby': [],
   \  'scss': ['scsslint']
@@ -86,10 +58,6 @@ let deoplete#tag#cache_limit_size = 5000000
 
 " VTR (Vim Tmux Runner)
 let g:VtrClearSequence = ""
-map <Leader>ta :VtrAttachToPane<CR>1<CR>
-map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
-map <Leader>tl :VtrSendCommandToRunner<cr>
-map <Leader>tc :VtrClearRunner<cr>
 
 " Surround
 let g:surround_45 = "<% \r %>" " on hyphen
@@ -97,15 +65,6 @@ let g:surround_61 = "<%= \r %>" " on equals
 
 " Prosession
 let g:prosession_dir = '~/.config/nvim/sessions'
-let g:prosession_on_startup = 1
-
-" Sneak
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
 
 " Syntaxes
-au BufNewFile,BufRead *.css set filetype=css.css4
-let g:html_indent_tags = 'li\|p\|span'
-let g:jsx_ext_required = 0
+autocmd BufNewFile,BufRead *.css set filetype=css.css4
