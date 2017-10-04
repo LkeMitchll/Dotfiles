@@ -10,7 +10,6 @@ if dein#load_state('~/.local/share/dein')
 
   call dein#add('christoomey/vim-tmux-runner')
   call dein#add('christoomey/vim-tmux-navigator')
-  call dein#add('dhruvasagar/vim-prosession', { 'depends': 'tpope/vim-obsession' })
   call dein#add('haya14busa/dein-command.vim')
   call dein#add('junegunn/fzf.vim')
   call dein#add('justinmk/vim-sneak')
@@ -18,7 +17,6 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('mattn/emmet-vim')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-surround')
-  call dein#add('tpope/vim-obsession')
   call dein#add('roman/golden-ratio')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('Shougo/deoplete.nvim')
@@ -51,9 +49,6 @@ let deoplete#tag#cache_limit_size = 5000000
 " Surround
 let g:surround_45 = "<% \r %>" " on hyphen
 let g:surround_61 = "<%= \r %>" " on equals
-
-" Prosession
-let g:prosession_dir = '~/.config/nvim/sessions'
 
 " Syntaxes
 autocmd BufNewFile,BufRead *.css set filetype=css.css4
