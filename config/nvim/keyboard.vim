@@ -30,9 +30,9 @@ nmap <Leader>a :Rg<Space>
 """ Find buffers
 nnoremap <Leader>bu :Buffers<CR>
 
-" Fugitive
-map <leader>gs :Gstatus<CR>
-map <leader>gco :Gcommit<CR>
+" Gina
+map <leader>gc :Gina<Space>
+map <leader>gs :Gina status -s<CR>
 
 " VTR (Vim Tmux Runner)
 map <Leader>ta :VtrAttachToPane<CR>1<CR>
