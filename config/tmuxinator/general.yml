@@ -2,6 +2,7 @@
 
 name: <%= args[0] %>
 root: <%= args[1] %>
+pre_window: clear
 
 windows:
   - editor:

@@ -1,3 +1,4 @@
+export EDITOR=nvim
 export TERM=screen-256color
 export XDG_CONFIG_HOME="/Users/Luke/.config"
 export RCRC="$XDG_CONFIG_HOME/rcrc"
@@ -60,3 +61,6 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 # Fuck
 eval $(thefuck --alias)
+
+# Tmuxinator
+source ~/.bin/tmuxinator.zsh

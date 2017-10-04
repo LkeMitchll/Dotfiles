@@ -1,11 +1,12 @@
 # ~/.tmuxinator/system.yml
 
 name: system
-root: ~/
+root: ~/.dotfiles
+pre_window: clear
 
 windows:
   - shell:
       layout: b392,208x57,0,0{80x57,0,0,10,127x57,81,0,12}
       panes:
         -
-        - cd ~/.dotfiles && vim
+        - vim
