@@ -33,7 +33,7 @@ endif
 colorscheme interrobang
 
 " FZF
-set rtp+=/usr/local/opt/fzf
+set runtimepath+=/usr/local/opt/fzf
 """ Custom ripgrep command
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -44,16 +44,10 @@ command! -bang -nargs=* Rg
 
 " Ale
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
-let g:ale_linters = {
-  \  'eruby': []
-  \}
 
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
 let deoplete#tag#cache_limit_size = 5000000
-
-" VTR (Vim Tmux Runner)
-let g:VtrClearSequence = ""
 
 " Surround
 let g:surround_45 = "<% \r %>" " on hyphen
