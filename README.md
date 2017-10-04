@@ -24,7 +24,7 @@ Use [Fira Code](https://github.com/tonsky/FiraCode) to take full advantage of li
 
 1. Install requirements (above)
 2. Clone this repo `git clone [url] ~/.dotfiles`
-3. Run `RCRC=~/.dotfiles/rcrc rcup -v`
+3. Run `RCRC=~/.dotfiles/config/rcrc rcup -v`
 4. Profit.
 
 ### Sources

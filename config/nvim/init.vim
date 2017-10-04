@@ -77,5 +77,5 @@ if executable("rg")
   set grepprg=rg\ --vimgrep
 endif
 
-source $HOME/.config/nvim/plugins.vim   " plugin settings
-source $HOME/.config/nvim/keyboard.vim  " custom keyboard shortcuts
+source $XDG_CONFIG_HOME/nvim/plugins.vim   " plugin settings
+source $XDG_CONFIG_HOME/nvim/keyboard.vim  " custom keyboard shortcu

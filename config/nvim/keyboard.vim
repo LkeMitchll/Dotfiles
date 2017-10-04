@@ -14,7 +14,7 @@ nnoremap <Leader>e :Sexplore<CR>
 " Split lines (opposite of j)
 nnoremap K i<CR><Esc>
 " Refresh vim after a config change
-map <Leader>rv :source ~/.config/nvim/init.vim<CR>
+map <Leader>rv :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 " Remove trailing whitespace [f5]
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Remove highlight

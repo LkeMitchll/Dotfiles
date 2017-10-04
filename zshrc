@@ -1,8 +1,10 @@
 export TERM=screen-256color
+export XDG_CONFIG_HOME="/Users/Luke/.config"
+export RCRC="$XDG_CONFIG_HOME/rcrc"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/texbin:$PATH"
-export LS_COLORS='di=1:fi=1:ln=32:or=31:mi=31:ex=35'
+export LS_COLORS="di=1:fi=1:ln=32:or=31:mi=31:ex=35"
 
 # Enable autocomplete
 autoload -Uz compinit
@@ -27,16 +29,16 @@ zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' group-name ''
 
 # Custom prompt
-source ~/.config/zsh/prompt.zsh
+source $XDG_CONFIG_HOME/zsh/prompt.zsh
 
 # Aliases
-source ~/.config/zsh/aliases
+source $XDG_CONFIG_HOME/zsh/aliases
 
 # Plugins
 source ~/.antigen/antigen.zsh
 
 antigen bundles <<EOBUNDLES
-  /Users/Luke/.config/zsh/lib
+  $XDG_CONFIG_HOME/zsh/lib
   zsh-users/zsh-history-substring-search
   zsh-users/zsh-syntax-highlighting
   zsh-users/zsh-autosuggestions
