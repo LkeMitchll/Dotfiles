@@ -12,3 +12,4 @@ tmp/**/*
 !tmp/cache/.keep
 *.pyc
 .tern-port
+node_modules

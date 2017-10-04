@@ -45,12 +45,7 @@ command! -bang -nargs=* Rg
 " Ale
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
 let g:ale_linters = {
-  \  'eruby': [],
-  \  'scss': ['scsslint']
-  \}
-let g:ale_fixers = {
-  \  'javascript': ['eslint'],
-  \  'css': ['stylelint']
+  \  'eruby': []
   \}
 
 " Deocomplete
