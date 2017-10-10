@@ -41,6 +41,9 @@ command! -bang -nargs=* Rg
 
 " Ale
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
+let g:ale_linters = {
+  \  'eruby': []
+  \}
 
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
