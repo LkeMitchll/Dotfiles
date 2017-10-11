@@ -31,7 +31,7 @@ nmap <Leader>a :Rg<Space>
 nnoremap <Leader>bu :Buffers<CR>
 
 " Gina
-map <leader>gc :Gina<Space>
+map <leader>gr :Gina<Space>
 map <leader>gs :Gina status -s<CR>
 
 " VTR (Vim Tmux Runner)
