@@ -31,12 +31,20 @@ uatt() {
   mas upgrade
   echo $SEPERATOR
   vim-update
+  waiter 5
 }
 
 # Cleanup
 housekeep() {
   brew cleanup
   brew cask cleanup
+}
+
+# Wait for x seconds then clear
+waiter() {
+  echo "Waiting for $1 seconds"
+  sleep $1
+  clear
 }
 
 # Web dev
