@@ -1,11 +1,11 @@
-alias ls="ls -lG"
 alias sl="ls"
+alias gs='g s'
 alias rpsec="rspec"
-alias finder='open .'
 alias c='clear'
 alias vim='nvim'
 alias vi='nvim'
 alias z='source ~/.zshrc'
+alias finder='open .'
 
 alias easy-brew="brew update; brew upgrade --all"
 alias vim-update="nvim '+call dein#update()' '+qa'"
