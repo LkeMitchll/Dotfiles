@@ -19,8 +19,6 @@ uatt() {
   echo $SEPERATOR
   rcup -v
   echo $SEPERATOR
-  ~/.tmux/plugins/tpm/bin/update_plugins all
-  echo $SEPERATOR
   antigen selfupdate
   antigen update
   echo $SEPERATOR
@@ -31,6 +29,7 @@ uatt() {
   mas upgrade
   echo $SEPERATOR
   vim-update
+  echo $SEPERATOR
   waiter 5
 }
 

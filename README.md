@@ -13,7 +13,6 @@ Use [Fira Code](https://github.com/tonsky/FiraCode) to take full advantage of li
   - [antigen](https://github.com/zsh-users/antigen) `git clone [url] ~/.antigen`
 - [asdf](https://github.com/asdf-vm/asdf)
 - tmux (2.1+)
-  - [tpm](https://github.com/tmux-plugins/tpm)
   - [tmuxinator](https://github.com/tmuxinator/tmuxinator)
 - neovim
   - [dein](https://github.com/Shougo/dein.vim)
