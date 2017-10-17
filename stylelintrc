@@ -35,7 +35,7 @@
     "declaration-block-semicolon-newline-after": "always",
     "selector-list-comma-newline-after": "always",
     "function-comma-space-after": "always",
-    "declaration-colon-space-after": "always",
+    "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
     "block-opening-brace-space-before": "always",
     "function-parentheses-space-inside": "never",
