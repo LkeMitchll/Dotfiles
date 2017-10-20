@@ -43,8 +43,8 @@ function git_current_branch() {
 
 function git_status() {
   local STATUS=""
-  local DIRTY="%{$fg[yellow]%}⊛"
-  local CLEAN="%{$fg[green]%}⊝"
+  local DIRTY="%{$fg[yellow]%}⊝"
+  local CLEAN="%{$fg[green]%}⊛"
   local FLAGS=("--porcelain")
 
   STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
@@ -63,7 +63,7 @@ function precmd {
   local CWD="%{$fg[magenta]%}%~"
   local GIT="$(git_current_branch) $(git_status)"
   local SUFFIX="%{$fg[cyan]%}╰─--> %{$fg[white]%}"
+  local NEWLINE=$'\n'
 
-  PROMPT="${PREFIX} ${CWD} ${GIT}
-${SUFFIX}"
+  PROMPT="${PREFIX} ${CWD} ${GIT}${NEWLINE}${SUFFIX}"
 }
