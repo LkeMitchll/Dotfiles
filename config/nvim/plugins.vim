@@ -11,6 +11,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('christoomey/vim-tmux-runner')
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('haya14busa/dein-command.vim')
+  call dein#add('joereynolds/vim-minisnip')
   call dein#add('junegunn/fzf.vim')
   call dein#add('justinmk/vim-sneak')
   call dein#add('lambdalisue/gina.vim')
@@ -21,6 +22,8 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('w0rp/ale')
+
+  " call dein#add('joereynolds/deoplete-minisnip')
 
   call dein#end()
   call dein#save_state()
@@ -52,6 +55,9 @@ let deoplete#tag#cache_limit_size = 5000000
 " Surround
 let g:surround_45 = "<% \r %>" " on hyphen
 let g:surround_61 = "<%= \r %>" " on equals
+
+" Minisnip
+let g:minisnip_dir = '~/.config/nvim/minisnip'
 
 " Syntaxes
 autocmd BufNewFile,BufRead *.css set filetype=css.css4
