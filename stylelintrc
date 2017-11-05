@@ -7,7 +7,10 @@
       "border": ["none"]
     },
     "color-named": "never",
-    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-duplicate-properties": [
+      true,
+      { ignore: ["consecutive-duplicates-with-different-values"] }
+    ],
     "block-closing-brace-newline-after": "always",
     "block-no-empty": true,
     "color-hex-length": "short",
@@ -47,7 +50,15 @@
     "property-no-vendor-prefix": true,
     "selector-no-vendor-prefix": true,
     "media-feature-name-no-vendor-prefix": true,
+    "at-rule-no-unknown": [
+      true,
+      { ignoreAtRules: ["value"] }
+    ],
     "at-rule-no-vendor-prefix": true,
     "value-no-vendor-prefix": true,
+    "property-no-unknown": [
+      true,
+      { ignoreProperties: ["composes"] }
+    ]
   }
 }
