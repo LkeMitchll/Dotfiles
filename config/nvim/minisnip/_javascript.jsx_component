@@ -1,0 +1,4 @@
+class {{++}} extends React.Component {
+}
+
+export default {{+~\~1+}}
