@@ -19,8 +19,7 @@ uatt() {
   echo $SEPERATOR
   rcup -v
   echo $SEPERATOR
-  antigen selfupdate
-  antigen update
+  antibody update
   echo $SEPERATOR
   asdf update
   asdf plugin-update --all

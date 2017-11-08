@@ -10,7 +10,7 @@ Use [Fira Code](https://github.com/tonsky/FiraCode) to take full advantage of li
 
 - [rcm](https://github.com/thoughtbot/rcm)
 - zsh
-  - [antigen](https://github.com/zsh-users/antigen) `git clone [url] ~/.antigen`
+  - [antibody](getantibody/antibody)
 - [asdf](https://github.com/asdf-vm/asdf)
 - tmux (2.1+)
   - [tmuxinator](https://github.com/tmuxinator/tmuxinator)

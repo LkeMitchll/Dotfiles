@@ -36,16 +36,8 @@ source $XDG_CONFIG_HOME/zsh/prompt.zsh
 source $XDG_CONFIG_HOME/zsh/aliases
 
 # Plugins
-source ~/.antigen/antigen.zsh
-
-antigen bundles <<EOBUNDLES
-  $XDG_CONFIG_HOME/zsh/lib
-  zsh-users/zsh-history-substring-search
-  zsh-users/zsh-syntax-highlighting
-  zsh-users/zsh-autosuggestions
-EOBUNDLES
-
-antigen apply
+source <(antibody init)
+antibody bundle < $XDG_CONFIG_HOME/zsh/plugins.txt
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
