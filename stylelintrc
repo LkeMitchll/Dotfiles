@@ -52,7 +52,7 @@
     "media-feature-name-no-vendor-prefix": true,
     "at-rule-no-unknown": [
       true,
-      { ignoreAtRules: ["value"] }
+      { ignoreAtRules: ["value", "include", "each", "mixin"] }
     ],
     "at-rule-no-vendor-prefix": true,
     "value-no-vendor-prefix": true,
