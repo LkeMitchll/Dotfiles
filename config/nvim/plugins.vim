@@ -21,9 +21,8 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('roman/golden-ratio')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('Shougo/deoplete.nvim')
+  call dein#add('joereynolds/deoplete-minisnip')
   call dein#add('w0rp/ale')
-
-  " call dein#add('joereynolds/deoplete-minisnip')
 
   call dein#end()
   call dein#save_state()
