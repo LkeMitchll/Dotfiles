@@ -5,7 +5,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#begin('~/.local/share/dein')
   call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
-  call dein#add('~/Git/vim-interrobang')
+  call dein#add('lkemitchll/vim-interrobang')
   call dein#add('tpope/vim-sensible')
 
   call dein#add('christoomey/vim-tmux-runner')
