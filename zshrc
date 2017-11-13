@@ -37,7 +37,7 @@ source $XDG_CONFIG_HOME/zsh/aliases
 
 # Plugins
 source <(antibody init)
-antibody bundle < $XDG_CONFIG_HOME/zsh/plugins.txt
+antibody bundle < $XDG_CONFIG_HOME/zsh/antibody
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
