@@ -28,6 +28,7 @@ uatt() {
   mas upgrade
   echo $SEPERATOR
   vim-update
+  echo "Vim plugins up to date."
   echo $SEPERATOR
   waiter 5
 }
