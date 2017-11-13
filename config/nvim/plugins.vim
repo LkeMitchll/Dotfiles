@@ -12,6 +12,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('haya14busa/dein-command.vim')
   call dein#add('joereynolds/vim-minisnip')
+  call dein#add('/usr/local/opt/fzf')
   call dein#add('junegunn/fzf.vim')
   call dein#add('justinmk/vim-sneak')
   call dein#add('lambdalisue/gina.vim')
@@ -32,7 +33,6 @@ endif
 colorscheme interrobang
 
 " FZF
-set runtimepath+=/usr/local/opt/fzf
 """ Custom ripgrep command
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -43,9 +43,6 @@ command! -bang -nargs=* Rg
 
 " Ale
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
-let g:ale_linters = {
-  \  'eruby': []
-  \}
 
 " Deocomplete
 let g:deoplete#enable_at_startup = 1
@@ -57,6 +54,3 @@ let g:surround_61 = "<%= \r %>" " on equals
 
 " Minisnip
 let g:minisnip_dir = '~/.config/nvim/minisnip'
-
-" Syntaxes
-autocmd BufNewFile,BufRead *.css set filetype=css.css4
