@@ -1,5 +1,4 @@
 " Fixes
-
 " Don't show tutorial warning on <C-c>
 nnoremap <C-c> <silent> <C-c>
 " Never enter ex mode
@@ -8,20 +7,16 @@ nnoremap Q <nop>
 nnoremap q: <nop>
 
 " Shortcuts
-
 " Open netrw
 nnoremap <Leader>e :Sexplore<CR>
 " Split lines (opposite of j)
 nnoremap K i<CR><Esc>
-" Refresh vim after a config change
-map <Leader>rv :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 " Remove trailing whitespace [f5]
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Remove highlight
 nnoremap <silent> <Leader>n :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 " Plugins
-
 " FZF
 """ Find files
 nnoremap <C-T> :Files<CR>
