@@ -2,10 +2,11 @@ export EDITOR=nvim
 export TERM=screen-256color
 export XDG_CONFIG_HOME="/Users/Luke/.config"
 export RCRC="$XDG_CONFIG_HOME/rcrc"
+export LS_COLORS="di=1:fi=1:ln=32:or=31:mi=31:ex=35"
+
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/texbin:$PATH"
-export LS_COLORS="di=1:fi=1:ln=32:or=31:mi=31:ex=35"
 
 # Enable autocomplete
 autoload -Uz compinit
@@ -30,7 +31,8 @@ zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' group-name ''
 
 # Custom prompt
-source $XDG_CONFIG_HOME/zsh/prompt.zsh
+# source $XDG_CONFIG_HOME/zsh/prompt.zsh
+source $XDG_CONFIG_HOME/zsh/prompt.light.zsh
 
 # Aliases
 source $XDG_CONFIG_HOME/zsh/aliases
@@ -41,6 +43,8 @@ antibody bundle < $XDG_CONFIG_HOME/zsh/antibody
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^N' autosuggest-accept
+ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 # ASDF
 source $HOME/.asdf/asdf.sh
