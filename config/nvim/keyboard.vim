@@ -30,6 +30,7 @@ map <leader>gr :Gina<Space>
 map <leader>gs :Gina status -s<CR>
 
 " VTR (Vim Tmux Runner)
+let g:VtrClearSequence = ""
 map <Leader>ta :VtrAttachToPane<CR>1<CR>
 map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 map <Leader>tl :VtrSendCommandToRunner<cr>
