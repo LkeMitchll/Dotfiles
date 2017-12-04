@@ -21,7 +21,7 @@ nnoremap <silent> <Leader>n :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR
 """ Find files
 nnoremap <C-T> :Files<CR>
 """ Grep files
-nmap <Leader>a :Rg<Space>
+nmap <Leader>a :Ag<Space>
 """ Find buffers
 nnoremap <Leader>bu :Buffers<CR>
 
