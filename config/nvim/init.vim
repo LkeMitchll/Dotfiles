@@ -70,7 +70,7 @@ let g:netrw_banner=0
 """ Filename
 set statusline=\ %f%<
 """ Filetype
-set statusline+=%=%y
+set statusline+=%=%y\ 
 
 " Set grep command
 if executable("ag")

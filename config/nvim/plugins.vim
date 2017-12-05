@@ -30,9 +30,6 @@ endif
 " Theme
 colorscheme interrobang
 
-" Ale
-set statusline+=\ %1*%{ALEGetStatusLine()}\ 
-
 " Surround
 let g:surround_{char2nr("-")} = "<% \r %>"
 let g:surround_{char2nr("=")} = "<%= \r %>"
