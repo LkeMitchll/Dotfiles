@@ -62,6 +62,7 @@ set completeopt-=preview
 set diffopt+=vertical
 
 " Netrw (folders)
+let g:netrw_bufsettings = "noma nomod nu nobl nowrap ro rnu"
 let g:netrw_browse_split=3
 let g:netrw_liststyle=3
 let g:netrw_banner=0
