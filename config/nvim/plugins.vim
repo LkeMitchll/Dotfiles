@@ -38,8 +38,8 @@ let g:deoplete#enable_at_startup = 1
 let deoplete#tag#cache_limit_size = 5000000
 
 " Surround
-let g:surround_45 = "<% \r %>" " on hyphen
-let g:surround_61 = "<%= \r %>" " on equals
+let g:surround_{char2nr("-")} = "<% \r %>"
+let g:surround_{char2nr("=")} = "<%= \r %>"
 
 " Minisnip
 let g:minisnip_dir = '~/.config/nvim/minisnip'
