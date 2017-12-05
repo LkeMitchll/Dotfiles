@@ -19,8 +19,8 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('tpope/vim-sensible')
   call dein#add('tpope/vim-surround', {'on_map': {'n' : ['cs', 'ds', 'ys']}})
   call dein#add('roman/golden-ratio')
+  call dein#add('roxma/nvim-completion-manager', {'on_event': 'InsertEnter'})
   call dein#add('sheerun/vim-polyglot')
-  call dein#add('Shougo/deoplete.nvim', {'on_event': 'InsertEnter'})
   call dein#add('w0rp/ale')
 
   call dein#end()
@@ -32,10 +32,6 @@ colorscheme interrobang
 
 " Ale
 set statusline+=\ %1*%{ALEGetStatusLine()}\ 
-
-" Deocomplete
-let g:deoplete#enable_at_startup = 1
-let deoplete#tag#cache_limit_size = 5000000
 
 " Surround
 let g:surround_{char2nr("-")} = "<% \r %>"
