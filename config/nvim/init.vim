@@ -36,8 +36,12 @@ set shiftwidth=2
 
 " Cursorline
 set cursorline
-autocmd WinLeave * set nocursorline
-autocmd WinEnter * set cursorline
+if &diff
+  set nocursorline
+else
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter * set cursorline
+endif
 
 " Number column
 set number

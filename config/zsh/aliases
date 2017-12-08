@@ -3,6 +3,7 @@ alias gs='g s'
 alias rpsec="rspec"
 alias c='clear'
 alias vim='nvim'
+alias vimdiff='nvim -d'
 alias vi='nvim'
 alias z='source ~/.zshrc'
 alias finder='open .'

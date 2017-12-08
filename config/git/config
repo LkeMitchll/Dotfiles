@@ -40,26 +40,23 @@
 [format]
   pretty = %Cred%h%Creset %aN -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset
 [difftool]
-  prompt = false
+  prompt = true
 [merge]
-  tool = vimdiff
+  tool = nvimdiff
   conflictstyle = diff3
+  ff = only
 [diff]
   tool = vimdiff
   algorithm = histogram
-[mergetool]
+[mergetool "nvimdiff"]
   prompt = false
   keepBackup = false
-  path = nvim
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 [apply]
   whitespace = fix
-[merge]
-  ff = only
-  conflictstyle = diff3
-  tool = vimdiff
 [push]
   default = current
 [branch]
