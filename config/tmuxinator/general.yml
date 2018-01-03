@@ -6,7 +6,10 @@ pre_window: clear
 
 windows:
   - editor:
-      layout: 4341,283x57,0,0{78x57,0,0,17,204x57,79,0,19}
+      layout: b392,208x57,0,0{80x57,0,0,10,127x57,81,0,12}
       panes:
         -
         - vim
+  - utils:
+      panes:
+        -
