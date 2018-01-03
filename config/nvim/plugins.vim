@@ -6,8 +6,8 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('haya14busa/dein-command.vim', {'on_cmd': 'Dein'})
 
-  call dein#add('christoomey/vim-tmux-runner', {'on_cmd': 'VtrAttachToPane'})
   call dein#add('christoomey/vim-tmux-navigator')
+  call dein#add('christoomey/vim-tmux-runner', {'on_cmd': 'VtrAttachToPane'})
   call dein#add('joereynolds/vim-minisnip', {'on_map': {'i': '<TAB>'}})
   call dein#add('/usr/local/opt/fzf')
   call dein#add('junegunn/fzf.vim', {'on_cmd': 'Files'})
@@ -15,12 +15,12 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('lambdalisue/gina.vim', {'on_cmd': 'Gina'})
   call dein#add('lkemitchll/vim-interrobang')
   call dein#add('mattn/emmet-vim')
-  call dein#add('tpope/vim-commentary', {'on_map': {'n': ['gcc']}})
-  call dein#add('tpope/vim-sensible')
-  call dein#add('tpope/vim-surround', {'on_map': {'n' : ['cs', 'ds', 'ys']}})
   call dein#add('roman/golden-ratio')
   call dein#add('roxma/nvim-completion-manager', {'on_event': 'InsertEnter'})
   call dein#add('sheerun/vim-polyglot')
+  call dein#add('tpope/vim-commentary', {'on_map': {'n': ['gcc']}})
+  call dein#add('tpope/vim-sensible')
+  call dein#add('tpope/vim-surround', {'on_map': {'n' : ['cs', 'ds', 'ys']}})
   call dein#add('w0rp/ale')
 
   call dein#end()
@@ -30,9 +30,9 @@ endif
 " Theme
 colorscheme interrobang
 
+" Minisnip
+let g:minisnip_dir = '~/.config/nvim/minisnip'
+
 " Surround
 let g:surround_{char2nr("-")} = "<% \r %>"
 let g:surround_{char2nr("=")} = "<%= \r %>"
-
-" Minisnip
-let g:minisnip_dir = '~/.config/nvim/minisnip'
