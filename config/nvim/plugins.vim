@@ -13,7 +13,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('junegunn/fzf.vim', {'on_cmd': 'Files'})
   call dein#add('justinmk/vim-sneak', {'on_map': {'n': ['s', 'S']}})
   call dein#add('lambdalisue/gina.vim', {'on_cmd': 'Gina'})
-  call dein#add('lkemitchll/vim-interrobang')
+  call dein#add('lkemitchll/vim-interrobang', {'hook_add': 'colorscheme interrobang'})
   call dein#add('mattn/emmet-vim', {'on_ft': ['html', 'ruby', 'jsx', 'css', 'scss']})
   call dein#add('roman/golden-ratio', {'on_event': 'VimEnter'})
   call dein#add('roxma/nvim-completion-manager', {'on_event': 'InsertEnter'})
@@ -26,9 +26,3 @@ if dein#load_state('~/.local/share/dein')
   call dein#end()
   call dein#save_state()
 endif
-
-" Theme
-colorscheme interrobang
-
-" Minisnip
-let g:minisnip_dir = '~/.config/nvim/minisnip'
