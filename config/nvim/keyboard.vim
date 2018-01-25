@@ -23,7 +23,7 @@ nnoremap <C-T> :Files<CR>
 """ Grep files
 nmap <Leader>a :Ag<Space>
 """ Find buffers
-nnoremap <Leader>bu :Buffers<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 " Gina
 map <leader>gr :Gina<Space>
