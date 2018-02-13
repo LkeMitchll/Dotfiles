@@ -28,6 +28,7 @@ nnoremap <Leader>b :Buffers<CR>
 " Gina
 map <leader>gr :Gina<Space>
 map <leader>gs :Gina status -s<CR>
+map <leader>go :Gina commit<CR>
 
 " VTR (Vim Tmux Runner)
 let g:VtrClearSequence = ""
