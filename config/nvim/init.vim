@@ -58,7 +58,7 @@ setglobal foldlevelstart=99
 
 " Spelling
 set exrc
-set spellfile=$HOME/confg/nvim/vim-spell-en.utf-8.add
+set spellfile=$HOME/.config/nvim/vim-spell-en.utf-8.add
 set complete+=kspell
 set completeopt-=preview
 
