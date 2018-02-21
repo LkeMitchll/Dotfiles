@@ -15,7 +15,7 @@ Use [Fira Code](https://github.com/tonsky/FiraCode) to take full advantage of li
 - tmux (2.1+)
   - [tmuxinator](https://github.com/tmuxinator/tmuxinator)
 - neovim
-  - [dein](https://github.com/Shougo/dein.vim)
+  - [plug](https://github.com/junegunn/vim-plug)
 - [fzf](https://github.com/junegunn/fzf)
   - [ag](https://github.com/ggreer/the_silver_searcher)
 

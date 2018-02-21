@@ -9,7 +9,7 @@ alias z='source ~/.zshrc'
 alias finder='open .'
 
 alias easy-brew="brew update; brew upgrade --all"
-alias vim-update="nvim '+call dein#update()' '+qa'"
+alias vim-update="nvim '+PlugUpdate' '+PlugUpgrade' '+qa!'"
 alias cpu="top -u -s 2"
 
 # Update all the things
