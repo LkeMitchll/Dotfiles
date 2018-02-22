@@ -12,7 +12,7 @@ export PATH="/usr/texbin:$PATH"
 source $XDG_CONFIG_HOME/zsh/completion.zsh
 
 # Custom prompt
-source $XDG_CONFIG_HOME/zsh/prompt.light.zsh
+source $XDG_CONFIG_HOME/zsh/prompt.zsh
 
 # Aliases
 source $XDG_CONFIG_HOME/zsh/aliases
