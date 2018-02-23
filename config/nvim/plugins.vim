@@ -9,7 +9,7 @@ Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
 Plug 'lkemitchll/vim-interrobang'
 Plug 'mattn/emmet-vim', {'for': ['html', 'eruby', 'jsx', 'css', 'scss']}
 Plug 'roman/golden-ratio'
-Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/nvim-completion-manager' | Plug 'fgrsnau/ncm-otherbuf' | Plug 'lkemitchll/ncm-minisnip'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
