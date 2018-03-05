@@ -4,9 +4,7 @@ export XDG_CONFIG_HOME="/Users/Luke/.config"
 export RCRC="$XDG_CONFIG_HOME/rcrc"
 export LS_COLORS="di=1:fi=1:ln=32:or=31:mi=31:ex=35"
 
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-export PATH="/usr/texbin:$PATH"
+export PATH="/usr/local/bin:$HOME/.bin:/usr/sbin:/sbin:/usr/bin:/bin"
 
 # Completion config
 source $XDG_CONFIG_HOME/zsh/completion.zsh
@@ -33,9 +31,6 @@ source $HOME/.asdf/completions/asdf.bash
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_TMUX="1"
-
-# Fuck
-eval $(thefuck --alias)
 
 # Tmuxinator
 source ~/.bin/tmuxinator.zsh
