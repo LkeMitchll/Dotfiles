@@ -2,7 +2,7 @@
 
 name: system
 root: ~/.dotfiles
-pre_window: clear
+pre_window: kitty set-tab-title System && clear
 
 windows:
   - shell:
