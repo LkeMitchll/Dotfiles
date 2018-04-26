@@ -1,10 +1,12 @@
 # Dotfiles
 
-Custom configuration files for various tools, including [neovim](https://neovim.io), zsh, tmux and more.
+Custom configuration files for various tools, including
+[neovim](https://neovim.io), zsh, tmux and more.
 
-I run all of this in [iTerm](https://iterm2.com) on macOS.
+I run all of this in [Kitty](https://github.com/kovidgoyal/kitty) on macOS.
 
-Use [Fira Code](https://github.com/tonsky/FiraCode) to take full advantage of ligatures.
+Use [Hasklig](https://github.com/i-tu/Hasklig) to take full advantage of
+ligatures.
 
 ## Requirements
 
