@@ -7,6 +7,8 @@ nnoremap Q <nop>
 nnoremap q: <nop>
 
 " Shortcuts
+" Reload config
+nnoremap <F12> :source ~/.config/nvim/init.vim<CR>
 " Open netrw
 nnoremap <Leader>e :Sexplore<CR>
 " Split lines (opposite of j)
