@@ -1,0 +1,3 @@
+[submodule "config/tmux/plugins/resurrect"]
+	path = config/tmux/plugins/resurrect
+	url = git@github.com:tmux-plugins/tmux-resurrect.git
