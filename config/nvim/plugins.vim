@@ -6,8 +6,8 @@ Plug 'joereynolds/vim-minisnip'
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'justinmk/vim-sneak'
 Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
-Plug '~/Git/vim-interrobang'
 Plug 'mattn/emmet-vim', {'for': ['html', 'eruby', 'jsx', 'css', 'scss']}
+Plug 'matze/vim-move'
 Plug 'roman/golden-ratio'
 Plug 'roxma/nvim-completion-manager' | Plug 'fgrsnau/ncm-otherbuf' | Plug '~/Git/ncm-minisnip'
 Plug 'sheerun/vim-polyglot'
@@ -15,6 +15,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug '~/Git/vim-interrobang'
 call plug#end()
 
 colorscheme interrobang
