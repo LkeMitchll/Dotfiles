@@ -1,40 +1,40 @@
 " Fixes
 " Don't show tutorial warning on <C-c>
-nnoremap <C-c> <silent> <C-c>
+map <C-c> <silent> <C-c>
 " Never enter ex mode
-nnoremap Q <nop>
+map Q <nop>
 " Don't show command history
-nnoremap q: <nop>
+map q: <nop>
 
 " Shortcuts
 " Reload config
-nnoremap <F12> :source ~/.config/nvim/init.vim<CR>
+nmap <F12> :source ~/.config/nvim/init.vim<CR>
 " Open netrw
-nnoremap <Leader>e :Sexplore<CR>
+nmap <Leader>e :Sexplore<CR>
 " Split lines (opposite of j)
-nnoremap K i<CR><Esc>
-" Remove trailing whitespace [f5]
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nmap K i<CR><Esc>
+" Remove trailing whitespace
+nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Remove highlight
-nnoremap <silent> <Leader>n :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+nmap <silent> <Leader>n :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 " Plugins
 " FZF
 """ Find files
-nnoremap <C-T> :Files<CR>
+nmap <C-T> :Files<CR>
 """ Grep files
 nmap <Leader>a :Ag<Space>
 """ Find buffers
-nnoremap <Leader>b :Buffers<CR>
+nmap <Leader>b :Buffers<CR>
 
 " Gina
-map <leader>gr :Gina<Space>
-map <leader>gs :split <CR> :Gina status -s<CR>
-map <leader>go :Gina commit<CR>
+nmap <leader>gr :Gina<Space>
+nmap <leader>gs :split <CR> :Gina status -s<CR>
+nmap <leader>go :Gina commit<CR>
 
 " VTR (Vim Tmux Runner)
 let g:VtrClearSequence = ""
-map <Leader>ta :VtrAttachToPane<CR>1<CR>
-map <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
-map <Leader>tl :VtrSendCommandToRunner<cr>
-map <Leader>tc :VtrClearRunner<cr>
+nmap <Leader>ta :VtrAttachToPane<CR>1<CR>
+nmap <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
+nmap <Leader>tl :VtrSendCommandToRunner<cr>
+nmap <Leader>tc :VtrClearRunner<cr>
