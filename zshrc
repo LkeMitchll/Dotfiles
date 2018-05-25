@@ -3,8 +3,12 @@ export TERM=screen-256color
 export XDG_CONFIG_HOME="/Users/Luke/.config"
 export RCRC="$XDG_CONFIG_HOME/rcrc"
 export LS_COLORS="di=1:fi=1:ln=32:or=31:mi=31:ex=35"
+export KEYTIMEOUT=1
 
 export PATH="/usr/local/bin:$HOME/.bin:/usr/sbin:/sbin:/usr/bin:/bin"
+
+# Vi mode
+bindkey -v
 
 # Completion config
 source $XDG_CONFIG_HOME/zsh/completion.zsh
