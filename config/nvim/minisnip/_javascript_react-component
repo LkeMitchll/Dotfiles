@@ -1,4 +1,10 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
 class {{++}} extends React.Component {
 }
 
-export default {{+~\~1+}}
+{{+~\~1+}}.propTypes = {
+}
+
+export default {{+~\~2+}}
