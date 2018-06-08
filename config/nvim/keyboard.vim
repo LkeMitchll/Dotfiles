@@ -27,6 +27,9 @@ nmap <Leader>a :Ag<Space>
 """ Find buffers
 nmap <Leader>b :Buffers<CR>
 
+" ALE
+nmap <Leader>p :ALEFix<CR>
+
 " Gina
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :split <CR> :Gina status -s<CR>
