@@ -6,7 +6,7 @@ NEWLINE=$'\n'
 PROMPT="${PREFIX} ${CWD}${NEWLINE}${SUFFIX}"
 
 function zle-line-init zle-keymap-select {
-  RPS1="%F{8}${${KEYMAP/vicmd/┇N┇}/(main|viins)/┇I┇}"
+  RPS1="%F{8}${${KEYMAP/vicmd/N}/(main|viins)/I}"
   RPS2=$RPS1
   zle reset-prompt
 }
