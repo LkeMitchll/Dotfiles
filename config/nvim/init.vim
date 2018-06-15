@@ -23,6 +23,8 @@ set diffopt+=vertical
 " Statusline
 set statusline=\ %f%< " filename
 set statusline+=%=%y\  " filetype
+" Show substition updates in context
+set inccommand=nosplit
 
 " Cursorline
 set cursorline
