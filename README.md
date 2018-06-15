@@ -5,7 +5,7 @@ Custom configuration files for various tools, including
 
 I run all of this in [Kitty](https://github.com/kovidgoyal/kitty) on macOS.
 
-Use [Hasklig](https://github.com/i-tu/Hasklig) to take full advantage of
+Use [Fira Code](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode) to take full advantage of
 ligatures.
 
 ## Requirements
