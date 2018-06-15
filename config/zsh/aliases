@@ -8,7 +8,7 @@ alias vi='nvim'
 alias z='source ~/.zshrc'
 alias finder='open .'
 alias kitty='/Applications/kitty.app/Contents/MacOS/kitty @ --to unix:/tmp/kitty '
-alias tab='kitty set-tab-title && clear'
+alias tab='kitty set-tab-title'
 
 alias easy-brew="brew update; brew upgrade --all"
 alias vim-update="nvim '+PlugUpdate' '+PlugUpgrade' '+qa!'"
