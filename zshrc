@@ -5,7 +5,7 @@ export RCRC="$XDG_CONFIG_HOME/rcrc"
 export LS_COLORS="di=1:fi=1:ln=32:or=31:mi=31:ex=35"
 export KEYTIMEOUT=1
 
-export PATH="/usr/local/bin:$HOME/.bin:/usr/sbin:/sbin:/usr/bin:/bin"
+export PATH="/usr/local/bin:$HOME/.bin:/usr/sbin:/sbin:/usr/bin:/bin:$PATH"
 
 # Vi mode
 bindkey -v

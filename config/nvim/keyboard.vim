@@ -17,6 +17,13 @@ nmap K i<CR><Esc>
 nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Remove highlight
 nmap <silent> <Leader>n :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+" Reindent whole file
+map <F7> mzgg=G`z
+" Pane navigation for humans
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Plugins
 " FZF
@@ -34,10 +41,3 @@ nmap <Leader>p :ALEFix<CR>
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :split <CR> :Gina status -s<CR>
 nmap <leader>go :Gina commit<CR>
-
-" VTR (Vim Tmux Runner)
-let g:VtrClearSequence = ""
-nmap <Leader>ta :VtrAttachToPane<CR>1<CR>
-nmap <Leader>tr :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
-nmap <Leader>tl :VtrSendCommandToRunner<cr>
-nmap <Leader>tc :VtrClearRunner<cr>
