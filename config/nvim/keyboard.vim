@@ -39,5 +39,5 @@ nmap <Leader>p :ALEFix<CR>
 
 " Gina
 nmap <leader>gr :Gina<Space>
-nmap <leader>gs :split <CR> :Gina status -s<CR>
+nmap <leader>gs :Gina status -s --opener=split<CR>
 nmap <leader>go :Gina commit<CR>
