@@ -10,6 +10,7 @@ ligatures.
 
 ## Requirements
 
+- [kitty](https://github.com/kovidgoyal/kitty)
 - [rcm](https://github.com/thoughtbot/rcm)
 - zsh
   - [antibody](getantibody/antibody)
