@@ -13,7 +13,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug '~/Git/vim-interrobang'
-Plug '~/Git/vim-kitty-runner', {'on': ['KittyRunCommand']}
+Plug '~/Git/vim-kitty-runner'
 call plug#end()
 
 colorscheme interrobang
