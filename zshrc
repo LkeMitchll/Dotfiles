@@ -34,7 +34,3 @@ source $HOME/.asdf/completions/asdf.bash
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_TMUX="1"
-
-# Tmuxinator
-source ~/.bin/tmuxinator.zsh
