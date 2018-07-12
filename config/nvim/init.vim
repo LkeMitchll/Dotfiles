@@ -25,6 +25,8 @@ set statusline=\ %f%< " filename
 set statusline+=%=%y\  " filetype
 " Show substition updates in context
 set inccommand=nosplit
+" Keep cursorline centered when scrolling
+set scrolloff=999
 
 " Cursorline
 set cursorline
