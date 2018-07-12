@@ -28,6 +28,7 @@ uatt() {
   local SEPERATOR="====================="
   brew update
   brew upgrade
+  brew cask upgrade
   echo $SEPERATOR
   rcup -v
   echo $SEPERATOR
