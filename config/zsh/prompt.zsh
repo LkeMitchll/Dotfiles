@@ -1,13 +1,16 @@
-PREFIX="%{$fg[cyan]%}╭─-<<"
+# ╭── /bin
+# ╰╴ɴ-> ls
+
+PREFIX="%{$fg[cyan]%}╭──"
 CWD="%{$fg[magenta]%}%~"
-SUFFIX="%{$fg[cyan]%}╰─->> %{$fg[white]%}"
+SUFFIX="%{$fg[cyan]%}╰╴%{$fg[white]%}"
+VI_N="%{$fg[yellow]%}ɴ%{$fg[cyan]%}->"
+VI_I="%{$fg[cyan]%}ɪ->"
 NEWLINE=$'\n'
 
-PROMPT="${PREFIX} ${CWD}${NEWLINE}${SUFFIX}"
-
 function zle-line-init zle-keymap-select {
-  RPS1="%F{8}${${KEYMAP/vicmd/N}/(main|viins)/I}"
-  RPS2=$RPS1
+  VIM="${${KEYMAP/vicmd/"${VI_N}"}/(main|viins)/"${VI_I}"}"
+  PROMPT="${PREFIX} ${CWD}${NEWLINE}${SUFFIX}${VIM} "
   zle reset-prompt
 }
 
