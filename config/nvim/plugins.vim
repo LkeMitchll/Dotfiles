@@ -7,7 +7,7 @@ Plug 'mattn/emmet-vim', {'for': ['html', 'eruby', 'jsx', 'css', 'scss']}
 Plug 'matze/vim-move'
 Plug 'roman/golden-ratio'
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/deoplete.nvim' | Plug  '~/Git/deoplete-minisnip'
+Plug 'Shougo/deoplete.nvim' | Plug 'Shougo/neco-syntax' | Plug  '~/Git/deoplete-minisnip'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
