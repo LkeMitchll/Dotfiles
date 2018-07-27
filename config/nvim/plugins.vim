@@ -1,8 +1,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim', {'on': ['Files', 'Ag', 'Buffers']}
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'joereynolds/vim-minisnip'
 Plug 'justinmk/vim-sneak'
-Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
+Plug 'lambdalisue/gina.vim'
 Plug 'mattn/emmet-vim', {'for': ['html', 'eruby', 'jsx', 'css', 'scss']}
 Plug 'matze/vim-move'
 Plug 'roman/golden-ratio'
