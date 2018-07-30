@@ -3,7 +3,7 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'joereynolds/vim-minisnip'
 Plug 'justinmk/vim-sneak'
 Plug 'lambdalisue/gina.vim'
-Plug 'mattn/emmet-vim', {'for': ['html', 'eruby', 'jsx', 'css', 'scss']}
+Plug 'mattn/emmet-vim'
 Plug 'matze/vim-move'
 Plug 'roman/golden-ratio'
 Plug 'sheerun/vim-polyglot'
