@@ -18,12 +18,10 @@ ligatures.
 - neovim
   - [plug](https://github.com/junegunn/vim-plug)
 - [fzf](https://github.com/junegunn/fzf)
-  - [ag](https://github.com/ggreer/the_silver_searcher)
 
 ## Install
 
 1. Install requirements (above)
 2. Clone this repo `git clone [url] ~/.dotfiles`
-3. Run `git submodule init && git submodule update --remote` inside the cloned dir.
-4. Run `RCRC=~/.dotfiles/config/rcrc rcup -v`
-5. Profit.
+3. Run `RCRC=~/.dotfiles/config/rcrc rcup -v`
+4. Profit.
