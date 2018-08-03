@@ -4,19 +4,19 @@ map <C-c> <silent> <C-c>
 nmap <F12> :source ~/.config/nvim/init.vim<CR>
 " Open netrw
 nmap <Leader>e :Sexplore<CR>
-" Split lines (opposite of j)
+" Split lines
 nmap K i<CR><Esc>
 " Remove trailing whitespace
 nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Remove highlight
-nmap <silent> <Leader>n :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+nmap <silent> <Leader>n :nohl<CR>
 " Reindent whole file
 map <F7> mzgg=G`z
-" Pane navigation for humans
+" Pane navigation
+nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " FZF
 """ Find files
