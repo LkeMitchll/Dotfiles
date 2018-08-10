@@ -3,7 +3,7 @@ map <C-c> <silent> <C-c>
 " Reload config
 nmap <F12> :source ~/.config/nvim/init.vim<CR>
 " Open netrw
-nmap <Leader>e :Sexplore<CR>
+nmap <Leader>e :silent Sexplore<CR>
 " Split lines
 nmap K i<CR><Esc>
 " Remove trailing whitespace
@@ -12,6 +12,7 @@ nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nmap <silent> <Leader>n :nohl<CR>
 " Reindent whole file
 map <F7> mzgg=G`z
+map <F2> :bufdo :bd<CR>
 " Pane navigation
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
