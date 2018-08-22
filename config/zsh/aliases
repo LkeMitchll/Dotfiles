@@ -20,7 +20,7 @@ session() {
 }
 
 alias easy-brew="brew update; brew upgrade --all"
-alias vim-update="nvim '+PlugClean +PlugUpdate' '+PlugUpgrade' '+qa!'"
+alias vim-update="nvim '+PlugClean' '+PlugUpdate' '+PlugUpgrade' '+qa!'"
 alias cpu="top -u -s 2"
 
 # Update all the things
