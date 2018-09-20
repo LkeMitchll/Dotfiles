@@ -12,7 +12,10 @@ nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nmap <silent> <Leader>n :nohl<CR>
 " Reindent whole file
 map <F7> mzgg=G`z
+" Delete all buffers
 map <F2> :bufdo :bd<CR>
+" Sort visually highlighted lines
+vmap <F6> :'<,'>sort<CR>
 " Pane navigation
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
