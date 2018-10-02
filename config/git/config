@@ -10,6 +10,7 @@
   caa = commit --all --amend
   sh = push
   sho = push origin
+  shofwl = push origin --force-with-lease
   ll = pull --rebase
   a = add
   aa = add --all
