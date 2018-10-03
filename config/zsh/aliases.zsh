@@ -3,10 +3,16 @@ alias gs='g s'
 alias rpsec="rspec"
 alias c='clear'
 alias vim='nvim'
-alias vimdiff='nvim -d'
 alias vi='nvim'
 alias z='source ~/.zshrc'
 alias finder='open .'
+alias vim-update="nvim '+PlugClean' '+PlugUpdate' '+PlugUpgrade' '+qa!'"
+# Web dev
+alias yr="yarn run"
+alias be="bundle exec"
+# Git
+alias git="hub"
+alias g="git"
 
 # Kitty
 tab() {
@@ -19,10 +25,6 @@ session() {
   kitty @ new-window --cwd=$PWD --keep-focus; clear
 }
 
-alias easy-brew="brew update; brew upgrade --all"
-alias vim-update="nvim '+PlugClean' '+PlugUpdate' '+PlugUpgrade' '+qa!'"
-alias cpu="top -u -s 2"
-
 # Update all the things
 uatt() {
   local SEPERATOR="====================="
@@ -30,7 +32,7 @@ uatt() {
   brew upgrade
   brew cask upgrade
   echo $SEPERATOR
-  rcup -v
+  rcup
   echo $SEPERATOR
   antibody update
   echo $SEPERATOR
@@ -58,18 +60,3 @@ waiter() {
   sleep $1
   clear
 }
-
-# Web dev
-alias mm="middleman"
-alias yr="yarn run"
-alias nr="npm run"
-
-# Git
-alias git="hub"
-alias g="git"
-
-# Rails
-alias rdbm="rake db:migrate"
-alias rdbs="rake db:setup"
-alias rdbr="rake db:reset"
-alias be="bundle exec"

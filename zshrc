@@ -17,7 +17,7 @@ source $XDG_CONFIG_HOME/zsh/completion.zsh
 source $XDG_CONFIG_HOME/zsh/prompt.zsh
 
 # Aliases
-source $XDG_CONFIG_HOME/zsh/aliases
+source $XDG_CONFIG_HOME/zsh/aliases.zsh
 
 # Plugins
 source <(antibody init)
