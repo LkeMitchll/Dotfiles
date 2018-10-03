@@ -21,5 +21,5 @@ else
   autocmd WinEnter * set cursorline
 endif
 
-source $XDG_CONFIG_HOME/nvim/keyboard.vim
-source $XDG_CONFIG_HOME/nvim/plugins.vim
+source ~/.config/nvim/keyboard.vim
+source ~/.config/nvim/plugins.vim
