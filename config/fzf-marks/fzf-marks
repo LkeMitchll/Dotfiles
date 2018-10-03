@@ -1,5 +1,5 @@
-desktop : /Users/Luke/Desktop
 dotfiles-alias : /Users/Luke/.dotfiles
 downloads : /Users/Luke/Downloads
-dotfiles : /Users/Luke/Git/Dotfiles
+desktop : /Users/Luke/Desktop
 git : /Users/Luke/Git
+dotfiles : /Users/Luke/Git/Dotfiles
