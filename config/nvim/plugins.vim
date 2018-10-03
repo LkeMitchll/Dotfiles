@@ -1,6 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim' | Plug 'Shougo/neco-syntax'
+Plug 'Shougo/deoplete.nvim' | Plug 'Shougo/neco-syntax' | Plug 'Shougo/context_filetype.vim'
 Plug 'joereynolds/vim-minisnip' | Plug '~/Git/deoplete-minisnip'
 Plug 'justinmk/vim-sneak'
 Plug 'lambdalisue/gina.vim'
@@ -18,3 +18,9 @@ call plug#end()
 
 colorscheme interrobang
 let g:deoplete#enable_at_startup = 1
+
+if !exists('g:context_filetype#filetypes')
+  let g:context_filetype#filetypes = {}
+endif
+let g:context_filetype#filetypes["javascript.jsx"] =
+      \ [{'filetype' : 'css', 'start' : 'const \D*\`', 'end' : '`'}]
