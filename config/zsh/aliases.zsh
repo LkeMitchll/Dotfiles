@@ -28,8 +28,10 @@ uatt() {
   local SEPERATOR="====================="
   brew bundle --global
   brew bundle --global cleanup --force
+  brew update
+  brew upgrade
   echo $SEPERATOR
-  rcup
+  rcup -v
   echo $SEPERATOR
   antibody update
   echo $SEPERATOR
