@@ -26,9 +26,8 @@ session() {
 # Update all the things
 uatt() {
   local SEPERATOR="====================="
-  brew update
-  brew upgrade
-  brew cask upgrade
+  brew bundle --global
+  brew bundle --global cleanup --force
   echo $SEPERATOR
   rcup
   echo $SEPERATOR
