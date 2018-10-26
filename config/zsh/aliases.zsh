@@ -42,6 +42,7 @@ uatt() {
   mas upgrade
   echo $SEPERATOR
   vim-update
+  echo "Neovim plugins up-to-date"
   echo $SEPERATOR
   waiter 5
 }
