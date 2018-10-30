@@ -16,6 +16,8 @@ brew "gnupg"
 brew "heroku/brew/heroku"
 brew "hub"
 brew "imagemagick"
+brew "libxml2"
+brew "libyaml"
 brew "mas"
 brew "neovim"
 brew "postgresql", restart_service: true
