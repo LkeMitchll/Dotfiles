@@ -50,8 +50,7 @@ uatt() {
 
 # Cleanup
 housekeep() {
-  brew cleanup
-  brew cask cleanup
+  brew cleanup --verbose -s
 }
 
 # Wait for x seconds then clear
