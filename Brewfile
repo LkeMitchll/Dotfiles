@@ -1,3 +1,4 @@
+# vi: ft=config
 tap "beeftornado/rmtree"
 tap "getantibody/tap"
 tap "heroku/brew"
@@ -6,6 +7,7 @@ tap "homebrew/services"
 tap "potatolabs/git-redate"
 tap "thoughtbot/formulae"
 
+brew "bat"
 brew "ctags"
 brew "diff-so-fancy"
 brew "ffmpeg"

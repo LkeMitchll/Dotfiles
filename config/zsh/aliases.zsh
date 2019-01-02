@@ -1,16 +1,17 @@
 alias sl="ls"
-alias gs='g s'
+alias gs="g s"
 alias rpsec="rspec"
-alias c='clear'
-alias vim='nvim'
-alias vi='nvim'
-alias z='source ~/.zshrc'
-alias finder='open .'
+alias c="clear"
+alias vim="nvim"
+alias vi="nvim"
+alias z="source ~/.zshrc"
+alias finder="open ."
 alias vim-update="nvim '+PlugClean' '+PlugUpdate' '+PlugUpgrade' '+qa!'"
 alias yr="yarn run"
 alias be="bundle exec"
 alias git="hub"
 alias g="git"
+alias cat="bat"
 
 # Kitty
 kitty-tab() {
