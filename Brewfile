@@ -1,5 +1,4 @@
 # vi: ft=config
-tap "beeftornado/rmtree"
 tap "getantibody/tap"
 tap "heroku/brew"
 tap "homebrew/cask"
@@ -29,8 +28,6 @@ brew "thoughtbot/formulae/parity"
 brew "thoughtbot/formulae/rcm"
 brew "zsh"
 
-cask "android-studio"
 cask "kitty"
 cask "oni"
 cask "phoenix"
-cask "virtualbox"
