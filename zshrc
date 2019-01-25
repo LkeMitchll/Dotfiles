@@ -28,6 +28,7 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^N' autosuggest-accept
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 FZF_MARKS_FILE=${XDG_CONFIG_HOME}/fzf-marks/fzf-marks
+FZF_MARKS_KEEP_ORDER=1
 
 # ASDF
 source $HOME/.asdf/asdf.sh
