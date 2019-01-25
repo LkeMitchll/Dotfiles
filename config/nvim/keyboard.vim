@@ -16,11 +16,6 @@ map <F7> mzgg=G`z
 map <F2> :bufdo :bd<CR>
 " Sort visually highlighted lines
 vmap <F6> :'<,'>sort<CR>
-" Pane navigation
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
 
 " FZF
 """ Find files
