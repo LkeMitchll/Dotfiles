@@ -20,3 +20,5 @@ zstyle ':completion:*:warnings' format "$fg[red]No matches for:$reset_color %d"
 zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' group-name ''
+# kitty completion
+kitty + complete setup zsh | source /dev/stdin

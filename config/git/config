@@ -13,10 +13,8 @@
   shofwl = push origin --force-with-lease
   ll = pull --rebase
   a = add
-  aa = add --all
   s = status -sbu
   f = fetch
-  fo = fetch origin
   d = diff
   ri = rebase --interactive
   rc = rebase --continue
