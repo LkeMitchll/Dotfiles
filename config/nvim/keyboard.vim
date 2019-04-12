@@ -1,31 +1,29 @@
-" Don't show tutorial warning on <C-c>
-map <C-c> <silent> <C-c>
-" Reload config
-nmap <F12> :source ~/.config/nvim/init.vim<CR>
 " Open netrw
-nmap <Leader>e :silent Sexplore<CR>
+nmap <leader>e :silent Sexplore<CR>
 " Split lines
 nmap K i<CR><Esc>
-" Remove trailing whitespace
-nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Remove highlight
-nmap <silent> <Leader>n :nohl<CR>
-" Reindent whole file
-map <F7> mzgg=G`z
+nmap <leader>n :nohl<CR>
 " Delete all buffers
 map <F2> :bufdo :bd<CR>
+" Remove trailing whitespace
+nmap <F3> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+" Reindent whole file
+map <F4> mzgg=G`z
 " Sort visually highlighted lines
-vmap <F6> :'<,'>sort<CR>
+vmap <F5> :'<,'>sort<CR>
+" Reload config
+nmap <F12> :source ~/.config/nvim/init.vim<CR>
 
 " FZF
 """ Find files
 nmap <C-T> :Files<CR>
 """ Grep files
-nmap <Leader>a :Ag<Space>
+nmap <leader>a :Ag<Space>
 """ Find buffers
-nmap <Leader>b :Buffers<CR>
+nmap <leader>b :Buffers<CR>
 " ALE
-nmap <Leader>p :ALEFix<CR>
+nmap <leader>p :ALEFix<CR>
 " Gina
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :Gina status<CR>

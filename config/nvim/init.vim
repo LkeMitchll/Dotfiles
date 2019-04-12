@@ -15,12 +15,6 @@ let g:netrw_banner=0
 let g:netrw_liststyle=3
 
 set cursorline
-if &diff
-  set nocursorline
-else
-  autocmd WinLeave * set nocursorline
-  autocmd WinEnter * set cursorline
-endif
 
 source ~/.config/nvim/keyboard.vim
 source ~/.config/nvim/plugins.vim

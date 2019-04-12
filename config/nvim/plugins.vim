@@ -1,6 +1,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim' | Plug 'Shougo/neco-syntax' | Plug 'Shougo/context_filetype.vim'
+Plug 'Shougo/context_filetype.vim'
+Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/neco-syntax'
 Plug 'joereynolds/vim-minisnip' | Plug '~/Git/deoplete-minisnip'
 Plug 'justinmk/vim-sneak'
 Plug 'knubie/vim-kitty-navigator'
@@ -8,7 +10,8 @@ Plug 'lambdalisue/gina.vim'
 Plug 'mattn/emmet-vim'
 Plug 'matze/vim-move'
 Plug 'roman/golden-ratio'
-Plug 'sheerun/vim-polyglot' | Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'sheerun/vim-polyglot'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
