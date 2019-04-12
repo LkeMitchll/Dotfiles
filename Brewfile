@@ -30,4 +30,3 @@ brew "zsh"
 
 cask "kitty"
 cask "oni"
-cask "phoenix"
