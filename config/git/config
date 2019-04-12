@@ -4,6 +4,7 @@
   name = LkeMitchll
   email = mail@luke.fail
 [alias]
+  aa = add --all
   ch = checkout
   co = commit
   ca = commit --all
