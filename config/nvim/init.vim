@@ -10,6 +10,9 @@ set smartindent expandtab shiftround
 set softtabstop=2 tabstop=2 shiftwidth=2
 set splitbelow splitright
 set tags+=.git/tags;/
+set shortmess+=c
+set signcolumn=yes
+set cmdheight=2
 
 let g:netrw_banner=0
 let g:netrw_liststyle=3

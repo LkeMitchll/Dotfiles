@@ -15,16 +15,23 @@ vmap <F5> :'<,'>sort<CR>
 " Reload config
 nmap <F12> :source ~/.config/nvim/init.vim<CR>
 
-" FZF
-""" Find files
-nmap <C-T> :Files<CR>
-""" Grep files
-nmap <leader>a :Ag<Space>
-""" Find buffers
-nmap <leader>b :Buffers<CR>
 " ALE
 nmap <leader>p :ALEFix<CR>
 " Gina
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :Gina status<CR>
 nmap <leader>go :Gina commit<CR>
+nmap null <Plug>(gina-builtin-mark)j
+nmap null <Plug>(gina-builtin-mark)k
+" COC
+nmap <C-T> :CocList files<CR>
+nmap <leader>b :CocList buffers<CR>
+nmap <leader>a :CocList --interactive grep<CR>
+nmap <leader>w :CocList --interactive words<CR>
+nmap <leader>l :<C-u>CocList<CR>
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nnoremap <silent> K :call CocAction('doHover')<CR>
+nmap <leader>rn <Plug>(coc-rename)
+""" Confirm completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

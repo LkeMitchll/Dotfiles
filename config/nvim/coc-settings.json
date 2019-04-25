@@ -1,0 +1,13 @@
+{
+  "diagnostic.displayByAle": true,
+  "suggest.noselect": false,
+  "suggest.enablePreview": true,
+  "emmet.includeLanguages": {"eruby": "html", "javascript": "css"},
+  "list.source.grep.command": "ag",
+  "list.insertMappings": {
+    "<C-v>": "action:splitv",
+    "<C-x>": "action:split",
+    "<C-t>": "action:tabe",
+    "<C-z>": "do:toggle"
+  }
+}

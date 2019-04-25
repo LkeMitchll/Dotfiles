@@ -1,14 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'Shougo/context_filetype.vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/neco-syntax'
-Plug 'joereynolds/vim-minisnip' | Plug '~/Git/deoplete-minisnip'
+Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'knubie/vim-kitty-navigator'
 Plug 'lambdalisue/gina.vim'
-Plug 'mattn/emmet-vim'
 Plug 'matze/vim-move'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'roman/golden-ratio'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -21,11 +17,11 @@ Plug '~/Git/vim-kitty-runner'
 call plug#end()
 
 colorscheme interrobang
-let g:deoplete#enable_at_startup = 1
-let g:kitty_navigator_listening_on_address = 'unix:/tmp/kitty'
 
-if !exists('g:context_filetype#filetypes')
-  let g:context_filetype#filetypes = {}
-endif
-let g:context_filetype#filetypes["javascript.jsx"] =
-      \ [{'filetype' : 'css', 'start' : '\D*\`', 'end' : '`'}]
+let g:kitty_navigator_listening_on_address = 'unix:/tmp/kitty'
+call gina#custom#command#option('status', '--opener', 'split')
+
+let g:coc_filetype_map = {
+    \ 'html.erb': 'html',
+    \ }
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
