@@ -1,13 +1,13 @@
 {
   "diagnostic.displayByAle": true,
-  "suggest.noselect": false,
-  "suggest.enablePreview": true,
-  "emmet.includeLanguages": {"eruby": "html", "javascript": "css"},
-  "list.source.grep.command": "ag",
+  "emmet.includeLanguages": { "eruby": "html", "javascript": "css" },
   "list.insertMappings": {
-    "<C-v>": "action:splitv",
+    "<C-v>": "action:vsplit",
     "<C-x>": "action:split",
     "<C-t>": "action:tabe",
     "<C-z>": "do:toggle"
-  }
+  },
+  "list.source.grep.command": "ag",
+  "suggest.enablePreview": true,
+  "suggest.noselect": false
 }

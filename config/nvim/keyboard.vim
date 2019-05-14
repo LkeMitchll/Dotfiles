@@ -31,7 +31,17 @@ nmap <leader>w :CocList --interactive words<CR>
 nmap <leader>l :<C-u>CocList<CR>
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
-nnoremap <silent> K :call CocAction('doHover')<CR>
+nnoremap <silent> L :call CocAction('doHover')<CR>
 nmap <leader>rn <Plug>(coc-rename)
 """ Confirm completion
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" use <tab> for trigger completion and navigate next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
