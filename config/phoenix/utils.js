@@ -2,15 +2,8 @@
 const HANDLERS = [];
 
 function getZeroPoint() {
-  Window.focused()
-    .screen()
-    .flippedVisibleFrame().y;
-  if (
-    Window.focused()
-      .screen()
-      .flippedVisibleFrame().y == -680
-  ) {
-    return 1680;
+  if (Window.focused().screen().flippedVisibleFrame().x < 0) {
+    return Window.focused().screen().flippedVisibleFrame().x
   } else {
     return 0;
   }
@@ -32,12 +25,3 @@ function setEventHandler(event, handler) {
 Key.on("r", prefix, () => {
   reloadPhoenix();
 });
-
-// Event.on("appDidActivate", () => {
-//   log(
-//     "screen",
-//     Window.focused()
-//       .screen()
-//       .identifier()
-//   );
-// });
