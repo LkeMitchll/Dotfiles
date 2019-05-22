@@ -21,8 +21,6 @@ nmap <leader>p :ALEFix<CR>
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :Gina status<CR>
 nmap <leader>go :Gina commit<CR>
-nmap null <Plug>(gina-builtin-mark)j
-nmap null <Plug>(gina-builtin-mark)k
 " COC
 nmap <C-T> :CocList files<CR>
 nmap <leader>b :CocList buffers<CR>
@@ -35,13 +33,3 @@ nnoremap <silent> L :call CocAction('doHover')<CR>
 nmap <leader>rn <Plug>(coc-rename)
 """ Confirm completion
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" use <tab> for trigger completion and navigate next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
