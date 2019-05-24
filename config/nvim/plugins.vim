@@ -20,8 +20,3 @@ colorscheme interrobang
 
 let g:kitty_navigator_listening_on_address = 'unix:/tmp/kitty'
 call gina#custom#command#option('status', '--opener', 'split')
-
-let g:coc_filetype_map = {
-    \ 'html.erb': 'html',
-    \ }
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif

@@ -17,19 +17,34 @@ nmap <F12> :source ~/.config/nvim/init.vim<CR>
 
 " ALE
 nmap <leader>p :ALEFix<CR>
+
 " Gina
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :Gina status<CR>
 nmap <leader>go :Gina commit<CR>
+
 " COC
 nmap <C-T> :CocList files<CR>
 nmap <leader>b :CocList buffers<CR>
 nmap <leader>a :CocList --interactive grep<CR>
-nmap <leader>w :CocList --interactive words<CR>
 nmap <leader>l :<C-u>CocList<CR>
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-nnoremap <silent> L :call CocAction('doHover')<CR>
+nmap <silent>[c <Plug>(coc-diagnostic-prev)
+nmap <silent>]c <Plug>(coc-diagnostic-next)
 nmap <leader>rn <Plug>(coc-rename)
+
 """ Confirm completion
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+""" VSCode-like snippet completion with <Tab>
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
