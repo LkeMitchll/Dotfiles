@@ -18,10 +18,15 @@ function log(desc, content) {
   Phoenix.log(desc.toUpperCase() + ": " + content);
 }
 
-function setEventHandler(event, handler) {
-  HANDLERS.push(Event.on(event, handler));
-}
-
 Key.on("r", prefix, () => {
   reloadPhoenix();
 });
+
+// Event.on("appDidActivate", () => {
+//   log(
+//     "screen",
+//     JSON.stringify(
+//       Window.focused().screen().flippedVisibleFrame()
+//     )
+//   );
+// });
