@@ -4,7 +4,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'knubie/vim-kitty-navigator'
 Plug 'lambdalisue/gina.vim'
 Plug 'matze/vim-move'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'roman/golden-ratio'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
