@@ -7,7 +7,8 @@ uatt() {
   brew upgrade
   brew cask upgrade
   echo $SEPERATOR
-  rcup -v
+  rcup
+  echo "Dotfiles up-to-date"
   echo $SEPERATOR
   antibody update
   echo $SEPERATOR
