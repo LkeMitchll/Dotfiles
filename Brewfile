@@ -26,5 +26,5 @@ brew "thoughtbot/formulae/rcm"
 brew "zsh"
 
 cask "kitty"
-cask "oni"
 cask "phoenix"
+cask "visual-studio-code"
