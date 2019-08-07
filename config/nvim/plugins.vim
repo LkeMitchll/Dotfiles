@@ -13,10 +13,10 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug '~/Git/vim-interrobang'
+Plug '~/Git/vim-kitchen-sink'
 Plug '~/Git/vim-kitty-runner'
 call plug#end()
 
 colorscheme interrobang
 
 let g:kitty_navigator_listening_on_address = 'unix:/tmp/kitty'
-call gina#custom#command#option('status', '--opener', 'split')
