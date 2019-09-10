@@ -16,6 +16,7 @@ brew "getantibody/tap/antibody"
 brew "git"
 brew "heroku/brew/heroku"
 brew "hub"
+brew "imagemagick"
 brew "mas"
 brew "neovim"
 brew "postgresql", restart_service: true
