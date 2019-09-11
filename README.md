@@ -17,7 +17,6 @@ ligatures.
 - [asdf](https://github.com/asdf-vm/asdf)
 - neovim
   - [plug](https://github.com/junegunn/vim-plug)
-- [fzf](https://github.com/junegunn/fzf)
 
 ## Install
 
