@@ -11,7 +11,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug '~/Git/vim-interrobang'
 Plug '~/Git/vim-kitchen-sink'
 Plug '~/Git/vim-kitty-runner'
