@@ -13,7 +13,7 @@ ligatures.
 - [kitty](https://github.com/kovidgoyal/kitty)
 - [rcm](https://github.com/thoughtbot/rcm)
 - zsh
-  - [antibody](getantibody/antibody)
+  - [antibody](https://github.com/getantibody/antibody)
 - [asdf](https://github.com/asdf-vm/asdf)
 - neovim
   - [plug](https://github.com/junegunn/vim-plug)
