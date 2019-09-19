@@ -48,6 +48,108 @@ Key.on("2", prefix, () => {
   });
 });
 
+// Quarter: Top left
+Key.on("w", prefix, () => {
+  Window.focused().setFrame({
+    x: getZeroPoint() + padding,
+    y:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().y + padding,
+    width:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().width /
+        2 -
+      padding * 2,
+    height:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().height /
+        2 -
+      padding * 2
+  });
+});
+
+// Quarter: Bottom left
+Key.on("a", prefix, () => {
+  Window.focused().setFrame({
+    x: getZeroPoint() + padding,
+    y:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().height / 2 + padding,
+    width:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().width /
+        2 -
+      padding * 2,
+    height:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().height /
+        2 -
+      padding * 2
+  });
+});
+
+// Quarter: Top right
+Key.on("s", prefix, () => {
+  Window.focused().setFrame({
+    x:
+      getZeroPoint() +
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().width /
+        2,
+    y:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().y + padding,
+    width:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().width /
+        2 -
+      padding,
+    height:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().height /
+        2 -
+      padding * 2
+  });
+});
+
+// Quarter: Bottom right
+Key.on("d", prefix, () => {
+  Window.focused().setFrame({
+    x:
+      getZeroPoint() +
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().width /
+        2,
+    y:
+     Window.focused()
+        .screen()
+        .flippedVisibleFrame().height / 2 + padding,
+    width:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().width /
+        2 -
+      padding,
+    height:
+      Window.focused()
+        .screen()
+        .flippedVisibleFrame().height /
+        2 -
+      padding * 2
+  });
+});
+
 // Left: Two thirds of the screen
 Key.on("[", prefix, () => {
   Window.focused().setFrame({
