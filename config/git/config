@@ -12,6 +12,7 @@
   sh = push
   sho = push origin
   shofwl = push origin --force-with-lease
+  shom = push origin master
   ll = pull --rebase
   a = add
   s = status -sbu
@@ -20,9 +21,8 @@
   ri = rebase --interactive
   rc = rebase --continue
   lg = log --graph --date=relative -10
-  shom = push origin master
-  reset-last-soft = reset --soft HEAD~1
-  reset-last-hard = reset --hard HEAD~1
+  rls = reset --soft HEAD~1
+  rlh = reset --hard HEAD~1
 [core]
   excludesfile = ~/.config/git/gitignore
   autocrlf = input
