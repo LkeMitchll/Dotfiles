@@ -203,7 +203,7 @@ Key.on("]", prefix, () => {
 });
 
 // Full screen
-Key.on(".", prefix, () => {
+Key.on("f", prefix, () => {
   Window.focused().setFrame({
     x: getZeroPoint() + padding,
     y:
