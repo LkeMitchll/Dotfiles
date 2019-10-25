@@ -8,6 +8,8 @@
     "<C-z>": "do:toggle"
   },
   "list.source.grep.command": "ag",
+  "list.source.files.command": "ag",
+  "list.source.files.args": ["-f", "-g", ".", "--nocolor", "--hidden", "--ignore", ".git"],
   "suggest.enablePreview": true,
   "suggest.noselect": false
 }
