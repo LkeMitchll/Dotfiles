@@ -1,11 +1,11 @@
 # ╭── /bin
 # ╰╴ɴ-> ls
 
-PREFIX="%{$fg[cyan]%}╭──"
+PREFIX="%{$fg[blue]%}╭──"
 CWD="%{$fg[magenta]%}%~"
-SUFFIX="%{$fg[cyan]%}╰╴%{$fg[white]%}"
-VI_N="%{$fg[yellow]%}ɴ%{$fg[cyan]%}->"
-VI_I="%{$fg[cyan]%}ɪ->"
+SUFFIX="%{$fg[blue]%}╰╴%{$fg[white]%}"
+VI_N="%{$fg[yellow]%}ɴ%{$fg[blue]%}->"
+VI_I="%{$fg[blue]%}ɪ->"
 NEWLINE=$'\n'
 
 function zle-line-init zle-keymap-select {
