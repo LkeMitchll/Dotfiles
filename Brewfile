@@ -8,7 +8,6 @@ tap "thoughtbot/formulae"
 
 brew "asdf"
 brew "bat"
-brew "ctags"
 brew "diff-so-fancy"
 brew "fzf"
 brew "getantibody/tap/antibody"

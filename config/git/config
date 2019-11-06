@@ -1,5 +1,3 @@
-[init]
-  templatedir = ~/.config/git/git_template
 [user]
   name = LkeMitchll
   email = mail@luke.fail
