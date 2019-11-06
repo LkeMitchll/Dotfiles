@@ -1,4 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'dense-analysis/ale'
 Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'knubie/vim-kitty-navigator'
@@ -11,7 +12,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'dense-analysis/ale'
 Plug '~/Git/vim-kitchen-sink'
 Plug '~/Git/vim-kitty-runner'
 call plug#end()

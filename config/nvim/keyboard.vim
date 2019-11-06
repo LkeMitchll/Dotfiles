@@ -7,17 +7,15 @@ nmap <leader>n :nohl<CR>
 
 " ALE
 nmap <leader>p :ALEFix<CR>
-
 " Gina
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :Gina status<CR>
 nmap <leader>go :Gina commit<CR>
-
 " COC
 nmap <C-T> :CocList files<CR>
 nmap <leader>b :CocList buffers<CR>
 nmap <leader>a :CocList --interactive grep<CR>
-nmap <leader>l :<C-u>CocList<CR>
+nmap <leader>l :CocList<CR>
 let g:coc_snippet_next = '<tab>'
 
 """ Confirm completion
