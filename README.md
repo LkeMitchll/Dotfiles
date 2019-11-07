@@ -10,17 +10,18 @@ ligatures.
 
 ## Requirements
 
+- [homebrew](https://brew.sh)
 - [kitty](https://github.com/kovidgoyal/kitty)
 - [rcm](https://github.com/thoughtbot/rcm)
-- zsh
+- [zsh](http://www.zsh.org)
   - [antibody](https://github.com/getantibody/antibody)
-- [asdf](https://github.com/asdf-vm/asdf)
-- neovim
+- [neovim](https://neovim.io)
   - [plugpac](https://github.com/bennyyip/plugpac.vim)
+- [asdf](https://github.com/asdf-vm/asdf)
 
 ## Install
 
 1. Install requirements (above)
 2. Clone this repo `git clone [url] ~/.dotfiles`
 3. Run `RCRC=~/.dotfiles/config/rcrc rcup -v`
-4. Profit.
+4. Run `uatt` (Update All The Things)
