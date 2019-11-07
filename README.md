@@ -16,7 +16,7 @@ ligatures.
   - [antibody](https://github.com/getantibody/antibody)
 - [asdf](https://github.com/asdf-vm/asdf)
 - neovim
-  - [plug](https://github.com/junegunn/vim-plug)
+  - [plugpac](https://github.com/bennyyip/plugpac.vim)
 
 ## Install
 
