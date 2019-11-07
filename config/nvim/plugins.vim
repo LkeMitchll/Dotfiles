@@ -5,6 +5,7 @@ Pack 'honza/vim-snippets'
 Pack 'justinmk/vim-sneak'
 Pack 'knubie/vim-kitty-navigator'
 Pack 'lambdalisue/gina.vim'
+Pack 'lkemitchll/vim-kitty-runner'
 Pack 'neoclide/coc.nvim', {'branch': 'release'}
 Pack 'roman/golden-ratio'
 Pack 'sheerun/vim-polyglot'
