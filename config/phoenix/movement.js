@@ -78,7 +78,9 @@ Key.on("a", prefix, () => {
     y:
       Window.focused()
         .screen()
-        .flippedVisibleFrame().height / 2 + padding,
+        .flippedVisibleFrame().height /
+        2 +
+      padding,
     width:
       Window.focused()
         .screen()
@@ -90,7 +92,7 @@ Key.on("a", prefix, () => {
         .screen()
         .flippedVisibleFrame().height /
         2 -
-      padding * 2
+      padding
   });
 });
 
@@ -132,9 +134,11 @@ Key.on("d", prefix, () => {
         .flippedVisibleFrame().width /
         2,
     y:
-     Window.focused()
+      Window.focused()
         .screen()
-        .flippedVisibleFrame().height / 2 + padding,
+        .flippedVisibleFrame().height /
+        2 +
+      padding,
     width:
       Window.focused()
         .screen()
@@ -146,7 +150,7 @@ Key.on("d", prefix, () => {
         .screen()
         .flippedVisibleFrame().height /
         2 -
-      padding * 2
+      padding
   });
 });
 
