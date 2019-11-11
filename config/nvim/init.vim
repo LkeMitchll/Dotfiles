@@ -1,4 +1,4 @@
-let mapleader = "\<Space>"
+let mapleader="\<Space>"
 set clipboard=unnamed
 set complete+=kspell inccommand=nosplit
 set cursorline number relativenumber scrolloff=999
@@ -26,24 +26,18 @@ call plugpac#end()
 packloadall
 
 " Open netrw
-nmap <leader>e :silent Sexplore<CR>
-" Split lines
-nmap K i<CR><Esc>
-" Remove highlight
-nmap <leader>n :nohl<CR>
-
+nmap <leader>e :Explore<CR>
 " ALE
 nmap <leader>p :ALEFix<CR>
 " Gina
 nmap <leader>gr :Gina<Space>
-nmap <leader>gs :Gina status<CR>
+nmap <leader>gs :Gina status -s<CR>
 nmap <leader>go :Gina commit<CR>
 " COC
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <C-T> :CocList files<CR>
 nmap <leader>b :CocList buffers<CR>
-nmap <leader>a :CocList --interactive grep<CR>
+nmap <leader>a :CocList grep<CR>
 nmap <leader>l :CocList<CR>
-""" Confirm completion
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 source ~/.config/nvim/colors.vim

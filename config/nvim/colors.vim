@@ -1,8 +1,5 @@
 hi CursorLine          ctermbg=0     cterm=NONE
 hi CursorLineNr        ctermfg=3
-hi DiffAdd             ctermfg=0     ctermbg=2
-hi DiffChange          ctermfg=0     ctermbg=3
-hi DiffDelete          ctermfg=0     ctermbg=1
 hi LineNr              ctermfg=8
 hi PmenuSel            ctermfg=0     ctermbg=3
 hi Sneak               ctermbg=3     ctermfg=0
@@ -25,7 +22,11 @@ hi Delimiter           ctermfg=7
 hi Function            ctermfg=1
 hi Identifier          ctermfg=7
 hi Keyword             ctermfg=2
-hi! link Error         ErrorMsg
+hi DiffAdd             ctermfg=0     ctermbg=2
+hi DiffChange          ctermfg=0     ctermbg=3
+hi DiffDelete          ctermfg=0     ctermbg=1
+hi! link SpellCap      DiffDelete
+hi! link Error         DiffDelete
 hi! link Number        Comment
 hi! link Operator      Delimiter
 hi! link PreProc       Delimiter
