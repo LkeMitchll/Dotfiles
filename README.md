@@ -16,7 +16,7 @@ ligatures.
 - [zsh](http://www.zsh.org)
   - [antibody](https://github.com/getantibody/antibody)
 - [neovim](https://neovim.io)
-  - [plugpac](https://github.com/bennyyip/plugpac.vim)
+  - [minpac](https://github.com/k-takata/minpac)
 - [asdf](https://github.com/asdf-vm/asdf)
 
 ## Install

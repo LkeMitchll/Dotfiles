@@ -7,22 +7,21 @@ set smartindent expandtab shiftround
 set softtabstop=2 tabstop=2 shiftwidth=2
 set splitbelow splitright diffopt+=vertical
 
-call plugpac#begin()
-Pack 'k-takata/minpac', {'type': 'opt'}
-Pack 'dense-analysis/ale'
-Pack 'honza/vim-snippets'
-Pack 'justinmk/vim-sneak'
-Pack 'knubie/vim-kitty-navigator'
-Pack 'lambdalisue/gina.vim'
-Pack 'lkemitchll/vim-kitty-runner'
-Pack 'neoclide/coc.nvim', {'branch': 'release'}
-Pack 'roman/golden-ratio'
-Pack 'sheerun/vim-polyglot'
-Pack 'styled-components/vim-styled-components', { 'branch': 'main'}
-Pack 'tpope/vim-commentary'
-Pack 'tpope/vim-sensible'
-Pack 'tpope/vim-surround'
-call plugpac#end()
+packadd minpac
+call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('dense-analysis/ale')
+call minpac#add('honza/vim-snippets')
+call minpac#add('justinmk/vim-sneak')
+call minpac#add('knubie/vim-kitty-navigator')
+call minpac#add('lambdalisue/gina.vim')
+call minpac#add('lkemitchll/vim-kitty-runner')
+call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
+call minpac#add('sheerun/vim-polyglot')
+call minpac#add('styled-components/vim-styled-components', { 'branch': 'main'})
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-sensible')
+call minpac#add('tpope/vim-surround')
 packloadall
 
 " Open netrw
