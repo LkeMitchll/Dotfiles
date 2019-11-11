@@ -1,16 +1,13 @@
 {
   "dependencies": {
-    "coc-css": "^1.2.2",
-    "coc-emmet": "^1.1.3",
+    "coc-css": ">=1.2.2",
+    "coc-emmet": ">=1.1.3",
     "coc-git": ">=1.6.16",
-    "coc-html": "^1.2.1",
-    "coc-json": ">=1.2.4",
+    "coc-html": ">=1.2.1",
     "coc-lists": ">=1.3.4",
     "coc-pairs": ">=1.2.18",
     "coc-snippets": ">=2.1.13",
-    "coc-solargraph": ">=1.1.3",
     "coc-syntax": ">=1.2.4",
-    "coc-tag": ">=1.2.4",
     "coc-tsserver": ">=1.4.5"
   }
 }
