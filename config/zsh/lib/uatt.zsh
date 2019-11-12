@@ -1,4 +1,6 @@
 # Update all the things
+alias vim-update="nvim '+call minpac#clean()' '+call minpac#update()' '+sleep 1' '+qa'"
+
 uatt() {
   local SEPERATOR="====================="
   brew bundle --global
@@ -22,9 +24,4 @@ uatt() {
   echo "Neovim plugins up-to-date"
   echo $SEPERATOR
   waiter 5
-}
-
-# Cleanup
-housekeep() {
-  brew cleanup --verbose -s
 }
