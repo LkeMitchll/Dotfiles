@@ -20,7 +20,6 @@ brew "postgresql", restart_service: true
 brew "potatolabs/git-redate/git-redate"
 brew "switchaudio-osx"
 brew "the_silver_searcher"
-brew "thoughtbot/formulae/parity"
 brew "thoughtbot/formulae/rcm"
 brew "zsh"
 
