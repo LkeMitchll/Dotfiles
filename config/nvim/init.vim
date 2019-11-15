@@ -25,6 +25,7 @@ packloadall
 " Open netrw
 nmap <leader>e :Explore<CR>
 " Gina
+call gina#custom#mapping#nmap('status', '<C-K>', ':KittyNavigateUp<CR>')
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :Gina status --opener=split<CR>
 nmap <leader>go :Gina commit --opener=split<CR>
