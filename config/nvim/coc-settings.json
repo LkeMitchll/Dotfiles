@@ -1,5 +1,4 @@
 {
-  "diagnostic.displayByAle": true,
   "emmet.includeLanguages": { "eruby": "html", "javascript": "css" },
   "list.insertMappings": {
     "<C-c>": "do:exit",
@@ -12,7 +11,6 @@
     "<C-c>": "do:exit"
   },
   "list.source.grep.command": "ag",
-  "list.source.files.command": "ag",
   "list.source.files.args": ["-f", "-g", ".", "--nocolor", "--hidden", "--ignore", ".git"],
   "suggest.enablePreview": true,
   "suggest.noselect": false

@@ -8,6 +8,10 @@
     "coc-pairs": ">=1.2.18",
     "coc-snippets": ">=2.1.13",
     "coc-syntax": ">=1.2.4",
-    "coc-tsserver": ">=1.4.5"
+    "coc-tsserver": ">=1.4.6",
+    "coc-eslint": ">=1.2.3",
+    "coc-prettier": ">=1.1.10",
+    "coc-styled-components": ">=0.3.0",
+    "coc-stylelint": ">=1.1.0"
   }
 }
