@@ -26,8 +26,8 @@ packloadall
 nmap <leader>e :Explore<CR>
 " Gina
 nmap <leader>gr :Gina<Space>
-nmap <leader>gs :Gina status -s<CR>
-nmap <leader>go :Gina commit<CR>
+nmap <leader>gs :Gina status --opener=split<CR>
+nmap <leader>go :Gina commit --opener=split<CR>
 " COC
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <C-T> :CocList files<CR>
