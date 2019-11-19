@@ -1,6 +1,5 @@
 let mapleader="\<Space>"
-set clipboard=unnamed
-set complete+=kspell inccommand=nosplit
+set clipboard=unnamed inccommand=nosplit
 set cursorline number relativenumber scrolloff=999
 set list listchars+=eol:¬,space:·,trail:
 set smartindent expandtab shiftround
@@ -22,8 +21,6 @@ call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-surround')
 packloadall
 
-" Open netrw
-nmap <leader>e :Explore<CR>
 " Gina
 call gina#custom#mapping#nmap('status', '<C-K>', ':KittyNavigateUp<CR>')
 nmap <leader>gr :Gina<Space>
@@ -33,6 +30,7 @@ nmap <leader>go :Gina commit --opener=split<CR>
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <C-T> :CocList files<CR>
 nmap <leader>b :CocList buffers<CR>
+nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>a :CocList grep<CR>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :CocCommand prettier.formatFile<CR>
