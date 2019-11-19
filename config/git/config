@@ -44,11 +44,6 @@
   prompt = false
   keepBackup = false
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-[filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
-[apply]
-  whitespace = fix
 [push]
   default = current
 [branch]
