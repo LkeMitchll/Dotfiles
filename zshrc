@@ -2,6 +2,7 @@ export EDITOR=nvim
 export XDG_CONFIG_HOME="/Users/Luke/.config"
 export RCRC="$XDG_CONFIG_HOME/rcrc"
 export KEYTIMEOUT=1
+export HOMEBREW_BUNDLE_NO_LOCK=1
 export PATH="/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$PATH"
 
 # Vi mode
