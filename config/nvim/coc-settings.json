@@ -1,8 +1,7 @@
 {
   "emmet.includeLanguages": {
     "eruby": "html",
-    "javascript": "css",
-    "javascript": "html"
+    "javascript": "css"
   },
   "list.insertMappings": {
     "<C-c>": "do:exit",
