@@ -1,5 +1,5 @@
 # Update all the things
-alias vim-update="nvim '+call minpac#clean()' '+call minpac#update()' '+sleep 1' '+qa'"
+alias vim-update="nvim '+call minpac#clean()' '+call minpac#update()' '+sleep 5' '+qa'"
 
 uatt() {
   local SEPERATOR="====================="
