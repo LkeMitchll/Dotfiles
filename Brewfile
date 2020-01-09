@@ -1,5 +1,4 @@
 # vi: ft=config
-tap "getantibody/tap"
 tap "heroku/brew"
 tap "homebrew/cask"
 tap "homebrew/services"
@@ -10,7 +9,6 @@ brew "asdf"
 brew "bat"
 brew "diff-so-fancy"
 brew "fzf"
-brew "getantibody/tap/antibody"
 brew "git"
 brew "heroku/brew/heroku"
 brew "hub"

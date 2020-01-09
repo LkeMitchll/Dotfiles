@@ -14,7 +14,6 @@ ligatures.
 - [kitty](https://github.com/kovidgoyal/kitty)
 - [rcm](https://github.com/thoughtbot/rcm)
 - [zsh](http://www.zsh.org)
-  - [antibody](https://github.com/getantibody/antibody)
 - [neovim](https://neovim.io)
   - [minpac](https://github.com/k-takata/minpac)
 - [asdf](https://github.com/asdf-vm/asdf)

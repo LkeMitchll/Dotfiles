@@ -12,8 +12,6 @@ uatt() {
   rcup
   echo "Dotfiles up-to-date"
   echo $SEPERATOR
-  antibody update
-  echo $SEPERATOR
   asdf update
   asdf plugin-update --all
   echo $SEPERATOR
