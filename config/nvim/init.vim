@@ -14,11 +14,11 @@ call minpac#add('justinmk/vim-sneak')
 call minpac#add('knubie/vim-kitty-navigator')
 call minpac#add('lambdalisue/gina.vim')
 call minpac#add('lkemitchll/vim-kitty-runner')
-call minpac#add('machakann/vim-sandwich')
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('sheerun/vim-polyglot')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-sensible')
+call minpac#add('tpope/vim-surround')
 packloadall
 
 " Gina
