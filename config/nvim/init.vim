@@ -6,6 +6,12 @@ set smartindent expandtab shiftround
 set softtabstop=2 tabstop=2 shiftwidth=2
 set splitbelow splitright diffopt+=vertical
 
+if has("gui_vimr")
+  " Here goes some VimR specific settings like
+  set background=dark
+  color 
+endif
+
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
@@ -33,6 +39,6 @@ nmap <leader>b :CocList buffers<CR>
 nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>a :CocList grep<CR>
 nmap <leader>l :CocList<CR>
-nmap <leader>p :CocCommand prettier.formatFile<CR>
+nmap <leader>p :call CocAction('format')<CR>
 
 source ~/.config/nvim/colors.vim
