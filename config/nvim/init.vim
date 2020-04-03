@@ -6,12 +6,6 @@ set smartindent expandtab shiftround
 set softtabstop=2 tabstop=2 shiftwidth=2
 set splitbelow splitright diffopt+=vertical
 
-if has("gui_vimr")
-  " Here goes some VimR specific settings like
-  set background=dark
-  color 
-endif
-
 packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
