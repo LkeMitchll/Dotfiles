@@ -17,8 +17,6 @@ for file in $XDG_CONFIG_HOME/zsh/lib/*; do
 done
 
 # ASDF
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
 . $HOME/.asdf/asdf.sh
 
 # FZF
