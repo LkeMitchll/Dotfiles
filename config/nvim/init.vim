@@ -13,6 +13,7 @@ call minpac#add('honza/vim-snippets')
 call minpac#add('justinmk/vim-sneak')
 call minpac#add('knubie/vim-kitty-navigator')
 call minpac#add('lambdalisue/gina.vim')
+call minpac#add('lkemitchll/vim-interrobang')
 call minpac#add('lkemitchll/vim-kitty-runner')
 call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 call minpac#add('sheerun/vim-polyglot')
@@ -21,11 +22,14 @@ call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-surround')
 packloadall
 
+colorscheme interrobang
+
 " Gina
 call gina#custom#mapping#nmap('status', '<C-K>', ':KittyNavigateUp<CR>')
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :Gina status --opener=split<CR>
 nmap <leader>go :Gina commit --opener=split<CR>
+
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <C-T> :CocList files<CR>
@@ -34,5 +38,3 @@ nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>a :CocList grep<CR>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
-
-source ~/.config/nvim/colors.vim
