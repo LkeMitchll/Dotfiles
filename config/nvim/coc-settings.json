@@ -3,6 +3,9 @@
     "eruby": "html",
     "javascript": "css"
   },
+  "snippets.extends": {
+    "svelte": ["javascript"]
+  },
   "list.insertMappings": {
     "<C-c>": "do:exit",
     "<C-v>": "action:vsplit",
