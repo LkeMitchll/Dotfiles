@@ -1,3 +1,4 @@
+set shell=/usr/local/bin/fish
 let mapleader="\<Space>"
 set clipboard=unnamed inccommand=nosplit
 set cursorline number relativenumber scrolloff=999
