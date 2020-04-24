@@ -1,7 +1,7 @@
 # Dotfiles
 
 Custom configuration files for various tools, including
-[neovim](https://neovim.io), zsh and more.
+[neovim](https://neovim.io), fish and more.
 
 I run all of this in [Kitty](https://github.com/kovidgoyal/kitty) on macOS.
 
@@ -13,7 +13,8 @@ ligatures.
 - [homebrew](https://brew.sh)
 - [kitty](https://github.com/kovidgoyal/kitty)
 - [rcm](https://github.com/thoughtbot/rcm)
-- [zsh](http://www.zsh.org)
+- [fish](https://fishshell.com)
+  - [fisher](https://github.com/jorgebucaran/fisher)
 - [neovim](https://neovim.io)
   - [minpac](https://github.com/k-takata/minpac)
 - [asdf](https://github.com/asdf-vm/asdf)
