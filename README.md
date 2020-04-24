@@ -16,7 +16,6 @@ ligatures.
 - [fish](https://fishshell.com)
   - [fisher](https://github.com/jorgebucaran/fisher)
 - [neovim](https://neovim.io)
-  - [minpac](https://github.com/k-takata/minpac)
 - [asdf](https://github.com/asdf-vm/asdf)
 
 ## Install
