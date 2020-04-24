@@ -1,9 +1,12 @@
 function nvim-update
   cd ~/.dotfiles
-  echo "nvim: Cleaning up old files..."
   echo "nvim: Updating plugins"
   git submodule update --remote --merge
-  echo "nvim: Symlinking..."
-  ln -s ~/.dotfiles/config/nvim/pack ~/.config/nvim/
+  if test -L ./config/nvim/pack
+    echo "nvim: Already symlinked, skipping..."
+  else
+    echo "nvim: Symlinking..."
+    ln -s ~/.dotfiles/config/nvim/pack ~/.config/nvim/
+  end
   cd -
 end
