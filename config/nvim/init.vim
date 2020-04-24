@@ -7,15 +7,15 @@ set softtabstop=2 tabstop=2 shiftwidth=2
 set splitbelow splitright diffopt+=vertical
 
 packadd coc.nvim
-packadd vim-snippets
-packadd vim-kitty-navigator
-packadd vim-sneak
 packadd gina.vim
+packadd vim-commentary
 packadd vim-interrobang
+packadd vim-kitty-navigator
 packadd vim-kitty-runner
 packadd vim-polyglot
-packadd vim-commentary
 packadd vim-sensible
+packadd vim-sneak
+packadd vim-snippets
 packadd vim-surround
 packloadall
 
