@@ -1,7 +1,6 @@
 function nvim-remove
   cd ~/.dotfiles
   echo "nvim: Cleaning up old files..."
-  rcdn
 
   if test -n $argv[1]
     echo "nvim: Uninstalling" $argv[1]
@@ -10,7 +9,5 @@ function nvim-remove
     rm -Rf .git/modules/config/nvim/pack/interrobang/$argv[1]
   end
 
-  echo "nvim: Symlinking..."
-  rcup
   cd -
 end

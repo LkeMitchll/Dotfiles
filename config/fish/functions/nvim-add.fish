@@ -8,6 +8,5 @@ function nvim-add
     git submodule add https://github.com/$argv[1] config/nvim/pack/interrobang/start/$name[2]
   end
 
-  rcup
   cd -
 end

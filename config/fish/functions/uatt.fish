@@ -8,14 +8,11 @@ function uatt
   brew cask upgrade
   echo "Packages up-to-date"
   echo $uatt_seperator
-  rcup
+  RCRC=~/.dotfiles/config/rcrc rcup
   echo "Dotfiles up-to-date"
   echo $uatt_seperator
   asdf update
   asdf plugin-update --all
-  echo $uatt_seperator
-  mas outdated
-  mas upgrade
   echo $uatt_seperator
   nvim-update
   echo "Neovim plugins up-to-date"
