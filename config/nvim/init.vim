@@ -6,20 +6,17 @@ set smartindent expandtab shiftround
 set softtabstop=2 tabstop=2 shiftwidth=2
 set splitbelow splitright diffopt+=vertical
 
-packadd minpac
-call minpac#init()
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-call minpac#add('honza/vim-snippets')
-call minpac#add('justinmk/vim-sneak')
-call minpac#add('knubie/vim-kitty-navigator')
-call minpac#add('lambdalisue/gina.vim')
-call minpac#add('lkemitchll/vim-interrobang')
-call minpac#add('lkemitchll/vim-kitty-runner')
-call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
-call minpac#add('sheerun/vim-polyglot')
-call minpac#add('tpope/vim-commentary')
-call minpac#add('tpope/vim-sensible')
-call minpac#add('tpope/vim-surround')
+packadd coc.nvim
+packadd vim-snippets
+packadd vim-kitty-navigator
+packadd vim-sneak
+packadd gina.vim
+packadd vim-interrobang
+packadd vim-kitty-runner
+packadd vim-polyglot
+packadd vim-commentary
+packadd vim-sensible
+packadd vim-surround
 packloadall
 
 colorscheme interrobang
