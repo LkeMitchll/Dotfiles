@@ -22,5 +22,6 @@ ligatures.
 
 1. Install requirements (above)
 2. Clone this repo `git clone [url] ~/.dotfiles`
-3. Run `RCRC=~/.dotfiles/config/rcrc rcup -v`
-4. Run `uatt` (Update All The Things)
+3. Run `brew bundle --file ~/.dotfiles/Brewfile`
+4. Run `RCRC=~/.dotfiles/config/rcrc rcup -v`
+5. Run `uatt` (Update All The Things)
