@@ -2,3 +2,4 @@
 .bundle
 .env
 node_modules
+config/nvim/pack
