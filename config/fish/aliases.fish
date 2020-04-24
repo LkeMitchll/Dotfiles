@@ -1,7 +1,7 @@
 abbr be "bundle exec"
 abbr c "clear"
 abbr cat "bat"
-abbr g "git"
+abbr g "hub"
 abbr git "hub"
 abbr vim "nvim"
 abbr yr "yarn run"
