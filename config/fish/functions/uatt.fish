@@ -1,7 +1,3 @@
-function vim-update
-  nvim '+call minpac#clean()' '+call minpac#update()' '+sleep 5' '+qa'
-end
-
 function uatt
   set uatt_seperator "====================="
 
@@ -20,7 +16,7 @@ function uatt
   mas outdated
   mas upgrade
   echo $uatt_seperator
-  vim-update
+  nvim-update
   echo "Neovim plugins up-to-date"
   echo $uatt_seperator
   waiter 5
