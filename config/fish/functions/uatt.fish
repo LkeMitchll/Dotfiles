@@ -6,6 +6,7 @@ function uatt
   brew update
   brew upgrade
   brew cask upgrade
+  echo "Packages up-to-date"
   echo $uatt_seperator
   rcup
   echo "Dotfiles up-to-date"
