@@ -20,6 +20,7 @@ brew "switchaudio-osx"
 brew "the_silver_searcher"
 brew "thoughtbot/formulae/rcm"
 brew "zsh"
+brew "fish"
 
 cask "kitty"
 cask "phoenix"

@@ -1,0 +1,8 @@
+abbr be "bundle exec"
+abbr c "clear"
+abbr cat "bat"
+abbr g "git"
+abbr git "hub"
+abbr vim "nvim"
+abbr yr "yarn run"
+abbr spectrum "set_color --print-colors"
