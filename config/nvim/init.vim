@@ -11,7 +11,7 @@ colorscheme interrobang
 " Gina
 nmap <leader>gr :Gina<Space>
 nmap <leader>gs :Gina status --opener=split<CR>
-nmap <leader>go :Gina commit --opener=split<CR>
+nmap <leader>go :Gina commit<CR>
 
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -21,3 +21,4 @@ nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>a :CocList grep<CR>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
+imap <C-j> <Plug>(coc-snippets-expand-jump)
