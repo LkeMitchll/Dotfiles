@@ -18,9 +18,6 @@
 [submodule "config/nvim/pack/interrobang/start/vim-interrobang"]
 	path = config/nvim/pack/interrobang/start/vim-interrobang
 	url = https://github.com/lkemitchll/vim-interrobang
-[submodule "config/nvim/pack/interrobang/start/vim-kitty-runner"]
-	path = config/nvim/pack/interrobang/start/vim-kitty-runner
-	url = https://github.com/lkemitchll/vim-kitty-runner
 [submodule "config/nvim/pack/interrobang/start/vim-polyglot"]
 	path = config/nvim/pack/interrobang/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
@@ -33,3 +30,6 @@
 [submodule "config/nvim/pack/interrobang/start/vim-surround"]
 	path = config/nvim/pack/interrobang/start/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "config/nvim/pack/interrobang/start/vim-floaterm"]
+	path = config/nvim/pack/interrobang/start/vim-floaterm
+	url = https://github.com/voldikss/vim-floaterm

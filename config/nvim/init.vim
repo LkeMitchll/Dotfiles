@@ -13,6 +13,9 @@ nmap <leader>gr :Gina<Space>
 nmap <leader>gs :Gina status --opener=split<CR>
 nmap <leader>go :Gina commit<CR>
 
+" Floaterm
+nmap <leader>tr :exe ':FloatermNew --height=0.8 --width=0.8 ' . input('Command: ')<CR>
+
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <C-T> :CocList files<CR>
@@ -22,3 +25,4 @@ nmap <leader>a :CocList grep<CR>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+nmap <leader>s :CocCommand document.renameCurrentWord<CR>
