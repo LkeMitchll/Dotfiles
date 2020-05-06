@@ -6,6 +6,7 @@ set -gx HOMEBREW_BUNDLE_NO_LOCK 1
 set -gx KEYTIMEOUT 1
 set -gx RCRC "$XDG_CONFIG_HOME/rcrc"
 set -gx XDG_CONFIG_HOME "/Users/luke/.config"
+bind \cn accept-autosuggestion
 
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/theme.fish
