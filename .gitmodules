@@ -9,9 +9,6 @@
 [submodule "config/nvim/pack/interrobang/start/vim-kitty-navigator"]
 	path = config/nvim/pack/interrobang/start/vim-kitty-navigator
 	url = https://github.com/knubie/vim-kitty-navigator
-[submodule "config/nvim/pack/interrobang/start/vim-sneak"]
-	path = config/nvim/pack/interrobang/start/vim-sneak
-	url = https://github.com/justinmk/vim-sneak
 [submodule "config/nvim/pack/interrobang/start/gina.vim"]
 	path = config/nvim/pack/interrobang/start/gina.vim
 	url = https://github.com/lambdalisue/gina.vim
@@ -33,3 +30,6 @@
 [submodule "config/nvim/pack/interrobang/start/vim-floaterm"]
 	path = config/nvim/pack/interrobang/start/vim-floaterm
 	url = https://github.com/voldikss/vim-floaterm
+[submodule "config/nvim/pack/interrobang/start/vim-sneak"]
+	path = config/nvim/pack/interrobang/start/vim-sneak
+	url = https://github.com/justinmk/vim-sneak
