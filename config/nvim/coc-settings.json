@@ -6,6 +6,7 @@
   "snippets.extends": {
     "svelte": ["javascript"]
   },
+  "svelte.plugin.typescript.diagnostics.enable": false,
   "list.insertMappings": {
     "<C-c>": "do:exit",
     "<C-v>": "action:vsplit",
