@@ -14,7 +14,6 @@ brew "git"
 brew "heroku/brew/heroku"
 brew "hub"
 brew "neovim"
-brew "postgresql", restart_service: true
 brew "switchaudio-osx"
 brew "the_silver_searcher"
 brew "thoughtbot/formulae/rcm"

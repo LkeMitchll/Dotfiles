@@ -1,5 +1,5 @@
 set -e PATH
-set -gx PATH /usr/local/bin /usr/sbin /sbin /usr/bin /bin $PATH
+set -gx PATH /usr/local/bin /usr/sbin /sbin /usr/bin /bin /Applications/Postgres.app/Contents/Versions/latest/bin $PATH
 
 set -gx EDITOR nvim
 set -gx HOMEBREW_BUNDLE_NO_LOCK 1
