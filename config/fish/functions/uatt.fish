@@ -11,8 +11,12 @@ function uatt
   RCRC=~/.dotfiles/config/rcrc rcup
   echo "Dotfiles up-to-date"
   echo $uatt_seperator
+  fisher
+  echo "Fish plugins up-to-date"
+  echo $uatt_seperator
   asdf update
   asdf plugin-update --all
+  echo "ASDF plugins up-to-date"
   echo $uatt_seperator
   nvim-update
   echo "Neovim plugins up-to-date"
