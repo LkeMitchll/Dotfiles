@@ -16,6 +16,7 @@ nmap <leader>go :Gina commit<CR>
 " Floaterm
 nmap <leader>tr :exe ':FloatermNew --height=0.8 --width=0.8 ' . input('Command: ')<CR>
 tnoremap <Esc> <C-\><C-n>:FloatermHide<CR>
+nmap <leader>tl :FloatermShow<CR>
 
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
