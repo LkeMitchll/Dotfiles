@@ -23,7 +23,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <C-T> :CocList files<CR>
 nmap <leader>b :CocList buffers<CR>
 nmap <leader>e :CocCommand explorer<CR>
-nmap <leader>a :CocList grep<CR>
+nmap <leader>a :CocList grep<Space>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
 nmap <leader>s :CocCommand document.renameCurrentWord<CR>
