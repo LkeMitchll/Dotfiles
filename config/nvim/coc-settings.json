@@ -1,4 +1,5 @@
 {
+  "coc.preferences.extensionUpdateCheck": "daily",
   "emmet.includeLanguages": {
     "eruby": "html",
     "javascript": "css"
