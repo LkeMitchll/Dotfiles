@@ -26,7 +26,6 @@
   autocrlf = input
   editor=nvim
   whitespace = space-before-tab,tab-in-indent,trailing-space
-  pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
   ui = auto
 [format]

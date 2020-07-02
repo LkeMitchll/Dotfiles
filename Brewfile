@@ -1,13 +1,9 @@
 # vi: ft=config
 tap "heroku/brew"
 tap "homebrew/cask"
-tap "homebrew/services"
 tap "thoughtbot/formulae"
 
 brew "asdf"
-brew "bat"
-brew "diff-so-fancy"
-brew "exa"
 brew "fish"
 brew "fzf"
 brew "git"
@@ -15,7 +11,6 @@ brew "heroku/brew/heroku"
 brew "hub"
 brew "imagemagick"
 brew "neovim"
-brew "switchaudio-osx"
 brew "the_silver_searcher"
 brew "thoughtbot/formulae/rcm"
 
