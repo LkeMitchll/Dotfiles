@@ -14,9 +14,9 @@ nmap <leader>gs :Gina status --opener=split<CR>
 nmap <leader>go :Gina commit<CR>
 
 " Floaterm
-nmap <leader>tr :exe ':FloatermNew --height=0.8 --width=0.8 ' . input('Command: ')<CR>
-tnoremap <Esc> <C-\><C-n>:FloatermHide<CR>
+nmap <leader>tr :exe ':FloatermNew ' . input('Command: ')<CR>
 nmap <leader>tl :FloatermShow<CR>
+tmap <Esc> <C-\><C-n>:FloatermHide<CR>
 
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -26,5 +26,4 @@ nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>a :CocList grep<Space>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
-nmap <leader>s :CocCommand document.renameCurrentWord<CR>
 imap <C-j> <Plug>(coc-snippets-expand-jump)
