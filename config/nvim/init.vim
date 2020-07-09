@@ -9,9 +9,10 @@ set splitbelow splitright diffopt+=vertical
 colorscheme interrobang
 
 " Gina
-nmap <leader>gr :Gina<Space>
-nmap <leader>gs :Gina status --opener=split<CR>
-nmap <leader>go :Gina commit<CR>
+nmap <leader>gr :Git<Space>
+nmap <leader>gs :Git<CR>
+nmap <leader>go :Git commit<CR>
+nmap <leader>gi :Git rebase -i<CR>
 
 " Floaterm
 nmap <leader>tr :exe ':FloatermNew ' . input('Command: ')<CR>
@@ -20,6 +21,7 @@ tmap <Esc> <C-\><C-n>:FloatermHide<CR>
 
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+nmap <leader>cd <Plug>(coc-definition)
 nmap <C-T> :CocList files<CR>
 nmap <leader>b :CocList buffers<CR>
 nmap <leader>e :CocCommand explorer<CR>
