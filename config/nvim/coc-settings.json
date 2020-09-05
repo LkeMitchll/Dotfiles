@@ -1,13 +1,13 @@
 {
   "coc.preferences.extensionUpdateCheck": "daily",
   "emmet.includeLanguages": {
-    "eruby": "html",
-    "javascript": "css"
+    "typescriptreact": ["css", "html"]
   },
   "snippets.extends": {
-    "svelte": ["javascript"]
+    "typescriptreact": ["css", "html", "javascript"],
+    "typescript": ["javascript"]
   },
-  "svelte.plugin.typescript.diagnostics.enable": false,
+  "stylelintplus.autoFixOnFormat": true,
   "list.insertMappings": {
     "<C-c>": "do:exit",
     "<C-v>": "action:vsplit",
