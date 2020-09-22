@@ -1,12 +1,15 @@
 {
   "coc.preferences.extensionUpdateCheck": "daily",
+  "prettier.formatterPriority": 1,
   "emmet.includeLanguages": {
-    "typescriptreact": ["css", "html"]
+    "typescriptreact": ["html"],
+    "eruby": "html"
   },
   "snippets.extends": {
-    "typescriptreact": ["css", "html", "javascript"],
+    "typescriptreact": ["html", "javascript"],
     "typescript": ["javascript"]
   },
+  "html.filetypes": ["html", "eruby"],
   "stylelintplus.autoFixOnFormat": true,
   "list.insertMappings": {
     "<C-c>": "do:exit",

@@ -29,3 +29,6 @@ nmap <leader>a :CocList grep<Space>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+let g:coc_filetype_map = {
+    \ 'eruby': 'html',
+    \ }
