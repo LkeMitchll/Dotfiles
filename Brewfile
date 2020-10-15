@@ -11,7 +11,7 @@ brew "heroku/brew/heroku"
 brew "hub"
 brew "imagemagick"
 brew "neovim"
-brew "the_silver_searcher"
+brew "rg"
 brew "thoughtbot/formulae/rcm"
 
 cask "kitty"

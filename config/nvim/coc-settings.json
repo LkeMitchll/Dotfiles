@@ -22,16 +22,6 @@
   "list.normalMappings": {
     "<C-c>": "do:exit"
   },
-  "list.source.grep.command": "ag",
-  "list.source.files.args": [
-    "-f",
-    "-g",
-    ".",
-    "--nocolor",
-    "--hidden",
-    "--ignore",
-    ".git"
-  ],
   "suggest.enablePreview": true,
   "suggest.noselect": false
 }

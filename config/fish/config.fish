@@ -14,6 +14,9 @@ source ~/.config/fish/theme.fish
 # ASDF
 source ~/.asdf/asdf.fish
 
+# FZF
+set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
+
 # Android
 set -gx ANDROID_HOME $HOME/Library/Android/sdk
 set -gx PATH $PATH $ANDROID_HOME/emulator
