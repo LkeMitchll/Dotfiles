@@ -1,17 +1,13 @@
 {
-  "coc.preferences.extensionUpdateCheck": "daily",
-  "explorer.icon.enableNerdfont": true,
-  "prettier.formatterPriority": 1,
+  "coc.preferences.formatOnInsertLeave": true,
+  "suggest.enablePreview": true,
+  "suggest.numberSelect": true,
   "emmet.includeLanguages": {
     "typescriptreact": ["html"],
     "eruby": "html"
   },
-  "snippets.extends": {
-    "typescriptreact": ["typescript", "html", "javascript"],
-    "typescript": ["javascript"]
-  },
+  "explorer.icon.enableNerdfont": true,
   "html.filetypes": ["html", "eruby"],
-  "stylelintplus.autoFixOnFormat": true,
   "list.insertMappings": {
     "<C-c>": "do:exit",
     "<C-v>": "action:vsplit",
@@ -19,9 +15,9 @@
     "<C-t>": "action:tabe",
     "<C-z>": "do:toggle"
   },
-  "list.normalMappings": {
-    "<C-c>": "do:exit"
+  "snippets.extends": {
+    "typescriptreact": ["typescript", "html", "javascript"],
+    "typescript": ["javascript"]
   },
-  "suggest.enablePreview": true,
-  "suggest.noselect": false
+  "stylelintplus.autoFixOnFormat": true
 }
