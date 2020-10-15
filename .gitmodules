@@ -24,12 +24,12 @@
 [submodule "config/nvim/pack/interrobang/start/vim-surround"]
 	path = config/nvim/pack/interrobang/start/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule "config/nvim/pack/interrobang/start/vim-floaterm"]
-	path = config/nvim/pack/interrobang/start/vim-floaterm
-	url = https://github.com/voldikss/vim-floaterm
 [submodule "config/nvim/pack/interrobang/start/vim-sneak"]
 	path = config/nvim/pack/interrobang/start/vim-sneak
 	url = https://github.com/justinmk/vim-sneak
 [submodule "config/nvim/pack/interrobang/start/vim-fugitive"]
 	path = config/nvim/pack/interrobang/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "config/nvim/pack/interrobang/start/vim-kitty-runner"]
+	path = config/nvim/pack/interrobang/start/vim-kitty-runner
+	url = https://github.com/lkemitchll/vim-kitty-runner

@@ -14,10 +14,8 @@ nmap <leader>gs :Git<CR>
 nmap <leader>go :Git commit<CR>
 nmap <leader>gi :Git rebase -i<CR>
 
-" Floaterm
-nmap <leader>tr :exe ':FloatermNew ' . input('Command: ')<CR>
-nmap <leader>tl :FloatermShow<CR>
-tmap <Esc> <C-\><C-n>:FloatermHide<CR>
+" vim-kitty-runner
+let g:KittyUseMaps = 1
 
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
