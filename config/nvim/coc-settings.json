@@ -1,12 +1,13 @@
 {
   "coc.preferences.extensionUpdateCheck": "daily",
+  "explorer.icon.enableNerdfont": true,
   "prettier.formatterPriority": 1,
   "emmet.includeLanguages": {
     "typescriptreact": ["html"],
     "eruby": "html"
   },
   "snippets.extends": {
-    "typescriptreact": ["html", "javascript"],
+    "typescriptreact": ["typescript", "html", "javascript"],
     "typescript": ["javascript"]
   },
   "html.filetypes": ["html", "eruby"],
