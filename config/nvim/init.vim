@@ -8,6 +8,11 @@ set softtabstop=2 tabstop=2 shiftwidth=2
 set splitbelow splitright diffopt+=vertical
 colorscheme interrobang
 
+" Keyboard shortcuts
+nmap <C-]> :cnext<CR>
+
+""" Plugins
+
 " Gina
 nmap <leader>gr :Git<Space>
 nmap <leader>gs :Git<CR>
@@ -23,9 +28,10 @@ nmap <leader>cd <Plug>(coc-definition)
 nmap <C-T> :CocList files<CR>
 nmap <leader>b :CocList buffers<CR>
 nmap <leader>e :CocCommand explorer<CR>
-nmap <leader>a :CocList grep<Space>
+nmap <leader>ag :CocList<CR>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
+nmap <leader>ac :CocCommand actions.open<CR>
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 inoremap <silent><expr> <TAB>
