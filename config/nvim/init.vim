@@ -14,6 +14,7 @@ nmap <C-]> :cnext<CR>
 """ Plugins
 
 " Gina
+" Fugitive
 nmap <leader>gr :Git<Space>
 nmap <leader>gs :Git<CR>
 nmap <leader>go :Git commit<CR>
