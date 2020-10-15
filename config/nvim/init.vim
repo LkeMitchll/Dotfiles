@@ -24,15 +24,16 @@ let g:KittyUseMaps = 1
 
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-nmap <leader>cd <Plug>(coc-definition)
 nmap <C-T> :CocList files<CR>
-nmap <leader>b :CocList buffers<CR>
-nmap <leader>e :CocCommand explorer<CR>
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+nmap <leader>ac :CocCommand actions.open<CR>
 nmap <leader>ag :CocList<CR>
+nmap <leader>b :CocList buffers<CR>
+nmap <leader>cd <Plug>(coc-definition)
+nmap <leader>d :CocDiagnotics<CR>
+nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
-nmap <leader>ac :CocCommand actions.open<CR>
-imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 let g:coc_filetype_map = {
     \ 'eruby': 'html',
