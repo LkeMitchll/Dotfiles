@@ -11,9 +11,6 @@ colorscheme interrobang
 " Keyboard shortcuts
 nmap <C-]> :cnext<CR>
 
-""" Plugins
-
-" Gina
 " Fugitive
 nmap <leader>gr :Git<Space>
 nmap <leader>gs :Git<CR>
@@ -21,14 +18,14 @@ nmap <leader>go :Git commit<CR>
 nmap <leader>gi :Git rebase -i<CR>
 
 " vim-kitty-runner
-let g:KittyUseMaps = 1
+let g:KittySwitchFocus = 1
 
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <C-T> :CocList files<CR>
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 nmap <leader>ac :CocCommand actions.open<CR>
-nmap <leader>ag :CocList<CR>
+nmap <leader>ag :CocList grep<CR>
 nmap <leader>b :CocList buffers<CR>
 nmap <leader>cd <Plug>(coc-definition)
 nmap <leader>d :CocDiagnotics<CR>
@@ -39,3 +36,8 @@ nmap <leader>p :call CocAction('format')<CR>
 let g:coc_filetype_map = {
     \ 'eruby': 'html',
     \ }
+
+
+
+
+let g:node_client_debug = 1
