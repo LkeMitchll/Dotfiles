@@ -33,3 +33,6 @@
 [submodule "config/nvim/pack/interrobang/start/vim-kitty-runner"]
 	path = config/nvim/pack/interrobang/start/vim-kitty-runner
 	url = https://github.com/lkemitchll/vim-kitty-runner
+[submodule "config/nvim/pack/interrobang/start/golden-ratio"]
+	path = config/nvim/pack/interrobang/start/golden-ratio
+	url = https://github.com/roman/golden-ratio
