@@ -30,10 +30,6 @@ nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
 
-let g:coc_filetype_map = {
-    \ 'eruby': 'html',
-    \ }
-
 
 
 
