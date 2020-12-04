@@ -17,9 +17,6 @@ nmap <leader>gs :Git<CR>
 nmap <leader>go :Git commit<CR>
 nmap <leader>gi :Git rebase -i<CR>
 
-" vim-kitty-runner
-let g:KittySwitchFocus = 1
-
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <C-T> :CocList files<CR>
