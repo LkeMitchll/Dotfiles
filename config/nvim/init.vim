@@ -29,8 +29,3 @@ nmap <leader>d :CocDiagnotics<CR>
 nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>l :CocList<CR>
 nmap <leader>p :call CocAction('format')<CR>
-
-
-
-
-let g:node_client_debug = 1
