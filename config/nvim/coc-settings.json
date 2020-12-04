@@ -1,7 +1,6 @@
 {
   "coc.preferences.formatOnInsertLeave": true,
   "suggest.enablePreview": true,
-  "suggest.numberSelect": true,
   "emmet.includeLanguages": {
     "typescriptreact": ["html"],
     "eruby": "html"
