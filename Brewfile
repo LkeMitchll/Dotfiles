@@ -1,5 +1,4 @@
 # vi: ft=config
-tap "heroku/brew"
 tap "homebrew/cask"
 tap "thoughtbot/formulae"
 
