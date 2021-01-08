@@ -18,7 +18,8 @@ function uatt
   asdf plugin-update --all
   echo "ASDF plugins up-to-date"
   echo $uatt_seperator
-  nvim-update
+  vish list
+  vish update
   echo "Neovim plugins up-to-date"
   echo $uatt_seperator
   waiter 5

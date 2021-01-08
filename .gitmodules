@@ -1,38 +1,38 @@
 
-[submodule "config/nvim/pack/interrobang/start/coc.nvim"]
-	path = config/nvim/pack/interrobang/start/coc.nvim
+[submodule "config/nvim/pack/vish/start/coc.nvim"]
+	path = config/nvim/pack/vish/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
 	branch = release
-[submodule "config/nvim/pack/interrobang/start/vim-snippets"]
-	path = config/nvim/pack/interrobang/start/vim-snippets
+[submodule "config/nvim/pack/vish/start/vim-snippets"]
+	path = config/nvim/pack/vish/start/vim-snippets
 	url = https://github.com/honza/vim-snippets
-[submodule "config/nvim/pack/interrobang/start/vim-kitty-navigator"]
-	path = config/nvim/pack/interrobang/start/vim-kitty-navigator
+[submodule "config/nvim/pack/vish/start/vim-kitty-navigator"]
+	path = config/nvim/pack/vish/start/vim-kitty-navigator
 	url = https://github.com/knubie/vim-kitty-navigator
-[submodule "config/nvim/pack/interrobang/start/vim-interrobang"]
-	path = config/nvim/pack/interrobang/start/vim-interrobang
+[submodule "config/nvim/pack/vish/start/vim-interrobang"]
+	path = config/nvim/pack/vish/start/vim-interrobang
 	url = https://github.com/lkemitchll/vim-interrobang
-[submodule "config/nvim/pack/interrobang/start/vim-polyglot"]
-	path = config/nvim/pack/interrobang/start/vim-polyglot
+[submodule "config/nvim/pack/vish/start/vim-polyglot"]
+	path = config/nvim/pack/vish/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule "config/nvim/pack/interrobang/start/vim-commentary"]
-	path = config/nvim/pack/interrobang/start/vim-commentary
+[submodule "config/nvim/pack/vish/start/vim-commentary"]
+	path = config/nvim/pack/vish/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule "config/nvim/pack/interrobang/start/vim-sensible"]
-	path = config/nvim/pack/interrobang/start/vim-sensible
+[submodule "config/nvim/pack/vish/start/vim-sensible"]
+	path = config/nvim/pack/vish/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible
-[submodule "config/nvim/pack/interrobang/start/vim-surround"]
-	path = config/nvim/pack/interrobang/start/vim-surround
+[submodule "config/nvim/pack/vish/start/vim-surround"]
+	path = config/nvim/pack/vish/start/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule "config/nvim/pack/interrobang/start/vim-sneak"]
-	path = config/nvim/pack/interrobang/start/vim-sneak
+[submodule "config/nvim/pack/vish/start/vim-sneak"]
+	path = config/nvim/pack/vish/start/vim-sneak
 	url = https://github.com/justinmk/vim-sneak
-[submodule "config/nvim/pack/interrobang/start/vim-fugitive"]
-	path = config/nvim/pack/interrobang/start/vim-fugitive
+[submodule "config/nvim/pack/vish/start/vim-fugitive"]
+	path = config/nvim/pack/vish/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "config/nvim/pack/interrobang/start/vim-kitty-runner"]
-	path = config/nvim/pack/interrobang/start/vim-kitty-runner
+[submodule "config/nvim/pack/vish/start/vim-kitty-runner"]
+	path = config/nvim/pack/vish/start/vim-kitty-runner
 	url = https://github.com/lkemitchll/vim-kitty-runner
-[submodule "config/nvim/pack/interrobang/start/golden-ratio"]
-	path = config/nvim/pack/interrobang/start/golden-ratio
-	url = https://github.com/roman/golden-ratio
+[submodule "config/nvim/pack/vish/start/golden-ratio"]
+	path = config/nvim/pack/vish/start/golden-ratio
+	url = git@github.com:roman/golden-ratio
