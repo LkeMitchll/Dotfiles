@@ -1,12 +1,10 @@
 {
-  "coc.preferences.formatOnInsertLeave": true,
   "suggest.enablePreview": true,
   "emmet.includeLanguages": {
     "typescriptreact": ["html"],
     "eruby": "html"
+    "htmldjango": "html"
   },
-  "explorer.icon.enableNerdfont": true,
-  "html.filetypes": ["html", "eruby"],
   "list.insertMappings": {
     "<C-c>": "do:exit",
     "<C-v>": "action:vsplit",
@@ -14,6 +12,8 @@
     "<C-t>": "action:tabe",
     "<C-z>": "do:toggle"
   },
+  "list.source.files.command": "rg",
+  "list.source.files.args": ["--files", "--hidden", "-i"],
   "snippets.extends": {
     "typescriptreact": ["typescript", "html", "javascript"],
     "typescript": ["javascript"]
