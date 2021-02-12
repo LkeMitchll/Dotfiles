@@ -1,19 +1,19 @@
 set shell=/usr/local/bin/fish
 let mapleader="\<Space>"
-set clipboard=unnamed inccommand=nosplit
+set clipboard=unnamed
 set cursorline number relativenumber scrolloff=999
 set list listchars+=eol:¬,space:·,trail:
 set smartindent expandtab shiftround nowrap
 set softtabstop=2 tabstop=2 shiftwidth=2
 set splitbelow splitright diffopt+=vertical
-set updatetime=300
+set inccommand=nosplit
+set diffopt+=vertical
 colorscheme interrobang
 
 " Fugitive
 nmap <leader>gr :Git<Space>
 nmap <leader>gs :Git<CR>
 nmap <leader>go :Git commit<CR>
-nmap <leader>gi :Git rebase -i<CR>
 
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

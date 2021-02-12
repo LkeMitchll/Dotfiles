@@ -1,4 +1,3 @@
-# vi: ft=config
 tap "homebrew/cask"
 tap "thoughtbot/formulae"
 

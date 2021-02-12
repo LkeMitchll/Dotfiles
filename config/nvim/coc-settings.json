@@ -1,8 +1,8 @@
 {
   "suggest.enablePreview": true,
   "emmet.includeLanguages": {
-    "typescriptreact": ["html"],
-    "eruby": "html"
+    "typescriptreact": "html",
+    "eruby": "html",
     "htmldjango": "html"
   },
   "list.insertMappings": {
