@@ -12,4 +12,3 @@ brew "rg"
 brew "thoughtbot/formulae/rcm"
 
 cask "kitty"
-cask "visual-studio-code"
