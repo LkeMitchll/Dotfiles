@@ -10,11 +10,6 @@ set inccommand=nosplit
 set diffopt+=vertical
 colorscheme interrobang
 
-" Fugitive
-nmap <leader>gr :Git<Space>
-nmap <leader>gs :Git<CR>
-nmap <leader>go :Git commit<CR>
-
 " COC
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 imap <C-j> <Plug>(coc-snippets-expand-jump)
