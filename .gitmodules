@@ -33,6 +33,3 @@
 [submodule "config/nvim/pack/vish/start/vim-kitty-runner"]
 	path = config/nvim/pack/vish/start/vim-kitty-runner
 	url = https://github.com/lkemitchll/vim-kitty-runner
-[submodule "config/nvim/pack/vish/start/golden-ratio"]
-	path = config/nvim/pack/vish/start/golden-ratio
-	url = git@github.com:roman/golden-ratio
