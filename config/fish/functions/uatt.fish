@@ -23,5 +23,4 @@ function uatt
   nvim +CocUpdateSync +qa
   echo "Neovim plugins up-to-date"
   echo $uatt_seperator
-  waiter 5
 end
