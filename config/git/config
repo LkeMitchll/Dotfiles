@@ -5,51 +5,28 @@
   aa = add --all
   ch = checkout
   co = commit
-  ca = commit --all
-  caa = commit --all --amend
   sh = push
   sho = push origin
   shofwl = push origin --force-with-lease
-  shom = push origin master
   ll = pull --rebase
-  a = add
   s = status -sbu
   f = fetch
-  d = diff
   ri = rebase --interactive
-  rc = rebase --continue
   lg = log --graph --date=relative -10
   rls = reset --soft HEAD~1
   rlh = reset --hard HEAD~1
 [core]
   excludesfile = ~/.config/git/gitignore
-  autocrlf = input
   editor=nvim
-  whitespace = space-before-tab,tab-in-indent,trailing-space
-[color]
-  ui = auto
 [format]
   pretty = %Cred%h%Creset %aN -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset
-[difftool]
-  prompt = true
 [merge]
   tool = nvimdiff
   conflictstyle = diff3
   ff = only
-[diff]
-  tool = vimdiff
-  algorithm = histogram
 [mergetool "nvimdiff"]
-  prompt = false
-  keepBackup = false
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-[push]
-  default = current
 [branch]
   autosetuprebase = always
-[commit]
-  template = ~/.config/git/gitmessage
-[fetch]
-  prune = true
 [rebase]
   autosquash = true
