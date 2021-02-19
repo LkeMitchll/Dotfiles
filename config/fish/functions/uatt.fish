@@ -20,6 +20,7 @@ function uatt
   echo $uatt_seperator
   vish list
   vish update
+  nvim +CocUpdateSync +qa
   echo "Neovim plugins up-to-date"
   echo $uatt_seperator
   waiter 5
