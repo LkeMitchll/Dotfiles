@@ -1,7 +1,6 @@
 {
   "suggest.enablePreview": true,
   "emmet.includeLanguages": {
-    "typescriptreact": "html",
     "eruby": "html",
     "htmldjango": "html"
   },
@@ -14,9 +13,5 @@
   },
   "list.source.files.command": "rg",
   "list.source.files.args": ["--files", "--hidden", "-i"],
-  "snippets.extends": {
-    "typescriptreact": ["typescript", "html", "javascript"],
-    "typescript": ["javascript"]
-  },
   "stylelintplus.autoFixOnFormat": true
 }
