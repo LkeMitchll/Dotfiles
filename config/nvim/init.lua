@@ -13,6 +13,13 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.cmd("colorscheme interrobang")
 
+local treesitter = require 'nvim-treesitter.configs'
+treesitter.setup {
+  ensure_installed = 'maintained',
+  highlight = { enable = true },
+  indent = { enable = true }
+}
+
 -- vim-fugitive
 vim.api.nvim_set_keymap("n", "<leader>gs", ":G<CR>", {})
 
