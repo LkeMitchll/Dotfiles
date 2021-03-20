@@ -1,8 +1,4 @@
 
-[submodule "config/nvim/pack/vish/start/coc.nvim"]
-	path = config/nvim/pack/vish/start/coc.nvim
-	url = https://github.com/neoclide/coc.nvim
-	branch = release
 [submodule "config/nvim/pack/vish/start/vim-snippets"]
 	path = config/nvim/pack/vish/start/vim-snippets
 	url = https://github.com/honza/vim-snippets
@@ -36,3 +32,24 @@
 [submodule "config/nvim/pack/vish/start/vim-interrobang"]
 	path = config/nvim/pack/vish/start/vim-interrobang
 	url = git@github.com:lkemitchll/vim-interrobang
+[submodule "config/nvim/pack/vish/start/nvim-compe"]
+	path = config/nvim/pack/vish/start/nvim-compe
+	url = git@github.com:hrsh7th/nvim-compe
+[submodule "config/nvim/pack/vish/start/nvim-lspconfig"]
+	path = config/nvim/pack/vish/start/nvim-lspconfig
+	url = git@github.com:neovim/nvim-lspconfig
+[submodule "config/nvim/pack/vish/start/neoformat"]
+	path = config/nvim/pack/vish/start/neoformat
+	url = git@github.com:sbdchd/neoformat
+[submodule "config/nvim/pack/vish/start/popup.nvim"]
+	path = config/nvim/pack/vish/start/popup.nvim
+	url = git@github.com:nvim-lua/popup.nvim
+[submodule "config/nvim/pack/vish/start/plenary.nvim"]
+	path = config/nvim/pack/vish/start/plenary.nvim
+	url = git@github.com:nvim-lua/plenary.nvim
+[submodule "config/nvim/pack/vish/start/telescope.nvim"]
+	path = config/nvim/pack/vish/start/telescope.nvim
+	url = git@github.com:nvim-telescope/telescope.nvim
+[submodule "config/nvim/pack/vish/start/ultisnips"]
+	path = config/nvim/pack/vish/start/ultisnips
+	url = git@github.com:SirVer/ultisnips
