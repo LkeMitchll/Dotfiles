@@ -26,11 +26,12 @@ treesitter.setup {
 
 -- nvim-lsp
 local lspconfig = require "lspconfig"
-local nodePrefix = "./node_modules/.bin/"
 
 lspconfig.cssls.setup {}
 lspconfig.tsserver.setup {filetypes = {"javascript", "javascriptreact"}}
 lspconfig.html.setup {filetypes = {"html", "htmldjango"}}
+-- linting & formatting
+local nodePrefix = "./node_modules/.bin/"
 lspconfig.efm.setup {
   init_options = {documentFormatting = true},
   filetypes = {"lua", "css", "javascript"},
@@ -70,6 +71,10 @@ set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
 
 -- nvim-compe
 require "compe".setup {
+  autocomplete = true,
+  min_length = 1,
+  preselect = "enable",
+  documentation = true,
   source = {
     ultisnips = true,
     nvim_lsp = true,
