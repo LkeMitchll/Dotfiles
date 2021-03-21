@@ -26,15 +26,40 @@ treesitter.setup {
 
 -- nvim-lsp
 local lspconfig = require 'lspconfig'
-lspconfig.tsserver.setup{
-  filetypes = {'javascript', 'javascriptreact', 'typescriptreact'}
-}
 lspconfig.cssls.setup{}
-lspconfig.html.setup{
-  filetypes = {'html', 'htmldjango'}
+lspconfig.tsserver.setup{ filetypes = {'javascript', 'javascriptreact'} }
+lspconfig.html.setup{ filetypes = {'html', 'htmldjango'} }
+lspconfig.efm.setup {
+  init_options = { documentFormatting = true },
+  filetypes = { 'css', 'javascript' },
+  settings = {
+    rootMarkers = {".git/"},
+    languages = {
+      css = {
+        {
+          formatCommand = "./node_modules/.bin/prettier --parser css",
+          formatStdin = true,
+          lintCommand = "./node_modules/.bin/stylelint --formatter unix --stdin --stdin-filename ${INPUT}",
+          lintStdin = true,
+          lintIgnoreExitCode = false,
+          lintFormats = {'%f:%l:%c: %m [%t%*[a-z]]'},
+        }
+      },
+      javascript = {
+        {
+          formatCommand = "./node_modules/.bin/prettier --parser babel",
+          formatStdin = true,
+          lintCommand = "./node_modules/.bin/eslint -f unix --stdin --stdin-filename ${INPUT}",
+          lintStdin = true,
+          lintIgnoreExitCode = true,
+        }
+      }
+    }
+  }
 }
 
 set_keymap('n', '<leader>cd', '<Cmd>lua vim.lsp.buf.definition()<CR>', {})
+set_keymap("n", "<space>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap=true, silent=true })
 
 -- nvim-compe
 require'compe'.setup {
@@ -55,29 +80,3 @@ set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 set_keymap("n", "<leader>b", ":Telescope buffers<CR>", {})
 set_keymap("n", "<leader>d", ":Telescope lsp_document_diagnostics<CR>", {})
-
--- neoformat
-require('formatter').setup({
-  logging = true,
-  filetype = {
-    javascript = {
-      function()
-        return {
-          exe = "prettier",
-          args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
-          stdin = true
-        }
-      end
-    },
-    css = {
-      function()
-        return {
-          exe = "prettier",
-          args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
-          stdin = true
-        }
-      end
-    }
-  }
-})
-set_keymap("n", "<leader>p", ":Format<CR>", {})
