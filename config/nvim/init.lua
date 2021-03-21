@@ -26,23 +26,23 @@ treesitter.setup {
 
 -- nvim-lsp
 local lspconfig = require 'lspconfig'
-lspconfig.tsserver.setup{}
+lspconfig.tsserver.setup{
+  filetypes = {'javascript', 'javascriptreact', 'typescriptreact'}
+}
 lspconfig.cssls.setup{}
 lspconfig.html.setup{
   filetypes = {'html', 'htmldjango'}
 }
 
 set_keymap('n', '<leader>cd', '<Cmd>lua vim.lsp.buf.definition()<CR>', {})
-set_keymap('n', '<leader>d', '<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', {})
 
 -- nvim-compe
 require'compe'.setup {
   source = {
-    path = true;
-    buffer = true;
-    nvim_lsp = true;
     ultisnips = true;
-    nvim_treesitter = true;
+    nvim_lsp = true;
+    buffer = true;
+    path = true;
   };
 }
 set_keymap("i", "<CR>", "compe#confirm('<CR>')", { expr = true; noremap = true })
@@ -54,6 +54,30 @@ set_keymap("n", "<leader>gs", ":G<CR>", {})
 set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 set_keymap("n", "<leader>b", ":Telescope buffers<CR>", {})
+set_keymap("n", "<leader>d", ":Telescope lsp_document_diagnostics<CR>", {})
 
 -- neoformat
-set_keymap("n", "<leader>p", ":Neoformat<CR>", {})
+require('formatter').setup({
+  logging = true,
+  filetype = {
+    javascript = {
+      function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+          stdin = true
+        }
+      end
+    },
+    css = {
+      function()
+        return {
+          exe = "prettier",
+          args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+          stdin = true
+        }
+      end
+    }
+  }
+})
+set_keymap("n", "<leader>p", ":Format<CR>", {})

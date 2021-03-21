@@ -38,9 +38,6 @@
 [submodule "config/nvim/pack/vish/start/nvim-lspconfig"]
 	path = config/nvim/pack/vish/start/nvim-lspconfig
 	url = git@github.com:neovim/nvim-lspconfig
-[submodule "config/nvim/pack/vish/start/neoformat"]
-	path = config/nvim/pack/vish/start/neoformat
-	url = git@github.com:sbdchd/neoformat
 [submodule "config/nvim/pack/vish/start/popup.nvim"]
 	path = config/nvim/pack/vish/start/popup.nvim
 	url = git@github.com:nvim-lua/popup.nvim
@@ -56,3 +53,6 @@
 [submodule "config/nvim/pack/vish/start/ale"]
 	path = config/nvim/pack/vish/start/ale
 	url = git@github.com:dense-analysis/ale
+[submodule "config/nvim/pack/vish/start/formatter.nvim"]
+	path = config/nvim/pack/vish/start/formatter.nvim
+	url = git@github.com:mhartington/formatter.nvim
