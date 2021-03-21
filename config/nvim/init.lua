@@ -82,7 +82,18 @@ set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true, noremap = true})
 -- vim-fugitive
 set_keymap("n", "<leader>gs", ":G<CR>", {})
 
--- fzf.vim
+-- telescope.nvim
+local tsactions = require("telescope.actions")
+require("telescope").setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-z>"] = tsactions.send_selected_to_qflist + tsactions.open_qflist
+      }
+    }
+  }
+}
+
 set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 set_keymap("n", "<leader>b", ":Telescope buffers<CR>", {})
