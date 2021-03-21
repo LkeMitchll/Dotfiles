@@ -17,60 +17,67 @@ vim.o.completeopt = "menuone,noselect"
 vim.cmd("colorscheme interrobang")
 
 -- nvim-treesitter
-local treesitter = require 'nvim-treesitter.configs'
+local treesitter = require "nvim-treesitter.configs"
 treesitter.setup {
-  ensure_installed = 'maintained',
-  highlight = { enable = true },
-  indent = { enable = true }
+  ensure_installed = "maintained",
+  highlight = {enable = true},
+  indent = {enable = true}
 }
 
 -- nvim-lsp
-local lspconfig = require 'lspconfig'
-lspconfig.cssls.setup{}
-lspconfig.tsserver.setup{ filetypes = {'javascript', 'javascriptreact'} }
-lspconfig.html.setup{ filetypes = {'html', 'htmldjango'} }
+local lspconfig = require "lspconfig"
+local nodePrefix = "./node_modules/.bin/"
+
+lspconfig.cssls.setup {}
+lspconfig.tsserver.setup {filetypes = {"javascript", "javascriptreact"}}
+lspconfig.html.setup {filetypes = {"html", "htmldjango"}}
 lspconfig.efm.setup {
-  init_options = { documentFormatting = true },
-  filetypes = { 'css', 'javascript' },
+  init_options = {documentFormatting = true},
+  filetypes = {"lua", "css", "javascript"},
   settings = {
     rootMarkers = {".git/"},
     languages = {
+      lua = {
+        {
+          formatCommand = "luafmt -i 2"
+        }
+      },
       css = {
         {
           formatCommand = "./node_modules/.bin/prettier --parser css",
           formatStdin = true,
-          lintCommand = "./node_modules/.bin/stylelint --formatter unix --stdin --stdin-filename ${INPUT}",
+          lintCommand = nodePrefix .. "stylelint --formatter unix --stdin --stdin-filename ${INPUT}",
           lintStdin = true,
           lintIgnoreExitCode = false,
-          lintFormats = {'%f:%l:%c: %m [%t%*[a-z]]'},
+          lintFormats = {"%f:%l:%c: %m [%t%*[a-z]]"}
         }
       },
       javascript = {
         {
-          formatCommand = "./node_modules/.bin/prettier --parser babel",
+          formatCommand = nodePrefix .. "prettier --parser babel",
           formatStdin = true,
-          lintCommand = "./node_modules/.bin/eslint -f unix --stdin --stdin-filename ${INPUT}",
+          lintCommand = nodePrefix .. "eslint -f unix --stdin --stdin-filename ${INPUT}",
           lintStdin = true,
-          lintIgnoreExitCode = true,
+          lintIgnoreExitCode = true
         }
       }
     }
   }
 }
 
-set_keymap('n', '<leader>cd', '<Cmd>lua vim.lsp.buf.definition()<CR>', {})
-set_keymap("n", "<space>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap=true, silent=true })
+set_keymap("n", "<leader>cd", "<Cmd>lua vim.lsp.buf.definition()<CR>", {})
+set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
 
 -- nvim-compe
-require'compe'.setup {
+require "compe".setup {
   source = {
-    ultisnips = true;
-    nvim_lsp = true;
-    buffer = true;
-    path = true;
-  };
+    ultisnips = true,
+    nvim_lsp = true,
+    buffer = true,
+    path = true
+  }
 }
-set_keymap("i", "<CR>", "compe#confirm('<CR>')", { expr = true; noremap = true })
+set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true, noremap = true})
 
 -- vim-fugitive
 set_keymap("n", "<leader>gs", ":G<CR>", {})
