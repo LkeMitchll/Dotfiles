@@ -28,40 +28,40 @@ treesitter.setup {
 local lspconfig = require "lspconfig"
 
 lspconfig.cssls.setup {}
-lspconfig.tsserver.setup {filetypes = {"javascript", "javascriptreact"}}
-lspconfig.html.setup {filetypes = {"html", "htmldjango"}}
+lspconfig.tsserver.setup {}
+lspconfig.html.setup {filetypes = {"html", "htmldjango", "eruby"}}
 -- linting & formatting
 local nodePrefix = "./node_modules/.bin/"
+function prettier(parser)
+  return {
+    formatCommand = "./node_modules/.bin/prettier --stdin --stdin-filepath --parser=" .. parser,
+    formatStdin = true
+  }
+end
+local stylelint = {
+  lintCommand = nodePrefix .. "stylelint --formatter unix --stdin --stdin-filename ${INPUT}",
+  lintStdin = true,
+  lintIgnoreExitCode = false,
+  lintFormats = {"%f:%l:%c: %m [%t%*[a-z]]"}
+}
+local eslint = {
+  lintCommand = nodePrefix .. "eslint -f unix --stdin --stdin-filename ${INPUT}",
+  lintStdin = true,
+  lintIgnoreExitCode = true
+}
+
 lspconfig.efm.setup {
   init_options = {documentFormatting = true},
-  filetypes = {"lua", "css", "javascript"},
+  filetypes = {"lua", "css", "scss", "javascript"},
   settings = {
     rootMarkers = {".git/"},
     languages = {
       lua = {
-        {
-          formatCommand = "luafmt -i 2"
-        }
+        {formatCommand = "luafmt -i 2"}
       },
-      css = {
-        {
-          formatCommand = "./node_modules/.bin/prettier --parser css",
-          formatStdin = true,
-          lintCommand = nodePrefix .. "stylelint --formatter unix --stdin --stdin-filename ${INPUT}",
-          lintStdin = true,
-          lintIgnoreExitCode = false,
-          lintFormats = {"%f:%l:%c: %m [%t%*[a-z]]"}
-        }
-      },
-      javascript = {
-        {
-          formatCommand = nodePrefix .. "prettier --parser babel",
-          formatStdin = true,
-          lintCommand = nodePrefix .. "eslint -f unix --stdin --stdin-filename ${INPUT}",
-          lintStdin = true,
-          lintIgnoreExitCode = true
-        }
-      }
+      css = {prettier("css"), stylelint},
+      scss = {prettier("scss"), stylelint},
+      javascript = {prettier("babel"), eslint}
     }
   }
 }
