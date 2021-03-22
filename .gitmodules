@@ -50,3 +50,6 @@
 [submodule "config/nvim/pack/vish/start/ultisnips"]
 	path = config/nvim/pack/vish/start/ultisnips
 	url = git@github.com:SirVer/ultisnips
+[submodule "config/nvim/pack/vish/start/emmet-vim"]
+	path = config/nvim/pack/vish/start/emmet-vim
+	url = git@github.com:mattn/emmet-vim
