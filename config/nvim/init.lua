@@ -101,5 +101,5 @@ require("telescope").setup {
 
 set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
-set_keymap("n", "<leader>b", ":Telescope buffers<CR>", {})
+set_keymap("n", "<leader>b", ":Telescope oldfiles<CR>", {})
 set_keymap("n", "<leader>d", ":Telescope lsp_document_diagnostics<CR>", {})
