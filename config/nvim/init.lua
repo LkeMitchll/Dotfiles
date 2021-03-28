@@ -1,4 +1,5 @@
 local set_keymap = vim.api.nvim_set_keymap
+local command = vim.cmd
 
 vim.g.mapleader = " "
 vim.o.clipboard = "unnamed"
@@ -14,7 +15,7 @@ vim.o.softtabstop = 2
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.completeopt = "menuone,noselect"
-vim.cmd("colorscheme interrobang")
+command("colorscheme interrobang")
 
 -- nvim-treesitter
 local treesitter = require "nvim-treesitter.configs"
@@ -30,6 +31,16 @@ local lspconfig = require "lspconfig"
 lspconfig.cssls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.html.setup {filetypes = {"html", "htmldjango", "eruby"}}
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    virtual_text = false,
+    underline = true,
+    signs = true
+  }
+)
 -- linting & formatting
 local nodePrefix = "./node_modules/.bin/"
 function prettier(parser)
@@ -66,6 +77,8 @@ lspconfig.efm.setup {
   }
 }
 
+command [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
+command [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
 set_keymap("n", "<leader>cd", "<Cmd>lua vim.lsp.buf.definition()<CR>", {})
 set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
 
