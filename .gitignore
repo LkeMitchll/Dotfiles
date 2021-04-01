@@ -1,3 +1,4 @@
 .DS_Store
 Brewfile.local
 config/fish/config.local.fish
+config/kitty/*.py
