@@ -36,7 +36,7 @@ The primary plugins I use in Neovim are:
 - [telescope.nvim] - a super fast fuzzy finder
 - [vim-fugitive] - an excellent git integration
 
-You can see a full list of the Neovim plugins I use here [here]
+You can see a full list of the Neovim plugins I use [here]
 
 I wrote [vish] to manage plugins.
 
@@ -78,6 +78,6 @@ note:
 [kitty config]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/kitty/kitty.conf
 [tokyo-night]: https://github.com/davidmathers/tokyo-night-kitty-theme
 [vim-kitty-navigator]: https://github.com/knubie/vim-kitty-navigator
-[kitty-sessions]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/fish/functions/session.fish
+[kitty sessions]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/fish/functions/session.fish
 [prompt]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/fish/functions/fish_prompt.fish
 [bira]: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#bira
