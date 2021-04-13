@@ -4,6 +4,7 @@ local command = vim.cmd
 vim.g.mapleader = " "
 vim.o.clipboard = "unnamed"
 vim.o.cursorline = true
+vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.list = true
 vim.o.listchars = "eol:¬,space:·,trail:"
