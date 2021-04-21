@@ -16,110 +16,96 @@ vim.o.softtabstop = 2
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.completeopt = "menuone,noselect"
-command("colorscheme interrobang")
 
--- nvim-treesitter
+require("packer").startup(
+  function()
+    use "wbthomason/packer.nvim"
+    --
+    use "airblade/vim-gitgutter"
+    use "folke/tokyonight.nvim"
+    use "hoob3rt/lualine.nvim"
+    use "hrsh7th/nvim-compe"
+    use "justinmk/vim-sneak"
+    use "knubie/vim-kitty-navigator"
+    use "lkemitchll/vim-kitty-runner"
+    use "neovim/nvim-lspconfig"
+    use "nvim-treesitter/nvim-treesitter"
+    use "tpope/vim-commentary"
+    use "tpope/vim-fugitive"
+    use "tpope/vim-sensible"
+    use "tpope/vim-surround"
+    use {
+      "hrsh7th/vim-vsnip",
+      requires = {"hrsh7th/vim-vsnip-integ", "rafamadriz/friendly-snippets"}
+    }
+    use {
+      "nvim-telescope/telescope.nvim",
+      requires = {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
+    }
+  end
+)
+-- Plugin: tokyonight.nvim
+vim.cmd [[colorscheme tokyonight]]
+vim.g.tokyonight_style = "night"
+
+-- Plugin: lualine.nvim
+require("lualine").setup {
+  options = {
+    theme = "tokyonight"
+  }
+}
+
+-- Plugin: nvim-treesitter
 local treesitter = require "nvim-treesitter.configs"
 treesitter.setup {
   ensure_installed = "maintained",
   highlight = {enable = true},
-  indent = {enable = true}
-}
-
--- nvim-lsp
-local lspconfig = require "lspconfig"
-local configs = require "lspconfig/configs"
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-configs.emmet_ls = {
-  default_config = {
-    cmd = {"emmet-ls", "--stdio"},
-    filetypes = {"html", "css"},
-    root_dir = function()
-      return vim.loop.cwd()
-    end,
-    settings = {}
-  }
-}
-
-lspconfig.emmet_ls.setup {
-  on_attach = on_attach
-}
-lspconfig.cssls.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.html.setup {filetypes = {"html", "htmldjango", "eruby"}}
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] =
-  vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
-    virtual_text = false,
-    underline = true,
-    signs = true
-  }
-)
--- linting & formatting
-local nodePrefix = "./node_modules/.bin/"
-function prettier(parser)
-  return {
-    formatCommand = "./node_modules/.bin/prettier --stdin --stdin-filepath --parser=" .. parser,
-    formatStdin = true
-  }
-end
-local stylelint = {
-  lintCommand = nodePrefix .. "stylelint --formatter unix --stdin --stdin-filename ${INPUT}",
-  lintStdin = true,
-  lintIgnoreExitCode = false,
-  lintFormats = {"%f:%l:%c: %m [%t%*[a-z]]"}
-}
-local eslint = {
-  lintCommand = nodePrefix .. "eslint -f unix --stdin --stdin-filename ${INPUT}",
-  lintStdin = true,
-  lintIgnoreExitCode = true
-}
-
-lspconfig.efm.setup {
-  init_options = {documentFormatting = true},
-  filetypes = {"lua", "css", "scss", "javascript"},
-  settings = {
-    rootMarkers = {".git/"},
-    languages = {
-      lua = {
-        {formatCommand = "luafmt -i 2"}
-      },
-      css = {prettier("css"), stylelint},
-      scss = {prettier("scss"), stylelint},
-      javascript = {prettier("babel"), eslint}
+  indent = {enable = true},
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm"
     }
   }
 }
 
+-- Plugin: nvim-lspconfig
+require("lsp")
+
+-- Plugin: nvim-kitty-runner
+vim.g.KittySwitchFocus = 1
+vim.g.KittyFocusLayout = "tall:bias=60"
+
+-- show lsp diagnostics on hover
 command [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
 command [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
+
 set_keymap("n", "<leader>cd", "<Cmd>lua vim.lsp.buf.definition()<CR>", {})
 set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
 
--- nvim-compe
+-- Plugin: nvim-compe
 require "compe".setup {
   autocomplete = true,
   min_length = 1,
   preselect = "enable",
   documentation = true,
   source = {
-    ultisnips = true,
+    vsnip = true,
     nvim_lsp = true,
     buffer = true,
-    path = true
+    path = true,
+    calc = true
   }
 }
 set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true, noremap = true})
 
--- vim-fugitive
+-- Plugin: vim-fugitive
 set_keymap("n", "<leader>gs", ":G<CR>", {})
 
--- telescope.nvim
+-- Plugin: telescope.nvim
 local tsactions = require("telescope.actions")
 require("telescope").setup {
   defaults = {

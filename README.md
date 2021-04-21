@@ -14,6 +14,7 @@ Use [Recursive Mono] to take full advantage of ligatures.
 - [fish]
   - [fisher]
 - [neovim]
+  - [packer]
 - [asdf]
 
 ## Install
@@ -36,12 +37,7 @@ The primary plugins I use in Neovim are:
 - [telescope.nvim] - a super fast fuzzy finder
 - [vim-fugitive] - an excellent git integration
 
-You can see a full list of the Neovim plugins I use [here]
-
-I wrote [vish] to manage plugins.
-
-My [theme] is a fork of [noctu] that simply inherits whatever colors my terminal
-provides.
+You can see a full list of the Neovim plugins I use in my [neovim config]
 
 ### Kitty
 
@@ -60,6 +56,7 @@ note:
 - I use a two-line [prompt], based on [bira]
 
 [neovim]: https://neovim.io
+[packer]: https://github.com/wbthomason/packer.nvim
 [Kitty]: https://github.com/kovidgoyal/kitty
 [Recursive Mono]: https://github.com/arrowtype/recursive
 [homebrew]: https://brew.sh
@@ -72,7 +69,7 @@ note:
 [telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
 [vim-fugitive]: https://github.com/tpope/vim-fugitive
 [vish]: https://github.com/LkeMitchll/vish
-[here]: https://github.com/LkeMitchll/Dotfiles/tree/main/config/nvim/pack/vish/start
+[neovim config]: https://github.com/LkeMitchll/Dotfiles/tree/main/config/nvim/init.lua
 [theme]: https://github.com/LkeMitchll/vim-interrobang
 [noctu]: https://github.com/noahfrederick/vim-noctu
 [kitty config]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/kitty/kitty.conf
