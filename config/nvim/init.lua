@@ -55,6 +55,9 @@ require("lualine").setup {
   }
 }
 
+-- Plugin: vim-sneak
+vim.g["sneak#label"] = 1
+
 -- Plugin: nvim-treesitter
 local treesitter = require "nvim-treesitter.configs"
 treesitter.setup {
