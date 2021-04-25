@@ -46,7 +46,7 @@ require("packer").startup(
   end
 )
 -- Plugin: tokyonight.nvim
-vim.cmd [[colorscheme tokyonight]]
+command "colorscheme tokyonight"
 vim.g.tokyonight_style = "night"
 
 -- Plugin: lualine.nvim
