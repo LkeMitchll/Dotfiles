@@ -105,6 +105,8 @@ require "compe".setup {
     calc = true
   }
 }
+
+set_keymap("i", "<C-Space>", "compe#complete()", {expr = true, noremap = true})
 set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true, noremap = true})
 
 -- Plugin: vim-fugitive
