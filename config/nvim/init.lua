@@ -47,6 +47,10 @@ require("packer").startup(
   end
 )
 
+-- Keymaps
+set_keymap("n", "<C-]>", ":cnext<CR>", {})
+set_keymap("n", "<C-[>", ":cprevious<CR>", {})
+
 -- Plugin: tokyonight.nvim
 vim.g.tokyonight_style = "night"
 command "colorscheme tokyonight"
