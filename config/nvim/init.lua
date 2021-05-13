@@ -18,6 +18,7 @@ vim.o.shiftwidth = 2
 vim.o.completeopt = "menuone,noselect"
 vim.o.updatetime = 500
 command "set nowrap"
+command "set title"
 
 require("packer").startup(
   function()
