@@ -2,28 +2,17 @@ local lspconfig = require "lspconfig"
 local configs = require "lspconfig/configs"
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
--- Support snippets from servers
+-- Snippet support
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = {"documentation", "detail", "additionalTextEdits"}
 }
 
--- Disable inline diagnostics
-vim.lsp.handlers["textDocument/publishDiagnostics"] =
-  vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
-    virtual_text = false,
-    underline = true,
-    signs = true
-  }
-)
-
 -- LSP servers
 configs.emmet_ls = {
   default_config = {
     cmd = {"emmet-ls", "--stdio"},
-    filetypes = {"html", "eruby", "css"},
+    filetypes = {"html", "eruby", "css", "scss"},
     root_dir = require "lspconfig".util.root_pattern(".git", vim.fn.getcwd())
   }
 }
@@ -33,7 +22,7 @@ lspconfig.cssls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.html.setup {filetypes = {"html", "eruby"}}
 
--- linting & formatting
+-- Linting & formatting
 local nodePrefix = "./node_modules/.bin/"
 
 function prettier(parser)

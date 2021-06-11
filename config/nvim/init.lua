@@ -2,21 +2,21 @@ local set_keymap = vim.api.nvim_set_keymap
 local command = vim.cmd
 
 vim.g.mapleader = " "
-vim.o.clipboard = "unnamed"
-vim.o.cursorline = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.list = true
-vim.o.listchars = "eol:¬,space:·,trail:"
-vim.o.splitbelow = true
-vim.o.smartindent = true
-vim.o.expandtab = true
-vim.o.shiftround = true
-vim.o.softtabstop = 2
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.completeopt = "menuone,noselect"
-vim.o.updatetime = 500
+vim.api.nvim_set_option("clipboard", "unnamed")
+vim.api.nvim_set_option("cursorline", true)
+vim.api.nvim_set_option("listchars", "eol:¬,space:·,trail:")
+vim.api.nvim_set_option("splitbelow", true)
+vim.api.nvim_set_option("smartindent", true)
+vim.api.nvim_set_option("expandtab", true)
+vim.api.nvim_set_option("shiftround", true)
+vim.api.nvim_set_option("softtabstop", 2)
+vim.api.nvim_set_option("tabstop", 2)
+vim.api.nvim_set_option("shiftwidth", 2)
+vim.api.nvim_set_option("completeopt", "menuone,noselect")
+vim.api.nvim_set_option("updatetime", 500)
 command "set nowrap"
 command "set title"
 
@@ -63,9 +63,6 @@ require("lualine").setup {
   }
 }
 
--- Plugin: vim-sneak
-vim.g["sneak#label"] = 1
-
 -- Plugin: nvim-treesitter
 local treesitter = require "nvim-treesitter.configs"
 treesitter.setup {
@@ -77,29 +74,20 @@ treesitter.setup {
 -- Plugin: nvim-lspconfig
 require("lsp")
 
+set_keymap("n", "<leader>cd", "<Cmd>lua vim.lsp.buf.definition()<CR>", {})
+set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
+
 -- Plugin: nvim-kitty-runner
 vim.g.KittySwitchFocus = 1
 vim.g.KittyFocusLayout = "tall:bias=60"
 
--- show lsp diagnostics on hover
-command [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
-command [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
-
-set_keymap("n", "<leader>cd", "<Cmd>lua vim.lsp.buf.definition()<CR>", {})
-set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
-
 -- Plugin: nvim-compe
 require "compe".setup {
-  autocomplete = true,
-  min_length = 1,
-  preselect = "enable",
-  documentation = true,
   source = {
     vsnip = true,
     nvim_lsp = true,
     buffer = true,
-    path = true,
-    calc = true
+    path = true
   }
 }
 
