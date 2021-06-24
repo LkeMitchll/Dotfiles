@@ -1,5 +1,5 @@
 set -e PATH
-set -gx PATH /usr/local/bin /usr/sbin /sbin /usr/bin /bin $PATH
+set -gx PATH /opt/homebrew/bin /usr/local/bin /usr/sbin /sbin /usr/bin /bin $PATH
 
 set -gx EDITOR nvim
 set -gx HOMEBREW_BUNDLE_NO_LOCK 1
@@ -12,7 +12,7 @@ source ~/.config/fish/aliases.fish
 source ~/.config/fish/theme.fish
 
 # ASDF
-source ~/.asdf/asdf.fish
+source /opt/homebrew/opt/asdf/asdf.fish
 
 # FZF
 set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'

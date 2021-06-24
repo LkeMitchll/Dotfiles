@@ -11,7 +11,7 @@ function uatt
   RCRC=~/.dotfiles/config/rcrc rcup
   echo "Dotfiles up-to-date"
   echo $uatt_seperator
-  fisher
+  fisher update
   echo "Fish plugins up-to-date"
   echo $uatt_seperator
   asdf update
