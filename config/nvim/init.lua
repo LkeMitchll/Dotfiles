@@ -1,3 +1,4 @@
+local set_option = vim.api.nvim_set_option
 local set_keymap = vim.api.nvim_set_keymap
 local command = vim.cmd
 
@@ -5,18 +6,18 @@ vim.g.mapleader = " "
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.list = true
-vim.api.nvim_set_option("clipboard", "unnamed")
-vim.api.nvim_set_option("cursorline", true)
-vim.api.nvim_set_option("listchars", "eol:¬,space:·,trail:")
-vim.api.nvim_set_option("splitbelow", true)
-vim.api.nvim_set_option("smartindent", true)
-vim.api.nvim_set_option("expandtab", true)
-vim.api.nvim_set_option("shiftround", true)
-vim.api.nvim_set_option("softtabstop", 2)
-vim.api.nvim_set_option("tabstop", 2)
-vim.api.nvim_set_option("shiftwidth", 2)
-vim.api.nvim_set_option("completeopt", "menuone,noselect")
-vim.api.nvim_set_option("updatetime", 500)
+set_option("clipboard", "unnamed")
+set_option("cursorline", true)
+set_option("listchars", "eol:¬,space:·,trail:")
+set_option("splitbelow", true)
+set_option("smartindent", true)
+set_option("expandtab", true)
+set_option("shiftround", true)
+set_option("softtabstop", 2)
+set_option("tabstop", 2)
+set_option("shiftwidth", 2)
+set_option("completeopt", "menuone,noselect")
+set_option("updatetime", 500)
 command "set nowrap"
 command "set title"
 
