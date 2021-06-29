@@ -1,5 +1,5 @@
 function fish_right_prompt
-  set -l git_branch (git branch ^/dev/null | sed -n '/\* /s///p')
+  set -l git_branch (fish_git_prompt)
   set -l branch_length (string length $git_branch)
 
   if test -n "$git_branch"
