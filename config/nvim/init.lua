@@ -77,6 +77,7 @@ require("lsp")
 
 set_keymap("n", "<leader>cd", "<Cmd>lua vim.lsp.buf.definition()<CR>", {})
 set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
+set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {})
 
 -- Plugin: nvim-kitty-runner
 vim.g.KittySwitchFocus = 1
