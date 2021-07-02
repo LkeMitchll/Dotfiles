@@ -21,15 +21,16 @@ set_option("updatetime", 500)
 command "set nowrap"
 command "set title"
 
+
 require("packer").startup(
   function()
     use "wbthomason/packer.nvim"
     --
     use "airblade/vim-gitgutter"
     use "folke/tokyonight.nvim"
+    use "ggandor/lightspeed.nvim"
     use "hoob3rt/lualine.nvim"
     use "hrsh7th/nvim-compe"
-    use "justinmk/vim-sneak"
     use "knubie/vim-kitty-navigator"
     use "lkemitchll/vim-kitty-runner"
     use "neovim/nvim-lspconfig"
