@@ -18,9 +18,7 @@ set_option("tabstop", 2)
 set_option("shiftwidth", 2)
 set_option("completeopt", "menuone,noselect")
 set_option("updatetime", 500)
-command "set nowrap"
-command "set title"
-
+command("set title")
 
 require("packer").startup(
   function()
