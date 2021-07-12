@@ -5,7 +5,6 @@ function uatt
   brew bundle --file ~/.Brewfile.local
   brew update
   brew upgrade
-  brew upgrade --cask
   echo "Packages up-to-date"
   echo $uatt_seperator
   RCRC=~/.dotfiles/config/rcrc rcup

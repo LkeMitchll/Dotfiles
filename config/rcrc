@@ -1,2 +1,2 @@
-EXCLUDES="README.md LICENSE .gitmodules .gitignore config/nvim/pack"
+EXCLUDES="README.md LICENSE .gitignore"
 DOTFILES_DIRS="$HOME/.dotfiles"
