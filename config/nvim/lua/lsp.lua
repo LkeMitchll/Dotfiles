@@ -21,6 +21,7 @@ lspconfig.emmet_ls.setup {on_attach = on_attach}
 lspconfig.cssls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.html.setup {filetypes = {"html", "eruby"}}
+lspconfig.solargraph.setup{}
 
 -- Linting & formatting
 local nodePrefix = "./node_modules/.bin/"
