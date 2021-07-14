@@ -13,11 +13,12 @@ configs.emmet_ls = {
   default_config = {
     cmd = {"emmet-ls", "--stdio"},
     filetypes = {"html", "eruby", "css", "scss"},
-    root_dir = require "lspconfig".util.root_pattern(".git", vim.fn.getcwd())
+    root_dir = require "lspconfig".util.root_pattern(".git", vim.fn.getcwd()),
+    settings = {};
   }
 }
 
-lspconfig.emmet_ls.setup {on_attach = on_attach}
+lspconfig.emmet_ls.setup {capabilities = capabilities}
 lspconfig.cssls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.html.setup {filetypes = {"html", "eruby"}}
