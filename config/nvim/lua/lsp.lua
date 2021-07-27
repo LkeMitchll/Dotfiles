@@ -7,6 +7,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = {"documentation", "detail", "additionalTextEdits"}
 }
+on_attach = function(client)
+  client.resolved_capabilities.document_formatting = false
+end
 
 -- LSP servers
 configs.emmet_ls = {
@@ -14,15 +17,15 @@ configs.emmet_ls = {
     cmd = {"emmet-ls", "--stdio"},
     filetypes = {"html", "eruby", "css", "scss"},
     root_dir = require "lspconfig".util.root_pattern(".git", vim.fn.getcwd()),
-    settings = {};
+    settings = {}
   }
 }
 
-lspconfig.emmet_ls.setup {capabilities = capabilities}
-lspconfig.cssls.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.html.setup {filetypes = {"html", "eruby"}}
-lspconfig.solargraph.setup{}
+lspconfig.cssls.setup {on_attach = on_attach}
+lspconfig.emmet_ls.setup {capabilities = capabilities, on_attach = on_attach}
+lspconfig.html.setup {on_attach = on_attach, filetypes = {"html", "eruby"}}
+lspconfig.stylelint_lsp.setup {on_attach = on_attach}
+lspconfig.tsserver.setup {on_attach = on_attach}
 
 -- Linting & formatting
 local nodePrefix = "./node_modules/.bin/"
@@ -33,12 +36,6 @@ function prettier(parser)
     formatStdin = true
   }
 end
-local stylelint = {
-  lintCommand = nodePrefix .. "stylelint --formatter unix --stdin --stdin-filename ${INPUT}",
-  lintStdin = true,
-  lintIgnoreExitCode = false,
-  lintFormats = {"%f:%l:%c: %m [%t%*[a-z]]"}
-}
 local eslint = {
   lintCommand = nodePrefix .. "eslint -f unix --stdin --stdin-filename ${INPUT}",
   lintStdin = true,
@@ -56,12 +53,12 @@ lspconfig.efm.setup {
   settings = {
     rootMarkers = {".git/"},
     languages = {
-      css = {prettier("css"), stylelint},
+      css = {prettier("css")},
       html = {prettier("html")},
       javascript = {prettier("babel"), eslint},
       lua = {{formatCommand = "luafmt -i 2"}},
       ruby = {rubocop},
-      scss = {prettier("scss"), stylelint}
+      scss = {prettier("scss")}
     }
   }
 }
