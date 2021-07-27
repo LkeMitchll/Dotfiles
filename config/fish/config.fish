@@ -1,5 +1,5 @@
 set -e PATH
-set -gx PATH /opt/homebrew/bin /usr/local/bin /usr/sbin /sbin /usr/bin /bin $PATH
+set -gx PATH /opt/homebrew/bin /usr/local/bin /usr/sbin /sbin /usr/bin /bin ~/.config/nvim/node_modules/.bin $PATH
 
 set -gx EDITOR nvim
 set -gx HOMEBREW_BUNDLE_NO_LOCK 1
