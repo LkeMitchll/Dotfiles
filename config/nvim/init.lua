@@ -32,7 +32,7 @@ require("packer").startup(
     use "knubie/vim-kitty-navigator"
     use "lkemitchll/vim-kitty-runner"
     use "neovim/nvim-lspconfig"
-    use "nvim-treesitter/nvim-treesitter"
+    use {"nvim-treesitter/nvim-treesitter", branch = "0.5-compat", run = ":TSUpdate"}
     use "tpope/vim-commentary"
     use "tpope/vim-fugitive"
     use "tpope/vim-sensible"
