@@ -62,7 +62,7 @@ local rubocop = {
 
 lspconfig.efm.setup {
   init_options = {documentFormatting = true},
-  filetypes = {"css", "html", "javascript", "lua", "ruby", "scss"},
+  filetypes = {"css", "html", "javascript", "lua", "ruby", "scss", "json"},
   settings = {
     rootMarkers = {".git/"},
     languages = {
@@ -71,7 +71,8 @@ lspconfig.efm.setup {
       javascript = {prettier("babel"), eslint},
       lua = {{formatCommand = "luafmt -i 2"}},
       ruby = {rubocop},
-      scss = {prettier("scss")}
+      scss = {prettier("scss")},
+      json = {prettier("json")}
     }
   }
 }
