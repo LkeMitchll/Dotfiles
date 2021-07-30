@@ -76,7 +76,6 @@ require("lsp")
 
 set_keymap("n", "<leader>cd", "<Cmd>lua vim.lsp.buf.definition()<CR>", {})
 set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
-set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {})
 
 -- Plugin: nvim-kitty-runner
 vim.g.KittySwitchFocus = 1
@@ -113,5 +112,6 @@ require("telescope").setup {
 set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 set_keymap("n", "<leader>b", ":Telescope oldfiles<CR>", {})
+set_keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>", {})
 set_keymap("n", "<leader>d", ":Telescope lsp_document_diagnostics<CR>", {})
 set_keymap("n", "<leader>v", ":Telescope commands<CR>", {})
