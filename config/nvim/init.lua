@@ -29,14 +29,15 @@ require("packer").startup(
     use "ggandor/lightspeed.nvim"
     use "hoob3rt/lualine.nvim"
     use "hrsh7th/nvim-compe"
+    use "jose-elias-alvarez/null-ls.nvim"
     use "knubie/vim-kitty-navigator"
     use "lkemitchll/vim-kitty-runner"
     use "neovim/nvim-lspconfig"
-    use {"nvim-treesitter/nvim-treesitter", branch = "0.5-compat", run = ":TSUpdate"}
     use "tpope/vim-commentary"
     use "tpope/vim-fugitive"
     use "tpope/vim-sensible"
     use "tpope/vim-surround"
+    use {"nvim-treesitter/nvim-treesitter", branch = "0.5-compat", run = ":TSUpdate"}
     use {
       "hrsh7th/vim-vsnip",
       requires = {"hrsh7th/vim-vsnip-integ", "rafamadriz/friendly-snippets"}
@@ -83,6 +84,7 @@ vim.g.KittyFocusLayout = "tall:bias=60"
 
 -- Plugin: nvim-compe
 require "compe".setup {
+  documentation = true,
   source = {
     vsnip = true,
     nvim_lsp = true,
@@ -91,8 +93,8 @@ require "compe".setup {
   }
 }
 
-set_keymap("i", "<C-Space>", "compe#complete()", {expr = true, noremap = true})
-set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true, noremap = true})
+set_keymap("i", "<C-Space>", "compe#complete()", {expr = true})
+set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true})
 
 -- Plugin: vim-fugitive
 set_keymap("n", "<leader>gs", ":G<CR>", {})
