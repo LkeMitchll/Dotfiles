@@ -8,7 +8,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = {"documentation", "detail", "additionalTextEdits"}
 }
 
--- Hide inline diagnostics
+-- Hide inline diagnostics (show on hover)
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics,
@@ -22,34 +22,29 @@ vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
 vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
 
 on_attach = function(client)
+  -- Always use the first formatter
   client.resolved_capabilities.document_formatting = false
+  -- Plugin: coq_nvim
+  require("coq")().lsp_ensure_capabilities()
 end
 
--- LSP servers
-configs.emmet_ls = {
-  default_config = {
-    cmd = {"emmet-ls", "--stdio"},
-    filetypes = {"html", "eruby", "css", "scss"},
-    root_dir = require "lspconfig".util.root_pattern(".git", vim.fn.getcwd()),
-    settings = {}
-  }
-}
+-- Init servers
+lspconfig.cssls.setup {on_attach = on_attach}
+lspconfig.html.setup {on_attach = on_attach, filetypes = {"html", "eruby"}}
+lspconfig.stylelint_lsp.setup {on_attach = on_attach}
+lspconfig.tsserver.setup {on_attach = on_attach}
+lspconfig.svelte.setup {on_attach = on_attach}
 
--- Linting & formatting
+-- Plugin: null_ls (linting & formatting)
 local null_ls = require "null-ls"
 local nl_builtin = null_ls.builtins
 null_ls.config(
   {
     sources = {
       nl_builtin.formatting.prettier,
-      nl_builtin.diagnostics.eslint,
+      nl_builtin.diagnostics.eslint
     }
   }
 )
 
-lspconfig.cssls.setup {on_attach = on_attach}
-lspconfig.emmet_ls.setup {capabilities = capabilities, on_attach = on_attach}
-lspconfig.html.setup {on_attach = on_attach, filetypes = {"html", "eruby"}}
-lspconfig.stylelint_lsp.setup {on_attach = on_attach}
-lspconfig.tsserver.setup {on_attach = on_attach}
 lspconfig["null-ls"].setup {on_attach = on_attach}

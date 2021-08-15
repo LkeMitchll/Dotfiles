@@ -24,27 +24,40 @@ require("packer").startup(
   function()
     use "wbthomason/packer.nvim"
     --
-    use "airblade/vim-gitgutter"
+    use "b3nj5m1n/kommentary"
     use "folke/tokyonight.nvim"
     use "ggandor/lightspeed.nvim"
     use "hoob3rt/lualine.nvim"
-    use "hrsh7th/nvim-compe"
     use "jose-elias-alvarez/null-ls.nvim"
     use "knubie/vim-kitty-navigator"
     use "lkemitchll/vim-kitty-runner"
     use "neovim/nvim-lspconfig"
-    use "tpope/vim-commentary"
-    use "tpope/vim-fugitive"
-    use "tpope/vim-sensible"
     use "tpope/vim-surround"
-    use {"nvim-treesitter/nvim-treesitter", branch = "0.5-compat", run = ":TSUpdate"}
     use {
-      "hrsh7th/vim-vsnip",
-      requires = {"hrsh7th/vim-vsnip-integ", "rafamadriz/friendly-snippets"}
+      "lewis6991/gitsigns.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("gitsigns").setup()
+      end
+    }
+    use {
+      "ms-jpq/coq_nvim",
+      branch = "coq",
+      run = ":COQdeps",
+      requires = {{'ms-jpq/coq.artifacts', branch = "artifacts"}}
+    }
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      branch = "0.5-compat",
+      run = ":TSUpdate"
     }
     use {
       "nvim-telescope/telescope.nvim",
       requires = {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
+    }
+    use { 
+      "TimUntersberger/neogit",
+      requires = "nvim-lua/plenary.nvim"
     }
   end
 )
@@ -75,29 +88,16 @@ treesitter.setup {
 -- Plugin: nvim-lspconfig
 require("lsp")
 
-set_keymap("n", "<leader>cd", "<Cmd>lua vim.lsp.buf.definition()<CR>", {})
-set_keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
+set_keymap("n", "<leader>cd", ":lua vim.lsp.buf.definition()<CR>", {})
+set_keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<CR>", {})
 
 -- Plugin: nvim-kitty-runner
 vim.g.KittySwitchFocus = 1
 vim.g.KittyFocusLayout = "tall:bias=60"
 
--- Plugin: nvim-compe
-require "compe".setup {
-  documentation = true,
-  source = {
-    vsnip = true,
-    nvim_lsp = true,
-    buffer = true,
-    path = true
-  }
-}
-
-set_keymap("i", "<C-Space>", "compe#complete()", {expr = true})
-set_keymap("i", "<CR>", "compe#confirm('<CR>')", {expr = true})
-
--- Plugin: vim-fugitive
-set_keymap("n", "<leader>gs", ":G<CR>", {})
+-- Plugin: neogit
+require("neogit").setup {}
+set_keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 
 -- Plugin: telescope.nvim
 local tsactions = require("telescope.actions")
@@ -105,6 +105,7 @@ require("telescope").setup {
   defaults = {
     mappings = {
       i = {
+        -- Open quickfix with tagged files
         ["<C-z>"] = tsactions.send_selected_to_qflist + tsactions.open_qflist
       }
     }
@@ -117,3 +118,6 @@ set_keymap("n", "<leader>b", ":Telescope oldfiles<CR>", {})
 set_keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>", {})
 set_keymap("n", "<leader>d", ":Telescope lsp_document_diagnostics<CR>", {})
 set_keymap("n", "<leader>v", ":Telescope commands<CR>", {})
+
+-- Plugin: coq_nvim
+vim.cmd [[autocmd VimEnter * COQnow -s]]
