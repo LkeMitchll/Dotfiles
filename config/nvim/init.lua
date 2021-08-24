@@ -20,8 +20,7 @@ set_option("completeopt", "menuone,noselect")
 set_option("updatetime", 500)
 command("set title")
 
-require("packer").startup(
-  function()
+require("packer").startup(function()
     use "wbthomason/packer.nvim"
     --
     use "b3nj5m1n/kommentary"
@@ -34,33 +33,26 @@ require("packer").startup(
     use "neovim/nvim-lspconfig"
     use "tpope/vim-surround"
     use {
-      "lewis6991/gitsigns.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
-      config = function()
-        require("gitsigns").setup()
-      end
+        "lewis6991/gitsigns.nvim",
+        requires = {"nvim-lua/plenary.nvim"},
+        config = function() require("gitsigns").setup() end
     }
     use {
-      "ms-jpq/coq_nvim",
-      branch = "coq",
-      run = ":COQdeps",
-      requires = {{'ms-jpq/coq.artifacts', branch = "artifacts"}}
+        "ms-jpq/coq_nvim",
+        branch = "coq",
+        requires = {{'ms-jpq/coq.artifacts', branch = "artifacts"}}
     }
     use {
-      "nvim-treesitter/nvim-treesitter",
-      branch = "0.5-compat",
-      run = ":TSUpdate"
+        "nvim-treesitter/nvim-treesitter",
+        branch = "0.5-compat",
+        run = ":TSUpdate"
     }
     use {
-      "nvim-telescope/telescope.nvim",
-      requires = {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
+        "nvim-telescope/telescope.nvim",
+        requires = {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
     }
-    use { 
-      "TimUntersberger/neogit",
-      requires = "nvim-lua/plenary.nvim"
-    }
-  end
-)
+    use {"TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim"}
+end)
 
 -- Keymaps
 set_keymap("n", "<C-]>", ":cnext<CR>", {})
@@ -71,18 +63,14 @@ vim.g.tokyonight_style = "night"
 command "colorscheme tokyonight"
 
 -- Plugin: lualine.nvim
-require("lualine").setup {
-  options = {
-    theme = "tokyonight"
-  }
-}
+require("lualine").setup {options = {theme = "tokyonight"}}
 
 -- Plugin: nvim-treesitter
 local treesitter = require "nvim-treesitter.configs"
 treesitter.setup {
-  ensure_installed = "maintained",
-  highlight = {enable = true},
-  indent = {enable = true}
+    ensure_installed = "maintained",
+    highlight = {enable = true},
+    indent = {enable = true}
 }
 
 -- Plugin: nvim-lspconfig
@@ -102,14 +90,15 @@ set_keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 -- Plugin: telescope.nvim
 local tsactions = require("telescope.actions")
 require("telescope").setup {
-  defaults = {
-    mappings = {
-      i = {
-        -- Open quickfix with tagged files
-        ["<C-z>"] = tsactions.send_selected_to_qflist + tsactions.open_qflist
-      }
+    defaults = {
+        mappings = {
+            i = {
+                -- Open quickfix with tagged files
+                ["<C-z>"] = tsactions.send_selected_to_qflist +
+                    tsactions.open_qflist
+            }
+        }
     }
-  }
 }
 
 set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
