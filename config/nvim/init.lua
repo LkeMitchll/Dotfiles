@@ -40,6 +40,7 @@ require("packer").startup(function()
     use {
         "ms-jpq/coq_nvim",
         branch = "coq",
+        run = ":COQdeps",
         requires = {{'ms-jpq/coq.artifacts', branch = "artifacts"}}
     }
     use {
