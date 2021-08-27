@@ -110,5 +110,4 @@ set_keymap("n", "<leader>d", ":Telescope lsp_document_diagnostics<CR>", {})
 set_keymap("n", "<leader>v", ":Telescope commands<CR>", {})
 
 -- Plugin: coq_nvim
-vim.g.coq_settings = {keymap = {jump_to_mark = "<C-g>"}}
-vim.cmd [[autocmd VimEnter * COQnow -s]]
+vim.g.coq_settings = {auto_start = "shut-up", keymap = {jump_to_mark = "<C-g>"}}
