@@ -33,9 +33,9 @@ Use [Recursive Mono] to take full advantage of ligatures.
 The primary plugins I use in Neovim are:
 
 - [nvim-lspconfig] - The built-in language server client
-- [nvim-compe] - a lightweight completion provider
+- [coq] - a fast completion provider
 - [telescope.nvim] - a super fast fuzzy finder
-- [vim-fugitive] - an excellent git integration
+- [neogit] - an excellent git integration
 
 You can see a full list of the Neovim plugins I use in my [neovim config]
 
@@ -65,13 +65,11 @@ note:
 [fisher]: https://github.com/jorgebucaran/fisher
 [asdf]: https://github.com/asdf-vm/asdf
 [nvim-lspconfig]: https://github.com/neovim/nvim-lspconfig
-[nvim-compe]: https://github.com/hrsh7th/nvim-compe
+[coq]: https://github.com/ms-jpq/coq_nvim
 [telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
-[vim-fugitive]: https://github.com/tpope/vim-fugitive
-[vish]: https://github.com/LkeMitchll/vish
+[neogit]: https://github.com/TimUntersberger/neogit
 [neovim config]: https://github.com/LkeMitchll/Dotfiles/tree/main/config/nvim/init.lua
 [theme]: https://github.com/LkeMitchll/vim-interrobang
-[noctu]: https://github.com/noahfrederick/vim-noctu
 [kitty config]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/kitty/kitty.conf
 [tokyo-night]: https://github.com/davidmathers/tokyo-night-kitty-theme
 [vim-kitty-navigator]: https://github.com/knubie/vim-kitty-navigator
