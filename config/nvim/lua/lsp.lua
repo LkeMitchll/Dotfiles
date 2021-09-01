@@ -27,7 +27,6 @@ lspconfig.cssls.setup {on_attach = on_attach}
 lspconfig.html.setup {on_attach = on_attach, filetypes = {"html", "eruby"}}
 lspconfig.stylelint_lsp.setup {on_attach = on_attach}
 lspconfig.tsserver.setup {on_attach = on_attach}
-lspconfig.svelte.setup {on_attach = on_attach}
 
 -- Plugin: null_ls (linting & formatting)
 local null_ls = require "null-ls"
