@@ -18,7 +18,8 @@ set_option("tabstop", 2)
 set_option("shiftwidth", 2)
 set_option("completeopt", "menuone,noselect")
 set_option("updatetime", 500)
-command("set title")
+set_option("wrap", false)
+set_option("title", true)
 
 require("packer").startup(function()
     use "wbthomason/packer.nvim"
