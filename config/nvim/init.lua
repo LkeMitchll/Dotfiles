@@ -8,7 +8,7 @@ vim.wo.relativenumber = true
 vim.wo.list = true
 set_option("clipboard", "unnamed")
 set_option("cursorline", true)
-set_option("listchars", "eol:¬,space:·,trail:")
+set_option("listchars", "eol:¬,space:·,trail:,extends:#")
 set_option("splitbelow", true)
 set_option("smartindent", true)
 set_option("expandtab", true)
