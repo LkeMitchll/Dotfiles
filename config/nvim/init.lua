@@ -24,50 +24,54 @@ set_option("wrap", false)
 command("set title")
 
 require("packer").startup(function()
-    use "wbthomason/packer.nvim"
-    --
-    use "b3nj5m1n/kommentary"
-    use "folke/tokyonight.nvim"
-    use "ggandor/lightspeed.nvim"
-    use "hoob3rt/lualine.nvim"
-    use "jose-elias-alvarez/null-ls.nvim"
-    use {"knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/"}
-    use "lkemitchll/vim-kitty-runner"
-    use "neovim/nvim-lspconfig"
-    use "tpope/vim-surround"
-    use {
-        "lewis6991/gitsigns.nvim",
-        requires = {"nvim-lua/plenary.nvim"},
-        config = function() require("gitsigns").setup() end
-    }
-    use {
-        "ms-jpq/coq_nvim",
-        branch = "coq",
-        run = ":COQdeps",
-        requires = {{'ms-jpq/coq.artifacts', branch = "artifacts"}}
-    }
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        branch = "0.5-compat",
-        run = ":TSUpdate",
-        config = function()
-            local treesitter = require "nvim-treesitter.configs"
-            treesitter.setup {
-                ensure_installed = "maintained",
-                highlight = {enable = true},
-                indent = {enable = true}
-            }
-        end
-    }
-    use {
-        "nvim-telescope/telescope.nvim",
-        requires = {"nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}
-    }
-    use {
-        "TimUntersberger/neogit",
-        requires = "nvim-lua/plenary.nvim",
-        config = function() require("neogit").setup {} end
-    }
+  use("wbthomason/packer.nvim")
+  --
+  use("b3nj5m1n/kommentary")
+  use("folke/tokyonight.nvim")
+  use("ggandor/lightspeed.nvim")
+  use("hoob3rt/lualine.nvim")
+  use("jose-elias-alvarez/null-ls.nvim")
+  use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
+  use("lkemitchll/vim-kitty-runner")
+  use("neovim/nvim-lspconfig")
+  use("tpope/vim-surround")
+  use({
+    "lewis6991/gitsigns.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("gitsigns").setup()
+    end,
+  })
+  use({
+    "ms-jpq/coq_nvim",
+    branch = "coq",
+    run = ":COQdeps",
+    requires = { { "ms-jpq/coq.artifacts", branch = "artifacts" } },
+  })
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    branch = "0.5-compat",
+    run = ":TSUpdate",
+    config = function()
+      local treesitter = require("nvim-treesitter.configs")
+      treesitter.setup({
+        ensure_installed = "maintained",
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
+    end,
+  })
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
+  })
+  use({
+    "TimUntersberger/neogit",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("neogit").setup({})
+    end,
+  })
 end)
 
 -- LSP
@@ -76,7 +80,7 @@ require("lsp")
 -- Theme
 global.tokyonight_style = "night"
 command("colorscheme tokyonight")
-require("lualine").setup {options = {theme = "tokyonight"}}
+require("lualine").setup({ options = { theme = "tokyonight" } })
 
 -- Keymaps
 set_keymap("n", "<C-]>", ":cnext<CR>", {})
@@ -99,6 +103,6 @@ set_keymap("n", "<leader>v", ":Telescope commands<CR>", {})
 
 -- Plugin: COQ
 global.coq_settings = {
-    auto_start = "shut-up",
-    keymap = {jump_to_mark = "<C-g>"}
+  auto_start = "shut-up",
+  keymap = { jump_to_mark = "<C-g>" },
 }
