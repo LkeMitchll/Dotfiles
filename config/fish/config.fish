@@ -12,7 +12,7 @@ source ~/.config/fish/aliases.fish
 source ~/.config/fish/theme.fish
 
 # ASDF
-source /opt/homebrew/opt/asdf/asdf.fish
+source (brew --prefix)/opt/asdf/asdf.fish
 
 # FZF
 set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
