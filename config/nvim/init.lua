@@ -31,7 +31,7 @@ require("packer").startup(function()
     use "ggandor/lightspeed.nvim"
     use "hoob3rt/lualine.nvim"
     use "jose-elias-alvarez/null-ls.nvim"
-    use "knubie/vim-kitty-navigator"
+    use {"knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/"}
     use "lkemitchll/vim-kitty-runner"
     use "neovim/nvim-lspconfig"
     use "tpope/vim-surround"
