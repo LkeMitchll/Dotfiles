@@ -1,27 +1,26 @@
-local set_option = vim.api.nvim_set_option
-local set_keymap = vim.api.nvim_set_keymap
 local global = vim.g
-local window = vim.wo
+local option = vim.opt
 local command = vim.cmd
+local set_keymap = vim.api.nvim_set_keymap
 
 global.mapleader = " "
-window.number = true
-window.relativenumber = true
-window.list = true
-set_option("clipboard", "unnamed")
-set_option("cursorline", true)
-set_option("listchars", "eol:¬,space:·,trail:,extends:#")
-set_option("splitbelow", true)
-set_option("smartindent", true)
-set_option("expandtab", true)
-set_option("shiftround", true)
-set_option("softtabstop", 2)
-set_option("tabstop", 2)
-set_option("shiftwidth", 2)
-set_option("completeopt", "menuone,noselect")
-set_option("updatetime", 500)
-set_option("wrap", false)
-command("set title")
+option.number = true
+option.relativenumber = true
+option.list = true
+option.clipboard = "unnamed"
+option.cursorline = true
+option.listchars = { space = "·", trail = "", extends = "#", eol = "¬" }
+option.splitbelow = true
+option.smartindent = true
+option.expandtab = true
+option.shiftround = true
+option.softtabstop = 2
+option.tabstop = 2
+option.shiftwidth = 2
+option.completeopt = { "menuone", "noselect" }
+option.updatetime = 500
+option.wrap = false
+option.title = true
 
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
@@ -94,7 +93,7 @@ set_keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<CR>", {})
 set_keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 
 -- Plugin: telescope.nvim
-set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
+set_keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 set_keymap("n", "<leader>b", ":Telescope oldfiles<CR>", {})
 set_keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>", {})
@@ -104,5 +103,5 @@ set_keymap("n", "<leader>v", ":Telescope commands<CR>", {})
 -- Plugin: COQ
 global.coq_settings = {
   auto_start = "shut-up",
-  keymap = { jump_to_mark = "<C-g>" },
+  keymap = { jump_to_mark = "<C-f>" },
 }
