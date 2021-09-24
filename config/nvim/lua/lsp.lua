@@ -30,13 +30,41 @@ lspconfig.stylelint_lsp.setup({ on_attach = on_attach })
 lspconfig.tsserver.setup({ on_attach = on_attach })
 
 -- Plugin: null_ls (linting & formatting)
+local htmlbeautifier = {}
+local methods = require("null-ls.methods").internal
+local helpers = require("null-ls.helpers")
+
+htmlbeautifier.method = methods.FORMATTING
+htmlbeautifier.filetypes = { "eruby", "html" }
+
+htmlbeautifier.generator = helpers.formatter_factory({
+  command = "htmlbeautifier",
+  to_stdin = true,
+})
+
 local null_ls = require("null-ls")
 local nl_builtin = null_ls.builtins
+
 null_ls.config({
   sources = {
-    nl_builtin.formatting.prettier,
+    nl_builtin.formatting.prettier.with({
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "svelte",
+        "css",
+        "scss",
+        "json",
+        "yaml",
+        "markdown",
+      },
+    }),
     nl_builtin.diagnostics.eslint,
     nl_builtin.formatting.stylua,
+    htmlbeautifier,
   },
 })
 
