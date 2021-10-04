@@ -95,7 +95,7 @@ set_keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 -- Plugin: telescope.nvim
 set_keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
-set_keymap("n", "<leader>b", ":Telescope oldfiles<CR>", {})
+set_keymap("n", "<leader>b", ":Telescope oldfiles only_cwd=true<CR>", {})
 set_keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>", {})
 set_keymap("n", "<leader>d", ":Telescope lsp_document_diagnostics<CR>", {})
 set_keymap("n", "<leader>v", ":Telescope commands<CR>", {})
