@@ -103,5 +103,5 @@ set_keymap("n", "<leader>v", ":Telescope commands<CR>", {})
 -- Plugin: COQ
 global.coq_settings = {
   auto_start = "shut-up",
-  keymap = { jump_to_mark = "<C-f>" },
+  keymap = { jump_to_mark = "<C-e>" },
 }
