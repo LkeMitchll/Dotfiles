@@ -48,7 +48,6 @@ require("packer").startup(function()
   })
   use({
     "nvim-treesitter/nvim-treesitter",
-    branch = "0.5-compat",
     run = ":TSUpdate",
     config = function()
       local treesitter = require("nvim-treesitter.configs")
