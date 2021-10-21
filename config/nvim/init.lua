@@ -25,7 +25,6 @@ option.title = true
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
   --
-  use("b3nj5m1n/kommentary")
   use("folke/tokyonight.nvim")
   use("ggandor/lightspeed.nvim")
   use("hoob3rt/lualine.nvim")
@@ -69,6 +68,12 @@ require("packer").startup(function()
     requires = "nvim-lua/plenary.nvim",
     config = function()
       require("neogit").setup({})
+    end,
+  })
+  use({
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
     end,
   })
 end)
