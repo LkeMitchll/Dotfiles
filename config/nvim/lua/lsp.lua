@@ -28,6 +28,7 @@ lspconfig.cssls.setup({ on_attach = on_attach })
 lspconfig.html.setup({ on_attach = on_attach, filetypes = { "html", "eruby" } })
 lspconfig.stylelint_lsp.setup({ on_attach = on_attach })
 lspconfig.tsserver.setup({ on_attach = on_attach })
+lspconfig.eslint.setup({ on_attach = on_attach })
 
 -- Plugin: null_ls (linting & formatting)
 local htmlbeautifier = {}
@@ -62,7 +63,6 @@ null_ls.config({
         "markdown",
       },
     }),
-    nl_builtin.diagnostics.eslint,
     nl_builtin.formatting.stylua,
     htmlbeautifier,
   },
