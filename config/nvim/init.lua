@@ -28,10 +28,10 @@ require("packer").startup(function()
   use("folke/tokyonight.nvim")
   use("ggandor/lightspeed.nvim")
   use("jose-elias-alvarez/null-ls.nvim")
-  use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
   use("lkemitchll/vim-kitty-runner")
   use("neovim/nvim-lspconfig")
   use("tpope/vim-surround")
+  use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
   use({
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
@@ -92,6 +92,12 @@ require("lualine").setup({ options = { theme = "tokyonight" } })
 set_keymap("n", "<C-]>", ":cnext<CR>", {})
 set_keymap("n", "<C-[>", ":cprevious<CR>", {})
 
+-- Plugin: COQ
+global.coq_settings = {
+  auto_start = "shut-up",
+  keymap = { jump_to_mark = "<C-e>" },
+}
+
 -- Plugin: nvim-lspconfig
 set_keymap("n", "<leader>cd", ":lua vim.lsp.buf.definition()<CR>", {})
 set_keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<CR>", {})
@@ -100,15 +106,9 @@ set_keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<CR>", {})
 set_keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 
 -- Plugin: telescope.nvim
-set_keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
+set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 set_keymap("n", "<leader>b", ":Telescope oldfiles only_cwd=true<CR>", {})
 set_keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>", {})
 set_keymap("n", "<leader>d", ":Telescope lsp_document_diagnostics<CR>", {})
 set_keymap("n", "<leader>v", ":Telescope commands<CR>", {})
-
--- Plugin: COQ
-global.coq_settings = {
-  auto_start = "shut-up",
-  keymap = { jump_to_mark = "<C-e>" },
-}
