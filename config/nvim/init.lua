@@ -27,12 +27,15 @@ require("packer").startup(function()
   --
   use("folke/tokyonight.nvim")
   use("ggandor/lightspeed.nvim")
-  use("nvim-lualine/lualine.nvim")
   use("jose-elias-alvarez/null-ls.nvim")
   use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
   use("lkemitchll/vim-kitty-runner")
   use("neovim/nvim-lspconfig")
   use("tpope/vim-surround")
+  use({
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+  })
   use({
     "lewis6991/gitsigns.nvim",
     requires = { "nvim-lua/plenary.nvim" },
