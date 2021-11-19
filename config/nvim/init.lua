@@ -82,6 +82,8 @@ end)
 
 -- LSP
 require("lsp")
+set_keymap("n", "<leader>cd", ":lua vim.lsp.buf.definition()<CR>", {})
+set_keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<CR>", {})
 
 -- Theme
 global.tokyonight_style = "night"
@@ -97,10 +99,6 @@ global.coq_settings = {
   auto_start = "shut-up",
   keymap = { jump_to_mark = "<C-e>" },
 }
-
--- Plugin: nvim-lspconfig
-set_keymap("n", "<leader>cd", ":lua vim.lsp.buf.definition()<CR>", {})
-set_keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<CR>", {})
 
 -- Plugin: neogit
 set_keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
