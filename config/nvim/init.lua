@@ -9,7 +9,7 @@ option.relativenumber = true
 option.list = true
 option.clipboard = "unnamed"
 option.cursorline = true
-option.listchars = { space = "·", trail = "", extends = "#", eol = "¬" }
+option.listchars = { space = "·", trail = "~", extends = "#", eol = "¬" }
 option.splitbelow = true
 option.smartindent = true
 option.expandtab = true
