@@ -8,7 +8,7 @@ on_attach = function(client)
 end
 
 -- Init servers
-local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint" }
+local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint", "tailwindcss" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,
