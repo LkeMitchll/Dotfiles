@@ -21,12 +21,10 @@ require("lsp.htmlbeautifier")
 local null_ls = require("null-ls")
 local nl_builtin = null_ls.builtins
 
-null_ls.config({
+null_ls.setup({
   sources = {
     nl_builtin.formatting.prettier,
     nl_builtin.formatting.stylua,
     htmlbeautifier,
   },
 })
-
-lspconfig["null-ls"].setup({ on_attach = on_attach })
