@@ -24,6 +24,7 @@ option.title = true
 
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
+  use("nvim-lua/plenary.nvim")
   --
   use("folke/tokyonight.nvim")
   use("ggandor/lightspeed.nvim")
@@ -38,7 +39,6 @@ require("packer").startup(function()
   })
   use({
     "lewis6991/gitsigns.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
     config = function()
       require("gitsigns").setup()
     end,
@@ -63,11 +63,10 @@ require("packer").startup(function()
   })
   use({
     "nvim-telescope/telescope.nvim",
-    requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
+    requires = { "nvim-lua/popup.nvim" },
   })
   use({
     "TimUntersberger/neogit",
-    requires = "nvim-lua/plenary.nvim",
     config = function()
       require("neogit").setup({})
     end,
@@ -81,9 +80,26 @@ require("packer").startup(function()
 end)
 
 -- LSP
-require("lsp")
+local lspconfig = require("lspconfig")
+local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint", "tailwindcss" }
+
+on_attach = function(client)
+  -- Always use the first formatter
+  client.resolved_capabilities.document_formatting = false
+  -- Plugin: coq_nvim
+  require("coq")().lsp_ensure_capabilities()
+end
+
+-- Init servers
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup({
+    on_attach = on_attach,
+  })
+end
+
 set_keymap("n", "<leader>cd", ":lua vim.lsp.buf.definition()<CR>", {})
 set_keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<CR>", {})
+set_keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", {})
 
 -- Theme
 global.tokyonight_style = "night"
@@ -102,6 +118,13 @@ global.coq_settings = {
 
 -- Plugin: neogit
 set_keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
+
+-- Plugin: null_ls (linting & formatting)
+require("null-ls").setup({
+  sources = {
+    require("null-ls").builtins.formatting.prettier,
+  },
+})
 
 -- Plugin: telescope.nvim
 set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
