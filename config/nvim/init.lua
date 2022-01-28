@@ -28,21 +28,11 @@ require("packer").startup(function()
   --
   use("folke/tokyonight.nvim")
   use("ggandor/lightspeed.nvim")
-  use("jose-elias-alvarez/null-ls.nvim")
   use("lkemitchll/vim-kitty-runner")
   use("neovim/nvim-lspconfig")
+  use("jose-elias-alvarez/null-ls.nvim")
   use("tpope/vim-surround")
   use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
-  use({
-    "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
-  })
-  use({
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
-  })
   use({
     "ms-jpq/coq_nvim",
     branch = "coq",
@@ -104,7 +94,6 @@ set_keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", {})
 -- Theme
 global.tokyonight_style = "night"
 command("colorscheme tokyonight")
-require("lualine").setup({ options = { theme = "tokyonight" } })
 
 -- Keymaps
 set_keymap("n", "<C-]>", ":cnext<CR>", {})
@@ -127,7 +116,7 @@ require("null-ls").setup({
 })
 
 -- Plugin: telescope.nvim
-set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
+set_keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 set_keymap("n", "<leader>b", ":Telescope oldfiles only_cwd=true<CR>", {})
 set_keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>", {})
