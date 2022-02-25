@@ -19,8 +19,5 @@ function uatt
   nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
   echo \n\n"✨ Neovim plugins up-to-date"
   echo $uatt_seperator
-  remove_spotify_podcasts
-  echo \n"✨ Spotify patched"
-  echo $uatt_seperator
   echo \n"✨ All done!"
 end
