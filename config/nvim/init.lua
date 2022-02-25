@@ -71,7 +71,7 @@ end)
 
 -- LSP
 local lspconfig = require("lspconfig")
-local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint", "tailwindcss" }
+local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint" }
 
 on_attach = function(client)
   -- Always use the first formatter
