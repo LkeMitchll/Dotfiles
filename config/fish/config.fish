@@ -16,6 +16,3 @@ source (brew --prefix)/opt/asdf/libexec/asdf.fish
 
 # FZF
 set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
-
-# Local overrides
-source ~/.config/fish/config.local.fish
