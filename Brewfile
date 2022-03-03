@@ -7,7 +7,6 @@ brew "fzf"
 brew "git"
 brew "hub"
 brew "neovim"
-brew "luarocks"
 brew "rg"
 brew "thoughtbot/formulae/rcm"
 
