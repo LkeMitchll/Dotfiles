@@ -1,18 +1,22 @@
-set -e PATH
-set -gx PATH /opt/homebrew/bin /usr/local/bin /usr/sbin /sbin /usr/bin /bin ~/.config/nvim/node_modules/.bin $PATH
-
 set -gx EDITOR nvim
-set -gx HOMEBREW_BUNDLE_NO_LOCK 1
-set -gx KEYTIMEOUT 1
-set -gx RCRC "$XDG_CONFIG_HOME/rcrc"
-set -gx XDG_CONFIG_HOME "/Users/luke/.config"
+set -e PATH
+set -gx PATH /opt/homebrew/bin /usr/local/bin $PATH
+set -gx PATH /usr/sbin /sbin /usr/bin /bin $PATH
+set -gx PATH ~/.config/nvim/node_modules/.bin ~/.cargo/bin $PATH
+
 bind \cn accept-autosuggestion
 
-source ~/.config/fish/aliases.fish
-source ~/.config/fish/theme.fish
+# FZF
+set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
 
 # ASDF
 source (brew --prefix)/opt/asdf/libexec/asdf.fish
 
-# FZF
-set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
+source ~/.config/fish/aliases.fish
+source ~/.config/fish/theme.fish
+
+set ANDROID_HOME /users/luke/Library/Android/sdk
+set -gx PATH $ANDROID_HOME/emulator $PATH
+set -gx PATH $ANDROID_HOME/tools $PATH
+set -gx PATH $ANDROID_HOME/tools/bin $PATH
+set -gx PATH $ANDROID_HOME/platform-tools $PATH

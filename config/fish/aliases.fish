@@ -1,5 +1,4 @@
 abbr c "clear"
-abbr spectrum "set_color --print-colors"
 abbr vim "nvim"
 abbr vr "nvim +KittySpawnRunner"
 abbr yr "yarn run"
