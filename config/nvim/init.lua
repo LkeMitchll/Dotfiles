@@ -14,6 +14,7 @@ option.expandtab = true
 option.shiftround = true
 option.shiftwidth = 2
 option.completeopt = { "menuone", "noselect" }
+option.laststatus = 3
 
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
@@ -24,6 +25,15 @@ require("packer").startup(function()
     config = function()
       global.tokyonight_style = "night"
       command("colorscheme tokyonight")
+    end,
+  })
+  use({
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    config = function()
+      require("lualine").setup({
+        options = { globalstatus = true, theme = "tokyonight" },
+      })
     end,
   })
   use({
