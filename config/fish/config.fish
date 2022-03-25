@@ -14,9 +14,3 @@ source (brew --prefix)/opt/asdf/libexec/asdf.fish
 
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/theme.fish
-
-set ANDROID_HOME /users/luke/Library/Android/sdk
-set -gx PATH $ANDROID_HOME/emulator $PATH
-set -gx PATH $ANDROID_HOME/tools $PATH
-set -gx PATH $ANDROID_HOME/tools/bin $PATH
-set -gx PATH $ANDROID_HOME/platform-tools $PATH
