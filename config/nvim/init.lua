@@ -6,7 +6,11 @@ set_keymap = vim.api.nvim_set_keymap
 global.mapleader = " "
 option.clipboard = "unnamed"
 option.relativenumber = true
-option.list, option.listchars = true, { space = "·", trail = "~", extends = "#", eol = "¬" }
+option.list, option.listchars = true, {
+  space = "·",
+  trail = "~",
+  eol = "¬",
+}
 option.cursorline = true
 option.splitbelow = true
 option.smartindent = true
@@ -15,6 +19,7 @@ option.shiftround = true
 option.shiftwidth = 2
 option.completeopt = { "menuone", "noselect" }
 option.laststatus = 3
+option.scrolloff = 999
 
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
