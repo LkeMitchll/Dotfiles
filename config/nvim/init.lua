@@ -3,6 +3,7 @@ command = vim.cmd
 option = vim.opt
 set_keymap = vim.api.nvim_set_keymap
 
+-- General Config
 global.mapleader = " "
 option.clipboard = "unnamed"
 option.relativenumber = true
@@ -21,6 +22,7 @@ option.completeopt = { "menuone", "noselect" }
 option.laststatus = 3
 option.scrolloff = 999
 
+-- Plugins
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
   use("nvim-lua/plenary.nvim")
