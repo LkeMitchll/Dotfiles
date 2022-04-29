@@ -92,6 +92,7 @@ require("packer").startup(function()
         sources = {
           require("null-ls").builtins.formatting.prettier,
           require("null-ls").builtins.formatting.stylua,
+          require("null-ls").builtins.formatting.mix,
         },
       })
     end,
@@ -102,7 +103,25 @@ require("packer").startup(function()
     config = function()
       local treesitter = require("nvim-treesitter.configs")
       treesitter.setup({
-        ensure_installed = "maintained",
+        ensure_installed = {
+          "comment",
+          "css",
+          "fish",
+          "graphql",
+          "help",
+          "html",
+          "javascript",
+          "json",
+          "lua",
+          "markdown",
+          "ruby",
+          "scss",
+          "svelte",
+          "tsx",
+          "typescript",
+          "vim",
+          "yaml",
+        },
         highlight = { enable = true },
         indent = { enable = true },
       })
