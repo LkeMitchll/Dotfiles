@@ -75,8 +75,6 @@ require("packer").startup(function()
       local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint" }
 
       on_attach = function(client)
-        -- Always use the first formatter
-        client.resolved_capabilities.document_formatting = false
         -- Plugin: coq_nvim
         require("coq")().lsp_ensure_capabilities()
       end
