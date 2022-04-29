@@ -150,6 +150,7 @@ require("packer").startup(function()
 end)
 
 -- Keymaps
+set_keymap("n", "<leader>e", ":Hexplore<CR>", {})
 set_keymap("n", "<C-]>", ":cnext<CR>", {})
 set_keymap("n", "<C-[>", ":cprevious<CR>", {})
 ---- LSP
