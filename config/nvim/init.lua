@@ -22,6 +22,11 @@ option.completeopt = { "menuone", "noselect" }
 option.laststatus = 3
 option.scrolloff = 999
 
+local statusline = "%#PmenuSel#"
+statusline = statusline .. " %f "
+statusline = statusline .. "%#Statusline#"
+option.statusline = statusline
+
 -- Plugins
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
@@ -31,28 +36,8 @@ require("packer").startup(function()
     "folke/tokyonight.nvim",
     config = function()
       global.tokyonight_style = "night"
+      global.tokyonight_colors = { border = "bg_highlight" }
       command("colorscheme tokyonight")
-    end,
-  })
-  use({
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require("lualine").setup({
-        options = {
-          globalstatus = true,
-          theme = "tokyonight",
-          component_separators = { left = "|", right = "|" },
-          section_separators = { left = "", right = "" },
-        },
-        sections = {
-          lualine_a = { "mode" },
-          lualine_b = { "branch", "diff", "diagnostics" },
-          lualine_c = { "filename" },
-          lualine_x = { "filetype" },
-          lualine_y = { "progress" },
-          lualine_z = { "location" },
-        },
-      })
     end,
   })
   use({
