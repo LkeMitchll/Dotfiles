@@ -57,9 +57,20 @@ require("packer").startup(function()
     config = function()
       local lspconfig = require("lspconfig")
       local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint" }
+      local lsp_formatting = function(bufnr)
+        vim.lsp.buf.format({
+          filter = function(client)
+            return client.name == "null-ls"
+          end,
+          bufnr = bufnr,
+        })
+      end
 
-      on_attach = function(client)
-        -- Plugin: coq_nvim
+      local on_attach = function(client)
+        if client.name == "tsserver" then
+          client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
+        end
+
         require("coq")().lsp_ensure_capabilities()
       end
 
@@ -73,11 +84,11 @@ require("packer").startup(function()
   use({
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
-      require("null-ls").setup({
+      local nls = require("null-ls")
+      nls.setup({
         sources = {
-          require("null-ls").builtins.formatting.prettier,
-          require("null-ls").builtins.formatting.stylua,
-          require("null-ls").builtins.formatting.mix,
+          nls.builtins.formatting.prettier,
+          nls.builtins.formatting.stylua,
         },
       })
     end,
@@ -140,7 +151,7 @@ set_keymap("n", "<C-]>", ":cnext<CR>", {})
 set_keymap("n", "<C-[>", ":cprevious<CR>", {})
 ---- LSP
 set_keymap("n", "<leader>cd", ":lua vim.lsp.buf.definition()<CR>", {})
-set_keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<CR>", {})
+set_keymap("n", "<leader>p", ":lua vim.lsp.buf.format { async = true }<CR>", {})
 ---- neogit
 set_keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 ---- Telescope
