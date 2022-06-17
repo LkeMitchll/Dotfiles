@@ -100,11 +100,9 @@ require("packer").startup(function()
       local treesitter = require("nvim-treesitter.configs")
       treesitter.setup({
         ensure_installed = {
-          "comment",
           "css",
           "fish",
           "graphql",
-          "help",
           "html",
           "javascript",
           "json",
@@ -113,15 +111,25 @@ require("packer").startup(function()
           "ruby",
           "scss",
           "svelte",
-          "tsx",
           "typescript",
+          "tsx",
           "vim",
           "yaml",
         },
         highlight = { enable = true },
         indent = { enable = true },
       })
+      -- augroup: file type detections
+      vim.api.nvim_create_augroup("filedetect", { clear = true })
+
+      -- autocmd: Enable spell checking for certain file types
+      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+        group = "filedetect",
+        pattern = { "*.njk" },
+        command = "set filetype=jinja.html",
+      })
     end,
+    requires = { "glench/vim-jinja2-syntax" },
   })
   use({
     "nvim-telescope/telescope.nvim",
