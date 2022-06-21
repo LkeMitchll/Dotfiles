@@ -133,6 +133,20 @@ require("packer").startup(function()
   })
   use({
     "nvim-telescope/telescope.nvim",
+    config = function()
+      local actions = require("telescope.actions")
+
+      require("telescope").setup({
+        defaults = {
+          layout_strategy = "vertical",
+          mappings = {
+            i = {
+              ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+            },
+          },
+        },
+      })
+    end,
     requires = { "nvim-lua/popup.nvim" },
   })
   use({
