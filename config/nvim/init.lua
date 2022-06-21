@@ -43,7 +43,7 @@ require("packer").startup(function()
   use({
     "ms-jpq/coq_nvim",
     branch = "coq",
-    run = ":COQdeps",
+    run = "python3 -m coq deps",
     requires = { { "ms-jpq/coq.artifacts", branch = "artifacts" } },
     config = function()
       global.coq_settings = {
