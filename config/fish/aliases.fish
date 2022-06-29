@@ -1,6 +1,6 @@
 abbr c "clear"
 abbr vim "nvim"
-abbr vr "nvim +KittySpawnRunner"
+abbr vr "nvim +KittyOpenRunner"
 abbr yr "yarn run"
 abbr nr "npm run"
 abbr be "bundle exec"

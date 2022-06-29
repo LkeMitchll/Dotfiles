@@ -156,15 +156,24 @@ require("packer").startup(function()
     end,
   })
   use({
-    "numToStr/Comment.nvim",
+    "echasnovski/mini.nvim",
+    branch = "stable",
     config = function()
-      require("Comment").setup()
+      require("mini.comment").setup({})
+      require("mini.jump").setup({})
+      require("mini.jump2d").setup({})
+      require("mini.pairs").setup({})
+      require("mini.surround").setup({})
+      require("mini.trailspace").setup({})
+    end,
+  })
+  use({
+    "lkemitchll/kitty-runner.nvim",
+    config = function()
+      require("kitty-runner").setup()
     end,
   })
   use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
-  use("ggandor/lightspeed.nvim")
-  use("lkemitchll/vim-kitty-runner")
-  use("tpope/vim-surround")
 end)
 
 -- Keymaps
