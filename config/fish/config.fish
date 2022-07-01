@@ -4,10 +4,10 @@ set -gx PATH /opt/homebrew/bin /usr/local/bin $PATH
 set -gx PATH /usr/sbin /sbin /usr/bin /bin $PATH
 set -gx PATH ~/.config/nvim/node_modules/.bin ~/.cargo/bin $PATH
 
-bind \cn accept-autosuggestion
+set -gx RCRC ~/.dotfiles/config/rcrc
 
-# FZF
-set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore-vcs --hidden'
+# Keybinds
+bind \cn accept-autosuggestion
 
 # ASDF
 source (brew --prefix)/opt/asdf/libexec/asdf.fish
