@@ -6,5 +6,6 @@ brew "fzf"
 brew "hub"
 brew "neovim"
 brew "rcm"
+brew "ripgrep"
 
 cask "kitty"
