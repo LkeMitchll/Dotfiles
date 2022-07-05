@@ -6,188 +6,140 @@ set_keymap = vim.api.nvim_set_keymap
 -- General Config
 global.mapleader = " "
 option.clipboard = "unnamed"
-option.relativenumber = true
-option.list, option.listchars = true, {
-  space = "·",
-  trail = "~",
-  eol = "¬",
-}
+option.completeopt = { "menuone", "noselect" }
 option.cursorline = true
-option.splitbelow = true
-option.smartindent = true
-option.expandtab = true
+option.laststatus = 3
+option.list, option.listchars = true, { space = "·", trail = "#" }
+option.number = true
+option.number = true
+option.relativenumber = true
+option.scrolloff = 999
 option.shiftround = true
 option.shiftwidth = 2
-option.completeopt = { "menuone", "noselect" }
-option.laststatus = 3
-option.scrolloff = 999
+option.expandtab = true
+option.smartindent = true
+option.splitbelow = true
+option.statusline = "%#PmenuSel# %f %#Statusline#"
 
-local statusline = "%#PmenuSel#"
-statusline = statusline .. " %f "
-statusline = statusline .. "%#Statusline#"
-option.statusline = statusline
+-- Keymaps
+set_keymap("n", "<leader>e", ":Hexplore<CR>", {})
+set_keymap("n", "<C-]>", ":cnext<CR>", {})
+set_keymap("n", "<C-[>", ":cprevious<CR>", {})
 
 -- Plugins
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
   use("nvim-lua/plenary.nvim")
   --
-  use({
-    "folke/tokyonight.nvim",
-    config = function()
-      global.tokyonight_style = "night"
-      global.tokyonight_colors = { border = "bg_highlight" }
-      command("colorscheme tokyonight")
-    end,
-  })
+  use("folke/tokyonight.nvim")
   use({
     "ms-jpq/coq_nvim",
     branch = "coq",
     run = "python3 -m coq deps",
     requires = { { "ms-jpq/coq.artifacts", branch = "artifacts" } },
-    config = function()
-      global.coq_settings = {
-        auto_start = "shut-up",
-        keymap = { jump_to_mark = "<C-e>" },
-      }
-    end,
   })
-  use({
-    "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require("lspconfig")
-      local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint" }
-      local lsp_formatting = function(bufnr)
-        vim.lsp.buf.format({
-          filter = function(client)
-            return client.name == "null-ls"
-          end,
-          bufnr = bufnr,
-        })
-      end
-
-      local on_attach = function(client)
-        if client.name == "tsserver" then
-          client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
-        end
-
-        require("coq")().lsp_ensure_capabilities()
-      end
-
-      for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup({
-          on_attach = on_attach,
-        })
-      end
-    end,
-  })
-  use({
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-      local nls = require("null-ls")
-      nls.setup({
-        sources = {
-          nls.builtins.formatting.prettier,
-          nls.builtins.formatting.stylua,
-        },
-      })
-    end,
-  })
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    config = function()
-      local treesitter = require("nvim-treesitter.configs")
-      treesitter.setup({
-        ensure_installed = {
-          "css",
-          "fish",
-          "graphql",
-          "html",
-          "javascript",
-          "json",
-          "lua",
-          "markdown",
-          "ruby",
-          "scss",
-          "svelte",
-          "typescript",
-          "tsx",
-          "vim",
-          "yaml",
-        },
-        highlight = { enable = true },
-        indent = { enable = true },
-      })
-      -- augroup: file type detections
-      vim.api.nvim_create_augroup("filedetect", { clear = true })
-
-      -- autocmd: Enable spell checking for certain file types
-      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-        group = "filedetect",
-        pattern = { "*.njk" },
-        command = "set filetype=jinja.html",
-      })
-    end,
-    requires = { "glench/vim-jinja2-syntax" },
-  })
-  use({
-    "nvim-telescope/telescope.nvim",
-    config = function()
-      local actions = require("telescope.actions")
-
-      require("telescope").setup({
-        defaults = {
-          layout_strategy = "vertical",
-          mappings = {
-            i = {
-              ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-            },
-          },
-        },
-      })
-    end,
-    requires = { "nvim-lua/popup.nvim" },
-  })
-  use({
-    "TimUntersberger/neogit",
-    config = function()
-      require("neogit").setup({})
-    end,
-  })
-  use({
-    "echasnovski/mini.nvim",
-    branch = "stable",
-    config = function()
-      require("mini.comment").setup({})
-      require("mini.jump").setup({})
-      require("mini.jump2d").setup({})
-      require("mini.pairs").setup({})
-      require("mini.surround").setup({})
-      require("mini.trailspace").setup({})
-    end,
-  })
-  use({
-    "lkemitchll/kitty-runner.nvim",
-    config = function()
-      require("kitty-runner").setup()
-    end,
-  })
+  use("neovim/nvim-lspconfig")
+  use("jose-elias-alvarez/null-ls.nvim")
+  use("nvim-treesitter/nvim-treesitter")
+  use("glench/vim-jinja2-syntax")
+  use("nvim-telescope/telescope.nvim")
+  use({ "TimUntersberger/neogit", requires = { "sindrets/diffview.nvim" } })
+  use({ "echasnovski/mini.nvim", branch = "stable" })
+  use({ "lkemitchll/kitty-runner.nvim", config = [[require("kitty-runner").setup()]] })
   use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
 end)
 
--- Keymaps
-set_keymap("n", "<leader>e", ":Hexplore<CR>", {})
-set_keymap("n", "<C-]>", ":cnext<CR>", {})
-set_keymap("n", "<C-[>", ":cprevious<CR>", {})
----- LSP
-set_keymap("n", "<leader>cd", ":lua vim.lsp.buf.definition()<CR>", {})
+-- Packer: Auto-compile changes
+vim.api.nvim_create_augroup("packer", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = "packer",
+  pattern = { "init.lua" },
+  command = "source <afile> | PackerCompile",
+})
+
+-- Plugin: Colorscheme
+global.tokyonight_style = "night"
+global.tokyonight_colors = { border = "bg_highlight" }
+command("colorscheme tokyonight")
+
+-- Plugin: COQ
+global.coq_settings = {
+  auto_start = "shut-up",
+  keymap = { jump_to_mark = "<C-e>" },
+}
+
+-- PLugin: LSP
+local lspconfig = require("lspconfig")
+local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint" }
+
+local on_attach = function(client)
+  if client.name == "tsserver" then
+    client.server_capabilities.documentFormattingProvider = false
+  end
+  require("coq")().lsp_ensure_capabilities()
+end
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup({
+    on_attach = on_attach,
+  })
+end
+
 set_keymap("n", "<leader>p", ":lua vim.lsp.buf.format { async = true }<CR>", {})
----- neogit
-set_keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
----- Telescope
-set_keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
+
+-- Plugin: null-ls
+local null_ls = require("null-ls")
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.stylua,
+  },
+})
+
+-- Plugin: Treesitter
+local treesitter = require("nvim-treesitter.configs")
+treesitter.setup({
+  highlight = { enable = true },
+  indent = { enable = true },
+  incremental_selection = { enable = true },
+})
+
+-- Plugin: Telescope
+local ts_actions = require("telescope.actions")
+require("telescope").setup({
+  defaults = {
+    layout_strategy = "flex",
+    layout_config = {
+      flex = {
+        flip_columns = 120,
+      },
+    },
+    mappings = {
+      i = {
+        ["<C-q>"] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
+      },
+    },
+  },
+})
+
+set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
-set_keymap("n", "<leader>ca", ":Telescope lsp_code_actions<CR>", {})
-set_keymap("n", "<leader>d", ":Telescope diagnostics bufnr=0<CR>", {})
-set_keymap("n", "<leader>v", ":Telescope commands<CR>", {})
+
+-- Plugin: Neogit
+require("neogit").setup({
+  kind = "split",
+  integrations = {
+    diffview = true,
+  },
+  sections = {
+    stashes = false,
+  },
+})
+
+set_keymap("n", "<leader>gs", ":Neogit<CR>", {})
+
+-- Plugin: Mini
+local mini_plugins = { "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
+for _, plugin in ipairs(mini_plugins) do
+  require("mini." .. plugin).setup({})
+end
