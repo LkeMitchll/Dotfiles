@@ -9,9 +9,6 @@ function uatt
   brew upgrade
   echo \n"✨ Homebrew packages up-to-date"
   echo $uatt_seperator
-  fisher update
-  echo \n"✨ Fish plugins up-to-date"
-  echo $uatt_seperator
   asdf plugin-update --all
   echo \n"✨ ASDF plugins up-to-date"
   echo $uatt_seperator

@@ -122,7 +122,7 @@ require("telescope").setup({
   },
 })
 
-set_keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
+set_keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
 set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 
 -- Plugin: Neogit
