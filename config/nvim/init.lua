@@ -43,8 +43,8 @@ require("packer").startup(function()
   use("nvim-treesitter/nvim-treesitter")
   use("glench/vim-jinja2-syntax")
   use("nvim-telescope/telescope.nvim")
-  use({ "TimUntersberger/neogit", requires = { "sindrets/diffview.nvim" } })
-  use({ "echasnovski/mini.nvim", branch = "stable" })
+  use("TimUntersberger/neogit")
+  use("echasnovski/mini.nvim")
   use({ "lkemitchll/kitty-runner.nvim", config = [[require("kitty-runner").setup()]] })
   use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
 end)
@@ -68,7 +68,7 @@ global.coq_settings = {
   keymap = { jump_to_mark = "<C-e>" },
 }
 
--- PLugin: LSP
+-- Plugin: LSP
 local lspconfig = require("lspconfig")
 local servers = { "cssls", "html", "stylelint_lsp", "tsserver", "eslint" }
 
@@ -85,7 +85,7 @@ for _, lsp in ipairs(servers) do
   })
 end
 
-set_keymap("n", "<leader>p", ":lua vim.lsp.buf.format { async = true }<CR>", {})
+set_keymap("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
 
 -- Plugin: null-ls
 local null_ls = require("null-ls")
