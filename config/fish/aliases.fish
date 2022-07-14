@@ -4,5 +4,6 @@ abbr vr "nvim +KittyOpenRunner"
 abbr yr "yarn run"
 abbr nr "npm run"
 abbr be "bundle exec"
+abbr ls "ls -lh"
 
 alias g="git"
