@@ -1,7 +1,6 @@
 global = vim.g
-command = vim.cmd
 option = vim.opt
-set_keymap = vim.api.nvim_set_keymap
+keymap = vim.keymap.set
 
 -- General Config
 global.mapleader = " "
@@ -22,9 +21,9 @@ option.splitbelow = true
 option.statusline = "%#PmenuSel# %f %#Statusline#"
 
 -- Keymaps
-set_keymap("n", "<leader>e", ":Hexplore<CR>", {})
-set_keymap("n", "<C-]>", ":cnext<CR>", {})
-set_keymap("n", "<C-[>", ":cprevious<CR>", {})
+keymap("n", "<leader>e", ":Hexplore<CR>", {})
+keymap("n", "<C-]>", ":cnext<CR>", {})
+keymap("n", "<C-[>", ":cprevious<CR>", {})
 
 -- Plugins
 require("packer").startup(function()
@@ -60,7 +59,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 -- Plugin: Colorscheme
 global.tokyonight_style = "night"
 global.tokyonight_colors = { border = "bg_highlight" }
-command("colorscheme tokyonight")
+vim.cmd.colorscheme("tokyonight")
 
 -- Plugin: COQ
 global.coq_settings = {
@@ -85,7 +84,7 @@ for _, lsp in ipairs(servers) do
   })
 end
 
-set_keymap("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
+keymap("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
 
 -- Plugin: null-ls
 local null_ls = require("null-ls")
@@ -99,6 +98,8 @@ null_ls.setup({
 -- Plugin: Treesitter
 local treesitter = require("nvim-treesitter.configs")
 treesitter.setup({
+  ensure_installed = "all",
+  ignore_install = { "phpdoc" },
   highlight = { enable = true },
   indent = { enable = true },
   incremental_selection = { enable = true },
@@ -122,21 +123,18 @@ require("telescope").setup({
   },
 })
 
-set_keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
-set_keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
+keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
+keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 
 -- Plugin: Neogit
 require("neogit").setup({
   kind = "split",
-  integrations = {
-    diffview = true,
-  },
   sections = {
     stashes = false,
   },
 })
 
-set_keymap("n", "<leader>gs", ":Neogit<CR>", {})
+keymap("n", "<leader>gs", ":Neogit<CR>", {})
 
 -- Plugin: Mini
 local mini_plugins = { "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
