@@ -5,11 +5,10 @@ keymap = vim.keymap.set
 -- General Config
 global.mapleader = " "
 option.clipboard = "unnamed"
-option.completeopt = { "menuone", "noselect" }
 option.cursorline = true
 option.laststatus = 3
-option.list, option.listchars = true, { space = "·", trail = "#" }
-option.number = true
+option.list = true
+option.listchars.space = "·"
 option.number = true
 option.relativenumber = true
 option.scrolloff = 999
@@ -18,17 +17,14 @@ option.shiftwidth = 2
 option.expandtab = true
 option.smartindent = true
 option.splitbelow = true
-option.statusline = "%#PmenuSel# %f %#Statusline#"
 
 -- Keymaps
 keymap("n", "<leader>e", ":Hexplore<CR>", {})
 keymap("n", "<C-]>", ":cnext<CR>", {})
-keymap("n", "<C-[>", ":cprevious<CR>", {})
 
 -- Plugins
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
-  use("nvim-lua/plenary.nvim")
   --
   use("folke/tokyonight.nvim")
   use({
@@ -38,11 +34,11 @@ require("packer").startup(function()
     requires = { { "ms-jpq/coq.artifacts", branch = "artifacts" } },
   })
   use("neovim/nvim-lspconfig")
-  use("jose-elias-alvarez/null-ls.nvim")
+  use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
   use("nvim-treesitter/nvim-treesitter")
   use("glench/vim-jinja2-syntax")
-  use("nvim-telescope/telescope.nvim")
-  use("TimUntersberger/neogit")
+  use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use({ "TimUntersberger/neogit", requires = { "nvim-lua/plenary.nvim" } })
   use("echasnovski/mini.nvim")
   use({ "lkemitchll/kitty-runner.nvim", config = [[require("kitty-runner").setup()]] })
   use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
