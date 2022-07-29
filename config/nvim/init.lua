@@ -60,6 +60,7 @@ vim.cmd.colorscheme("tokyonight")
 -- Plugin: COQ
 global.coq_settings = {
   auto_start = "shut-up",
+  display = { icons = { mode = "none" } },
   keymap = { jump_to_mark = "<C-e>" },
 }
 
