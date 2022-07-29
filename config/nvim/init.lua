@@ -134,7 +134,7 @@ require("neogit").setup({
 keymap("n", "<leader>gs", ":Neogit<CR>", {})
 
 -- Plugin: Mini
-local mini_plugins = { "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
+local mini_plugins = { "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
 for _, plugin in ipairs(mini_plugins) do
   require("mini." .. plugin).setup({})
 end
