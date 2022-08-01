@@ -1,5 +1,5 @@
 set -gx EDITOR nvim
-set -e  PATH
+set -e PATH
 set -gx PATH /opt/homebrew/bin $PATH
 set -gx PATH /usr/sbin /sbin /usr/bin /bin $PATH
 set -gx PATH ~/.config/nvim/node_modules/.bin ~/.cargo/bin $PATH

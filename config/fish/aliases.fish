@@ -1,5 +1,5 @@
-abbr c "clear"
-abbr vim "nvim"
+abbr c clear
+abbr vim nvim
 abbr vr "nvim +KittyOpenRunner"
 abbr yr "yarn run"
 abbr nr "npm run"
