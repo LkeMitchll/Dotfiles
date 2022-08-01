@@ -2,10 +2,10 @@
   "dependencies": {
     "eslint": "^8.19.0",
     "prettier": "^2.7.1",
-    "stylelint-lsp": "^1.2.4",
+    "stylelint": "^14.9.1",
     "tree-sitter-cli": "^0.20.6",
     "typescript": "^4.3.5",
-    "typescript-language-server": "^0.6.2",
-    "vscode-langservers-extracted": "^3.0.1"
+    "typescript-language-server": "^0.11.2",
+    "vscode-langservers-extracted": "^4.4.0"
   }
 }
