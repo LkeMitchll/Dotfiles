@@ -4,8 +4,8 @@ function uatt
   echo "✨ Update All The Things!"
   echo $uatt_seperator
   brew update
-  brew bundle --global
-  brew bundle --file ~/.Brewfile.local
+  brew bundle --file ~/.config/homebrew/Brewfile
+  brew bundle --file ~/.config/homebrew/Brewfile.local
   brew upgrade
   echo \n"✨ Homebrew packages up-to-date"
   echo $uatt_seperator

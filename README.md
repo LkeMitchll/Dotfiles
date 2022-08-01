@@ -19,7 +19,7 @@ Use [rec-mono][Recursive Mono] to take full advantage of ligatures.
 
 1. Install [homebrew]
 2. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
-3. Run `brew bundle --file ~/.dotfiles/Brewfile`
+3. Run `brew bundle --file ~/.dotfiles/config/homebrew/Brewfile`
 5. Run `rcup`
 
 [neovim]: https://neovim.io
