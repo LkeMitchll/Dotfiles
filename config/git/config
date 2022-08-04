@@ -12,7 +12,7 @@
   s = status -sbu
   f = fetch
   ri = rebase --interactive
-  lg = log --graph --date=relative -10
+  lg = log --graph --date=relative
   rls = reset --soft HEAD~1
   rlh = reset --hard HEAD~1
 [core]
