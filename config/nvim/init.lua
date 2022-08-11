@@ -20,19 +20,14 @@ option.splitbelow = true
 
 -- Keymaps
 keymap("n", "<leader>e", ":Hexplore<CR>", {})
-keymap("n", "<C-]>", ":cnext<CR>", {})
+keymap("n", "<Right>", ":cnext<CR>", {})
+keymap("n", "<Left>", ":cprevious<CR>", {})
 
 -- Plugins
 require("packer").startup(function()
   use("wbthomason/packer.nvim")
   --
   use("folke/tokyonight.nvim")
-  use({
-    "ms-jpq/coq_nvim",
-    branch = "coq",
-    run = "python3 -m coq deps",
-    requires = { { "ms-jpq/coq.artifacts", branch = "artifacts" } },
-  })
   use("neovim/nvim-lspconfig")
   use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
   use("nvim-treesitter/nvim-treesitter")
@@ -42,6 +37,12 @@ require("packer").startup(function()
   use("echasnovski/mini.nvim")
   use({ "lkemitchll/kitty-runner.nvim", config = [[require("kitty-runner").setup()]] })
   use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
+  use({
+    "ms-jpq/coq_nvim",
+    branch = "coq",
+    run = "python3 -m coq deps",
+    requires = { { "ms-jpq/coq.artifacts", branch = "artifacts" } },
+  })
 end)
 
 -- Packer: Auto-compile changes
