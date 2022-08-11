@@ -66,7 +66,7 @@ global.coq_settings = {
 
 -- Plugin: LSP
 local lspconfig = require("lspconfig")
-local servers = { "cssls", "html", "tsserver" }
+local servers = { "cssls", "html", "tsserver", "vuels" }
 
 local on_attach = function(client)
   if client.name == "tsserver" then
