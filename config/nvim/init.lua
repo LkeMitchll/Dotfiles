@@ -129,14 +129,8 @@ keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
 keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 
 -- Plugin: Neogit
-require("neogit").setup({
-  kind = "split",
-  sections = {
-    stashes = false,
-  },
-})
-
-keymap("n", "<leader>gs", ":Neogit<CR>", {})
+require("neogit").setup()
+keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 
 -- Plugin: Mini
 local mini_plugins = { "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
