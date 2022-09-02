@@ -18,8 +18,7 @@ function uatt
     echo $uatt_seperator
 
     echo \n"Updating Neovim plugins..."\n
-    cd ~/.config/nvim; and npm update; and cd -
-    nvim --headless -c 'autocmd User PackerComplete quitall' -c PackerSync
+    vish update
     echo \n\n"Neovim plugins up-to-date"
     echo $uatt_seperator
 

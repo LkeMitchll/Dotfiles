@@ -23,36 +23,6 @@ keymap("n", "<leader>e", ":Hexplore<CR>", {})
 keymap("n", "<Right>", ":cnext<CR>", {})
 keymap("n", "<Left>", ":cprevious<CR>", {})
 
--- Plugins
-require("packer").startup(function()
-  use("wbthomason/packer.nvim")
-  --
-  use("folke/tokyonight.nvim")
-  use("neovim/nvim-lspconfig")
-  use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
-  use("nvim-treesitter/nvim-treesitter")
-  use("glench/vim-jinja2-syntax")
-  use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
-  use({ "TimUntersberger/neogit", requires = { "nvim-lua/plenary.nvim" } })
-  use("echasnovski/mini.nvim")
-  use({ "lkemitchll/kitty-runner.nvim", config = [[require("kitty-runner").setup()]] })
-  use({ "knubie/vim-kitty-navigator", run = "cp ./*.py ~/.config/kitty/" })
-  use({
-    "ms-jpq/coq_nvim",
-    branch = "coq",
-    run = "python3 -m coq deps",
-    requires = { { "ms-jpq/coq.artifacts", branch = "artifacts" } },
-  })
-end)
-
--- Packer: Auto-compile changes
-vim.api.nvim_create_augroup("packer", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = "packer",
-  pattern = { "init.lua" },
-  command = "source <afile> | PackerCompile",
-})
-
 -- Plugin: Colorscheme
 global.tokyonight_style = "night"
 global.tokyonight_colors = { border = "bg_highlight" }
@@ -131,6 +101,9 @@ keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 -- Plugin: Neogit
 require("neogit").setup()
 keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
+
+-- Plugin: kitty-runner
+require("kitty-runner").setup()
 
 -- Plugin: Mini
 local mini_plugins = { "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
