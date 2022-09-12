@@ -18,6 +18,7 @@ function vish -a cmd -d "Vim plugin manager for fish"
                 echo "vish: Installing" $argv[2]
                 set name (string split / $argv[2])
                 git submodule add git@github.com:$argv[2] config/nvim/pack/vish/start/$name[2]
+                nvim -c "helptags ALL" +qa
             else
                 echo -e "vish: Please supply a GitHub repo name \n"
                 vish --help
@@ -33,6 +34,7 @@ function vish -a cmd -d "Vim plugin manager for fish"
                 git submodule deinit -f config/nvim/pack/vish/start/$argv[2]
                 git rm -f config/nvim/pack/vish/start/$argv[2]
                 rm -Rf .git/modules/config/nvim/pack/vish/start/$argv[2]
+                nvim -c "helptags ALL" +qa
             else
                 echo -e "vish: Please supply a plugin name \n"
                 vish --help
@@ -43,6 +45,7 @@ function vish -a cmd -d "Vim plugin manager for fish"
             echo -e "vish: Updating plugins \n"
 
             git submodule update --remote --merge
+            nvim -c "helptags ALL" +qa
 
             if test -L ~/.config/nvim/pack
                 echo "vish: Already symlinked, skipping..."
