@@ -24,9 +24,12 @@ keymap("n", "<Right>", ":cnext<CR>", {})
 keymap("n", "<Left>", ":cprevious<CR>", {})
 
 -- Plugin: Colorscheme
-global.tokyonight_style = "night"
-global.tokyonight_colors = { border = "bg_highlight" }
-vim.cmd.colorscheme("tokyonight")
+require("tokyonight").setup({
+  on_colors = function(colors)
+    colors.border = colors.dark3
+  end,
+})
+vim.cmd.colorscheme("tokyonight-night")
 
 -- Plugin: COQ
 global.coq_settings = {
