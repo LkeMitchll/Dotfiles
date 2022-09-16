@@ -4,8 +4,6 @@ Custom configuration files for various tools, including [neovim], [fish] and mor
 
 I run all of this in [kitty] on macOS, managed with [rcm].
 
-Use [rec-mono][Recursive Mono] to take full advantage of ligatures.
-
 ## Requirements
 
 - [homebrew]
@@ -13,7 +11,6 @@ Use [rec-mono][Recursive Mono] to take full advantage of ligatures.
 - [rcm]
 - [fish]
 - [neovim]
-  - [packer]
 
 ## Install
 
@@ -23,9 +20,7 @@ Use [rec-mono][Recursive Mono] to take full advantage of ligatures.
 5. Run `rcup`
 
 [neovim]: https://neovim.io
-[packer]: https://github.com/wbthomason/packer.nvim
 [kitty]: https://github.com/kovidgoyal/kitty
-[rec-mono]: https://github.com/arrowtype/recursive
 [homebrew]: https://brew.sh
 [rcm]: https://github.com/thoughtbot/rcm
 [fish]: https://fishshell.com
@@ -43,9 +38,6 @@ The primary plugins I use in Neovim are:
 - [telescope.nvim] - a super fast fuzzy finder
 - [neogit] - an excellent git integration
 
-You can see a full list of the Neovim plugins I use in my [neovim config]
-
-[neovim config]: https://github.com/LkeMitchll/Dotfiles/tree/main/config/nvim/init.lua
 [nvim-lspconfig]: https://github.com/neovim/nvim-lspconfig
 [coq]: https://github.com/ms-jpq/coq_nvim
 [telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
@@ -69,7 +61,7 @@ need a plugin (suggestions, substring-autocomplete etc.), some small things of
 note:
 
 - I wrote a simple script to start [kitty sessions]
-- I use a two-line [prompt], based on [bira]
+- I use a two-line [prompt], loosely based on [bira]
 
 [kitty sessions]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/fish/functions/session.fish
 [prompt]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/fish/functions/fish_prompt.fish
