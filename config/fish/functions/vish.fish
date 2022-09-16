@@ -20,7 +20,7 @@ function vish -a cmd -d "Vim plugin manager for fish"
                 git submodule add git@github.com:$argv[2] config/nvim/pack/vish/start/$name[2]
                 nvim -c "helptags ALL" +qa
             else
-                echo -e "vish: Please supply a GitHub repo name \n"
+                echo -e "vish: Please supply a GitHub repo name e.g. tpope/vim-fugitive\n"
                 vish --help
             end
             cd -
