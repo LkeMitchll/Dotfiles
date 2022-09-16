@@ -17,6 +17,7 @@ option.shiftwidth = 2
 option.expandtab = true
 option.smartindent = true
 option.splitbelow = true
+option.statusline = "%#PmenuSel# %f %#CursorColumn# %= %m %#CursorLineNr# %y "
 
 -- Keymaps
 keymap("n", "<leader>e", ":Hexplore<CR>", {})
