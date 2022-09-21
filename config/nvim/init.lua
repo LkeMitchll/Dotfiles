@@ -23,6 +23,11 @@ option.statusline = "%#PmenuSel# %f %#CursorColumn# %= %m %#CursorLineNr# %y "
 keymap("n", "<leader>e", ":Hexplore<CR>", {})
 keymap("n", "<Right>", ":cnext<CR>", {})
 keymap("n", "<Left>", ":cprevious<CR>", {})
+---- Resize with arrows
+keymap("n", "<S-Up>", ":resize -2<CR>", {})
+keymap("n", "<S-Down>", ":resize +2<CR>", {})
+keymap("n", "<S-Left>", ":vertical resize -2<CR>", {})
+keymap("n", "<S-Right>", ":vertical resize +2<CR>", {})
 
 -- Plugin: Colorscheme
 require("tokyonight").setup({
@@ -44,9 +49,6 @@ local lspconfig = require("lspconfig")
 local servers = { "cssls", "html", "tsserver", "vuels" }
 
 local on_attach = function(client)
-  if client.name == "tsserver" then
-    client.server_capabilities.documentFormattingProvider = false
-  end
   require("coq")().lsp_ensure_capabilities()
 end
 
@@ -56,13 +58,16 @@ for _, lsp in ipairs(servers) do
   })
 end
 
-keymap("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
+vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float()]])
+
+keymap("n", "<leader>p", ":lua vim.lsp.buf.format({timeout_ms = 2000})<CR>", {})
 
 -- Plugin: null-ls
 local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.eslint,
+    null_ls.builtins.formatting.stylelint,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.fish_indent,
     null_ls.builtins.diagnostics.eslint,
