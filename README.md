@@ -17,7 +17,7 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 1. Install [homebrew]
 2. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
 3. Run `brew bundle --file ~/.dotfiles/config/homebrew/Brewfile`
-5. Run `rcup`
+4. Run `RCRC=~/.dotfiles/rcrc rcup`
 
 [neovim]: https://neovim.io
 [kitty]: https://github.com/kovidgoyal/kitty
