@@ -1,0 +1,7 @@
+complete -c vish -x -a help -d "print usage help"
+complete -c vish -x -a init -d "initialise vish"
+complete -c vish -x -a install -d "install a plugin"
+complete -c vish -x -a update -d "update all plugins"
+complete -c vish -x -a list -d "list or search installed plugins"
+complete -c vish --condition "__fish_use_subcommand" -a uninstall -d "uninstall a plugin"
+complete -c vish -x --condition "__fish_seen_subcommand_from uninstall" -a "(vish list)"
