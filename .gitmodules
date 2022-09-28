@@ -37,6 +37,12 @@
 [submodule "config/nvim/pack/vish/start/plenary.nvim"]
 	path = config/nvim/pack/vish/start/plenary.nvim
 	url = git@github.com:nvim-lua/plenary.nvim
-[submodule "config/nvim/pack/vish/start/nvim-treesitter-context"]
-	path = config/nvim/pack/vish/start/nvim-treesitter-context
-	url = git@github.com:nvim-treesitter/nvim-treesitter-context
+[submodule "config/nvim/pack/vish/start/mason.nvim"]
+	path = config/nvim/pack/vish/start/mason.nvim
+	url = git@github.com:williamboman/mason.nvim
+[submodule "config/nvim/pack/vish/start/mason-lspconfig.nvim"]
+	path = config/nvim/pack/vish/start/mason-lspconfig.nvim
+	url = git@github.com:williamboman/mason-lspconfig.nvim
+[submodule "config/nvim/pack/vish/start/mason-null-ls.nvim"]
+	path = config/nvim/pack/vish/start/mason-null-ls.nvim
+	url = git@github.com:jayp0521/mason-null-ls.nvim

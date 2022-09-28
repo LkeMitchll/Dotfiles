@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "typescript-language-server": "^0.11.2",
-    "vls": "^0.8.1",
-    "vscode-langservers-extracted": "^4.4.0"
-  }
-}

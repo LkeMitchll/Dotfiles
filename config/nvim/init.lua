@@ -45,9 +45,16 @@ global.coq_settings = {
   keymap = { jump_to_mark = "<C-e>" },
 }
 
--- Plugin: LSP
+-- Plugin: Mason
+require("mason").setup()
+
+-- Plugin: nvim-lspconfig
 local lspconfig = require("lspconfig")
-local servers = { "cssls", "html", "tsserver", "vuels" }
+local servers = { "cssls", "html", "tsserver" }
+----- Plugin: mason-lspconfig
+require("mason-lspconfig").setup({
+  automatic_installation = true,
+})
 
 local on_attach = function(client)
   require("coq")().lsp_ensure_capabilities()
@@ -59,22 +66,23 @@ for _, lsp in ipairs(servers) do
   })
 end
 
-vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float()]])
+keymap("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
 
-keymap("n", "<leader>p", ":lua vim.lsp.buf.format({timeout_ms = 2000})<CR>", {})
-
--- Plugin: null-ls
+-- Plugin: null_ls
 local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.eslint,
+    null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.formatting.stylelint,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.fish_indent,
-    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.diagnostics.stylelint,
-    null_ls.builtins.diagnostics.fish,
   },
+})
+---- Plugin: mason-null-ls
+require("mason-null-ls").setup({
+  automatic_installation = true,
 })
 
 -- Plugin: Treesitter
