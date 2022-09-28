@@ -21,6 +21,7 @@ option.statusline = "%#PmenuSel# %f %#CursorColumn# %= %m %#CursorLineNr# %y "
 
 -- Keymaps
 keymap("n", "<leader>e", ":Hexplore<CR>", {})
+---- Navigate quickfix buffers
 keymap("n", "<Right>", ":cnext<CR>", {})
 keymap("n", "<Left>", ":cprevious<CR>", {})
 ---- Resize with arrows
@@ -115,7 +116,7 @@ keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 require("kitty-runner").setup()
 
 -- Plugin: Mini
-local mini_plugins = { "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
+local mini_plugins = { "ai", "align", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
 for _, plugin in ipairs(mini_plugins) do
   require("mini." .. plugin).setup({})
 end
