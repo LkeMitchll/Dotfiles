@@ -24,11 +24,6 @@ keymap("n", "<leader>e", ":Hexplore<CR>", {})
 ---- Navigate quickfix buffers
 keymap("n", "<Right>", ":cnext<CR>", {})
 keymap("n", "<Left>", ":cprevious<CR>", {})
----- Resize with arrows
-keymap("n", "<S-Up>", ":resize -2<CR>", {})
-keymap("n", "<S-Down>", ":resize +2<CR>", {})
-keymap("n", "<S-Left>", ":vertical resize -2<CR>", {})
-keymap("n", "<S-Right>", ":vertical resize +2<CR>", {})
 
 -- Plugin: Colorscheme
 require("tokyonight").setup({
@@ -75,7 +70,6 @@ null_ls.setup({
     null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.formatting.stylelint,
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.fish_indent,
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.diagnostics.stylelint,
   },
@@ -99,12 +93,6 @@ treesitter.setup({
 local ts_actions = require("telescope.actions")
 require("telescope").setup({
   defaults = {
-    layout_strategy = "flex",
-    layout_config = {
-      flex = {
-        flip_columns = 120,
-      },
-    },
     mappings = {
       i = {
         ["<C-q>"] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
@@ -124,7 +112,7 @@ keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 require("kitty-runner").setup()
 
 -- Plugin: Mini
-local mini_plugins = { "ai", "align", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
+local mini_plugins = { "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
 for _, plugin in ipairs(mini_plugins) do
   require("mini." .. plugin).setup({})
 end
