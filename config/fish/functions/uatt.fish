@@ -6,7 +6,6 @@ function uatt
     echo $uatt_seperator
 
     echo \n"Updating Homebrew packages..."\n
-    brew update
     cat $brewfiles | brew bundle --file=-
     brew upgrade
     echo \n"Homebrew packages up-to-date"

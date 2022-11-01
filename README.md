@@ -18,6 +18,7 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 2. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
 3. Run `brew bundle --file ~/.dotfiles/config/homebrew/Brewfile`
 4. Run `RCRC=~/.dotfiles/rcrc rcup`
+5. Run `vish init`
 
 [neovim]: https://neovim.io
 [kitty]: https://github.com/kovidgoyal/kitty
@@ -31,17 +32,23 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 
 ### Neovim
 
-The primary plugins I use in Neovim are:
+To manage my plugins I wrote a little [fish function], that wraps the built-in
+[package loader]. The primary plugins I use in Neovim are:
 
 - [nvim-lspconfig] - The built-in language server client
 - [coq] - a fast completion provider
 - [telescope.nvim] - a super fast fuzzy finder
 - [neogit] - an excellent git integration
 
+You can see a full list of the plugins I have installed in the [submodules file].
+
+[fish function]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/fish/functions/vish.fish
+[package loader]: https://neovim.io/doc/user/repeat.html#using-scripts
 [nvim-lspconfig]: https://github.com/neovim/nvim-lspconfig
 [coq]: https://github.com/ms-jpq/coq_nvim
 [telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
 [neogit]: https://github.com/TimUntersberger/neogit
+[submodules file]: https://github.com/LkeMitchll/Dotfiles/blob/main/.gitmodules
 
 ### Kitty
 

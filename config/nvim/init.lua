@@ -21,7 +21,6 @@ option.statusline = "%#PmenuSel# %f %#CursorColumn# %= %m %#CursorLineNr# %y "
 
 -- Keymaps
 keymap("n", "<leader>e", ":Hexplore<CR>", {})
----- Navigate quickfix buffers
 keymap("n", "<Right>", ":cnext<CR>", {})
 keymap("n", "<Left>", ":cprevious<CR>", {})
 
@@ -70,6 +69,7 @@ null_ls.setup({
     null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.formatting.stylelint,
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.fish_indent,
     null_ls.builtins.diagnostics.eslint_d,
     null_ls.builtins.diagnostics.stylelint,
   },
@@ -106,7 +106,7 @@ keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 
 -- Plugin: Neogit
 require("neogit").setup()
-keymap("n", "<leader>gs", ":lua require('neogit').open({kind='split'})<CR>", {})
+keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 
 -- Plugin: kitty-runner
 require("kitty-runner").setup()
