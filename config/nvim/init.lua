@@ -106,7 +106,7 @@ keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 
 -- Plugin: Neogit
 require("neogit").setup()
-keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
+keymap("n", "<leader>gs", ":lua require('neogit').open({kind='split'})<CR>", {})
 
 -- Plugin: kitty-runner
 require("kitty-runner").setup()
