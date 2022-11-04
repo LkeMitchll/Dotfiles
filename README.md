@@ -26,7 +26,7 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 [rcm]: https://github.com/thoughtbot/rcm
 [fish]: https://fishshell.com
 
-------------------------------------------------------------------------
+---
 
 ## Notes
 

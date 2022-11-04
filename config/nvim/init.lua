@@ -27,7 +27,7 @@ keymap("n", "<Left>", ":cprevious<CR>", {})
 -- Plugin: Colorscheme
 require("tokyonight").setup({
   on_colors = function(colors)
-    colors.border = colors.dark3
+    colors.border = colors.bg_highlight
   end,
 })
 vim.cmd.colorscheme("tokyonight-night")

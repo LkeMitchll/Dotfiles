@@ -1,1 +1,1 @@
-EXCLUDES="README config/nvim/pack"
+EXCLUDES="config/nvim/pack"
