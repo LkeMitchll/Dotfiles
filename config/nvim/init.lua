@@ -45,6 +45,7 @@ require("mason").setup()
 -- Plugin: nvim-lspconfig
 local lspconfig = require("lspconfig")
 local servers = { "cssls", "html", "tsserver" }
+
 ----- Plugin: mason-lspconfig
 require("mason-lspconfig").setup({
   automatic_installation = true,
@@ -60,8 +61,6 @@ for _, lsp in ipairs(servers) do
   })
 end
 
-keymap("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
-
 -- Plugin: null_ls
 local null_ls = require("null-ls")
 null_ls.setup({
@@ -74,6 +73,9 @@ null_ls.setup({
     null_ls.builtins.diagnostics.stylelint,
   },
 })
+
+keymap("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
+
 ---- Plugin: mason-null-ls
 require("mason-null-ls").setup({
   automatic_installation = true,
@@ -93,6 +95,15 @@ treesitter.setup({
 local ts_actions = require("telescope.actions")
 require("telescope").setup({
   defaults = {
+    layout_strategy = "flex",
+    layout_config = {
+      vertical = {
+        preview_cutoff = 30,
+      },
+      flex = {
+        flip_columns = 120,
+      },
+    },
     mappings = {
       i = {
         ["<C-q>"] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,

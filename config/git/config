@@ -1,23 +1,19 @@
-[alias]
-  s = status -sbu
-  aa = add --all
-  sho = push origin
-  shofwl = push origin --force-with-lease
-  ll = pull --rebase
 [core]
   excludesfile = ~/.config/git/gitignore
   editor = nvim
+[init]
+  defaultBranch = main
+[branch]
+  autosetuprebase = always
 [merge]
   tool = nvimdiff
   conflictstyle = diff3
   ff = only
 [mergetool "nvimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-[branch]
-  autosetuprebase = always
-[rebase]
-  autosquash = true
 [push]
   default = current
-[init]
-  defaultBranch = main
+[pull]
+  rebase = true
+[rebase]
+  autosquash = true
