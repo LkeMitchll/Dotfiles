@@ -17,3 +17,7 @@
   rebase = true
 [rebase]
   autosquash = true
+[status]
+  short = true
+  untracked-files = true
+  branch = true
