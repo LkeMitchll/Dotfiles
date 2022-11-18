@@ -3,6 +3,8 @@
   editor = nvim
 [init]
   defaultBranch = main
+[format]
+  pretty = oneline
 [branch]
   autosetuprebase = always
 [merge]
@@ -21,3 +23,5 @@
   short = true
   untracked-files = true
   branch = true
+[log]
+  abbrevCommit = true
