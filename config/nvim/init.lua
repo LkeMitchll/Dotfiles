@@ -44,7 +44,7 @@ require("mason").setup()
 
 -- Plugin: nvim-lspconfig
 local lspconfig = require("lspconfig")
-local servers = { "cssls", "html", "tsserver" }
+local servers = { "cssls", "html", "tsserver", "jsonls" }
 
 ----- Plugin: mason-lspconfig
 require("mason-lspconfig").setup({
