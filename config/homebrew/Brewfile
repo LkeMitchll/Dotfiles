@@ -1,3 +1,5 @@
+tap "homebrew/cask-fonts"
+
 brew "asdf"
 brew "fish"
 brew "fzf"
@@ -6,3 +8,4 @@ brew "rcm"
 brew "ripgrep"
 
 cask "kitty"
+cask "font-jetbrains-mono"

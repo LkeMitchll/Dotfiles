@@ -10,18 +10,20 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 - `git`
 - [homebrew]
 
-## Install
-
-2. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
-3. Run `brew bundle --file ~/.dotfiles/config/homebrew/Brewfile`
-4. Run `RCRC=~/.dotfiles/rcrc rcup`
-5. Run `vish init`
-
 [neovim]: https://neovim.io
 [fish]: https://fishshell.com
 [kitty]: https://github.com/kovidgoyal/kitty
 [homebrew]: https://brew.sh
 [rcm]: https://github.com/thoughtbot/rcm
+
+## Install
+
+2. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
+3. Run `/opt/homebrew/bin/brew bundle --file ~/.dotfiles/config/homebrew/Brewfile` to install dependencies.
+5. Run `chsh -s /opt/homebrew/bin/fish` to change the default shell.
+4. Run `RCRC=~/.dotfiles/rcrc /opt/homebrew/bin/rcup` to symlink these dotfiles.
+5. Run `vish init` to clone neovim plugins.
+6. Open `kitty.app`.
 
 ---
 
