@@ -7,9 +7,6 @@
 [submodule "config/nvim/pack/vish/start/nvim-lspconfig"]
 	path = config/nvim/pack/vish/start/nvim-lspconfig
 	url = git@github.com:neovim/nvim-lspconfig
-[submodule "config/nvim/pack/vish/start/null-ls.nvim"]
-	path = config/nvim/pack/vish/start/null-ls.nvim
-	url = git@github.com:jose-elias-alvarez/null-ls.nvim
 [submodule "config/nvim/pack/vish/start/nvim-treesitter"]
 	path = config/nvim/pack/vish/start/nvim-treesitter
 	url = git@github.com:nvim-treesitter/nvim-treesitter
@@ -28,12 +25,6 @@
 [submodule "config/nvim/pack/vish/start/vim-kitty-navigator"]
 	path = config/nvim/pack/vish/start/vim-kitty-navigator
 	url = git@github.com:knubie/vim-kitty-navigator
-[submodule "config/nvim/pack/vish/start/coq_nvim"]
-	path = config/nvim/pack/vish/start/coq_nvim
-	url = git@github.com:ms-jpq/coq_nvim
-[submodule "config/nvim/pack/vish/start/coq.artifacts"]
-	path = config/nvim/pack/vish/start/coq.artifacts
-	url = git@github.com:ms-jpq/coq.artifacts
 [submodule "config/nvim/pack/vish/start/plenary.nvim"]
 	path = config/nvim/pack/vish/start/plenary.nvim
 	url = git@github.com:nvim-lua/plenary.nvim
@@ -43,6 +34,21 @@
 [submodule "config/nvim/pack/vish/start/mason-lspconfig.nvim"]
 	path = config/nvim/pack/vish/start/mason-lspconfig.nvim
 	url = git@github.com:williamboman/mason-lspconfig.nvim
-[submodule "config/nvim/pack/vish/start/mason-null-ls.nvim"]
-	path = config/nvim/pack/vish/start/mason-null-ls.nvim
-	url = git@github.com:jayp0521/mason-null-ls.nvim
+[submodule "config/nvim/pack/vish/start/vim-snippets"]
+	path = config/nvim/pack/vish/start/vim-snippets
+	url = git@github.com:honza/vim-snippets
+[submodule "config/nvim/pack/vish/start/nvim-snippy"]
+	path = config/nvim/pack/vish/start/nvim-snippy
+	url = git@github.com:dcampos/nvim-snippy
+[submodule "config/nvim/pack/vish/start/cmp-nvim-lsp"]
+	path = config/nvim/pack/vish/start/cmp-nvim-lsp
+	url = git@github.com:hrsh7th/cmp-nvim-lsp
+[submodule "config/nvim/pack/vish/start/cmp-buffer"]
+	path = config/nvim/pack/vish/start/cmp-buffer
+	url = git@github.com:hrsh7th/cmp-buffer
+[submodule "config/nvim/pack/vish/start/nvim-cmp"]
+	path = config/nvim/pack/vish/start/nvim-cmp
+	url = git@github.com:hrsh7th/nvim-cmp
+[submodule "config/nvim/pack/vish/start/cmp-snippy"]
+	path = config/nvim/pack/vish/start/cmp-snippy
+	url = git@github.com:dcampos/cmp-snippy

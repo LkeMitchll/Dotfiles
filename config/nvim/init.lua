@@ -1,8 +1,5 @@
-global = vim.g
-option = vim.opt
-keymap = vim.keymap.set
-
 -- General Config
+local global, option = vim.g, vim.opt
 global.mapleader = " "
 option.clipboard = "unnamed"
 option.cursorline = true
@@ -20,11 +17,12 @@ option.splitbelow = true
 option.statusline = "%#PmenuSel# %f %#CursorColumn# %= %m %#CursorLineNr# %y "
 
 -- Keymaps
+local keymap = vim.keymap.set
 keymap("n", "<leader>e", ":Hexplore<CR>", {})
 keymap("n", "<Right>", ":cnext<CR>", {})
 keymap("n", "<Left>", ":cprevious<CR>", {})
 
--- Plugin: Colorscheme
+-- Plugin: Tokyonight (colorscheme)
 require("tokyonight").setup({
   on_colors = function(colors)
     colors.border = colors.bg_highlight
@@ -32,58 +30,58 @@ require("tokyonight").setup({
 })
 vim.cmd.colorscheme("tokyonight-night")
 
--- Plugin: COQ
-global.coq_settings = {
-  auto_start = "shut-up",
-  display = { icons = { mode = "none" } },
-  keymap = { jump_to_mark = "<C-e>" },
-}
-
--- Plugin: Mason
-require("mason").setup()
-
--- Plugin: nvim-lspconfig
-local lspconfig = require("lspconfig")
-local servers = { "cssls", "html", "tsserver", "jsonls" }
-
------ Plugin: mason-lspconfig
-require("mason-lspconfig").setup({
-  automatic_installation = true,
-})
-
-local on_attach = function(client)
-  require("coq")().lsp_ensure_capabilities()
+-- Plugin: Mini
+local mini_plugins = { "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
+for _, plugin in ipairs(mini_plugins) do
+  require("mini." .. plugin).setup({})
 end
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
-    on_attach = on_attach,
-  })
-end
-
--- Plugin: null_ls
-local null_ls = require("null-ls")
-null_ls.setup({
-  sources = {
-    null_ls.builtins.formatting.eslint_d,
-    null_ls.builtins.formatting.stylelint,
-    null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.fish_indent,
-    null_ls.builtins.diagnostics.eslint_d,
-    null_ls.builtins.diagnostics.stylelint,
+-- Plugin: nvim-cmp & snippy
+local cmp, snippy = require("cmp"), require("snippy")
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      snippy.expand_snippet(args.body)
+    end,
   },
+  mapping = cmp.mapping.preset.insert({
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if snippy.can_expand_or_advance() then
+        snippy.expand_or_advance()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+  }),
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "snippy" },
+    { name = "buffer" },
+  }),
 })
 
+-- Plugin: nvim-lspconfig, mason & mason-lspconfig
+require("mason").setup()
+local mason_lsp, lsp = require("mason-lspconfig"), require('lspconfig')
+mason_lsp.setup({
+  ensure_installed = { "cssls", "html", "tsserver", "jsonls", "eslint", "sumneko_lua", "stylelint_lsp" },
+  automatic_installation = true
+})
+mason_lsp.setup_handlers {
+  function(server_name)
+    lsp[server_name].setup({})
+  end,
+  ["stylelint_lsp"] = function()
+    lsp.stylelint_lsp.setup({
+      filetypes = { "css", "scss" }
+    })
+  end
+}
 keymap("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
 
----- Plugin: mason-null-ls
-require("mason-null-ls").setup({
-  automatic_installation = true,
-})
-
 -- Plugin: Treesitter
-local treesitter = require("nvim-treesitter.configs")
-treesitter.setup({
+require("nvim-treesitter.configs").setup({
   ensure_installed = "all",
   ignore_install = { "phpdoc" },
   highlight = { enable = true },
@@ -111,8 +109,8 @@ require("telescope").setup({
     },
   },
 })
-
-keymap("n", "<C-t>", ":Telescope find_files hidden=true<CR>", {})
+keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
+keymap("n", "<C-S-t>", ":Telescope find_files hidden=true<CR>", {})
 keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
 
 -- Plugin: Neogit
@@ -121,9 +119,3 @@ keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
 
 -- Plugin: kitty-runner
 require("kitty-runner").setup()
-
--- Plugin: Mini
-local mini_plugins = { "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
-for _, plugin in ipairs(mini_plugins) do
-  require("mini." .. plugin).setup({})
-end
