@@ -3,7 +3,6 @@ local global, option = vim.g, vim.opt
 global.mapleader = " "
 option.clipboard = "unnamed"
 option.cursorline = true
-option.laststatus = 3
 option.list = true
 option.listchars:append({ space = "·" })
 option.number = true
@@ -14,7 +13,6 @@ option.shiftwidth = 2
 option.expandtab = true
 option.smartindent = true
 option.splitbelow = true
-option.statusline = "%#PmenuSel# %f %#CursorColumn# %= %m %#CursorLineNr# %y "
 
 -- Keymaps
 local keymap = vim.keymap.set
@@ -24,6 +22,10 @@ keymap("n", "<Left>", ":cprevious<CR>", {})
 
 -- Plugin: Tokyonight (colorscheme)
 require("tokyonight").setup({
+  styles = {
+    sidebars = "normal",
+    floats = "normal"
+  },
   on_colors = function(colors)
     colors.border = colors.bg_highlight
   end,
@@ -31,7 +33,7 @@ require("tokyonight").setup({
 vim.cmd.colorscheme("tokyonight-night")
 
 -- Plugin: Mini
-local mini_plugins = { "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
+local mini_plugins = { "statusline", "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
 for _, plugin in ipairs(mini_plugins) do
   require("mini." .. plugin).setup({})
 end
