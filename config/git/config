@@ -25,3 +25,5 @@
   branch = true
 [log]
   abbrevCommit = true
+[include]
+  path = ~/.config/git/config.local
