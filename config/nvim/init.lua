@@ -17,8 +17,8 @@ option.splitbelow = true
 -- Keymaps
 local keymap = vim.keymap.set
 keymap("n", "<leader>e", ":Hexplore<CR>", {})
-keymap("n", "<Right>", ":cnext<CR>", {})
-keymap("n", "<Left>", ":cprevious<CR>", {})
+keymap("n", "<S-C-J>", ":cnext<CR>", {})
+keymap("n", "<S-C-K>", ":cprevious<CR>", {})
 
 -- Plugin: Tokyonight (colorscheme)
 require("tokyonight").setup({
@@ -33,7 +33,10 @@ require("tokyonight").setup({
 vim.cmd.colorscheme("tokyonight-night")
 
 -- Plugin: Mini
-local mini_plugins = { "statusline", "ai", "comment", "jump", "jump2d", "pairs", "surround", "trailspace" }
+local mini_plugins = {
+  "ai", "comment", "jump", "jump2d", "pairs",
+  "statusline", "surround", "trailspace"
+}
 for _, plugin in ipairs(mini_plugins) do
   require("mini." .. plugin).setup({})
 end
@@ -67,7 +70,7 @@ cmp.setup({
 require("mason").setup()
 local mason_lsp, lsp = require("mason-lspconfig"), require('lspconfig')
 mason_lsp.setup({
-  ensure_installed = { "cssls", "html", "tsserver", "jsonls", "eslint", "sumneko_lua", "stylelint_lsp" },
+  ensure_installed = { "cssls", "html", "jsonls", "eslint", "stylelint_lsp", "tsserver", "sumneko_lua" },
   automatic_installation = true
 })
 mason_lsp.setup_handlers {
@@ -113,11 +116,11 @@ require("telescope").setup({
 })
 keymap("n", "<C-t>", ":Telescope find_files<CR>", {})
 keymap("n", "<C-S-t>", ":Telescope find_files hidden=true<CR>", {})
-keymap("n", "<leader>ag", ":Telescope live_grep<CR>", {})
+keymap("n", "<leader>a", ":Telescope live_grep<CR>", {})
 
 -- Plugin: Neogit
 require("neogit").setup()
-keymap("n", "<leader>gs", ":Neogit kind=split<CR>", {})
+keymap("n", "<leader>g", ":Neogit kind=split<CR>", {})
 
 -- Plugin: kitty-runner
 require("kitty-runner").setup()
