@@ -1,11 +1,12 @@
-tap "homebrew/cask-fonts"
-
 brew "asdf"
 brew "fish"
 brew "fzf"
+brew "git-extras"
 brew "neovim"
 brew "rcm"
 brew "ripgrep"
 
 cask "kitty"
+
+tap "homebrew/cask-fonts"
 cask "font-jetbrains-mono"
