@@ -1,6 +1,6 @@
 -- General Config
-local global, option = vim.g, vim.opt
-global.mapleader = " "
+local option = vim.opt
+vim.g.mapleader = " "
 option.clipboard = "unnamed"
 option.cursorline = true
 option.list = true
