@@ -70,7 +70,10 @@ cmp.setup({
 require("mason").setup()
 local mason_lsp, lsp = require("mason-lspconfig"), require('lspconfig')
 mason_lsp.setup({
-  ensure_installed = { "cssls", "html", "jsonls", "eslint", "stylelint_lsp", "tsserver", "sumneko_lua" },
+  ensure_installed = {
+    "cssls", "html", "jsonls", "eslint",
+    "stylelint_lsp", "tsserver", "sumneko_lua"
+  },
   automatic_installation = true
 })
 mason_lsp.setup_handlers {
