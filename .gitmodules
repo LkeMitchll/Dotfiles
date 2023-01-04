@@ -52,3 +52,6 @@
 [submodule "config/nvim/pack/vish/start/cmp-snippy"]
 	path = config/nvim/pack/vish/start/cmp-snippy
 	url = git@github.com:dcampos/cmp-snippy
+[submodule "config/nvim/pack/vish/start/debugprint.nvim"]
+	path = config/nvim/pack/vish/start/debugprint.nvim
+	url = git@github.com:andrewferrier/debugprint.nvim
