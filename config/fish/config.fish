@@ -1,7 +1,7 @@
 set fish_greeting
 
 # Homebrew
-set -gx PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
+set -gx PATH /opt/homebrew/bin $PATH
 
 # FZF
 set -gx FZF_DEFAULT_OPTS "--color=16"
@@ -16,4 +16,4 @@ abbr vim nvim
 abbr vr "nvim +KittyOpenRunner"
 
 # Theme
-source ~/.config/nvim/pack/vish/start/tokyonight.nvim/extras/fish/tokyonight_night.fish
+source ~/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_night.fish

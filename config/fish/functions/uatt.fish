@@ -17,7 +17,7 @@ function uatt
     echo $uatt_seperator
 
     echo \n"Updating Neovim plugins..."\n
-    vish update
+    nvim --headless "+Lazy! sync" +qa
     echo \n\n"Neovim plugins up-to-date"
     echo $uatt_seperator
 

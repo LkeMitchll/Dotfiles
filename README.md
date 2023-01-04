@@ -18,11 +18,11 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 
 ## Install
 
-2. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
-3. Run `/opt/homebrew/bin/brew bundle --file ~/.dotfiles/config/homebrew/Brewfile` to install dependencies.
+1. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
+2. Run `/opt/homebrew/bin/brew bundle --file ~/.dotfiles/config/homebrew/Brewfile` to install dependencies.
+3. Run `/opt/homebrew/bin/rcup` to symlink these dotfiles.
+4. Run `git clone git@github.com:folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim`
 5. Run `chsh -s /opt/homebrew/bin/fish` to change the default shell.
-4. Run `RCRC=~/.dotfiles/rcrc /opt/homebrew/bin/rcup` to symlink these dotfiles.
-5. Run `vish init` to clone neovim plugins.
 6. Open `kitty.app`.
 
 ---
@@ -31,39 +31,31 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 
 ### Neovim
 
-To manage my plugins I wrote a little [fish function], that wraps the built-in
-[package loader]. The primary plugins I use in Neovim are:
+I try to keep my neovim setup as minimal as I can, I manage my plugins using
+[lazy.nvim]. The primary plugins I use in Neovim are:
 
-- [nvim-lspconfig] - the built-in language server (LSP) client
-  - [mason.nvim] - install and configure LSPs
-- [nvim-cmp] - a completion engine
-  - [nvim-snippy] - provides snippets
+- [lsp-zero.nvim] - automatically configures LSP and snippets
 - [telescope.nvim] - a super fast fuzzy finder
 - [neogit] - an excellent git integration
 
-You can see a full list of the plugins I have installed in the [submodules file].
+You can see a full list of the plugins I have installed in the [neovim config].
 
-[fish function]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/fish/functions/vish.fish
-[package loader]: https://neovim.io/doc/user/repeat.html#using-scripts
-
-[nvim-lspconfig]: https://github.com/neovim/nvim-lspconfig
-[mason.nvim]: https://github.com/williamboman/mason.nvim
-[nvim-cmp]: https://github.com/knubie/nvim-cmp
-[nvim-snippy]: https://github.com/dcampos/nvim-snippy
+[lazy.nvim]: https://github.com/folke/lazy.nvim
+[lsp-zero.nvim]: https://github.com/VonHeikemen/lsp-zero.nvim
 [telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
 [neogit]: https://github.com/TimUntersberger/neogit
 
-[submodules file]: https://github.com/LkeMitchll/Dotfiles/blob/main/.gitmodules
+[neovim config]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/nvim/init.lua
 
 ### Kitty
 
 I try to keep my [kitty config] light, but some things of note:
 
-- My colorscheme, is based on [tokyo-night]
+- My colorscheme, is [tokyonight]
 - I make use of [vim-kitty-navigator]
 
 [kitty config]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/kitty/kitty.conf
-[tokyo-night]: https://github.com/folke/tokyonight.nvim/tree/main/extras
+[tokyonight]: https://github.com/folke/tokyonight.nvim/tree/main/extras
 [vim-kitty-navigator]: https://github.com/knubie/vim-kitty-navigator
 
 ### Fish
