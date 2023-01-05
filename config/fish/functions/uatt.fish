@@ -1,25 +1,29 @@
+function title
+  echo (set_color $argv[2])\n$argv[1](set_color normal)
+end
+
 function uatt
-    set uatt_seperator "**************************************"
-    set brewfiles ~/.config/homebrew/Brewfile ~/.config/homebrew/Brewfile.local
+  set divider (set_color blue)(string repeat -n 50 '*')(set_color normal)
+  set brewfiles ~/.config/homebrew/Brewfile ~/.config/homebrew/Brewfile.local
 
-    echo "UATT: Update All The Things!"
-    echo $uatt_seperator
+  title "UATT: Update All The Things!" magenta
+  echo $divider
 
-    echo \n"Updating Homebrew packages..."\n
-    cat $brewfiles | brew bundle --file=-
-    brew upgrade
-    echo \n"Homebrew packages up-to-date"
-    echo $uatt_seperator
+  title "Updating Homebrew packages..." yellow
+  cat $brewfiles | brew bundle --file=-
+  brew upgrade
+  title "Homebrew packages up-to-date" green
+  echo $divider
 
-    echo \n"Updating ASDF plugins..."\n
-    asdf plugin-update --all
-    echo \n"ASDF plugins up-to-date"
-    echo $uatt_seperator
+  title "Updating ASDF plugins..." yellow
+  asdf plugin-update --all
+  title "ASDF plugins up-to-date" green
+  echo $divider
 
-    echo \n"Updating Neovim plugins..."\n
-    nvim --headless "+Lazy! sync" +qa
-    echo \n\n"Neovim plugins up-to-date"
-    echo $uatt_seperator
+  title "Updating Neovim plugins..." yellow
+  nvim --headless "+Lazy! sync" +qa
+  title "Neovim plugins up-to-date" green
+  echo $divider
 
-    echo \n"All done!"\n
+  title "All done!" red
 end
