@@ -81,9 +81,7 @@ require("lazy").setup {
     config = function()
       local lsp = require('lsp-zero')
       lsp.preset('recommended')
-      lsp.ensure_installed({
-        "cssls", "html", "jsonls", "eslint", "stylelint_lsp", "tsserver", "sumneko_lua"
-      })
+      lsp.configure("html", { filetypes = { "html", "jinja.html" } })
       lsp.configure("stylelint_lsp", { filetypes = { "css", "scss" } })
       lsp.nvim_workspace()
       lsp.setup()
