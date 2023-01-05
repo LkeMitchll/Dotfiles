@@ -13,7 +13,6 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- Keymaps
-vim.keymap.set("n", "<leader>e", ":Hexplore<CR>", {})
 vim.keymap.set("n", "<S-C-J>", ":cnext<CR>", {})
 vim.keymap.set("n", "<S-C-K>", ":cprevious<CR>", {})
 
@@ -59,29 +58,31 @@ require("lazy").setup {
     dependencies = "nvim-lua/plenary.nvim",
     config = true,
     keys = {
-      { "<C-t>", ":Telescope find_files<CR>", mode = { "n" } },
-      { "<C-S-t>", ":Telescope find_files hidden=true<CR>", mode = { "n" } },
-      { "<leader>a", ":Telescope live_grep<CR>", mode = { "n" } }
+      { "<C-t>", ":Telescope find_files<CR>" },
+      { "<C-S-t>", ":Telescope find_files hidden=true<CR>" },
+      { "<leader>a", ":Telescope live_grep<CR>" }
     }
   },
   { "VonHeikemen/lsp-zero.nvim",
     dependencies = {
-      'neovim/nvim-lspconfig',
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-      'hrsh7th/nvim-cmp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-nvim-lua',
-      'L3MON4D3/LuaSnip',
-      'rafamadriz/friendly-snippets',
+      "neovim/nvim-lspconfig",
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
+      "L3MON4D3/LuaSnip",
+      "rafamadriz/friendly-snippets",
     },
+    event = "BufEnter",
     config = function()
-      local lsp = require('lsp-zero')
-      lsp.preset('recommended')
-      lsp.configure("html", { filetypes = { "html", "jinja.html" } })
+      local lsp = require("lsp-zero")
+      lsp.preset("recommended")
+      lsp.configure("html", { filetypes = { "html", "jinja.html", "eruby" } })
+      lsp.configure("emmet_ls", { filetypes = { "html", "jinja.html", "eruby", "css", "scss" } })
       lsp.configure("stylelint_lsp", { filetypes = { "css", "scss" } })
       lsp.nvim_workspace()
       lsp.setup()
@@ -91,7 +92,7 @@ require("lazy").setup {
   { "TimUntersberger/neogit",
     config = true,
     keys = {
-      { "<leader>gs", ":Neogit kind=split<CR>", mode = { "n" } }
+      { "<leader>gs", ":Neogit kind=split<CR>" }
     }
   },
   { "knubie/vim-kitty-navigator", build = "cp ./*.py ~/.config/kitty/" },
