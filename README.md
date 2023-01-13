@@ -37,6 +37,7 @@ I try to keep my neovim setup as minimal as I can, I manage my plugins using
 - [lsp-zero.nvim] - automatically configures LSP and snippets
 - [telescope.nvim] - a super fast fuzzy finder
 - [neogit] - an excellent git integration
+- [mini.nvim] - a collection of minimal, helpful plugins
 
 You can see a full list of the plugins I have installed in the [neovim config].
 
@@ -44,6 +45,7 @@ You can see a full list of the plugins I have installed in the [neovim config].
 [lsp-zero.nvim]: https://github.com/VonHeikemen/lsp-zero.nvim
 [telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
 [neogit]: https://github.com/TimUntersberger/neogit
+[mini.nvim]: https://github.com/echasnovski/mini.nvim
 
 [neovim config]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/nvim/init.lua
 
