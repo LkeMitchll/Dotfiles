@@ -97,5 +97,11 @@ require("lazy").setup {
   },
   { "knubie/vim-kitty-navigator", build = "cp ./*.py ~/.config/kitty/" },
   { "lkemitchll/kitty-runner.nvim", config = true },
-  { "andrewferrier/debugprint.nvim", config = true }
+  { "andrewferrier/debugprint.nvim", config = true },
+  { "stevearc/oil.nvim",
+    config = true,
+    keys = {
+      { "-", ":split<CR>:lua require('oil').open()<CR>" }
+    }
+  }
 }
