@@ -30,7 +30,7 @@ require("lazy").setup {
   { "echasnovski/mini.nvim",
     config = function()
       local mini_plugins = {
-        "ai", "comment", "jump", "jump2d", "pairs",
+        "ai", "comment", "jump", "jump2d", "move", "pairs",
         "statusline", "surround", "trailspace"
       }
       for _, plugin in ipairs(mini_plugins) do
