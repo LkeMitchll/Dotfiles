@@ -18,12 +18,10 @@ vim.keymap.set("n", "<S-C-K>", ":cprevious<CR>", {})
 
 -- Plugins
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
-
 require("lazy").setup {
   { "folke/tokyonight.nvim",
     lazy = false,
     config = function()
-      require("tokyonight").setup({})
       vim.cmd.colorscheme("tokyonight-night")
     end
   },
@@ -38,12 +36,9 @@ require("lazy").setup {
       end
     end
   },
+  { "glench/vim-jinja2-syntax", ft = "jinja.html" },
+  { "fladson/vim-kitty", ft = "kitty" },
   { "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "glench/vim-jinja2-syntax",
-      "fladson/vim-kitty"
-    },
-    build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = "all",
@@ -52,7 +47,7 @@ require("lazy").setup {
         indent = { enable = true },
         incremental_selection = { enable = true },
       })
-    end
+    end,
   },
   { "nvim-telescope/telescope.nvim",
     dependencies = "nvim-lua/plenary.nvim",
@@ -77,12 +72,11 @@ require("lazy").setup {
       "L3MON4D3/LuaSnip",
       "rafamadriz/friendly-snippets",
     },
-    event = "BufEnter",
     config = function()
       local lsp = require("lsp-zero")
       lsp.preset("recommended")
-      lsp.configure("html", { filetypes = { "html", "jinja.html", "eruby" } })
-      lsp.configure("emmet_ls", { filetypes = { "html", "jinja.html", "eruby", "css", "scss" } })
+      lsp.configure("html", { filetypes = { "html", "jinja.html" } })
+      lsp.configure("emmet_ls", { filetypes = { "html", "jinja.html", "css", "scss" } })
       lsp.configure("stylelint_lsp", { filetypes = { "css", "scss" } })
       lsp.nvim_workspace()
       lsp.setup()
@@ -95,13 +89,13 @@ require("lazy").setup {
       { "<leader>gs", ":Neogit kind=split<CR>" }
     }
   },
-  { "knubie/vim-kitty-navigator", build = "cp ./*.py ~/.config/kitty/" },
-  { "lkemitchll/kitty-runner.nvim", config = true },
-  { "andrewferrier/debugprint.nvim", config = true },
   { "stevearc/oil.nvim",
     config = true,
     keys = {
-      { "-", ":split<CR>:lua require('oil').open()<CR>" }
+      { "-", ":Oil --float<CR>" }
     }
-  }
+  },
+  { "knubie/vim-kitty-navigator", build = "cp ./*.py ~/.config/kitty/" },
+  { "lkemitchll/kitty-runner.nvim", config = true },
+  { "andrewferrier/debugprint.nvim", config = true }
 }
