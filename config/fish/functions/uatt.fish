@@ -12,6 +12,7 @@ function uatt
   title "Updating Homebrew packages..." yellow
   cat $brewfiles | brew bundle --file=-
   brew upgrade
+  fish_update_completions
   title "Homebrew packages up-to-date" green
   echo $divider
 

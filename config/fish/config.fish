@@ -1,14 +1,14 @@
 set fish_greeting
 
 # Homebrew
-set -gx PATH /opt/homebrew/bin $PATH
+fish_add_path /opt/homebrew/bin
 
 # FZF
 set -gx FZF_DEFAULT_OPTS "--color=16"
-source (brew --prefix)/opt/fzf/shell/key-bindings.fish; and fzf_key_bindings
+source (brew --prefix fzf)/shell/key-bindings.fish; and fzf_key_bindings
 
 # ASDF
-source (brew --prefix)/opt/asdf/libexec/asdf.fish
+source (brew --prefix asdf)/libexec/asdf.fish
 
 # Aliases
 abbr g git

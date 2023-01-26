@@ -3,5 +3,5 @@ function fish_prompt
     set runner_indicator (set_color yellow)"[•]"
   end
   echo (set_color blue)'╭─' (set_color magenta)(prompt_pwd) $runner_indicator
-  echo (set_color blue)'╰─ '(set_color green)'$ '(set_color normal)
+  echo (set_color blue)'╰─' (set_color green)'$ '(set_color normal)
 end
