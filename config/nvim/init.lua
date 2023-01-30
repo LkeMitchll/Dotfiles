@@ -1,16 +1,11 @@
 -- General Config
 vim.g.mapleader = " "
-vim.opt.clipboard = "unnamed"
-vim.opt.cursorline = true
-vim.opt.list = true
 vim.opt.listchars:append({ space = "·" })
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.clipboard = "unnamed"
 vim.opt.scrolloff = 999
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.opt.smartindent = true
 
 -- Keymaps
 vim.keymap.set("n", "<S-C-J>", ":cnext<CR>", {})
@@ -27,6 +22,7 @@ require("lazy").setup {
   },
   { "echasnovski/mini.nvim",
     config = function()
+      require("mini.basics").setup({ options = { extra_ui = true } })
       local mini_plugins = {
         "ai", "comment", "jump", "jump2d", "move", "pairs",
         "statusline", "surround", "trailspace"
