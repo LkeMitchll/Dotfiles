@@ -6,6 +6,6 @@ function session
 
   kitty @ set-tab-title $tab_name
   kitty @ launch --cwd=$PWD --title=server_$tab_name --keep-focus
-  kitty @ send_text --match=title:server_$tab_name $argv[2]\u000D
+  kitty @ send-text --match=title:server_$tab_name $argv[2]\u000D
   nvim +KittyOpenRunner README.md
 end
