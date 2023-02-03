@@ -13,7 +13,7 @@ vim.keymap.set("n", "<S-C-K>", ":cprevious<CR>", {})
 
 -- Plugins
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
-require("lazy").setup {
+require("lazy").setup({
   { "folke/tokyonight.nvim",
     lazy = false,
     config = function()
@@ -24,30 +24,28 @@ require("lazy").setup {
     config = function()
       require("mini.basics").setup({ options = { extra_ui = true } })
       local mini_plugins = {
-        "ai", "comment", "jump", "jump2d", "move", "pairs",
-        "statusline", "surround", "trailspace"
+        "ai", "comment", "jump", "jump2d", "move",
+        "pairs", "statusline", "surround", "trailspace"
       }
       for _, plugin in ipairs(mini_plugins) do
         require("mini." .. plugin).setup({})
       end
     end
   },
-  { "glench/vim-jinja2-syntax", ft = "jinja.html" },
-  { "fladson/vim-kitty", ft = "kitty" },
   { "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = "all",
         ignore_install = { "phpdoc" },
         highlight = { enable = true },
-        indent = { enable = true },
-        incremental_selection = { enable = true },
       })
     end,
   },
+  { "fladson/vim-kitty", ft = "kitty" },
+  { "glench/vim-jinja2-syntax", ft = "jinja.html" },
   { "nvim-telescope/telescope.nvim",
     dependencies = "nvim-lua/plenary.nvim",
-    config = true,
+    opts = { defaults = { winblend = 10 } },
     keys = {
       { "<C-t>", ":Telescope find_files<CR>" },
       { "<C-S-t>", ":Telescope find_files hidden=true<CR>" },
@@ -71,27 +69,26 @@ require("lazy").setup {
     config = function()
       local lsp = require("lsp-zero")
       lsp.preset("recommended")
+      lsp.nvim_workspace()
       lsp.configure("html", { filetypes = { "html", "jinja.html" } })
       lsp.configure("emmet_ls", { filetypes = { "html", "jinja.html", "css", "scss" } })
       lsp.configure("stylelint_lsp", { filetypes = { "css", "scss" } })
-      lsp.nvim_workspace()
       lsp.setup()
       vim.keymap.set("n", "<leader>p", ":LspZeroFormat<CR>", {})
     end
   },
   { "TimUntersberger/neogit",
     config = true,
-    keys = {
-      { "<leader>gs", ":Neogit kind=split<CR>" }
-    }
+    keys = { { "<leader>gs", ":Neogit kind=split<CR>" } }
   },
   { "stevearc/oil.nvim",
-    config = true,
-    keys = {
-      { "-", ":Oil --float<CR>" }
-    }
+    opts = { float = { max_width = 70, max_height = 20 } },
+    keys = { { "-", ":Oil --float<CR>" } }
   },
-  { "knubie/vim-kitty-navigator", build = "cp ./*.py ~/.config/kitty/" },
-  { "lkemitchll/kitty-runner.nvim", config = true },
+  { "jghauser/kitty-runner.nvim",
+    dev = true,
+    config = true,
+  },
+  { "knubie/vim-kitty-navigator", lazy = false, build = "cp ./*.py ~/.config/kitty/" },
   { "andrewferrier/debugprint.nvim", config = true }
-}
+}, { dev = { path = "~/Developer" } })
