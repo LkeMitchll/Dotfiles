@@ -20,10 +20,12 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 
 1. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
 2. Run `/opt/homebrew/bin/brew bundle --file ~/.dotfiles/config/homebrew/Brewfile` to install dependencies.
-3. Run `/opt/homebrew/bin/rcup` to symlink these dotfiles.
-4. Run `git clone git@github.com:folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim`
-5. Run `chsh -s /opt/homebrew/bin/fish` to change the default shell.
-6. Open `kitty.app`.
+3. Run `sudo echo /opt/homebrew/bin/fish >> /etc/shells`, then `chsh -s /opt/homebrew/bin/fish` to change the default shell.
+4. Run `fish`, then `fish_add_path /opt/homebrew/bin`
+5. Run `rcup` to symlink these dotfiles.
+6. Run `git clone git@github.com:folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim`
+7. Run `nvim` to install plugins.
+7. Open `kitty.app`.
 
 ---
 
@@ -34,20 +36,7 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 I try to keep my neovim setup as minimal as I can, I manage my plugins using
 [lazy.nvim]. The primary plugins I use in Neovim are:
 
-- [lsp-zero.nvim] - automatically configures LSP and snippets
-- [telescope.nvim] - a super fast fuzzy finder
-- [neogit] - an excellent git integration
-- [mini.nvim] - a collection of minimal, helpful plugins
-
-You can see a full list of the plugins I have installed in the [neovim config].
-
-[lazy.nvim]: https://github.com/folke/lazy.nvim
-[lsp-zero.nvim]: https://github.com/VonHeikemen/lsp-zero.nvim
-[telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
-[neogit]: https://github.com/TimUntersberger/neogit
-[mini.nvim]: https://github.com/echasnovski/mini.nvim
-
-[neovim config]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/nvim/init.lua
+- [lsp-zero.nvim] - automatically configures LSP and snippetsg/nvim/init.lua
 
 ### Kitty
 
