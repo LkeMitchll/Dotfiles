@@ -19,13 +19,8 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 ## Install
 
 1. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
-2. Run `/opt/homebrew/bin/brew bundle --file ~/.dotfiles/config/homebrew/Brewfile` to install dependencies.
-3. Run `sudo echo /opt/homebrew/bin/fish >> /etc/shells`, then `chsh -s /opt/homebrew/bin/fish` to change the default shell.
-4. Run `fish`, then `fish_add_path /opt/homebrew/bin`
-5. Run `rcup` to symlink these dotfiles.
-6. Run `git clone git@github.com:folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim`
-7. Run `nvim` to install plugins.
-7. Open `kitty.app`.
+2. Run `cd ~/.dotfiles & chmod +x ./setup.sh & ./setup.sh`.
+3. If all went well, run `nvim` to install plugins.
 
 ---
 
