@@ -7,10 +7,6 @@ vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
--- Keymaps
-vim.keymap.set("n", "<S-C-J>", ":cnext<CR>", {})
-vim.keymap.set("n", "<S-C-K>", ":cprevious<CR>", {})
-
 -- Plugins
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 require("lazy").setup({
@@ -24,7 +20,7 @@ require("lazy").setup({
     config = function()
       require("mini.basics").setup({ options = { extra_ui = true } })
       local mini_plugins = {
-        "ai", "comment", "jump", "jump2d", "move",
+        "ai", "comment", "jump", "jump2d", "move", "bracketed",
         "pairs", "statusline", "surround", "trailspace"
       }
       for _, plugin in ipairs(mini_plugins) do
@@ -79,7 +75,7 @@ require("lazy").setup({
   },
   { "TimUntersberger/neogit",
     config = true,
-    keys = { { "<leader>gs", ":Neogit kind=split<CR>" } }
+    keys = { { "<C-G>", ":Neogit kind=split<CR>" } }
   },
   { "stevearc/oil.nvim",
     opts = { skip_confirm_for_simple_edits = true },
