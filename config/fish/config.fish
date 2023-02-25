@@ -13,5 +13,8 @@ abbr g git
 abbr vim nvim
 abbr vr "nvim +KittyOpenRunner"
 
+# Create kitty 'session' in folders with .kitty-session on cd
+source ~/.config/fish/functions/session.fish
+
 # Theme
 source ~/.local/share/nvim/lazy/tokyonight.nvim/extras/fish/tokyonight_night.fish
