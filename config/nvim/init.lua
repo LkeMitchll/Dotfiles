@@ -44,9 +44,9 @@ require("lazy").setup({
     dependencies = "nvim-lua/plenary.nvim",
     opts = { defaults = { winblend = 10 } },
     keys = {
-      { "<C-t>",     ":Telescope find_files<CR>" },
-      { "<C-S-t>",   ":Telescope find_files hidden=true<CR>" },
-      { "<leader>a", ":Telescope live_grep<CR>" }
+      { "<C-T>",   ":Telescope find_files<CR>" },
+      { "<C-S-T>", ":Telescope find_files hidden=true<CR>" },
+      { "<C-A>",   ":Telescope live_grep<CR>" }
     }
   },
   { "VonHeikemen/lsp-zero.nvim",
@@ -78,11 +78,11 @@ require("lazy").setup({
     config = true,
     keys = { { "<C-G>", ":Neogit kind=split<CR>" } }
   },
-  { "stevearc/oil.nvim",
-    opts = { skip_confirm_for_simple_edits = true },
-    keys = { { "-", ":split<CR>:Oil<CR>" } }
+  { "stevearc/oil.nvim", keys = { { "-", ":split<CR>:Oil<CR>" } } },
+  { "lkemitchll/kitty-runner.nvim", config = true },
+  { "knubie/vim-kitty-navigator",
+    lazy = false,
+    build = "cp ./*.py ~/.config/kitty/"
   },
-  { "lkemitchll/kitty-runner.nvim",  config = true },
-  { "knubie/vim-kitty-navigator",    lazy = false, build = "cp ./*.py ~/.config/kitty/" },
   { "andrewferrier/debugprint.nvim", config = true }
 }, { dev = { path = "~/Developer" } })
