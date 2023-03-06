@@ -6,6 +6,7 @@ vim.opt.scrolloff = 999
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+vim.opt.relativenumber = true
 
 -- Plugins
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
