@@ -7,6 +7,3 @@ brew "rcm"
 brew "ripgrep"
 
 cask "kitty"
-
-tap "homebrew/cask-fonts"
-cask "font-jetbrains-mono"
