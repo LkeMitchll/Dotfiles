@@ -5,8 +5,8 @@ fish_add_path /opt/homebrew/bin
 # FZF
 set -gx FZF_DEFAULT_OPTS "--color=16"
 source (brew --prefix fzf)/shell/key-bindings.fish; and fzf_key_bindings
-# ASDF
-source (brew --prefix asdf)/libexec/asdf.fish
+# RTX
+rtx activate fish | source
 
 # Aliases
 abbr g git

@@ -16,11 +16,6 @@ function uatt
   title "Homebrew packages up-to-date" green
   echo $divider
 
-  title "Updating ASDF plugins..." yellow
-  asdf plugin-update --all
-  title "ASDF plugins up-to-date" green
-  echo $divider
-
   title "Updating Neovim plugins..." yellow
   nvim --headless "+Lazy! sync" +qa
   title "Neovim plugins up-to-date" green
