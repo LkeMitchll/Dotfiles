@@ -21,6 +21,8 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 1. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
 2. Run `cd ~/.dotfiles & chmod +x ./setup.sh & ./setup.sh`.
 3. If all went well, run `nvim` to install plugins.
+4. (Optional) Run `brew autoupdate start --upgrade --enable-notification` to
+   auto-update homebrew installations
 
 ---
 
