@@ -64,25 +64,47 @@ require("lazy").setup({
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-nvim-lua",
       "saadparwaiz1/cmp_luasnip",
       "L3MON4D3/LuaSnip",
       "rafamadriz/friendly-snippets",
     },
     config = function()
       local lsp = require("lsp-zero").preset({})
+      local lspconfig = require("lspconfig")
       lsp.on_attach(function(_, bufnr)
         lsp.default_keymaps({ buffer = bufnr })
       end)
-      require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
-      require("lspconfig").html.setup({ filetypes = { "html", "nunjucks" } })
-      require("lspconfig").emmet_ls.setup({ filetypes = { "html", "nunjucks", "css", "scss" } })
-      require("lspconfig").stylelint_lsp.setup({ filetypes = { "css", "scss" } })
+      lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+      lspconfig.html.setup({ filetypes = { "html", "nunjucks" } })
+      lspconfig.emmet_ls.setup({ filetypes = { "html", "nunjucks", "css", "scss" } })
+      lspconfig.stylelint_lsp.setup({ filetypes = { "css", "scss" } })
       lsp.setup()
       vim.keymap.set("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
+      ---
+      require("luasnip.loaders.from_vscode").lazy_load()
+      require("cmp").setup({
+        sources = {
+          { name = "nvim_lsp" },
+          { name = "nvim_lsp_signature_help" },
+          { name = "luasnip" },
+          { name = "path" },
+          {
+            name = "buffer",
+            option = {
+              get_bufnrs = function()
+                return vim.api.nvim_list_bufs()
+              end
+            }
+          }
+        },
+        mapping = {
+          ["<C-F>"] = require("lsp-zero").cmp_action().luasnip_jump_forward()
+        }
+      })
     end
   },
   { "TimUntersberger/neogit",        config = true, keys = { { "<C-G>", ":Neogit kind=split<CR>" } } },
