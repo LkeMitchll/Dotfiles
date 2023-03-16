@@ -24,7 +24,7 @@ require("lazy").setup({
       vim.opt.listchars:append({ space = "·" })
       local mini_plugins = {
         "ai", "comment", "jump", "jump2d", "move", "bracketed",
-        "pairs", "statusline", "surround", "trailspace"
+        "pairs", "statusline", "splitjoin", "surround", "trailspace"
       }
       for _, plugin in ipairs(mini_plugins) do
         require("mini." .. plugin).setup({})
