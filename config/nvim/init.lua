@@ -1,11 +1,12 @@
 -- General Config
 vim.g.mapleader = " "
 vim.opt.clipboard = "unnamed"
+vim.opt.expandtab = true
+vim.opt.relativenumber = true
 vim.opt.scrolloff = 999
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.relativenumber = true
+vim.opt.timeoutlen = 0
 
 -- Plugins
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
@@ -51,9 +52,9 @@ require("lazy").setup({
     dependencies = "nvim-lua/plenary.nvim",
     opts = { defaults = { winblend = 10 } },
     keys = {
-      { "<C-T>",   ":Telescope find_files<CR>" },
-      { "<C-S-T>", ":Telescope find_files hidden=true<CR>" },
-      { "<C-A>",   ":Telescope live_grep<CR>" }
+      { "<C-T>",   ":Telescope find_files<CR>",             desc = "Find files with Telescope" },
+      { "<C-S-T>", ":Telescope find_files hidden=true<CR>", desc = "Find hidden files with Telescope" },
+      { "<C-A>",   ":Telescope live_grep<CR>",              desc = "Find stings with Telescope" }
     }
   },
   {
@@ -83,7 +84,7 @@ require("lazy").setup({
       lspconfig.emmet_ls.setup({ filetypes = { "html", "nunjucks", "css", "scss" } })
       lspconfig.stylelint_lsp.setup({ filetypes = { "css", "scss" } })
       lsp.setup()
-      vim.keymap.set("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", {})
+      vim.keymap.set("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", { desc = "Format with LSP" })
       ---
       require("luasnip.loaders.from_vscode").lazy_load()
       require("cmp").setup({
@@ -107,9 +108,31 @@ require("lazy").setup({
       })
     end
   },
-  { "TimUntersberger/neogit",        config = true, keys = { { "<C-G>", ":Neogit kind=split<CR>" } } },
-  { "stevearc/oil.nvim",             config = true, keys = { { "-", ":split<CR>:Oil<CR>" } } },
-  { "knubie/vim-kitty-navigator",    lazy = false,  build = "cp ./*.py ~/.config/kitty/" },
-  { "lkemitchll/kitty-runner.nvim",  config = true },
-  { "andrewferrier/debugprint.nvim", config = true }
+  {
+    "TimUntersberger/neogit",
+    config = true,
+    keys = { { "<C-G>", ":Neogit kind=split<CR>", desc = "Open Neogit" } }
+  },
+  {
+    "stevearc/oil.nvim",
+    config = true,
+    keys = { { "-", ":split<CR>:Oil<CR>", desc = "Open Oil" } }
+  },
+  {
+    "knubie/vim-kitty-navigator",
+    lazy = false,
+    build = "cp ./*.py ~/.config/kitty/"
+  },
+  {
+    "lkemitchll/kitty-runner.nvim",
+    config = true
+  },
+  {
+    "andrewferrier/debugprint.nvim",
+    config = true
+  },
+  {
+    "folke/which-key.nvim",
+    config = true
+  }
 }, { dev = { path = "~/Developer" } })
