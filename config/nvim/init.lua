@@ -20,12 +20,12 @@ require("lazy").setup({
   },
   {
     "echasnovski/mini.nvim",
-    config = function()
-      require("mini.basics").setup({ options = { extra_ui = true } })
+    init = function()
       vim.opt.listchars:append({ space = "·" })
+      require("mini.basics").setup({ options = { extra_ui = true } })
       local mini_plugins = {
-        "ai", "comment", "jump", "jump2d", "move", "bracketed",
-        "pairs", "statusline", "splitjoin", "surround", "trailspace"
+        "ai", "bracketed", "comment", "jump", "jump2d", "move", "pairs",
+        "splitjoin", "statusline", "surround", "trailspace"
       }
       for _, plugin in ipairs(mini_plugins) do
         require("mini." .. plugin).setup({})
@@ -34,7 +34,7 @@ require("lazy").setup({
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    config = function()
+    init = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = "all",
         ignore_install = { "phpdoc" },
@@ -50,7 +50,6 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     dependencies = "nvim-lua/plenary.nvim",
-    opts = { defaults = { winblend = 10 } },
     keys = {
       { "<C-T>",   ":Telescope find_files<CR>",             desc = "Find files with Telescope" },
       { "<C-S-T>", ":Telescope find_files hidden=true<CR>", desc = "Find hidden files with Telescope" },
@@ -73,16 +72,16 @@ require("lazy").setup({
       "L3MON4D3/LuaSnip",
       "rafamadriz/friendly-snippets",
     },
-    config = function()
+    init = function()
       local lsp = require("lsp-zero").preset({})
       local lspconfig = require("lspconfig")
       lsp.on_attach(function(_, bufnr)
         lsp.default_keymaps({ buffer = bufnr })
       end)
+
       lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-      lspconfig.html.setup({ filetypes = { "html", "nunjucks" } })
       lspconfig.emmet_ls.setup({ filetypes = { "html", "nunjucks", "css", "scss" } })
-      lspconfig.stylelint_lsp.setup({ filetypes = { "css", "scss" } })
+
       lsp.setup()
       vim.keymap.set("n", "<leader>p", ":lua vim.lsp.buf.format()<CR>", { desc = "Format with LSP" })
       ---
@@ -93,20 +92,18 @@ require("lazy").setup({
           { name = "nvim_lsp_signature_help" },
           { name = "luasnip" },
           { name = "path" },
-          {
-            name = "buffer",
-            option = {
-              get_bufnrs = function()
-                return vim.api.nvim_list_bufs()
-              end
-            }
-          }
+          { name = "buffer" }
         },
         mapping = {
           ["<C-F>"] = require("lsp-zero").cmp_action().luasnip_jump_forward()
         }
       })
     end
+  },
+  {
+    "knubie/vim-kitty-navigator",
+    lazy = false,
+    build = "cp ./*.py ~/.config/kitty/"
   },
   {
     "TimUntersberger/neogit",
@@ -116,23 +113,20 @@ require("lazy").setup({
   {
     "stevearc/oil.nvim",
     config = true,
-    keys = { { "-", ":split<CR>:Oil<CR>", desc = "Open Oil" } }
+    keys = { { "-", ":Oil --float<CR>", desc = "Open Oil" } }
   },
   {
-    "knubie/vim-kitty-navigator",
-    lazy = false,
-    build = "cp ./*.py ~/.config/kitty/"
+    "andrewferrier/debugprint.nvim",
+    config = true,
+    keys = { { "g?v" } }
   },
   {
     "lkemitchll/kitty-runner.nvim",
     config = true
   },
   {
-    "andrewferrier/debugprint.nvim",
-    config = true
-  },
-  {
     "folke/which-key.nvim",
     config = true
-  }
+  },
+  { "github/copilot.vim" }
 }, { dev = { path = "~/Developer" } })
