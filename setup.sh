@@ -1,6 +1,4 @@
 #!/bin/bash
-# Install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 # Install dependencies using homebrew
 /opt/homebrew/bin/brew bundle --file ~/.dotfiles/config/homebrew/Brewfile
 # Change the default shell to fish

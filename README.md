@@ -7,7 +7,6 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 ## Requirements
 
 - macOS
-- `git`
 - [homebrew]
 
 [neovim]: https://neovim.io
@@ -22,7 +21,7 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 2. Run `cd ~/.dotfiles & chmod +x ./setup.sh & ./setup.sh`.
 3. If all went well, run `nvim` to install plugins.
 4. (Optional) Run `brew autoupdate start --upgrade --enable-notification` to
-   auto-update homebrew installations
+   auto-update homebrew packages.
 
 ---
 
@@ -33,14 +32,16 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 I try to keep my neovim setup as minimal as I can, I manage my plugins using
 [lazy.nvim]. The primary plugins I use in Neovim are:
 
-- [lsp-zero.nvim] - automatically configures LSP and snippets
-- [mini.nvim] - A collection on minimal but useful plugins
+- [lsp-zero.nvim] - Toolkit to configure LSP and snippets
+- [mini.nvim] - A collection of minimal but useful plugins
 - [neogit] - An excellent git integration
+- [telescope.nvim] - A fuzzy finder for files, and lots of other things.
 
 [lazy.nvim]: https://github.com/folke/lazy.nvim
 [lsp-zero.nvim]: https://github.com/VonHeikemen/lsp-zero.nvim
 [mini.nvim]: https://github.com/echasnovski/mini.nvim
 [neogit]: https://github.com/TimUntersberger/neogit
+[telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
 
 ### Kitty
 
