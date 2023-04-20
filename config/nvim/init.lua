@@ -7,7 +7,6 @@ vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.timeoutlen = 0
-vim.opt.listchars:append({ space = "·" })
 
 -- Plugins
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
@@ -21,12 +20,15 @@ require("lazy").setup({
   },
   {
     "echasnovski/mini.nvim",
+    dependencies = "nvim-tree/nvim-web-devicons",
     init = function()
+      require("mini.basics").setup({ options = { extra_ui = true } })
+      vim.opt.listchars:append({ space = "·" })
+
       local mini_modules = {
         "ai", "bracketed", "comment", "jump", "jump2d", "move",
         "pairs", "splitjoin", "statusline", "surround", "trailspace"
       }
-      require("mini.basics").setup({ options = { extra_ui = true } })
       for _, plugin in ipairs(mini_modules) do
         require("mini." .. plugin).setup({})
       end
@@ -40,10 +42,9 @@ require("lazy").setup({
         highlight = { enable = true },
       })
       vim.filetype.add({
-        extension = { njk = "nunjucks" },
+        extension = { njk = "htmldjango" },
         filename = { [".njk"] = "htmldjango" }
       })
-      vim.treesitter.language.register("htmldjango", "nunjucks")
     end,
   },
   {
@@ -63,7 +64,6 @@ require("lazy").setup({
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-nvim-lsp-signature-help",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp",
@@ -72,30 +72,13 @@ require("lazy").setup({
       "rafamadriz/friendly-snippets",
     },
     init = function()
-      local lsp = require("lsp-zero").preset({})
-      local lspconfig = require("lspconfig")
+      local lsp = require("lsp-zero").preset("recommended")
       lsp.on_attach(function(_, bufnr)
         lsp.default_keymaps({ buffer = bufnr, preserve_mappings = false })
       end)
-
-      lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-      lspconfig.emmet_ls.setup({ filetypes = { "html", "nunjucks", "css", "scss" } })
-
-      lsp.setup()
-      ---
+      require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
       require("luasnip.loaders.from_vscode").lazy_load()
-      require("cmp").setup({
-        sources = {
-          { name = "nvim_lsp" },
-          { name = "nvim_lsp_signature_help" },
-          { name = "luasnip" },
-          { name = "path" },
-          { name = "buffer" }
-        },
-        mapping = {
-          ["<C-F>"] = require("lsp-zero").cmp_action().luasnip_jump_forward()
-        }
-      })
+      lsp.setup()
     end
   },
   {
@@ -111,7 +94,7 @@ require("lazy").setup({
   {
     "stevearc/oil.nvim",
     config = true,
-    keys = { { "-", ":Oil --float<CR>", desc = "Open Oil" } }
+    keys = { { "-", ":split<CR>:Oil<CR>", desc = "Open Oil" } }
   },
   {
     "andrewferrier/debugprint.nvim",
