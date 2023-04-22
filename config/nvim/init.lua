@@ -6,14 +6,12 @@ vim.opt.scrolloff = 999
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
-vim.opt.timeoutlen = 0
 
 -- Plugins
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 require("lazy").setup({
   {
     "folke/tokyonight.nvim",
-    lazy = false,
     config = function()
       vim.cmd.colorscheme("tokyonight-night")
     end
@@ -49,12 +47,19 @@ require("lazy").setup({
   },
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    init = function()
+      require("telescope").load_extension("file_browser")
+    end,
     keys = {
-      { "<C-T>",   ":Telescope find_files<CR>",             desc = "Find files with Telescope" },
-      { "<C-S-T>", ":Telescope find_files hidden=true<CR>", desc = "Find hidden files with Telescope" },
-      { "<C-A>",   ":Telescope live_grep<CR>",              desc = "Find strings with Telescope" }
-    }
+      { "<C-T>",   ":Telescope find_files<CR>" },
+      { "<C-S-T>", ":Telescope find_files hidden=true<CR>" },
+      { "<C-A>",   ":Telescope live_grep<CR>" },
+      { "-",       ":Telescope file_browser path=%:p:h<CR>" }
+    },
   },
   {
     "VonHeikemen/lsp-zero.nvim",
@@ -74,7 +79,7 @@ require("lazy").setup({
     init = function()
       local lsp = require("lsp-zero").preset("recommended")
       lsp.on_attach(function(_, bufnr)
-        lsp.default_keymaps({ buffer = bufnr, preserve_mappings = false })
+        lsp.default_keymaps({ buffer = bufnr })
       end)
       require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
       require("luasnip.loaders.from_vscode").lazy_load()
@@ -82,19 +87,9 @@ require("lazy").setup({
     end
   },
   {
-    "knubie/vim-kitty-navigator",
-    lazy = false,
-    build = "cp ./*.py ~/.config/kitty/"
-  },
-  {
     "TimUntersberger/neogit",
     config = true,
     keys = { { "<C-G>", ":Neogit kind=split<CR>", desc = "Open Neogit" } }
-  },
-  {
-    "stevearc/oil.nvim",
-    config = true,
-    keys = { { "-", ":split<CR>:Oil<CR>", desc = "Open Oil" } }
   },
   {
     "andrewferrier/debugprint.nvim",
@@ -109,5 +104,8 @@ require("lazy").setup({
     "folke/which-key.nvim",
     config = true
   },
-  { "github/copilot.vim" }
+  {
+    "knubie/vim-kitty-navigator",
+    build = "cp ./*.py ~/.config/kitty/"
+  }
 }, { dev = { path = "~/Developer" } })
