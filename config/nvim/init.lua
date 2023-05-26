@@ -39,10 +39,7 @@ require("lazy").setup({
         ensure_installed = "all",
         highlight = { enable = true },
       })
-      vim.filetype.add({
-        extension = { njk = "htmldjango" },
-        filename = { [".njk"] = "htmldjango" }
-      })
+      vim.filetype.add({ extension = { njk = "htmldjango" } })
     end,
   },
   {
@@ -92,20 +89,11 @@ require("lazy").setup({
     keys = { { "<C-G>", ":Neogit kind=split<CR>", desc = "Open Neogit" } }
   },
   {
-    "andrewferrier/debugprint.nvim",
-    config = true,
-    keys = { { "g?v" } }
+    "knubie/vim-kitty-navigator",
+    build = "cp ./*.py ~/.config/kitty/"
   },
   {
     "lkemitchll/kitty-runner.nvim",
     config = true
-  },
-  {
-    "folke/which-key.nvim",
-    config = true
-  },
-  {
-    "knubie/vim-kitty-navigator",
-    build = "cp ./*.py ~/.config/kitty/"
   }
-}, { dev = { path = "~/Developer" } })
+})
