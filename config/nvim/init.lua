@@ -18,7 +18,6 @@ require("lazy").setup({
   },
   {
     "echasnovski/mini.nvim",
-    dependencies = "nvim-tree/nvim-web-devicons",
     init = function()
       require("mini.basics").setup({ options = { extra_ui = true } })
       vim.opt.listchars:append({ space = "·" })
