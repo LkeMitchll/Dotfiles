@@ -1,17 +1,16 @@
 -- General Config
-vim.g.mapleader = " "
-vim.opt.clipboard = "unnamed"
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 999
+vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
+vim.opt.timeoutlen = 200
 
 -- Plugins
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 require("lazy").setup({
   {
     "folke/tokyonight.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       vim.cmd.colorscheme("tokyonight-moon")
     end
@@ -36,7 +35,7 @@ require("lazy").setup({
     init = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = "all",
-        highlight = { enable = true },
+        highlight = { enable = true }
       })
       vim.filetype.add({ extension = { njk = "htmldjango" } })
     end,
@@ -85,14 +84,12 @@ require("lazy").setup({
   {
     "TimUntersberger/neogit",
     config = true,
-    keys = { { "<C-G>", ":Neogit kind=split<CR>", desc = "Open Neogit" } }
+    keys = { { "<C-G>", ":Neogit kind=split<CR>" } }
   },
   {
     "knubie/vim-kitty-navigator",
     build = "cp ./*.py ~/.config/kitty/"
   },
-  {
-    "lkemitchll/kitty-runner.nvim",
-    config = true
-  }
+  { "lkemitchll/kitty-runner.nvim", config = true },
+  { "folke/which-key.nvim",         config = true }
 })
