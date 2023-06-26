@@ -22,12 +22,14 @@ require("lazy").setup({
       vim.opt.listchars:append({ space = "·" })
 
       local mini_modules = {
-        "ai", "bracketed", "comment", "jump", "jump2d", "move",
+        "ai", "bracketed", "comment", "files", "jump", "jump2d", "move",
         "pairs", "splitjoin", "statusline", "surround", "trailspace"
       }
       for _, plugin in ipairs(mini_modules) do
         require("mini." .. plugin).setup({})
       end
+
+      vim.keymap.set("n", "-", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>")
     end
   },
   {
@@ -43,17 +45,12 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
-      "nvim-telescope/telescope-file-browser.nvim",
-      "nvim-lua/plenary.nvim",
+      "nvim-lua/plenary.nvim"
     },
-    init = function()
-      require("telescope").load_extension("file_browser")
-    end,
     keys = {
       { "<C-T>",   ":Telescope find_files<CR>" },
       { "<C-S-T>", ":Telescope find_files hidden=true<CR>" },
-      { "<C-A>",   ":Telescope live_grep<CR>" },
-      { "-",       ":Telescope file_browser path=%:p:h<CR>" }
+      { "<C-A>",   ":Telescope live_grep<CR>" }
     },
   },
   {
