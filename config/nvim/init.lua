@@ -79,7 +79,7 @@ require("lazy").setup({
     end
   },
   {
-    "TimUntersberger/neogit",
+    "NeogitOrg/neogit",
     config = true,
     keys = { { "<C-G>", ":Neogit kind=split<CR>" } }
   },
