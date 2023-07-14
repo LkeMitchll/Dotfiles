@@ -9,11 +9,6 @@ source (brew --prefix fzf)/shell/key-bindings.fish; and fzf_key_bindings
 # RTX
 rtx activate fish | source
 
-# Aliases
-abbr g git
-abbr vim nvim
-abbr vr "nvim +KittyOpenRunner"
-
 # Create kitty 'session' in folders with .kitty-session on cd
 source ~/.config/fish/functions/session.fish
 
