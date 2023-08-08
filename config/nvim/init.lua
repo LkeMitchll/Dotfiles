@@ -55,33 +55,20 @@ local plugins = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp",
-      "saadparwaiz1/cmp_luasnip",
-      "L3MON4D3/LuaSnip",
-      "rafamadriz/friendly-snippets",
+      "L3MON4D3/LuaSnip"
     },
     config = function()
       local lsp = require("lsp-zero").preset({})
+
       lsp.on_attach(function()
         lsp.default_keymaps({ preserve_mappings = false })
       end)
-
       require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+      lsp.extend_cmp()
+
       require("mason").setup()
       require("mason-lspconfig").setup({ handlers = { lsp.default_setup } })
-
-      lsp.extend_cmp({ set_extra_mappings = true })
-      require("luasnip.loaders.from_vscode").lazy_load()
-      require("cmp").setup({
-        sources = {
-          { name = "path" },
-          { name = "nvim_lsp" },
-          { name = "buffer" },
-          { name = "luasnip" }
-        }
-      })
     end
   },
   {
