@@ -3,6 +3,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
+vim.opt.timeoutlen = 200
 vim.opt.listchars:append({ space = "·" })
 
 -- Plugins
@@ -80,7 +81,8 @@ local plugins = {
     "knubie/vim-kitty-navigator",
     build = "cp ./*.py ~/.config/kitty/"
   },
-  { "lkemitchll/kitty-runner.nvim", config = true }
+  { "lkemitchll/kitty-runner.nvim", dev = true,   config = true },
+  { "folke/which-key.nvim",         config = true }
 }
 
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
