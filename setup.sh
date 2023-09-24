@@ -8,5 +8,6 @@ chsh -s /opt/homebrew/bin/fish
 /opt/homebrew/bin/fish -c "fish_add_path /opt/homebrew/bin"
 # Symlink all the dotfiles
 /opt/homebrew/bin/fish -c "rcup"
-# Install lazy.nvim
-git clone https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim
+# Download all the git submodules
+/opt/homebrew/bin/fish -c "nvish init"
+/opt/homebrew/bin/fish -c "SYMLINK_DIRS='config/nvim/pack' rcup"

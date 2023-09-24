@@ -30,18 +30,15 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 ### Neovim
 
 I try to keep my neovim setup as minimal as I can, I manage my plugins using
-[lazy.nvim]. The primary plugins I use in Neovim are:
+the builtin package manager. The primary plugins I use in Neovim are:
 
 - [lsp-zero.nvim] - Toolkit to configure LSP and snippets
 - [mini.nvim] - A collection of minimal but useful plugins
 - [neogit] - An excellent git integration
-- [telescope.nvim] - A fuzzy finder for files, and lots of other things.
 
-[lazy.nvim]: https://github.com/folke/lazy.nvim
 [lsp-zero.nvim]: https://github.com/VonHeikemen/lsp-zero.nvim
 [mini.nvim]: https://github.com/echasnovski/mini.nvim
 [neogit]: https://github.com/TimUntersberger/neogit
-[telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
 
 ### Kitty
 
