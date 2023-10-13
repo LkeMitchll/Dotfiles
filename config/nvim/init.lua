@@ -22,12 +22,15 @@ require("mini.basics").setup({ options = { extra_ui = true } })
 
 local mini_modules = {
   "ai", "bracketed", "comment", "completion", "files", "jump", "jump2d", "move",
-  "operators", "pairs", "splitjoin", "statusline", "surround", "trailspace"
+  "operators", "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
 }
+
 for _, module in ipairs(mini_modules) do
   require("mini." .. module).setup()
 end
 
+vim.keymap.set("n", "<C-T>", ":Pick files<CR>")
+vim.keymap.set("n", "<C-P>", ":Pick grep_live<CR>")
 vim.keymap.set("n", "-", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>")
 vim.keymap.set("n", "<BS>", ":lua MiniTrailspace.trim()<CR>")
 
@@ -42,9 +45,7 @@ require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 
 -- mason: Install LSPs
 require("mason").setup()
-require("mason-lspconfig").setup({
-  handlers = { lsp.default_setup }
-})
+require("mason-lspconfig").setup({ handlers = { lsp.default_setup } })
 
 -- neogit: Git Client
 require("neogit").setup()
