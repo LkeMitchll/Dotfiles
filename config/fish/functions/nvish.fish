@@ -5,12 +5,12 @@ function nvish -a cmd -d "Neovim plugin manager for fish"
             echo "Usage:   nvish install <plugin>     Install plugins"
             echo "         nvish remove <plugin>      Remove installed plugins"
             echo "         nvish update               Update all installed plugins"
-            echo "         nvish list <search>        List installed plugins"
+            echo "         nvish list                 List installed plugins"
             echo "         nvish init                 Initialise nvish"
             echo "         nvish help                 Print this help message"
             echo -e \n
             echo "Example: nvish install tpope/vim-fugitive"
-            echo "         nvish uninstall vim-fugitive"
+            echo "         nvish remove vim-fugitive"
         case install i
             if test -n "$argv[2]"
                 echo "nvish: Installing" $argv[2]
