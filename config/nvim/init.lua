@@ -3,6 +3,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
+vim.opt.listchars:append({ space = "·" })
 
 -- Plugins
 -- tokyonight: Theme
@@ -17,7 +18,6 @@ require("nvim-treesitter.configs").setup({
 vim.filetype.add({ extension = { njk = "htmldjango" } })
 
 -- mini.nvim: Swiss army knife of plugins
-vim.opt.listchars:append({ space = "·" })
 require("mini.basics").setup({ options = { extra_ui = true } })
 
 local mini_modules = {
@@ -51,9 +51,8 @@ require("mason-lspconfig").setup({ handlers = { lsp.default_setup } })
 require("neogit").setup()
 vim.keymap.set("n", "<C-G>", ":Neogit kind=split<CR>")
 
--- kitty-runner: Run commands in kitty
+-- kitty-runner: Run commands in a kitty window
 require("kitty-runner").setup()
 
 -- which-key: Help with keymaps
-vim.opt.timeoutlen = 200
 require("which-key").setup()
