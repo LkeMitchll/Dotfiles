@@ -3,6 +3,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
+vim.opt.cmdheight = 0
 
 -- Plugins
 -- tokyonight
@@ -19,7 +20,7 @@ vim.filetype.add({ extension = { njk = "htmldjango" } })
 -- mini.nvim
 local mini_modules = {
   "ai", "basics", "bracketed", "comment", "completion", "files", "jump", "jump2d",
-  "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
+  "notify", "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
 }
 
 for _, module in ipairs(mini_modules) do
