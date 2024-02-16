@@ -19,8 +19,7 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 
 1. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
 2. Run `cd ~/.dotfiles & chmod +x ./setup.sh & ./setup.sh`.
-3. If all went well, run `nvim` to install plugins.
-4. (Optional) Run `brew autoupdate start --upgrade --enable-notification` to
+3. (Optional) Run `brew autoupdate start --upgrade --enable-notification` to
    auto-update homebrew packages.
 
 ---
@@ -30,12 +29,13 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 ### Neovim
 
 I try to keep my neovim setup as minimal as I can, I manage my plugins using
-the builtin package manager. The primary plugins I use in Neovim are:
+[mini.deps]. The primary plugins I use in Neovim are:
 
 - [lsp-zero.nvim] - Toolkit to configure LSP and snippets
 - [mini.nvim] - A collection of minimal but useful plugins
 - [neogit] - An excellent git integration
 
+[mini.deps]: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-deps.md
 [lsp-zero.nvim]: https://github.com/VonHeikemen/lsp-zero.nvim
 [mini.nvim]: https://github.com/echasnovski/mini.nvim
 [neogit]: https://github.com/TimUntersberger/neogit
