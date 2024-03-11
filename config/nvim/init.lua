@@ -9,9 +9,10 @@ require("mini.deps").setup()
 local add = require("mini.deps").add
 
 -- mini.nvim
+add("echasnovski/mini.nvim")
 local mini_modules = {
-  "ai", "basics", "bracketed", "comment", "completion", "files", "jump",
-  "jump2d", "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
+  "ai", "basics", "bracketed", "comment", "files", "jump", "jump2d",
+  "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
 }
 
 for _, module in ipairs(mini_modules) do
@@ -36,22 +37,48 @@ require("nvim-treesitter.configs").setup({
 
 vim.filetype.add({ extension = { njk = "htmldjango" } })
 
--- lsp-zero & mason
+-- lsp-zero: nvim-lspconfig, mason, nvim-cmp, luasnip
 add({
   source = "VonHeikemen/lsp-zero.nvim",
   checkout = "v3.x",
-  depends = { "neovim/nvim-lspconfig", "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" }
+  depends = {
+    "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    "saadparwaiz1/cmp_luasnip",
+    "L3MON4D3/LuaSnip",
+    "rafamadriz/friendly-snippets"
+  }
 })
-local lsp = require("lsp-zero")
 
+local lsp = require("lsp-zero")
 lsp.on_attach(function()
   lsp.default_keymaps({ preserve_mappings = false })
 end)
 
-require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
-
 require("mason").setup()
-require("mason-lspconfig").setup({ handlers = { lsp.default_setup } })
+require("mason-lspconfig").setup({
+  handlers = {
+    lsp.default_setup,
+    lua_ls = function()
+      require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+    end,
+  }
+})
+
+local cmp = require("cmp")
+-- load friendly-snippets
+require("luasnip.loaders.from_vscode").lazy_load()
+cmp.setup({
+  sources = { { name = "nvim_lsp" }, { name = "luasnip" } },
+  mapping = cmp.mapping.preset.insert({
+    -- Jump between luasnip placeholders
+    ["<C-f>"] = lsp.cmp_action().luasnip_jump_forward(),
+    ["<C-b>"] = lsp.cmp_action().luasnip_jump_backward()
+  }),
+})
 
 -- neogit
 add({ source = "NeogitOrg/neogit", depends = { "nvim-lua/plenary.nvim" } })
