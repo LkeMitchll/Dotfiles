@@ -1,12 +1,14 @@
 #!/bin/bash
+fish_path="/opt/homebrew/bin/fish"
+brew_path="/opt/homebrew/bin/brew"
 # Install dependencies using homebrew
-/opt/homebrew/bin/brew bundle --file ~/.dotfiles/config/homebrew/Brewfile
+$brew_path bundle --file ~/.dotfiles/config/homebrew/Brewfile
 # Change the default shell to fish
-sudo sh -c  "echo /opt/homebrew/bin/fish >> /etc/shells"
-chsh -s /opt/homebrew/bin/fish
+sudo sh -c  "echo ${fish_path} >> /etc/shells"
+chsh -s $fish_path
 # Launch fish and add homebrew to $PATH
-/opt/homebrew/bin/fish -c "fish_add_path /opt/homebrew/bin"
+$fish_path -c "fish_add_path /opt/homebrew/bin"
 # Symlink all the dotfiles
-/opt/homebrew/bin/fish -c "rcup"
+$fish_path -c "rcup -v"
 # Install nvim plugin manager
-/opt/homebrew/bin/fish -c "git clone git@github.com:echasnovski/mini.nvim.git ~/.local/share/nvim/site/pack/deps/start/mini.nvim"
+$fish_path -c "git clone git@github.com:echasnovski/mini.nvim.git ~/.local/share/nvim/site/pack/deps/start/mini.nvim"

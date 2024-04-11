@@ -17,10 +17,9 @@ I run all of this in [kitty] on macOS, managed with [rcm].
 
 ## Install
 
-1. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`
-2. Run `cd ~/.dotfiles & chmod +x ./setup.sh & ./setup.sh`.
-3. (Optional) Run `brew autoupdate start --upgrade --enable-notification` to
-   auto-update homebrew packages.
+1. Clone this repo `git clone git@github.com:LkeMitchll/Dotfiles.git ~/.dotfiles`.
+2. Install [homebrew].
+3. Run `cd ~/.dotfiles & chmod +x ./setup.sh & ./setup.sh`.
 
 ---
 

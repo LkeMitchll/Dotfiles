@@ -1,9 +1,9 @@
 brew "fish"
 brew "fzf"
+brew "git"
 brew "git-extras"
 brew "neovim"
 brew "rcm"
 brew "ripgrep"
 brew "mise"
-
 cask "kitty"
