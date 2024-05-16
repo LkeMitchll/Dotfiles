@@ -11,8 +11,8 @@ local add = require("mini.deps").add
 -- mini.nvim
 add("echasnovski/mini.nvim")
 local mini_modules = {
-  "ai", "basics", "bracketed", "comment", "files", "jump", "jump2d",
-  "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
+  "ai", "basics", "bracketed", "files", "jump", "jump2d", "pairs",
+  "pick", "splitjoin", "statusline", "surround", "trailspace"
 }
 
 for _, module in ipairs(mini_modules) do
