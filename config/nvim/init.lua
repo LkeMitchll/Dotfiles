@@ -12,8 +12,8 @@ local add = require("mini.deps").add
 -- mini.nvim
 add("echasnovski/mini.nvim")
 local mini_modules = {
-  "ai", "basics", "bracketed", "files", "jump", "jump2d", "pairs",
-  "pick", "splitjoin", "statusline", "surround", "trailspace"
+  "ai", "basics", "bracketed", "diff", "files", "git", "jump", "jump2d",
+  "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
 }
 
 for _, module in ipairs(mini_modules) do
@@ -54,11 +54,13 @@ add({
   }
 })
 
+---- setup LSP
 local lsp = require("lsp-zero")
 lsp.on_attach(function()
   lsp.default_keymaps({ preserve_mappings = false })
 end)
 
+---- setup mason
 require("mason").setup()
 require("mason-lspconfig").setup({
   handlers = {
@@ -69,13 +71,14 @@ require("mason-lspconfig").setup({
   }
 })
 
+---- setup cmp
 local cmp = require("cmp")
--- load friendly-snippets
+---- load friendly-snippets
 require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
   sources = { { name = "nvim_lsp" }, { name = "luasnip" } },
   mapping = cmp.mapping.preset.insert({
-    -- Jump between luasnip placeholders
+    ---- Jump between luasnip placeholders
     ["<C-f>"] = lsp.cmp_action().luasnip_jump_forward(),
     ["<C-b>"] = lsp.cmp_action().luasnip_jump_backward()
   }),
