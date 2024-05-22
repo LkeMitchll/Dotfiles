@@ -3,6 +3,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
+vim.opt.timeoutlen = 100
 
 -- Plugins
 require("mini.deps").setup()
@@ -86,11 +87,8 @@ require("neogit").setup()
 
 vim.keymap.set("n", "<C-G>", ":Neogit kind=split<CR>")
 
--- vim-kitty-navigator
-add("knubie/vim-kitty-navigator")
-
 -- kitty-runner
-add("lkemitchll/kitty-runner.nvim")
+add({ source = "lkemitchll/kitty-runner.nvim", depends = { "knubie/vim-kitty-navigator" } })
 require("kitty-runner").setup()
 
 -- which-key
