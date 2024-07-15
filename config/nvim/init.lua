@@ -12,7 +12,7 @@ local add = require("mini.deps").add
 -- mini.nvim
 add("echasnovski/mini.nvim")
 local mini_modules = {
-  "ai", "basics", "bracketed", "diff", "files", "git", "jump", "jump2d",
+  "ai", "basics", "bracketed", "diff", "files", "git", "icons", "jump", "jump2d",
   "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
 }
 
