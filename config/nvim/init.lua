@@ -35,12 +35,12 @@ require("nvim-treesitter.configs").setup({
   highlight = { enable = true }
 })
 
-vim.filetype.add({ extension = { njk = "htmldjango" } })
+vim.filetype.add({ extension = { njk = "liquid" } })
 
 -- lsp-zero: nvim-lspconfig, mason, nvim-cmp, luasnip
 add({
   source = "VonHeikemen/lsp-zero.nvim",
-  checkout = "v3.x",
+  checkout = "v4.x",
   depends = {
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
@@ -53,34 +53,53 @@ add({
   }
 })
 
----- setup LSP
-local lsp = require("lsp-zero")
-lsp.on_attach(function()
-  lsp.default_keymaps({ preserve_mappings = false })
-end)
+---- Setup LSP
+local lsp_zero = require('lsp-zero')
 
----- setup mason
-require("mason").setup()
-require("mason-lspconfig").setup({
-  handlers = {
-    lsp.default_setup,
-    lua_ls = function()
-      require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
-    end,
-  }
+local lsp_attach = function(_, bufnr)
+  lsp_zero.default_keymaps({ buffer = bufnr })
+end
+
+lsp_zero.extend_lspconfig({
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  lsp_attach = lsp_attach,
+  sign_text = true,
 })
 
----- setup cmp
-local cmp = require("cmp")
----- load friendly-snippets
+---- Setup mason
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
+    lua_ls = function()
+      require('lspconfig').lua_ls.setup({
+        on_init = function(client)
+          lsp_zero.nvim_lua_settings(client, {})
+        end,
+      })
+    end,
+  },
+})
+
+---- Setup cmp & luasnip
 require("luasnip.loaders.from_vscode").lazy_load()
+
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+
 cmp.setup({
-  sources = { { name = "nvim_lsp" }, { name = "luasnip" } },
+  sources = { { name = 'nvim_lsp' }, { name = 'luasnip' } },
   mapping = cmp.mapping.preset.insert({
-    ---- Jump between luasnip placeholders
-    ["<C-f>"] = lsp.cmp_action().luasnip_jump_forward(),
-    ["<C-b>"] = lsp.cmp_action().luasnip_jump_backward()
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
   }),
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  }
 })
 
 -- neogit
