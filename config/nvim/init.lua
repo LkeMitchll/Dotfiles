@@ -3,21 +3,29 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
+vim.opt.listchars:append({ space = "·" })
 
 -- Plugins
 require("mini.deps").setup()
 local add = require("mini.deps").add
 
 -- mini.nvim
-add("echasnovski/mini.nvim")
+add({ source = "echasnovski/mini.nvim", depends = { "rafamadriz/friendly-snippets" }})
+
 local mini_modules = {
-  "ai", "basics", "bracketed", "diff", "files", "git", "icons", "jump", "jump2d",
-  "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
+  "ai", "bracketed", "completion", "diff", "files", "git", "icons", "jump",
+  "jump2d", "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
 }
 
 for _, module in ipairs(mini_modules) do
   require("mini." .. module).setup()
 end
+
+require("mini.basics").setup({ options = { extra_ui = true } })
+
+require("mini.snippets").setup({
+  snippets = { require('mini.snippets').gen_loader.from_lang() }
+})
 
 vim.keymap.set("n", "<C-T>", ":Pick files<CR>")
 vim.keymap.set("n", "<C-P>", ":Pick grep_live<CR>")
@@ -37,19 +45,14 @@ require("nvim-treesitter.configs").setup({
 
 vim.filetype.add({ extension = { njk = "liquid" } })
 
--- lsp-zero: nvim-lspconfig, mason, nvim-cmp, luasnip
+-- lsp-zero: nvim-lspconfig, mason
 add({
   source = "VonHeikemen/lsp-zero.nvim",
   checkout = "v4.x",
   depends = {
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    "saadparwaiz1/cmp_luasnip",
-    "L3MON4D3/LuaSnip",
-    "rafamadriz/friendly-snippets"
+    "williamboman/mason-lspconfig.nvim"
   }
 })
 
@@ -57,14 +60,10 @@ add({
 local lsp_zero = require('lsp-zero')
 
 local lsp_attach = function(_, bufnr)
-  lsp_zero.default_keymaps({ buffer = bufnr })
+  lsp_zero.default_keymaps({ buffer = bufnr, preserve_mappings = false })
 end
 
-lsp_zero.extend_lspconfig({
-  capabilities = require('cmp_nvim_lsp').default_capabilities(),
-  lsp_attach = lsp_attach,
-  sign_text = true,
-})
+lsp_zero.extend_lspconfig({ lsp_attach = lsp_attach, sign_text = true })
 
 ---- Setup mason
 require('mason').setup({})
@@ -83,25 +82,6 @@ require('mason-lspconfig').setup({
   },
 })
 
----- Setup cmp & luasnip
-require("luasnip.loaders.from_vscode").lazy_load()
-
-local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
-
-cmp.setup({
-  sources = { { name = 'nvim_lsp' }, { name = 'luasnip' } },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-  }),
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  }
-})
-
 -- neogit
 add({ source = "NeogitOrg/neogit", depends = { "nvim-lua/plenary.nvim" } })
 require("neogit").setup()
@@ -115,3 +95,6 @@ require("kitty-runner").setup()
 -- which-key
 add("folke/which-key.nvim")
 require("which-key").setup()
+
+-- copilot
+add("github/copilot.vim")
