@@ -1,0 +1,12 @@
+font-family = "MD IO"
+font-size = 15
+font-thicken
+adjust-cell-height = 15
+
+window-padding-x = 10
+window-padding-y = 10
+window-save-state = always
+macos-titlebar-proxy-icon = hidden
+
+window-colorspace = display-p3
+theme = tokyonight
