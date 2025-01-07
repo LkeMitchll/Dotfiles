@@ -3,7 +3,6 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
-vim.opt.listchars:append({ space = "·" })
 
 -- Plugins
 require("mini.deps").setup()
@@ -13,15 +12,13 @@ local add = require("mini.deps").add
 add({ source = "echasnovski/mini.nvim", depends = { "rafamadriz/friendly-snippets" } })
 
 local mini_modules = {
-  "ai", "bracketed", "completion", "diff", "files", "git", "icons", "jump",
+  "ai", "basics", "bracketed", "completion", "diff", "files", "git", "icons", "jump",
   "jump2d", "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
 }
 
 for _, module in ipairs(mini_modules) do
   require("mini." .. module).setup()
 end
-
-require("mini.basics").setup({ options = { extra_ui = true } })
 
 require("mini.snippets").setup({
   snippets = { require("mini.snippets").gen_loader.from_lang() }
@@ -31,6 +28,17 @@ vim.keymap.set("n", "<C-T>", ":Pick files<CR>")
 vim.keymap.set("n", "<C-P>", ":Pick grep_live<CR>")
 vim.keymap.set("n", "-", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>")
 vim.keymap.set("n", "<BS>", ":lua MiniTrailspace.trim()<CR>")
+
+-- snacks.nvim
+add("folke/snacks.nvim")
+require("snacks").setup({
+  gitbrowse = { enabled = true },
+  indent = { enabled = true },
+  lazygit = { enabled = true }
+})
+
+vim.keymap.set("n", "<C-G>", ":lua Snacks.lazygit()<CR>")
+vim.keymap.set("n", "<leader>g", ":lua Snacks.gitbrowse()<CR>")
 
 -- tokyonight
 add("folke/tokyonight.nvim")
@@ -81,12 +89,6 @@ require("mason-lspconfig").setup({
     end,
   },
 })
-
--- neogit
-add({ source = "NeogitOrg/neogit", depends = { "nvim-lua/plenary.nvim" } })
-require("neogit").setup()
-
-vim.keymap.set("n", "<C-G>", ":Neogit kind=split<CR>")
 
 -- which-key
 add("folke/which-key.nvim")
