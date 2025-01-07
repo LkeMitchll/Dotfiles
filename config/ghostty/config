@@ -5,8 +5,6 @@ adjust-cell-height = 15
 
 window-padding-x = 10
 window-padding-y = 10
-window-save-state = always
-macos-titlebar-proxy-icon = hidden
 
 window-colorspace = display-p3
-theme = tokyonight
+theme = "/users/luke/.local/share/nvim/site/pack/deps/opt/tokyonight.nvim/extras/ghostty/tokyonight_night"
