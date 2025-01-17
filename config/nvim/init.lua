@@ -3,6 +3,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
+vim.opt.cmdheight = 0
 
 -- Plugins
 require("mini.deps").setup()
@@ -33,7 +34,7 @@ vim.keymap.set("n", "<BS>", ":lua MiniTrailspace.trim()<CR>")
 add("folke/snacks.nvim")
 require("snacks").setup({
   gitbrowse = { enabled = true },
-  indent = { enabled = true },
+  indent = { enabled = true, animate = { enabled = false } },
   lazygit = { enabled = true }
 })
 
