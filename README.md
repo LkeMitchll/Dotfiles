@@ -2,7 +2,7 @@
 
 Custom configuration files for various tools, including [Neovim], [Fish] and more.
 
-I run all of this in [Kitty] on mac OS, managed with [RCM].
+I run all of this in [Ghostty] on macOS, managed with [RCM].
 
 ## Requirements
 
@@ -11,7 +11,7 @@ I run all of this in [Kitty] on mac OS, managed with [RCM].
 
 [Neovim]: https://neovim.io
 [Fish]: https://fishshell.com
-[Kitty]: https://github.com/kovidgoyal/kitty
+[Ghostty]: https://ghostty.org
 [Homebrew]: https://brew.sh
 [RCM]: https://github.com/thoughtbot/rcm
 
@@ -30,25 +30,24 @@ I run all of this in [Kitty] on mac OS, managed with [RCM].
 I try to keep my Neovim setup as minimal as I can, I manage my plugins using
 [mini.deps]. The primary plugins I use in Neovim are:
 
-- [lsp-zero.nvim] - Toolkit to configure LSP and snippets
 - [mini.nvim] - A collection of minimal but useful plugins
-- [neogit] - An excellent git integration
+- [snacks.nvim] - Annother collection of minimal but useful plugins
+- [lsp-zero.nvim] - Toolkit to configure LSP and snippets
 
 [mini.deps]: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-deps.md
 [lsp-zero.nvim]: https://github.com/VonHeikemen/lsp-zero.nvim
 [mini.nvim]: https://github.com/echasnovski/mini.nvim
-[neogit]: https://github.com/TimUntersberger/neogit
+[snacks.nvim]: https://github.com/folke/snacks.nvim
 
-### Kitty
+### Ghostty
 
-I try to keep my [Kitty config] light, but some things of note:
+I try to keep my Ghostty config light, but some things of note:
 
 - My colorscheme, is [tokyonight]
-- I make use of [vim-kitty-navigator]
+- I make use of [MD IO] as a font
 
-[Kitty config]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/kitty/kitty.conf
 [tokyonight]: https://github.com/folke/tokyonight.nvim/tree/main/extras
-[vim-kitty-navigator]: https://github.com/knubie/vim-kitty-navigator
+[MD IO]: https://io.mass-driver.com
 
 ### Fish
 
@@ -56,9 +55,9 @@ I use fish as it feels modern, and includes functionality that would otherwise
 need a plugin (suggestions, substring-autocomplete etc.), some small things of
 note:
 
-- I wrote a simple script to start [Kitty sessions]
 - I use a two-line [prompt], loosely based on [bira]
+- I use [FZF] to find things
 
-[Kitty sessions]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/fish/functions/session.fish
 [prompt]: https://github.com/LkeMitchll/Dotfiles/blob/main/config/fish/functions/fish_prompt.fish
 [bira]: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#bira
+[FZF]: https://github.com/junegunn/fzf
