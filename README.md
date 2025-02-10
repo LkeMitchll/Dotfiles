@@ -28,14 +28,10 @@ I run all of this in [Ghostty] on macOS, managed with [RCM].
 ### Neovim
 
 I try to keep my Neovim setup as minimal as I can, I manage my plugins using
-[mini.deps]. The primary plugins I use in Neovim are:
-
-- [mini.nvim] - A collection of minimal but useful plugins
-- [snacks.nvim] - Annother collection of minimal but useful plugins
-- [lsp-zero.nvim] - Toolkit to configure LSP and snippets
+[mini.deps]. The bulk of my setup is built out of 2 collections of small,
+minimal plugins: [mini.nvim] and [snacks.nvim].
 
 [mini.deps]: https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-deps.md
-[lsp-zero.nvim]: https://github.com/VonHeikemen/lsp-zero.nvim
 [mini.nvim]: https://github.com/echasnovski/mini.nvim
 [snacks.nvim]: https://github.com/folke/snacks.nvim
 
