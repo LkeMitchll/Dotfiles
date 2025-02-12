@@ -1,6 +1,7 @@
+confirm-close-surface = false
+
 font-family = "MD IO"
-font-size = 16
-font-thicken
+font-size = 15
 adjust-cell-height = 15
 
 window-padding-x = 10
