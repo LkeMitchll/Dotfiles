@@ -1,10 +1,12 @@
 brew "fish"
 brew "fzf"
 brew "git"
+brew "git-extras"
 brew "lazygit"
 brew "lua-language-server"
 brew "mise"
 brew "neovim"
 brew "rcm"
 brew "ripgrep"
+
 cask "ghostty"
