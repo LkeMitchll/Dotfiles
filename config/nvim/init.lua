@@ -6,9 +6,7 @@ vim.opt.shiftwidth = 2
 vim.opt.cmdheight = 0
 
 -- Language Servers (v0.11)
-local lsp_configs = {
-  "biome", "css", "html", "json", "lua", "stylelint", "typescript"
-}
+local lsp_configs = { "biome", "css", "html", "json", "lua", "stylelint", "typescript" }
 
 for _, config in ipairs(lsp_configs) do
   vim.lsp.enable(config)
@@ -20,6 +18,7 @@ local add = require("mini.deps").add
 
 ---- nvim-treesitter
 add("nvim-treesitter/nvim-treesitter")
+
 require("nvim-treesitter.configs").setup({
   ensure_installed = "all",
   highlight = { enable = true }
@@ -44,7 +43,6 @@ require("mini.snippets").setup({
 ---- snacks
 add("folke/snacks.nvim")
 require("snacks").setup({
-  gitbrowse = { enabled = true },
   indent = { enabled = true, animate = { enabled = false } },
   lazygit = { enabled = true }
 })
@@ -58,6 +56,7 @@ add("folke/which-key.nvim")
 require("which-key").setup()
 
 -- Keymaps
+vim.keymap.set("n", "<leader>g", ":!git browse<CR>")
 ---- LSP
 vim.keymap.set("n", "<F3>", ":lua vim.lsp.buf.format()<CR>")
 ---- Mini
@@ -67,6 +66,5 @@ vim.keymap.set("n", "-", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>"
 vim.keymap.set("n", "<BS>", ":lua MiniTrailspace.trim()<CR>")
 ---- snacks
 vim.keymap.set("n", "<C-G>", ":lua Snacks.lazygit()<CR>")
-vim.keymap.set("n", "<leader>g", ":lua Snacks.gitbrowse()<CR>")
 ---- which-key
 vim.keymap.set("n", "`", ":WhichKey<CR>")
