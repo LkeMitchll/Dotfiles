@@ -1,6 +1,6 @@
 function lsp_install
   set npm_packages \
-    biome \
+    @biomejs/biome \
     stylelint-lsp \
     typescript \
     typescript-language-server \
