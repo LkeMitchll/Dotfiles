@@ -5,7 +5,7 @@ vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.cmdheight = 0
 
--- Language Servers (v0.11)
+-- Language Servers
 local lsp_configs = { "biome", "css", "html", "json", "lua", "typescript" }
 
 for _, config in ipairs(lsp_configs) do
