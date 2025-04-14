@@ -1,20 +1,26 @@
 -- General Config
 vim.opt.clipboard = "unnamedplus"
+vim.opt.relativenumber = true
 vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.cmdheight = 0
 
+-- Plugins
+require("mini.deps").setup()
+local add = require("mini.deps").add
+
 -- Language Servers
-local lsp_configs = { "biome", "css", "html", "json", "lua", "typescript" }
+add("neovim/nvim-lspconfig")
+local lsp_configs = { "cssls", "html", "jsonls", "lua_ls", "ts_ls" }
 
 for _, config in ipairs(lsp_configs) do
   vim.lsp.enable(config)
 end
+-- Remove after Neovim v0.11.1
+require('lspconfig').biome.setup({})
 
--- Plugins
-require("mini.deps").setup()
-local add = require("mini.deps").add
+vim.diagnostic.config({ virtual_text = { current_line = true } })
 
 ---- nvim-treesitter
 add("nvim-treesitter/nvim-treesitter")
