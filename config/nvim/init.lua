@@ -12,13 +12,11 @@ local add = require("mini.deps").add
 
 -- Language Servers
 add("neovim/nvim-lspconfig")
-local lsp_configs = { "cssls", "html", "jsonls", "lua_ls", "ts_ls" }
+local lsp_configs = { "biome", "cssls", "html", "jsonls", "lua_ls", "ts_ls" }
 
 for _, config in ipairs(lsp_configs) do
   vim.lsp.enable(config)
 end
--- Remove after Neovim v0.11.1
-require('lspconfig').biome.setup({})
 
 vim.diagnostic.config({ virtual_text = { current_line = true } })
 
@@ -33,6 +31,7 @@ require("nvim-treesitter.configs").setup({
 ---- mini
 add({ source = "echasnovski/mini.nvim", depends = { "rafamadriz/friendly-snippets" } })
 
+---- General setup
 local mini_modules = {
   "ai", "basics", "bracketed", "completion", "diff", "files", "icons", "jump",
   "jump2d", "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
@@ -42,12 +41,18 @@ for _, module in ipairs(mini_modules) do
   require("mini." .. module).setup()
 end
 
-require("mini.snippets").setup({
+---- Setup snippets
+local snippets = require("mini.snippets")
+
+snippets.setup({
   snippets = { require("mini.snippets").gen_loader.from_lang() }
 })
 
+snippets.start_lsp_server()
+
 ---- snacks
 add("folke/snacks.nvim")
+
 require("snacks").setup({
   gitbrowse = { enabled = true },
   indent = { enabled = true, animate = { enabled = false } },
