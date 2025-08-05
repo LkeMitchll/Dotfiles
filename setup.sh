@@ -10,5 +10,3 @@ chsh -s $fish_path
 $fish_path -c "fish_add_path /opt/homebrew/bin"
 # Symlink all the dotfiles
 $fish_path -c "rcup -v"
-# Install nvim plugin manager
-$fish_path -c "git clone git@github.com:echasnovski/mini.nvim.git ~/.local/share/nvim/site/pack/deps/start/mini.nvim"

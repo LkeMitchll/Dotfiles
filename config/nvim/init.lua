@@ -8,27 +8,32 @@ vim.opt.cmdheight = 0
 vim.opt.scrolloff = 999
 
 -- Plugins
-require("mini.deps").setup()
-local add = require("mini.deps").add
+vim.pack.add({
+  "https://github.com/mason-org/mason.nvim",
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/echasnovski/mini.nvim",
+  "https://github.com/rafamadriz/friendly-snippets",
+  "https://github.com/folke/snacks.nvim",
+  "https://github.com/folke/tokyonight.nvim",
+  "https://github.com/folke/which-key.nvim",
+})
 
 -- Mason
-add("mason-org/mason.nvim")
 require("mason").setup()
 
 -- Language Servers
-add("neovim/nvim-lspconfig")
 vim.lsp.enable({ "biome", "cssls", "html", "jsonls", "lua_ls", "ts_ls" })
 vim.diagnostic.config({ virtual_text = { current_line = true } })
 
 ---- nvim-treesitter
-add("nvim-treesitter/nvim-treesitter")
 require("nvim-treesitter.configs").setup({
   ensure_installed = "all",
+  ignore_install = { "ipkg" },
   highlight = { enable = true }
 })
 
 ---- mini
-add({ source = "echasnovski/mini.nvim", depends = { "rafamadriz/friendly-snippets" } })
 ---- General setup
 local mini_modules = {
   "ai", "basics", "bracketed", "completion", "diff", "files", "icons", "jump",
@@ -37,7 +42,6 @@ local mini_modules = {
 for _, module in ipairs(mini_modules) do
   require("mini." .. module).setup()
 end
-
 ---- Setup snippets
 local snippets = require("mini.snippets")
 snippets.setup({
@@ -46,7 +50,6 @@ snippets.setup({
 snippets.start_lsp_server()
 
 ---- snacks
-add("folke/snacks.nvim")
 require("snacks").setup({
   gitbrowse = { enabled = true },
   indent = { enabled = true, animate = { enabled = false } },
@@ -55,11 +58,9 @@ require("snacks").setup({
 })
 
 ---- tokyonight
-add("folke/tokyonight.nvim")
 vim.cmd.colorscheme("tokyonight-night")
 
 ---- which-key
-add("folke/which-key.nvim")
 require("which-key").setup()
 
 -- Keymaps
