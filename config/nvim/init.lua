@@ -9,14 +9,14 @@ vim.opt.scrolloff = 999
 
 -- Plugins
 vim.pack.add({
-  "https://github.com/mason-org/mason.nvim",
-  "https://github.com/neovim/nvim-lspconfig",
-  "https://github.com/nvim-treesitter/nvim-treesitter",
-  "https://github.com/echasnovski/mini.nvim",
-  "https://github.com/rafamadriz/friendly-snippets",
   "https://github.com/folke/snacks.nvim",
   "https://github.com/folke/tokyonight.nvim",
   "https://github.com/folke/which-key.nvim",
+  "https://github.com/mason-org/mason.nvim",
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/nvim-mini/mini.nvim",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/rafamadriz/friendly-snippets",
 })
 
 -- Mason
@@ -36,7 +36,7 @@ require("nvim-treesitter.configs").setup({
 ---- mini
 ---- General setup
 local mini_modules = {
-  "ai", "basics", "bracketed", "completion", "diff", "files", "icons", "jump",
+  "ai", "basics", "bracketed", "cmdline", "completion", "diff", "files", "icons", "jump",
   "jump2d", "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
 }
 for _, module in ipairs(mini_modules) do
@@ -59,9 +59,6 @@ require("snacks").setup({
 
 ---- tokyonight
 vim.cmd.colorscheme("tokyonight-night")
-
----- which-key
-require("which-key").setup()
 
 -- Keymaps
 ---- LSP
