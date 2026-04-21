@@ -1,8 +1,6 @@
 confirm-close-surface = false
 
 font-family = "MD IO"
-font-style = "Medium"
-font-style-italic = "Medium Italic"
 font-size = 15
 adjust-cell-height = 15
 adjust-box-thickness = 1
@@ -12,4 +10,3 @@ window-padding-y = 10
 
 window-colorspace = display-p3
 theme = "/users/luke/.local/share/nvim/site/pack/core/opt/tokyonight.nvim/extras/ghostty/tokyonight_night"
-keybind = shift+enter=text:\n

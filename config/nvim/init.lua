@@ -5,7 +5,6 @@ vim.opt.expandtab = true
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.cmdheight = 0
-vim.opt.scrolloff = 999
 
 -- Plugins
 vim.pack.add({
