@@ -6,5 +6,6 @@ brew "mise"
 brew "neovim"
 brew "rcm"
 brew "ripgrep"
+brew "tree-sitter-cli"
 
 cask "ghostty"

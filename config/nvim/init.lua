@@ -6,6 +6,8 @@ vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.cmdheight = 0
 
+require("vim._core.ui2").enable()
+
 -- Plugins
 vim.pack.add({
   "https://github.com/folke/snacks.nvim",
@@ -14,8 +16,8 @@ vim.pack.add({
   "https://github.com/mason-org/mason.nvim",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/nvim-mini/mini.nvim",
-  "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/rafamadriz/friendly-snippets",
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" }
 })
 
 -- Mason
@@ -24,13 +26,6 @@ require("mason").setup()
 -- Language Servers
 vim.lsp.enable({ "biome", "cssls", "html", "jsonls", "lua_ls", "ts_ls" })
 vim.diagnostic.config({ virtual_text = { current_line = true } })
-
----- nvim-treesitter
-require("nvim-treesitter.configs").setup({
-  ensure_installed = "all",
-  ignore_install = { "ipkg" },
-  highlight = { enable = true }
-})
 
 ---- mini
 ---- General setup
