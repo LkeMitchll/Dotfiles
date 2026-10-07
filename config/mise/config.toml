@@ -1,0 +1,8 @@
+[tools]
+node = "lts"
+python = "3.14.8"
+lua-language-server = "latest"
+"npm:@biomejs/biome" = "latest"
+"npm:vscode-langservers-extracted" = "latest"
+"npm:typescript-language-server" = "latest"
+"npm:typescript" = "latest"

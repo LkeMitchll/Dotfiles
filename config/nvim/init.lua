@@ -13,15 +13,11 @@ vim.pack.add({
   "https://github.com/folke/snacks.nvim",
   "https://github.com/folke/tokyonight.nvim",
   "https://github.com/folke/which-key.nvim",
-  "https://github.com/mason-org/mason.nvim",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/nvim-mini/mini.nvim",
   "https://github.com/rafamadriz/friendly-snippets",
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" }
 })
-
--- Mason
-require("mason").setup()
 
 -- Language Servers
 vim.lsp.enable({ "biome", "cssls", "html", "jsonls", "lua_ls", "ts_ls" })
@@ -31,7 +27,7 @@ vim.diagnostic.config({ virtual_text = { current_line = true } })
 ---- General setup
 local mini_modules = {
   "ai", "basics", "bracketed", "cmdline", "completion", "diff", "files", "icons", "jump",
-  "jump2d", "pairs", "pick", "splitjoin", "statusline", "surround", "trailspace"
+  "jump2d", "pairs", "pick", "splitjoin", "statuscolumn", "statusline", "surround", "trailspace"
 }
 for _, module in ipairs(mini_modules) do
   require("mini." .. module).setup()
@@ -47,8 +43,7 @@ snippets.start_lsp_server()
 require("snacks").setup({
   gitbrowse = { enabled = true },
   indent = { enabled = true, animate = { enabled = false } },
-  lazygit = { enabled = true },
-  statuscolumn = { enabled = true }
+  lazygit = { enabled = true }
 })
 
 ---- tokyonight
