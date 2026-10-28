@@ -20,7 +20,7 @@ vim.pack.add({
 })
 
 -- Language Servers
-vim.lsp.enable({ "biome", "cssls", "html", "jsonls", "lua_ls", "ts_ls" })
+vim.lsp.enable({ "biome", "cssls", "html", "jsonls", "lua_ls", "tsc" })
 vim.diagnostic.config({ virtual_text = { current_line = true } })
 
 ---- mini
